@@ -1,12 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import aktuellesView from "@/views/AktuellesView";
-import BGErfolgeView from "@/views/BG-ErfolgeView";
-import BGPositionView from "@/views/BG-PositionView";
 import KommentareView from "@/views/KommentareView";
 import PressearchivView from "@/views/PressearchivView";
 import TagesordnungView from "@/views/TagesordnungView";
 import UnserTeamView from "@/views/UnserTeamView";
+import AktuellesView from "@/views/AktuellesView";
+import ErfolgeView from "@/views/ErfolgeView";
+import PositionView from "@/views/PositionView";
 
 const routes = [
   {
@@ -17,17 +17,17 @@ const routes = [
   {
     path: '/aktuelles',
     name: 'aktuelles',
-    component: aktuellesView
+    component: AktuellesView
   },
   {
     path: '/erfolge',
     name: 'erfolge',
-    component: BGErfolgeView
+    component: ErfolgeView
   },
   {
-    path: '/postion',
-    name: 'postion',
-    component: BGPositionView
+    path: '/position',
+    name: 'position',
+    component: PositionView
   },
   {
     path: '/kommentare',

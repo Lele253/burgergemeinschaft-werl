@@ -1,17 +1,15 @@
 <template>
-  <div>
-    <HeaderComponent/>
-    <div class="background pt-10">
-
+    <div>
+      <HeaderComponent/>
+      <div class="background pt-10">
+      </div>
     </div>
-  </div>
 </template>
-
 
 <script>
 import HeaderComponent from "@/components/HeaderComponent";
 export default {
-  name: "AktuellesView",
+  name: "ErfolgeView",
   components: {
     HeaderComponent
   }
@@ -22,10 +20,8 @@ export default {
 .background {
   width: 100vw;
   height: 90vh;
-  background-image: url('../assets/aktuelles.jpeg');
-  background-size: cover;
-  background-position: center;
+  background-image: url('../assets/erfolge.png');
   background-repeat: no-repeat;
-  background-attachment: fixed;
+
 }
 </style>

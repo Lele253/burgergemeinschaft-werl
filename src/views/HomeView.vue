@@ -53,7 +53,6 @@ export default ({
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-
 }
 .card{
   height: 70vh;

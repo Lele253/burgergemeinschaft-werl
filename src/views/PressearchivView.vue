@@ -1,12 +1,19 @@
 <template>
-<div>
-
-</div>
+  <div>
+    <HeaderComponent/>
+    <div class="background pt-10">
+    </div>
+  </div>
 </template>
 
 <script>
+import HeaderComponent from "@/components/HeaderComponent";
+
 export default {
-  name: "PressearchivView"
+  name: "PressearchivView",
+  components: {
+    HeaderComponent
+  }
 }
 </script>
 
