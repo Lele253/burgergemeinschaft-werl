@@ -1,12 +1,13 @@
 <template>
   <div>
     <HeaderComponent/>
-    <div class="background pt-10">
+    <v-img cover style="height: 86vh"  :src="background">
+      <div style="background-color: rgba(255,255,255,0.56);height: 100%; width: 100%">
+        keafdljliwd
 
-    </div>
+      </div>
+    </v-img>
   </div>
-
-
 </template>
 
 <script>
@@ -18,6 +19,7 @@ export default ({
     return {
       bildRechts: require('../assets/vorstandneu.jpeg'),
       name: 'Kommentare',
+      background: require('../assets/werl.png')
     }
   },
   components: {
@@ -31,14 +33,6 @@ export default ({
 
 <style>
 
-.background {
-  width: 100vw;
-  height: 90vh;
-  background-image: url('../assets/werl.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
+
 
 </style>

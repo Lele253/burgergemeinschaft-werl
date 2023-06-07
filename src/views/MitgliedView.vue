@@ -1,7 +1,9 @@
 <template>
   <div>
     <HeaderComponent/>
-    <div class="background pt-10">
+    <v-img cover style="height: 86vh" :src="background">
+      <div style="background-color: rgba(255,255,255,0.21);height: 100%; width: 100%">
+      <div class=" pt-10">
       <v-row class="d-flex justify-center">
         <v-col class="d-flex justify-center" cols="4">
           <v-card class="card">
@@ -87,12 +89,12 @@
                 </v-col>
               </v-row>
             </v-form>
-
-
           </v-card>
         </v-col>
       </v-row>
     </div>
+      </div>
+    </v-img>
   </div>
 </template>
 
@@ -103,6 +105,7 @@ export default {
   data() {
     return {
       name: "Mitglied werden",
+      background: require('../assets/mitglied werden.jpeg'),
       bild: require('../assets/dokumentIcon.png'),
       vorname: null,
       nachname: '',
