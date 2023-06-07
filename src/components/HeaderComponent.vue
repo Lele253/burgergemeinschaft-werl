@@ -1,18 +1,18 @@
 <template>
   <div class="header">
-    <div >
+    <div>
       <v-row style="height: 70px">
         <v-col cols="4">
           <v-img
-              @click="$router.push('/')"
               :src="background"
               class="mt-2 justify-start d-flex3"
               height="80"
+              @click="$router.push('/')"
           >
           </v-img>
         </v-col>
         <v-col cols="4">
-          <h1 class="text-center text-white mt-5">Bürgergemeinschaft Werl</h1>
+          <h1 class="text-center text-white mt-5">{{ $store.state.routername }}</h1>
         </v-col>
         <v-col class="d-flex justify-center " cols="4">
           <v-btn class="mr-3 mt-10 mitglied-button">
@@ -25,7 +25,10 @@
         <v-row class="mt-9 d-flex justify-center text-white" style=" width: 100%;">
           <v-col class="nav-cols" cols="1" @click="$router.push('/team')">Unser Team</v-col>
           <v-col class="nav-cols" cols="1" @click="$router.push('/aktuelles')">Aktuelles</v-col>
-          <v-col class="nav-cols" cols="1" @click="$router.push('/position')">BG-Position</v-col>
+          <v-col class="nav-cols" cols="1"
+                 @click="weiterleiten()">
+            BG-Position
+          </v-col>
           <v-col class="nav-cols" cols="1" @click="$router.push('/erfolge')">BG-Erfolge</v-col>
           <v-col class="nav-cols" cols="1" @click="$router.push('/kommentare')">Kommentare</v-col>
           <v-col class="nav-cols" cols="1" @click="$router.push('/pressearchiv')">Pressearchiv</v-col>
@@ -40,10 +43,15 @@
 
 <script>
 export default {
-  name: "HeaderComponent",
   data() {
     return {
-      background: require('../assets/bg-werl-logo.png')
+      background: require('../assets/bg-werl-logo.png'),
+      name: "HeaderComponent",
+    }
+  },
+  methods: {
+    weiterleiten() {
+      window.open('https://leandro-graf.de/positionspapier.pdf')
     }
   }
 }
@@ -60,7 +68,8 @@ export default {
   color: white;
   background: blue;
 }
-.nav-cols{
+
+.nav-cols {
   min-width: 140px;
 
 }

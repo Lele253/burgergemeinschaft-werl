@@ -10,13 +10,25 @@
 import HeaderComponent from "@/components/HeaderComponent";
 
 export default {
-  name: "PositionView",
+  data() {
+    return {
+      name: "Position",
+    }
+  },
   components: {
     HeaderComponent
+  },
+  created() {
+    this.$store.state.routername = this.name
   }
 }
 </script>
 
 <style scoped>
-
+.background {
+  width: 100vw;
+  height: 90vh;
+  background-image: url('../assets/VorstandUndRat.png');
+  background-repeat: no-repeat;
+}
 </style>

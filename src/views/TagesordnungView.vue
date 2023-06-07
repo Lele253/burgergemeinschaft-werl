@@ -10,9 +10,16 @@
 import HeaderComponent from "@/components/HeaderComponent";
 
 export default {
-  name: "TagesordnungView",
+  data() {
+    return {
+      name: "Tagesordnung",
+    }
+  },
   components: {
     HeaderComponent
+  },
+  created() {
+    this.$store.state.routername = this.name
   }
 }
 </script>

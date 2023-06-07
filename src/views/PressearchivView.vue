@@ -10,9 +10,16 @@
 import HeaderComponent from "@/components/HeaderComponent";
 
 export default {
-  name: "PressearchivView",
+  data() {
+    return {
+      name: "Pressearchiv",
+    }
+  },
   components: {
     HeaderComponent
+  },
+  created() {
+    this.$store.state.routername = this.name
   }
 }
 </script>

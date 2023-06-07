@@ -10,10 +10,18 @@
 
 <script>
 import HeaderComponent from "@/components/HeaderComponent";
+
 export default {
-  name: "AktuellesView",
+  data() {
+    return {
+      name: 'Aktuelles'
+    }
+  },
   components: {
     HeaderComponent
+  },
+  created() {
+    this.$store.state.routername = this.name
   }
 }
 </script>

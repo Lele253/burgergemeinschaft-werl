@@ -10,9 +10,16 @@
 import HeaderComponent from "@/components/HeaderComponent";
 
 export default {
-  name: "UnserTeamView",
+  data() {
+    return {
+      name: "UnserTeam",
+    }
+  },
   components: {
     HeaderComponent
+  },
+  created() {
+    this.$store.state.routername = this.name
   }
 }
 </script>
