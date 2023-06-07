@@ -24,7 +24,6 @@
           </v-card>
         </v-col>
       </v-row>
-
     </div>
   </div>
 
@@ -43,7 +42,7 @@ export default ({
     }
   },
   components: {
-    HeaderComponent
+    HeaderComponent,
   },
   created() {
     this.$store.state.routername = this.name
@@ -55,7 +54,7 @@ export default ({
 
 .background {
   width: 100vw;
-  height: 90vh;
+  height: 81vh;
   background-image: url('../assets/werl.png');
   background-size: cover;
   background-position: center;

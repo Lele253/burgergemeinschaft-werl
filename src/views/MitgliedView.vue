@@ -1,98 +1,100 @@
 <template>
   <div>
     <HeaderComponent/>
-    <v-img cover style="height: 86vh" :src="background">
-      <div style="background-color: rgba(255,255,255,0.21);height: 100%; width: 100%">
-      <div class=" pt-10">
-      <v-row class="d-flex justify-center">
-        <v-col class="d-flex justify-center" cols="4">
-          <v-card class="card">
-            <h2 class="text-center mt-5">Ich will mitmachen!</h2>
-            <p class="text-center mt-5 mx-10"> Finden Sie sich in unseren Zielen wieder? Dann werden Sie Mitglied in der
-              Bürgergemeinschaft Werl e.V.
-              und
-              gestalten Sie aktiv das Leben in unserer Stadt Werl mit...
-            </p>
-            <v-img :src="bild" height="300"/>
-            <h4 class="text-center mt-10 mx-10">
-              Füllen Sie dafür einfach das Formular aus und wir kontaktieren Sie zeitnah.
-            </h4>
-          </v-card>
-        </v-col>
-        <v-col class="d-flex justify-center" cols="6">
-          <v-card class="card">
+    <v-img :src="background" cover style="height: 81vh">
+      <div class="d-flex align-center" style="background-color: rgba(255,255,255,0.21);height: 100%; width: 100%">
+        <div class=" pt-10">
+          <v-row class="d-flex justify-center " style="width: 100%">
+            <v-col class="d-flex justify-center" cols="4">
+              <v-card class="card">
+                <h2 class="text-center mt-10">Ich will mitmachen!</h2>
+                <p class="text-center mt-10 mx-10"> Finden Sie sich in unseren Zielen wieder? Dann werden Sie Mitglied
+                  in
+                  der
+                  Bürgergemeinschaft Werl e.V.
+                  und
+                  gestalten Sie aktiv das Leben in unserer Stadt Werl mit...
+                </p>
+                <v-img :src="bild" height="300"/>
+                <h4 class="text-center mt-10 mx-10">
+                  Füllen Sie dafür einfach das Formular aus und wir kontaktieren Sie zeitnah.
+                </h4>
+              </v-card>
+            </v-col>
+            <v-col class="d-flex justify-center" cols="6">
+              <v-card class="card">
 
-            <v-form class="mt-10 mx-10" @submit="abschicken">
-              <v-row style="width: 100%;">
-                <v-col cols="6">
-                  <v-text-field
-                      v-model="vorname"
-                      :rules="rules"
-                      label="Vorname"
-                      variant="outlined"
-                  ></v-text-field>
-                </v-col>
-                <v-col cols="6">
-                  <v-text-field
-                      v-model="nachname"
-                      :rules="rules"
-                      label="Nachname"
-                      variant="outlined"
-                  ></v-text-field>
-                </v-col>
-                <v-col cols="12">
-                  <v-text-field
-                      v-model="email"
-                      :rules="rules"
-                      label="Email Adresse"
-                      type="mail"
-                      variant="outlined"
-                  ></v-text-field>
-                </v-col>
-                <v-col cols="12">
-                  <v-text-field
-                      v-model="handynummer"
-                      :rules="rules"
-                      label="Handynummer"
-                      variant="outlined"
-                  ></v-text-field>
-                </v-col>
-                <v-col cols="6">
-                  <v-text-field
-                      v-model="plz"
-                      :rules="rules"
-                      label="PLZ"
-                      variant="outlined"
-                  ></v-text-field>
-                </v-col>
-                <v-col cols="6">
-                  <v-text-field
-                      v-model="ort"
-                      :rules="rules"
-                      label="Ort"
-                      variant="outlined"
-                  ></v-text-field>
-                </v-col>
-                <v-col cols="12">
-                  <v-text-field
-                      v-model="adresse"
-                      :rules="rules"
-                      label="Adresse"
-                      variant="outlined"
-                  ></v-text-field>
-                </v-col>
-                <v-col class="d-flex justify-center" cols="12">
-                  <v-btn v-if="ausgefüllt" class="mt-2" type="submit" width="150">Abschicken</v-btn>
-                  <v-btn v-if="!ausgefüllt" class="mt-2" style="color: gray; background: rgba(128,128,128,0.11)"
-                         width="150">Abschicken
-                  </v-btn>
-                </v-col>
-              </v-row>
-            </v-form>
-          </v-card>
-        </v-col>
-      </v-row>
-    </div>
+                <v-form class="mt-10 mx-10 d-flex justify-center" @submit="abschicken">
+                  <v-row style="width: 100%">
+                    <v-col cols="6">
+                      <v-text-field
+                          v-model="vorname"
+                          :rules="rules"
+                          label="Vorname"
+                          variant="outlined"
+                      ></v-text-field>
+                    </v-col>
+                    <v-col cols="6">
+                      <v-text-field
+                          v-model="nachname"
+                          :rules="rules"
+                          label="Nachname"
+                          variant="outlined"
+                      ></v-text-field>
+                    </v-col>
+                    <v-col cols="12">
+                      <v-text-field
+                          v-model="email"
+                          :rules="rules"
+                          label="Email Adresse"
+                          type="mail"
+                          variant="outlined"
+                      ></v-text-field>
+                    </v-col>
+                    <v-col cols="12">
+                      <v-text-field
+                          v-model="handynummer"
+                          :rules="rules"
+                          label="Handynummer"
+                          variant="outlined"
+                      ></v-text-field>
+                    </v-col>
+                    <v-col cols="6">
+                      <v-text-field
+                          v-model="plz"
+                          :rules="rules"
+                          label="PLZ"
+                          variant="outlined"
+                      ></v-text-field>
+                    </v-col>
+                    <v-col cols="6">
+                      <v-text-field
+                          v-model="ort"
+                          :rules="rules"
+                          label="Ort"
+                          variant="outlined"
+                      ></v-text-field>
+                    </v-col>
+                    <v-col cols="12">
+                      <v-text-field
+                          v-model="adresse"
+                          :rules="rules"
+                          label="Adresse"
+                          variant="outlined"
+                      ></v-text-field>
+                    </v-col>
+                    <v-col class="d-flex justify-center" cols="12">
+                      <v-btn v-if="ausgefüllt" class="mt-2" type="submit" width="150">Abschicken</v-btn>
+                      <v-btn v-if="!ausgefüllt" class="mt-2" style="color: gray; background: rgba(128,128,128,0.11)"
+                             width="150">Abschicken
+                      </v-btn>
+                    </v-col>
+                  </v-row>
+                </v-form>
+              </v-card>
+            </v-col>
+          </v-row>
+        </div>
       </div>
     </v-img>
   </div>
@@ -145,7 +147,7 @@ export default {
 
 <style scoped>
 .card {
-  height: 70vh;
+  height: 650px;
   width: 90%;
   background-color: rgba(255, 255, 255, 0.91);
   box-shadow: 4px 6px 8px black;

@@ -1,7 +1,7 @@
 <template>
   <div>
     <HeaderComponent/>
-    <v-img cover style="height: 86vh" :src="background">
+    <v-img :src="background" cover style="height: 81vh">
       <div style="background-color: rgba(255,255,255,0.56);height: 100%; width: 100%">
         keafdljliwd
 

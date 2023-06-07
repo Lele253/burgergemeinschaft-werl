@@ -1,7 +1,6 @@
 import {createRouter, createWebHistory} from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import PressearchivView from "@/views/PressearchivView";
-import TagesordnungView from "@/views/TagesordnungView";
 import UnserTeamView from "@/views/UnserTeamView";
 import AktuellesView from "@/views/AktuellesView";
 import ErfolgeView from "@/views/ErfolgeView";
@@ -39,11 +38,6 @@ const routes = [
         path: '/pressearchiv',
         name: 'pressearchiv',
         component: PressearchivView
-    },
-    {
-        path: '/tagesordnung',
-        name: 'tagesordnung',
-        component: TagesordnungView
     },
     {
         path: '/team',

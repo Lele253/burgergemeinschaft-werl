@@ -25,14 +25,15 @@
         <v-row class="mt-9 d-flex justify-center text-white" style=" width: 100%;">
           <v-col class="nav-cols" cols="1" @click="$router.push('/team')">Unser Team</v-col>
           <v-col class="nav-cols" cols="1" @click="$router.push('/aktuelles')">Aktuelles</v-col>
-          <v-col class="nav-cols" cols="1"
-                 @click="weiterleiten()">
+          <v-col class="nav-cols" cols="1" @click="weiterleiten('https://leandro-graf.de/positionspapier.pdf')">
             BG-Position
           </v-col>
           <v-col class="nav-cols" cols="1" @click="$router.push('/erfolge')">BG-Erfolge</v-col>
           <v-col class="nav-cols" cols="1" @click="$router.push('/kommentare')">Kommentare</v-col>
           <v-col class="nav-cols" cols="1" @click="$router.push('/pressearchiv')">Pressearchiv</v-col>
-          <v-col class="nav-cols" cols="1" @click="$router.push('/tagesordnung')">Tagesordung</v-col>
+          <v-col class="nav-cols" cols="1" @click="weiterleiten('https://sessionnet.krz.de/werl/bi/info.asp')">
+            Tagesordung
+          </v-col>
 
         </v-row>
       </div>
@@ -50,8 +51,8 @@ export default {
     }
   },
   methods: {
-    weiterleiten() {
-      window.open('https://leandro-graf.de/positionspapier.pdf')
+    weiterleiten(url) {
+      window.open(url)
     }
   }
 }
