@@ -147,7 +147,9 @@ export default {
 
 <style scoped>
 .card {
-  height: 650px;
+  height: 70vh;
+  max-height: 650px;
+  min-height: 400px;
   width: 90%;
   background-color: rgba(255, 255, 255, 0.91);
   box-shadow: 4px 6px 8px black;
