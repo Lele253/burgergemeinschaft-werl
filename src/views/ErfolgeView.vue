@@ -1,8 +1,12 @@
 <template>
   <div>
     <HeaderComponent/>
-    <div class="background pt-10">
-    </div>
+    <v-img cover style="height: 79vh" :src="background">
+      <div style="background-color: rgba(255,255,255,0.56);height: 100%; width: 100%">
+        keafdljliwd
+
+      </div>
+    </v-img>
   </div>
 </template>
 
@@ -13,6 +17,8 @@ export default {
   data() {
     return {
       name: "Erfolge",
+      background: require('../assets/erfolge.png')
+
     }
   },
   components: {
@@ -25,10 +31,4 @@ export default {
 </script>
 
 <style scoped>
-.background {
-  width: 100vw;
-  height: 90vh;
-  background-image: url('../assets/erfolge.png');
-  background-repeat: no-repeat;
-}
 </style>

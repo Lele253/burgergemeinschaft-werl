@@ -59,9 +59,11 @@ export default {
 
 <style scoped>
 .header {
+  position: relative;
+  z-index: 999;
   height: 150px;
   background: #2F53A7;
-  box-shadow: 0px 3px 1px black;
+  box-shadow: 0px 3px 6px black;
 }
 
 .mitglied-button {

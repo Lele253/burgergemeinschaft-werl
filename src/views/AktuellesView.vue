@@ -1,9 +1,12 @@
 <template>
   <div>
     <HeaderComponent/>
-    <div class="background pt-10">
+    <v-img cover style="height: 79vh" :src="background">
+      <div style="background-color: rgba(255,255,255,0.56);height: 100%; width: 100%">
+        keafdljliwd
 
-    </div>
+      </div>
+    </v-img>
   </div>
 </template>
 
@@ -14,7 +17,8 @@ import HeaderComponent from "@/components/HeaderComponent";
 export default {
   data() {
     return {
-      name: 'Aktuelles'
+      name: 'Aktuelles',
+      background: require('../assets/aktuelles.jpeg')
     }
   },
   components: {
@@ -27,13 +31,5 @@ export default {
 </script>
 
 <style scoped>
-.background {
-  width: 100vw;
-  height: 90vh;
-  background-image: url('../assets/aktuelles.jpeg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
+
 </style>
