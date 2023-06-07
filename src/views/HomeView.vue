@@ -50,7 +50,7 @@ export default ({
 });
 </script>
 
-<style>
+<style scoped>
 
 .background {
   width: 100vw;

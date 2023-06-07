@@ -7,6 +7,7 @@ import ErfolgeView from "@/views/ErfolgeView";
 import PositionView from "@/views/PositionView";
 import kommentareView from "@/views/KommentareView";
 import MitgliedView from "@/views/MitgliedView";
+import AdminView from "@/views/AdminView";
 
 const routes = [
     {
@@ -33,6 +34,11 @@ const routes = [
         path: '/kommentare',
         name: 'kommentare',
         component: kommentareView
+    },
+    {
+        path: '/admin',
+        name: 'Admin',
+        component: AdminView
     },
     {
         path: '/pressearchiv',
