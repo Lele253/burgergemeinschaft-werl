@@ -26,9 +26,9 @@
           <v-col class="nav-cols" cols="1" @click="$router.push('/team')">Unser Team</v-col>
           <v-col class="nav-cols" cols="1" @click="$router.push('/aktuelles')">Aktuelles</v-col>
           <v-col class="nav-cols" cols="1" @click="weiterleiten('https://leandro-graf.de/positionspapier.pdf')">
-            BG-Position
+            Position
           </v-col>
-          <v-col class="nav-cols" cols="1" @click="$router.push('/erfolge')">BG-Erfolge</v-col>
+          <v-col class="nav-cols" cols="1" @click="$router.push('/erfolge')">Erfolge</v-col>
           <v-col class="nav-cols" cols="1" @click="$router.push('/kommentare')">Kommentare</v-col>
           <v-col class="nav-cols" cols="1" @click="$router.push('/pressearchiv')">Pressearchiv</v-col>
           <v-col class="nav-cols" cols="1" @click="weiterleiten('https://sessionnet.krz.de/werl/bi/info.asp')">
