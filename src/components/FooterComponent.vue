@@ -1,13 +1,55 @@
 <template>
   <div class="footer d-flex justify-center">
-    <p class="mr-2" style="font-size: 20px; cursor:pointer;" @click="$router.push('/links')">Links</p>
-    <p style="font-size: 20px">|</p>
-    <!--    <p class="ml-2" style="font-size: 20px; cursor:pointer;">Kontakt</p>-->
+    <!--    <p class="mr-2 footer-text" @click="$router.push('/links')">Links</p>-->
 
     <div class="text-center ml-2">
-      <p style="font-size: 20px; cursor:pointer;" @click="snackbar = true">Kontakt</p>
+      <p class="footer-text" @click="snackbarLinks = true">Links</p>
+      <v-snackbar v-model="snackbarLinks" width="80">
+        <h3 class="text-center">Links</h3>
+        <p class="text-center mt-2" style="cursor: pointer"
+           @click="weiterleiten('https://www.brandwatch.com/de/wp-content/themes/brandwatch/src/core/endpoints/resize.php?image=uploads/brandwatch/troll.jpg&width=469')">
+          <u>Stadt Werl</u>
+        </p>
+        <p class="text-center mt-2" style="cursor: pointer"
+           @click="weiterleiten('https://www.brandwatch.com/de/wp-content/themes/brandwatch/src/core/endpoints/resize.php?image=uploads/brandwatch/troll.jpg&width=469')">
+          <u>Mariengymnasium</u></p>
+        <p class="text-center mt-2" style="cursor: pointer"
+           @click="weiterleiten('https://www.brandwatch.com/de/wp-content/themes/brandwatch/src/core/endpoints/resize.php?image=uploads/brandwatch/troll.jpg&width=469')">
+          <u>Sekundarschule</u></p>
+        <p class="text-center mt-2" style="cursor: pointer"
+           @click="weiterleiten('https://www.brandwatch.com/de/wp-content/themes/brandwatch/src/core/endpoints/resize.php?image=uploads/brandwatch/troll.jpg&width=469')">
+          <u>Ursilinengymnasium</u>
+        </p>
+        <p class="text-center mt-2" style="cursor: pointer"
+           @click="weiterleiten('https://www.brandwatch.com/de/wp-content/themes/brandwatch/src/core/endpoints/resize.php?image=uploads/brandwatch/troll.jpg&width=469')">
+          <u>Ursilinenrealschule</u>
+        </p>
+        <p class="text-center mt-2" style="cursor: pointer"
+           @click="weiterleiten('https://www.brandwatch.com/de/wp-content/themes/brandwatch/src/core/endpoints/resize.php?image=uploads/brandwatch/troll.jpg&width=469')">
+          <u>Marienschule
+            Büderich</u></p>
+        <p class="text-center mt-2" style="cursor: pointer"
+           @click="weiterleiten('https://www.brandwatch.com/de/wp-content/themes/brandwatch/src/core/endpoints/resize.php?image=uploads/brandwatch/troll.jpg&width=469')">
+          <u>Norbertschule</u></p>
+        <p class="text-center mt-2" style="cursor: pointer"
+           @click="weiterleiten('https://www.brandwatch.com/de/wp-content/themes/brandwatch/src/core/endpoints/resize.php?image=uploads/brandwatch/troll.jpg&width=469')">
+          <u>Walburgisschule </u></p>
+        <div class="d-flex justify-center mt-2">
+          <v-btn color="red" variant="text" @click="snackbarLinks = false">
+            Close
+          </v-btn>
+        </div>
+      </v-snackbar>
+    </div>
 
-      <v-snackbar v-model="snackbar" width="80">
+
+    <p style="font-size: 20px">|</p>
+    <p class=" ml-2 footer-text" @click="$router.push('/impressum')">Impressum</p>
+    <p class="ml-2" style="font-size: 20px">|</p>
+
+    <div class="text-center ml-2">
+      <p class="footer-text" @click="snackbarKontakt = true">Kontakt</p>
+      <v-snackbar v-model="snackbarKontakt" width="80">
         <v-row class="ml-2" style="width: 100%">
           <v-col class="" cols="12">
             <h3 class="text-center">Kontakt</h3>
@@ -24,7 +66,7 @@
             <p style="cursor: pointer" @click="weiterleiten('tel:+4929228820732')"><u>Tel: 02922-8820732</u></p>
           </v-col>
           <v-col class="text-center" cols="12">
-            <v-btn color="red" variant="text" @click="snackbar = false">
+            <v-btn color="red" variant="text" @click="snackbarKontakt = false">
               Close
             </v-btn>
           </v-col>
@@ -40,8 +82,8 @@
 export default {
   name: "FooterComponent",
   data: () => ({
-    snackbar: true,
-    text: `Hello, I'm a snackbar`,
+    snackbarKontakt: false,
+    snackbarLinks: false,
   }),
   methods: {
     weiterleiten(url) {
@@ -52,6 +94,11 @@ export default {
 </script>
 
 <style scoped>
+.footer-text {
+  font-size: 20px;
+  cursor: pointer;
+}
+
 .footer {
   position: fixed;
   bottom: 0px;

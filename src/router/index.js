@@ -8,6 +8,8 @@ import PositionView from "@/views/PositionView";
 import kommentareView from "@/views/KommentareView";
 import MitgliedView from "@/views/MitgliedView";
 import AdminView from "@/views/AdminView";
+import ImpressumView from "@/views/ImpressumView";
+import linksView from "@/views/LinksView";
 
 const routes = [
     {
@@ -54,6 +56,16 @@ const routes = [
         path: '/mitglied',
         name: 'Mitglied werden',
         component: MitgliedView
+    },
+    {
+        path: '/impressum',
+        name: 'Impressum',
+        component: ImpressumView
+    },
+    {
+        path: '/links',
+        name: 'Links',
+        component: linksView
     }
 
 ]
