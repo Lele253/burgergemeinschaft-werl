@@ -2,10 +2,9 @@
   <div>
     <HeaderComponent/>
     <v-img :src="background" cover style="height: 81vh">
-      <div class="d-flex align-center"
+      <div class="pt-3"
            style="background-color: rgba(255,255,255,0.21);height: 100%; width: 100%">
-        <div class=" pt-10">
-          <v-row class="d-flex justify-center " style="width: 100%">
+          <v-row class="d-flex justify-center"  >
             <v-col class="d-flex justify-center" cols="4">
               <v-card class="card">
                 <h2 class="text-center mt-10">Ich will mitmachen!</h2>
@@ -16,18 +15,18 @@
                   und
                   gestalten Sie aktiv das Leben in unserer Stadt Werl mit...
                 </p>
-                <v-img :src="bild" class="mt-5" height="300"/>
+                <v-img :src="bild" class="mt-5" height="50" />
                 <h4 class="text-center pb-5 mt-t mx-10">
                   Füllen Sie dafür einfach das Formular aus und wir kontaktieren Sie zeitnah.
                 </h4>
               </v-card>
             </v-col>
-            <v-col class="d-flex justify-center" cols="6">
-              <v-card class="card">
+            <v-col class="d-flex justify-center" cols="7">
+              <v-card class="card mx-0">
 
                 <v-form class="mt-10 mx-10 d-flex justify-center" @submit="abschicken">
                   <v-row style="width: 100%">
-                    <v-col class="pt-0" cols="6">
+                    <v-col class="py-0" cols="6">
                       <v-text-field
                           v-model="vorname"
                           :rules="rules"
@@ -35,7 +34,7 @@
                           variant="outlined"
                       ></v-text-field>
                     </v-col>
-                    <v-col class="pt-0" cols="6">
+                    <v-col class="py-0" cols="6">
                       <v-text-field
                           v-model="nachname"
                           :rules="rules"
@@ -43,7 +42,7 @@
                           variant="outlined"
                       ></v-text-field>
                     </v-col>
-                    <v-col class="pt-0" cols="12">
+                    <v-col class="py-0" cols="12">
                       <v-text-field
                           v-model="email"
                           :rules="rules"
@@ -52,7 +51,7 @@
                           variant="outlined"
                       ></v-text-field>
                     </v-col>
-                    <v-col class="pt-0" cols="12">
+                    <v-col class="py-0" cols="12">
                       <v-text-field
                           v-model="handynummer"
                           :rules="rules"
@@ -60,7 +59,7 @@
                           variant="outlined"
                       ></v-text-field>
                     </v-col>
-                    <v-col class="pt-0" cols="6">
+                    <v-col class="py-0 pb-0" cols="6">
                       <v-text-field
                           v-model="plz"
                           :rules="rules"
@@ -68,7 +67,7 @@
                           variant="outlined"
                       ></v-text-field>
                     </v-col>
-                    <v-col class="pt-0" cols="6">
+                    <v-col class="py-0" cols="6">
                       <v-text-field
                           v-model="ort"
                           :rules="rules"
@@ -76,7 +75,7 @@
                           variant="outlined"
                       ></v-text-field>
                     </v-col>
-                    <v-col class="pt-0" cols="12">
+                    <v-col class="py-0" cols="12">
                       <v-text-field
                           v-model="adresse"
                           :rules="rules"
@@ -84,9 +83,9 @@
                           variant="outlined"
                       ></v-text-field>
                     </v-col>
-                    <v-col class="d-flex justify-center" cols="12">
-                      <v-btn v-if="ausgefüllt" class="mt-2" type="submit" width="150">Abschicken</v-btn>
-                      <v-btn v-if="!ausgefüllt" class="mt-2" style="color: gray; background: rgba(128,128,128,0.11)"
+                    <v-col class="d-flex justify-center mb-3 pt-0" cols="12">
+                      <v-btn v-if="ausgefüllt"  type="submit" width="150">Abschicken</v-btn>
+                      <v-btn v-if="!ausgefüllt"   style="color: gray; background: rgba(128,128,128,0.11)"
                              width="150">Abschicken
                       </v-btn>
                     </v-col>
@@ -95,7 +94,7 @@
               </v-card>
             </v-col>
           </v-row>
-        </div>
+
       </div>
     </v-img>
   </div>
@@ -149,6 +148,7 @@ export default {
 <style scoped>
 .card {
   width: 90%;
+  height: 100%;
   background-color: rgba(255, 255, 255, 0.91);
   box-shadow: 4px 6px 8px black;
   border-radius: 20px 20px 20px 20px;
