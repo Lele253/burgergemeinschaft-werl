@@ -15,7 +15,7 @@
           <h1 class="text-center text-white mt-5">{{ $store.state.routername }}</h1>
         </v-col>
         <v-col class="d-flex justify-center " cols="4">
-          <v-btn class="mr-3 mt-10 mitglied-button">
+          <v-btn class="mr-3 mt-10 mitglied-button" @click="$router.push('/mitglied')">
             Mitglied werden
           </v-btn>
         </v-col>
