@@ -37,17 +37,17 @@
                         </v-card>-->
             <v-virtual-scroll :item-height="30" :items="beiträge" height="470px">
               <template v-slot="{ item }">
-                <v-card class="mt-3" height="50" width="500" @click="setBeitrag(item.id)">
+                <v-card class="mt-3" min-height="100" width="500" @click="setBeitrag(item.id)">
 
-                  <v-row class="mt-0">
-                    <v-col cols="8">
+                  <v-row>
+                    <v-col class="mt-3" cols="12">
                       <h3 v-if="item.titel == this.ausgewählterBeitragTitel" class="text-center" style="color: blue">
                         {{ item.titel }}</h3>
                       <h3 v-if="item.titel != this.ausgewählterBeitragTitel" class="text-center" style="color: black">
                         {{ item.titel }}</h3>
                     </v-col>
-                    <v-col cols="4">
-                      {{ item.datum }}
+                    <v-col class="d-flex justify-end" cols="12">
+                      <p class="mr-10">{{ item.datum }}</p>
                     </v-col>
                   </v-row>
 
@@ -95,14 +95,28 @@ export default {
     return {
       name: 'Aktuelles',
       background: require('../assets/aktuelles.jpeg'),
-      beiträge: [{id: 1, titel: 'Test1', text: 'Beitrag 1: Erster Beitrag', datum: '15.07.2022'},
+      beiträge: [{
+        id: 1,
+        titel: 'Borussia Dortmund: Das Unvermeidliche ist eingetreten ',
+        text: 'Beitrag 1: Erster Beitrag',
+        datum: '15.07.2022'
+      },
         {
           id: 2,
           titel: 'Test2',
           text: 'Beitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter BeitragBeitrag 2: Zweiter Beitrag',
           datum: '16.07.2022'
         },
-        {id: 3, titel: 'Test3', text: 'Beitrag 3: Dritter Beitrag', datum: '17.07.2022'},
+        {
+          id: 3,
+          titel: 'Borussia Dortmund: Das Unvermeidliche ist eingetreten – und spült dreistelligen Millionen-Betrag in die Kasse',
+          text: 'BWie die Sportwebsite (The Athletic) am Mittwoch berichtete, werden die "Königlichen" mehr als 100 Millionen Euro für den 19 Jahre alten englischen Fußball-Nationalspieler zahlen. Noch sei der Vertrag aber nicht unterschrieben. Es werde erwartet, dass sich der Mittelfeldspieler in den kommenden Tagen einer medizinischen Untersuchung unterzieht. Eine Bestätigung der beiden Vereine lag bisher nicht vor. \n' +
+              '\n' +
+              'Der Abgang von Bellingham nach drei Jahren beim BVB scheint ausgemachte Sache. Als Favorit im Werben um den Jungstar gilt Real Madrid. Bellingham war 2020 vom englischen Zweitligisten Birmingham für rund 25 Millionen Euro zum Revierclub gewechselt. Mit guten Leistungen steigerte er seinen Marktwert beträchtlich. Selbst der zunächst als neuer Bellingham-Club gehandelte FC Liverpool stieg angesichts der üppigen Ablöse bereits vor Wochen aus dem Transferpoker aus. \n' +
+              '\n' +
+              'Bellingham wäre nach Raphael Guerreiro, Mahmoud Dahoud, Luca Unbehaun, Felix Passlack und Anthony Modeste der sechste Abgang des Bundesliga-Zweiten. Ein hoher Transfererlös für den Engländer könnte die Suche nach adäquatem Ersatz erleichtern. "Ich denke, dass wir etwa 60 bis 65 Prozent der Transfersummen, die wir in dieser Periode erzielen, wieder reinvestieren werden", kündigte BVB-Boss Hans-Joachim Watzke unlängst in der Bild an.',
+          datum: '17.07.2022'
+        },
         {id: 4, titel: 'Test4', text: 'Beitrag 4: Vierter Beitrag', datum: '18.07.2022'},
         {id: 5, titel: 'Test5', text: 'Beitrag 5: Fünfter Beitrag', datum: '19.07.2022'},
         {id: 6, titel: 'Test6', text: 'Beitrag 6: Sechster Beitrag', datum: '20.07.2022'},
