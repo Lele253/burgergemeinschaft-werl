@@ -23,7 +23,9 @@
 
       <div class="d-flex justify-center" style="width: 100%;">
         <v-row class="mt-9 d-flex justify-center text-white" style=" width: 100%;">
-          <v-col class="nav-cols" cols="1" @click="$router.push('/team')">Unser Team</v-col>
+          <v-col class="nav-cols" cols="1"
+                 @click="$router.push('/team')">Unser Team
+          </v-col>
           <v-col class="nav-cols" cols="1" @click="$router.push('/aktuelles')">Aktuelles</v-col>
           <v-col class="nav-cols" cols="1" @click="weiterleiten('https://leandro-graf.de/positionspapier.pdf')">
             Position
