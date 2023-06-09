@@ -141,6 +141,43 @@
                     </v-col>
                   </v-row>
                 </div>
+                <div v-if="userBearbeiten">
+              <v-card-title class="text-center pb-8" >User Löschen</v-card-title>
+              <v-row style="width: 95%" class="mx-auto">
+                <v-col cols="3">Vorname</v-col>
+                <v-col cols="3">Nachname</v-col>
+                <v-col cols="3">Email</v-col>
+                <v-col cols="2">Berechtigung</v-col>
+              </v-row>
+              <v-row class="mx-auto my-1" style=" width: 95%" v-for="x in userArray" :key="x" >
+                <v-col class="pa-0" cols="3">
+                  <v-text-field v-model="x.vorname" variant="solo">
+
+                  </v-text-field>
+
+                </v-col>
+                <v-col class="pa-0"  cols="3">
+                  <v-text-field v-model="x.nachname" variant="solo">
+
+                  </v-text-field>
+                </v-col>
+                <v-col class="pa-0" cols="3">
+                  <v-text-field v-model="x.email" variant="solo">
+
+                  </v-text-field>
+                </v-col>
+                <v-col class="pa-0" cols="2">
+                  <v-select variant="solo" :items="berechtigungenItems" v-model="x.berechtigung">
+
+                  </v-select>
+
+                </v-col>
+                <v-col class="py-0 pr-1 d-flex align-center justify-end" >
+                  <Icon style="font-size: 30px; color: green; cursor: pointer" icon="fluent-mdl2:accept-medium" />
+                </v-col>
+              </v-row>
+            </div>
+
           </v-card>
 
 
@@ -316,9 +353,9 @@ export default {
       teamAktive: false,
       vorstandAktiv: false,
       bewerbungAktive:false,
-      userAnlegen:true,
+      userAnlegen:false,
       userLoeschen:false,
-      userBearbeiten:false,
+      userBearbeiten:true,
       profilBild: null,
       vorname:'',
       nachname:'',
