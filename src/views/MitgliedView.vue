@@ -79,7 +79,7 @@
                     <v-text-field
                         v-model="adresse"
                         :rules="rules"
-                        label="Adresse"
+                        label="Straße, Hausnummer"
                         variant="outlined"
                     ></v-text-field>
                   </v-col>

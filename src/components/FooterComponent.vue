@@ -3,7 +3,7 @@
     <!--    <p class="mr-2 footer-text" @click="$router.push('/links')">Links</p>-->
 
     <div class="text-center ml-2">
-      <p class="footer-text" @click="snackbarLinks = true">Links</p>
+      <p class="ml-2 footer-text" @click="snackbarLinks = true">Links</p>
       <v-snackbar v-model="snackbarLinks" width="80">
         <h3 class="text-center">Links</h3>
         <p class="text-center mt-2" style="cursor: pointer"
@@ -43,9 +43,9 @@
     </div>
 
 
-    <p style="font-size: 20px">|</p>
+    <p  class="ml-2" style="font-size: 20px;color: white">|</p>
     <p class=" ml-2 footer-text" @click="$router.push('/impressum')">Impressum</p>
-    <p class="ml-2" style="font-size: 20px">|</p>
+    <p class="ml-2" style="color: white; font-size: 20px">|</p>
 
     <div class="text-center ml-2">
       <p class="footer-text" @click="snackbarKontakt = true">Kontakt</p>
@@ -97,6 +97,7 @@ export default {
 .footer-text {
   font-size: 20px;
   cursor: pointer;
+  color: white;
 }
 
 .footer {

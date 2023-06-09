@@ -4,6 +4,7 @@
       <v-row style="height: 70px">
         <v-col cols="4">
           <v-img
+              style="cursor: pointer"
               :src="background"
               class="mt-2 justify-start d-flex3"
               height="80"
@@ -23,17 +24,15 @@
 
       <div class="d-flex justify-center" style="width: 100%;">
         <v-row class="mt-9 d-flex justify-center text-white" style=" width: 100%;">
-          <v-col class="nav-cols" cols="1"
-                 @click="$router.push('/team')">Unser Team
-          </v-col>
+          <v-col class="nav-cols" cols="1" @click="$router.push('/team')">Unser Team</v-col>
           <v-col class="nav-cols" cols="1" @click="$router.push('/aktuelles')">Aktuelles</v-col>
           <v-col class="nav-cols" cols="1" @click="weiterleiten('https://leandro-graf.de/positionspapier.pdf')">
             Position
           </v-col>
-          <v-col class="nav-cols" cols="1" @click="$router.push('/erfolge')">Erfolge</v-col>
-          <v-col class="nav-cols" cols="1" @click="$router.push('/kommentare')">Kommentare</v-col>
-          <v-col class="nav-cols" cols="1" @click="$router.push('/pressearchiv')">Pressearchiv</v-col>
-          <v-col class="nav-cols" cols="1" @click="weiterleiten('https://sessionnet.krz.de/werl/bi/info.asp')">
+          <v-col style="cursor: pointer" class="nav-cols" cols="1" @click="$router.push('/erfolge')">Erfolge</v-col>
+          <v-col style="cursor: pointer" class="nav-cols" cols="1" @click="$router.push('/kommentare')">Kommentare</v-col>
+          <v-col style="cursor: pointer" class="nav-cols" cols="1" @click="$router.push('/pressearchiv')">Pressearchiv</v-col>
+          <v-col style="cursor: pointer" class="nav-cols" cols="1" @click="weiterleiten('https://sessionnet.krz.de/werl/bi/info.asp')">
             Tagesordung
           </v-col>
 
