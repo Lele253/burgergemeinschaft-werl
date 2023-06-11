@@ -16,7 +16,7 @@ import HeaderComponent from "@/components/HeaderComponent";
 export default {
   data() {
     return {
-      name: "UnserTeam",
+      name: "Unser Team",
       background: require('../assets/VorstandUndRat.png')
 
     }
