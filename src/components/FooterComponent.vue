@@ -36,14 +36,14 @@
           <u>Walburgisschule </u></p>
         <div class="d-flex justify-center mt-2">
           <v-btn color="red" variant="text" @click="snackbarLinks = false">
-            Close
+            Schließen
           </v-btn>
         </div>
       </v-snackbar>
     </div>
 
 
-    <p  class="ml-2" style="font-size: 20px;color: white">|</p>
+    <p class="ml-2" style="font-size: 20px;color: white">|</p>
     <p class=" ml-2 footer-text" @click="$router.push('/impressum')">Impressum</p>
     <p class="ml-2" style="color: white; font-size: 20px">|</p>
 
@@ -67,7 +67,7 @@
           </v-col>
           <v-col class="text-center" cols="12">
             <v-btn color="red" variant="text" @click="snackbarKontakt = false">
-              Close
+              Schließen
             </v-btn>
           </v-col>
         </v-row>
