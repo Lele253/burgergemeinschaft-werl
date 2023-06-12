@@ -226,25 +226,53 @@
         <v-col v-if="erfolgeAktive" cols="9">
           <v-row class="mb-1 px-0" style="width: 100% ">
             <v-col class="d-flex justify-center">
-              <v-btn class="button-links">
+              <v-btn @click="erfolgAnlegen=true; erfolgBearbeiten=false; erfolgLoeschen= false" :class="{ 'userAnlegen': erfolgAnlegen }" class="button-links">
                 Erfolg anlegen
               </v-btn>
             </v-col>
             <v-col class="d-flex justify-center">
 
-              <v-btn class="button-links">
+              <v-btn @click="erfolgAnlegen=false; erfolgBearbeiten=false; erfolgLoeschen= true" :class="{ 'userAnlegen': erfolgLoeschen }" class="button-links">
                 Erfolg Löschen
               </v-btn>
             </v-col>
             <v-col class="d-flex justify-center">
 
-              <v-btn class="button-links">
+              <v-btn @click="erfolgAnlegen=false; erfolgBearbeiten=true; erfolgLoeschen= false" :class="{ 'userAnlegen': erfolgBearbeiten }" class="button-links">
                 Erfolg bearbeiten
               </v-btn>
             </v-col>
           </v-row>
-          <v-card class="card">
+          <v-card v-if="erfolgAnlegen" class="card">
+            <v-card-title class="text-center"> Anlegen</v-card-title>
+            <v-card-subtitle class="text-center">Wusstest du dass...</v-card-subtitle>
+            <v-row style="width: 100%" class="d-flex justify-center">
+              <v-col cols="9">
+                <v-textarea label="Erfolg eintragen" variant="solo" v-model="erfolgText"></v-textarea>
+              </v-col>
+              <v-col cols="9">
+                <v-file-input
+                    v-model="erfolgBild"
+                    accept="image/*"
+                    label="Wähle ein Bild aus"
+                    variant="solo"
+                ></v-file-input>
+              </v-col>
 
+              <v-col cols="9" class="d-flex justify-center">
+                <v-btn @click="erfolgErstellen" class="text-white " style="background-color: #2F53A7" >
+                  Erstellen
+                </v-btn>
+              </v-col>
+            </v-row>
+
+          </v-card>
+          <v-card v-if="erfolgLoeschen" class="card">
+            <v-card-title class="text-center">  Löschen</v-card-title>
+
+          </v-card>
+          <v-card v-if="erfolgBearbeiten" class="card">
+            <v-card-title class="text-center"> Bearbeiten</v-card-title>
           </v-card>
         </v-col>
         <v-col v-if="pressearchivAktive" cols="9">
@@ -267,9 +295,7 @@
               </v-btn>
             </v-col>
           </v-row>
-          <v-card class="card">
-
-          </v-card>
+         <v-card class="card"></v-card>
         </v-col>
         <v-col v-if="teamAktive" cols="9">
           <v-row class="mb-1 px-0" style="width: 100% ">
@@ -377,19 +403,23 @@ export default {
     return {
       name: 'Admin',
       background: require('../assets/aktuelles.jpeg'),
-
+      erfolgText:'',
       userAktive: false,
       aktuellesAktive: false,
-      erfolgeAktive: false,
+      erfolgeAktive: true,
       kommentareAktive: false,
       pressearchivAktive: false,
       teamAktive: false,
       vorstandAktiv: false,
-      bewerbungAktive: true,
+      bewerbungAktive: false,
       userAnlegen: false,
       userLoeschen: false,
       userBearbeiten: true,
+      erfolgAnlegen: true,
+      erfolgLoeschen: false,
+      erfolgBearbeiten: false,
       profilBild: null,
+      erfolgBild:null,
       vorname: '',
       nachname: '',
       email: '',
@@ -508,6 +538,14 @@ export default {
     HeaderComponent, Icon
   },
   methods: {
+    erfolgErstellen(){
+
+      this.$store.state.erfolge.push({
+        img: this.erfolgBild,
+        text: this.erfolgText,
+      })
+      console.log(this.$store.state.erfolge)
+    },
     userErstellen() {
       this.userArray.push({
         vorname: this.vorname,

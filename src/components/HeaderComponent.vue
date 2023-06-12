@@ -24,50 +24,55 @@
 
       <div class="d-flex justify-center" style="width: 100%;">
         <v-row class="mt-9 d-flex justify-center text-white" style=" width: 100%;">
-          <v-col v-if="$store.state.routername == 'Unser Team'" class="nav-cols" cols="1"
+          <v-col v-if="$store.state.routername == 'Unser Team'" class="nav-cols pt-1" cols="1"
                  style="color: white; cursor:pointer;"
-                 @click="$router.push('/team')">Unser
+                 @click="$router.push('/team')">
+            <u>Unser Team</u>
+          </v-col>
+          <v-col v-else class="nav-cols titel" cols="1"
+                 @click="$router.push('/team')">
+            Unser
             Team
           </v-col>
-          <v-col v-else class="nav-cols titel" cols="1" style="color: grey; cursor:pointer;"
-                 @click="$router.push('/team')">
-            Unser Team
-          </v-col>
 
-          <v-col v-if="$store.state.routername == 'Aktuelles'" class="nav-cols" cols="1"
-                 style="color: white; cursor:pointer;" @click="$router.push('/aktuelles')">Aktuelles
+          <v-col v-if="$store.state.routername == 'Aktuelles'" class="nav-cols pt-1" cols="1"
+                 style="color: white; cursor:pointer;" @click="$router.push('/aktuelles')">
+            <u>Aktuelles</u>
           </v-col>
-          <v-col v-else class="nav-cols titel" cols="1" style="color: grey; cursor:pointer;"
+          <v-col v-else class="nav-cols titel" cols="1"
                  @click="$router.push('/aktuelles')">Aktuelles
           </v-col>
 
-          <v-col class="nav-cols titel" cols="1" style="color: grey"
+          <v-col class="nav-cols titel" cols="1"
                  @click="weiterleiten('https://leandro-graf.de/positionspapier.pdf')">
             Position
           </v-col>
-          <v-col v-if="$store.state.routername == 'Erfolge'" class="nav-cols" cols="1"
-                 style="cursor: pointer; color: white"
-                 @click="$router.push('/erfolge')">Erfolge
+          <v-col v-if="$store.state.routername == 'Erfolge'" class="nav-cols pt-1" cols="1"
+                 @click="$router.push('/erfolge')">
+            <u>Erfolge</u>
           </v-col>
-          <v-col v-else class="nav-cols titel" cols="1" style="cursor: pointer; color: grey"
+          <v-col v-else class="nav-cols titel" cols="1"
                  @click="$router.push('/erfolge')">Erfolge
           </v-col>
 
-          <v-col v-if="$store.state.routername == 'Kommentare'" class="nav-cols" cols="1"
-                 style="cursor: pointer; color: white" @click="$router.push('/kommentare')">Kommentare
+          <v-col v-if="$store.state.routername == 'Kommentare'" class="nav-cols pt-1" cols="1"
+                 @click="$router.push('/kommentare')">
+            <u>Kommentare</u>
           </v-col>
-          <v-col v-else class="nav-cols titel" cols="1" style="cursor: pointer; color: grey"
-                 @click="$router.push('/kommentare')">Kommentare
+          <v-col v-else class="nav-cols titel" cols="1"
+                 @click="$router.push('/kommentare')">
+            Kommentare
           </v-col>
 
-          <v-col v-if="$store.state.routername == 'Pressearchiv'" class="nav-cols" cols="1"
-                 style="cursor: pointer; color: white" @click="$router.push('/pressearchiv')">Pressearchiv
+          <v-col v-if="$store.state.routername == 'Pressearchiv'" class="nav-cols pt-1" cols="1"
+                 @click="$router.push('/pressearchiv')">
+            <u>Pressearchiv</u>
           </v-col>
-          <v-col v-else class="nav-cols titel" cols="1" style="cursor: pointer; color: grey"
+          <v-col v-else class="nav-cols titel" cols="1"
                  @click="$router.push('/pressearchiv')">Pressearchiv
           </v-col>
 
-          <v-col class="nav-cols titel" cols="1" style="cursor: pointer; color: grey"
+          <v-col class="nav-cols titel" cols="1"
                  @click="weiterleiten('https://sessionnet.krz.de/werl/bi/info.asp')">
             Tagesordung
           </v-col>
@@ -114,6 +119,7 @@ export default {
 }
 
 .titel:hover {
-  color: white !important;
+  color: white;
+  cursor: pointer;
 }
 </style>
