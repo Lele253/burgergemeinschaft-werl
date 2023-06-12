@@ -13,11 +13,16 @@
                           style="background-color: lightskyblue"
                           @click="setBeitrag(item.id)">
                     <v-row>
-                      <v-col class="mt-3" cols="12">
+                      <v-col cols="4">
+                        <div class="d-flex align-center">
+                          <v-img :src="item.img" class="mx-2 my-2"/>
+                        </div>
+                      </v-col>
+                      <v-col class="mt-3 d-flex align-center" cols="8">
                         <h3 class="text-center mx-5" style="color: black">
                           {{ item.titel }}</h3>
                       </v-col>
-                      <v-col class="d-flex justify-end" cols="12">
+                      <v-col class="d-flex justify-center" cols="12">
                         <p class="mr-10">{{ item.datum }}</p>
                       </v-col>
                     </v-row>
@@ -28,12 +33,16 @@
                           @click="setBeitrag(item.id)">
 
                     <v-row>
-                      <v-col class="mt-3" cols="12">
-                        <h3 v-if="item.titel != this.ausgewählterBeitragTitel" class="text-center mx-5"
-                            style="color: black">
+                      <v-col cols="4">
+                        <div class="d-flex align-center">
+                          <v-img :src="item.img" class="mx-2 my-2"/>
+                        </div>
+                      </v-col>
+                      <v-col class="mt-3 d-flex align-center" cols="8">
+                        <h3 class="text-center mx-5" style="color: black">
                           {{ item.titel }}</h3>
                       </v-col>
-                      <v-col class="d-flex justify-end" cols="12">
+                      <v-col class="d-flex justify-center" cols="12">
                         <p class="mr-10">{{ item.datum }}</p>
                       </v-col>
                     </v-row>
