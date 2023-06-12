@@ -10,17 +10,11 @@
           <template v-slot="{ item }">
             <div class="d-flex justify-center">
               <v-card class="mt-3 card">
-                <v-row v-if="item.img !=''">
+                <v-row>
                   <v-col cols="2">
-                    <v-img :src="item.img" width="200"/>
+                    <v-img v-if="item.img !=''" :src="item.img" width="200"/>
                   </v-col>
                   <v-col class="d-flex align-center" cols="10">
-                    <p class="text-center mx-2 my-2">{{ item.text }}</p>
-                  </v-col>
-                </v-row>
-
-                <v-row v-else class="d-flex justify-center">
-                  <v-col cols="10">
                     <p class="text-center mx-2 my-2">{{ item.text }}</p>
                   </v-col>
                 </v-row>
