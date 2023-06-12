@@ -403,7 +403,7 @@ export default {
     return {
       name: 'Admin',
       background: require('../assets/aktuelles.jpeg'),
-      erfolgText:'',
+      erfolgText:'...',
       userAktive: false,
       aktuellesAktive: false,
       erfolgeAktive: true,
@@ -540,7 +540,7 @@ export default {
   methods: {
     erfolgErstellen(){
 
-      this.$store.state.erfolge.push({
+      this.$store.state.erfolge.unshift({
         img: this.erfolgBild,
         text: this.erfolgText,
       })
