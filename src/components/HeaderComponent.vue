@@ -29,7 +29,7 @@
                  @click="$router.push('/team')">Unser
             Team
           </v-col>
-          <v-col v-else class="nav-cols titel" cols="1" style="color: #d0d0d0; cursor:pointer;"
+          <v-col v-else class="nav-cols titel" cols="1" style="color: grey; cursor:pointer;"
                  @click="$router.push('/team')">
             Unser Team
           </v-col>
@@ -37,11 +37,11 @@
           <v-col v-if="$store.state.routername == 'Aktuelles'" class="nav-cols" cols="1"
                  style="color: white; cursor:pointer;" @click="$router.push('/aktuelles')">Aktuelles
           </v-col>
-          <v-col v-else class="nav-cols titel" cols="1" style="color: #d0d0d0; cursor:pointer;"
+          <v-col v-else class="nav-cols titel" cols="1" style="color: grey; cursor:pointer;"
                  @click="$router.push('/aktuelles')">Aktuelles
           </v-col>
 
-          <v-col class="nav-cols titel" cols="1" style="color: #d0d0d0"
+          <v-col class="nav-cols titel" cols="1" style="color: grey"
                  @click="weiterleiten('https://leandro-graf.de/positionspapier.pdf')">
             Position
           </v-col>
@@ -49,25 +49,25 @@
                  style="cursor: pointer; color: white"
                  @click="$router.push('/erfolge')">Erfolge
           </v-col>
-          <v-col v-else class="nav-cols titel" cols="1" style="cursor: pointer; color: #d0d0d0"
+          <v-col v-else class="nav-cols titel" cols="1" style="cursor: pointer; color: grey"
                  @click="$router.push('/erfolge')">Erfolge
           </v-col>
 
           <v-col v-if="$store.state.routername == 'Kommentare'" class="nav-cols" cols="1"
                  style="cursor: pointer; color: white" @click="$router.push('/kommentare')">Kommentare
           </v-col>
-          <v-col v-else class="nav-cols titel" cols="1" style="cursor: pointer; color: #d0d0d0"
+          <v-col v-else class="nav-cols titel" cols="1" style="cursor: pointer; color: grey"
                  @click="$router.push('/kommentare')">Kommentare
           </v-col>
 
           <v-col v-if="$store.state.routername == 'Pressearchiv'" class="nav-cols" cols="1"
                  style="cursor: pointer; color: white" @click="$router.push('/pressearchiv')">Pressearchiv
           </v-col>
-          <v-col v-else class="nav-cols titel" cols="1" style="cursor: pointer; color: #d0d0d0"
+          <v-col v-else class="nav-cols titel" cols="1" style="cursor: pointer; color: grey"
                  @click="$router.push('/pressearchiv')">Pressearchiv
           </v-col>
 
-          <v-col class="nav-cols titel" cols="1" style="cursor: pointer; color: #d0d0d0"
+          <v-col class="nav-cols titel" cols="1" style="cursor: pointer; color: grey"
                  @click="weiterleiten('https://sessionnet.krz.de/werl/bi/info.asp')">
             Tagesordung
           </v-col>
