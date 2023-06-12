@@ -36,8 +36,6 @@ export default {
     return {
       name: "Erfolge",
       background: require('../assets/erfolge.png'),
-
-
     }
   },
   components: {

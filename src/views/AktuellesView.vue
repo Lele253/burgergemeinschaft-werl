@@ -84,7 +84,6 @@ export default {
     return {
       name: 'Aktuelles',
       background: require('../assets/aktuelles.jpeg'),
-
       ausgewählterBeitragText: '',
       ausgewählterBeitragTitel: ''
     }

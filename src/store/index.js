@@ -156,7 +156,8 @@ export default createStore({
     getters: {
         user: (state) => {
             return state.user
-        }
+        },
+        erfolge: state => state.erfolge
     },
     mutations: {
         user(state, user) {
