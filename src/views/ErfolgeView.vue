@@ -5,7 +5,6 @@
     <v-img :src="background" cover style="height: 81vh">
       <div style="background-color: rgba(255,255,255,0.56);height: 100%; width: 100%">
         <h1 class="text-center pt-5">Wusstest du, dass...</h1>
-
         <v-virtual-scroll :item-height="30" :items="$store.state.erfolge" height="65vh">
           <template v-slot="{ item }">
             <div class="d-flex justify-center">
@@ -15,7 +14,7 @@
                     <v-img v-if="item.img !=''" :src="item.img" width="200"/>
                   </v-col>
                   <v-col class="d-flex align-center" cols="10">
-                    <p class="text-center mx-2 my-2">{{ item.text }}</p>
+                    <p class="text-center mx-2 my-2 text-white">{{ item.text }}</p>
                   </v-col>
                 </v-row>
               </v-card>

@@ -6,9 +6,9 @@ export default createStore({
         routername: 'BG Werl',
         beiträge: [
             {
-                "id": 1,
-                "titel": "Stellungnahme der BG Werl zur Diskussion über Lärmbelastung bei Schützenfesten",
-                "text": "SCHÜTZENFESTE - ERNEUT RECHTSUNSICHERHEIT BEI DER VERWALTUNG ?\n" +
+                id: 1,
+                titel: "Stellungnahme der BG Werl zur Diskussion über Lärmbelastung bei Schützenfesten",
+                text: "SCHÜTZENFESTE - ERNEUT RECHTSUNSICHERHEIT BEI DER VERWALTUNG ?\n" +
                     "\n" +
                     " \n" +
                     "\n" +
@@ -25,54 +25,56 @@ export default createStore({
                     " \n" +
                     "\n" +
                     "Wir haben wirklich Verständnis für die Bürger, die irgendwann zur Ruhe kommen möchten. Aber Schützenfest ist einmal pro Jahr und die oben beschriebenen Richtwerte sind vertretbar.",
-                "datum": "01.06.2023"
+                datum: "01.06.2023"
             },
             {
-                "id": 2,
-                "titel": "Stellungnahme zum Umbesetzungsantrag der UWG-Fraktion",
-                "text": "Die neue UWG-Fraktion im Werler Rat, bestehend aus den ehemaligen Ratsherren der BG Werl (May, Disselhoff u. Prünte) ist dadurch entstanden, dass die drei Ratsherren die Bürgergemeinschaft verlassen haben und ihre Ratsmandate dem Wählerwillen widersprechend nicht an die BG zurückgegeben, sondern zur UWG mitgenommen haben, obwohl sie nur über die Reserveliste der BG Werl überhaupt in den Stadtrat einziehen konnten. Dies war weder vom Wähler so vorgesehen noch ist es moralisch in Ordnung.\n" +
-                    "\n" +
-                    "Die erste Amtshandlung der neuen UWG-Fraktion bestand darin, einen Umbesetzungsantrag für den Planungs-, Bau- und Stadtentwicklungsausschuss zu stellen, um hiermit den sachkundigen Bürger Schmigowski aus dem Ausschuss entfernen zu können. Der sachkundige Bürger Schmigowski hat wiederholt geäußert, für eine sachlich orientierte parteiunabhängige Politik zu stehen. Eine Tatsache, die offenbar dem Willen der UWG-Fraktion im Wege stand, ihre de-facto-Koalition mit der CDU fortsetzen zu können, ohne stets der „Gefahr“ ausgesetzt zu sein, dass jemand aus der BG hier eben nicht einfach jederzeit blind folgt.\n" +
-                    "\n" +
-                    "Da dem sachkundigen Bürger Schmigowski seitens des Werler Rechtsrates in der Vergangenheit mit dem Hinweis er sei ja keine Fraktion, keine rechtlichen Beratungen erteilt wurden, wendete er sich an die Kommunalaufsicht beim Kreis Soest, nachdem er Kenntnis von dem Antrag erlangt hatte. Die Kommunalaufsicht prüfte auf seine Eingabe hin den Umbesetzungsantrag und stellte fest, dass dieser nicht den Vorgaben der Gemeindeordnung entsprach. Würde der Rat diesem Antrag zustimmen, so wäre der Beschluss rechtswidrig. Hier stellen sich direkt zwei Fragen: Hat der Bürgermeister als „Verwaltungsfachmann“ hier beim Zulassen des Antrags nicht gewusst, dass er hier einen nicht zulässigen Antrag auf die Tagesordnung der Ratssitzung setzt? Wir erinnern uns, wie der Bürgermeister beim ersten (offenbar auch schon rechtswidrigen) Antrag dieser Art öffentlich jemanden dafür kritisierte, dass er sein demokratisches Recht einer Nein-Stimme wahrgenommen hat. Die zweite sich stellende Frage ist, ob der langjährige Ratsherr und LWL-Abgeordnete May als Fraktionsvorsitzender der UWG hier auch überhaupt keine Ahnung von der Nichtzulässigkeit seines Antrages hatte. Wurde der Antrag gar nicht geprüft? Zu keiner Zeit? Von niemandem? Es wirft kein gutes Licht auf die Beteiligten, dass der sachkundige Bürger Schmigowski, der gegen seinen und gegen den Willen des Wählers ausgetauscht werden sollte, hier auf eigene Faust und mit – im Vergleich – Laienwissen ausgestattet, selbst die Initiative über die nächsthöhere Instanz ergreifen musste, um überhaupt zu erreichen, dass jemand diesen Antrag mal rechtlich fundiert hinterfragt.\n" +
-                    "\n" +
-                    "Nachdem der Kreis diese Arbeit jetzt für den Werler Bürgermeister erledigt hat, sollte man meinen, dass der Antrag von der Tagesordnung genommen wird. Bis jetzt ist das nicht geschehen. Binnen weniger als 48 Stunden bemühte man sich im Rathaus nun im Eiltempo, über die nach dem Kreis Soest folgende Instanz nach Mitteln und Wegen zu forschen, mit denen der Antrag doch aufrechterhalten werden oder so angepasst werden kann, dass trotzdem noch erreicht werden kann, den für die unabhängige BG agierenden sachkundigen Bürger Schmigowski auf schnellstmöglichem Wege aus dem Ausschuss herauszubekommen. Diese Tatkräftigkeit des Bürgermeisters wird die UWG-Fraktion sicher schwer begeistert haben. Zu keiner Zeit jedoch hat der Bürgermeister mal den Kontakt zum sachkundigen Bürger Schmigowski gesucht.  Wenn man nun die ganzen Vorgänge rund um die Umbesetzungsanträge und die Vorkommnisse in der Ratssitzung im Oktober summiert, so drängt sich hier der Gedanke an die gebotene Neutralität des Bürgermeisteramtes auf. Wir setzen voraus und gehen eigentlich davon aus, dass sich der Bürgermeister dieser Pflicht stets bewusst ist.\n" +
-                    "\n" +
-                    "Es wird für die Werlerinnen und Werler sehr interessant werden zu beobachten, ob sich die CDU diesem Treiben anschließt und beim Versuch, einen unliebsamen unabhängigen sachkundigen Bürger mit der Brechstange loszuwerden, mitmacht oder ob es sich dort durchsetzt, den kleinen „Koalitionspartner“ nach ihren Ausflügen auf rechtlich sehr dünnes Eis wieder einzufangen.\n" +
-                    "\n" +
-                    "Wir von der BG Werl jedenfalls ziehen unseren Hut und äußern unseren größten Respekt vor allen Ratsfrauen und Ratsherren, die wenn es nötig werden sollte, den Mut haben, sich in der kommenden Ratssitzung gegen dieses sehr bedenkliche Vorgehen der Umbesetzung zu stellen. Die drei Ratsherren May, Prünte und Disselhoff fordern wir hiermit zur Niederlegung ihrer Ratsmandate auf.",
-                "datum": "05.06.2023"
+                id: 2,
+                titel: "Stellungnahme zum Umbesetzungsantrag der UWG-Fraktion",
+                text: "Die neue UWG-Fraktion im Werler Rat, bestehend aus den ehemaligen Ratsherren der BG Werl (May, Disselhoff u. Prünte) ist dadurch entstanden, dass die drei Ratsherren die Bürgergemeinschaft verlassen haben und ihre Ratsmandate dem Wählerwillen widersprechend nicht an die BG zurückgegeben, sondern zur UWG mitgenommen haben, obwohl sie nur über die Reserveliste der BG Werl überhaupt in den Stadtrat einziehen konnten. Dies war weder vom Wähler so vorgesehen noch ist es moralisch in Ordnung.",
+                datum: "02.06.2023"
             },
             {
-                "id": 3,
-                "titel": "BG unterstützt Fahrradschutzstreifen am Hellweg",
-                "text": "Am 08.03. hat unser Vorsitzender Jens Schmigowski für die BG im Planungsausschuss für den Vorschlag der Verwaltung gestimmt, Fahrradschutzstreifen am Hellweg einzuführen.\n" +
-                    "Diese Entscheidung erfolgte nach genauer Abwägung aller Sachargumente, nach Gesprächen mit Fachleuten und vor allem im Einklang mit dem Positionspapier der BG Werl aus dem Jahr 2020.\n" +
-                    "Dieses sagt unter anderem:\n" +
-                    "\"Seit 2012 hat die BG einen Arbeitskreis „Förderung der Fahrradmobilität in Werl“ moderiert und geführt. Ergebnis ist eine Vielzahl von Fahrradweguntersuchungen und -optimierungen. Die Behinderungen (Wegesperren) auf vielen Wegen wurden zurückgeführt auf ein sinnvolles Maß, Fahrradstreifen wurden angelegt, Ampelschaltungen für den Radfahrer verbessert. Abstellmöglichkeiten in der Innenstadt, an den Bahnhöfen und an der Stadthalle wurden geschaffen. Das Fahren an den Bundesstraßen wurde sicherer gemacht. Nach einer vorliegenden Studie (Masterarbeit) gibt es noch eine Vielzahl von Stellen im Stadtgebiet, die verkehrstechnisch für den Radverkehr optimiert werden sollten. Die BG unterstützt das massiv und fordert dazu auf, mehr Geld in den Ausbau der Fahrradinfrastruktur zu geben. Da das Radfahren aber eine zukünftig deutlich höhere Bedeutung im Stadtbild haben sollte – nämlich in Bezug auf Klimaschutz, Gesundheit, Flächenverbrauch, greifen wir das Thema noch einmal für die Mittelfristplanung auf.\"\n" +
-                    "Die BG folgt damit ausdrücklich auch dem Wunsch der Mitgliederversammlung nach einer sachlich orientierten parteiunabhängigen Politik in Werl.",
-                "datum": "10.06.2023"
+                id: 3,
+                titel: "Offener Brief an den Bürgermeister zur geplanten Bebauung des Vinzenz-Geländes",
+                text: "Sehr geehrter Herr Bürgermeister,\n" +
+                    "\n" +
+                    "mit Sorge haben wir die Planungen zur Bebauung des Vinzenz-Geländes zur Kenntnis genommen. Als Bürgergemeinschaft Werl setzen wir uns für den Erhalt von Grünflächen und Naturräumen in unserer Stadt ein. Das Vinzenz-Gelände bietet eine wertvolle Möglichkeit, einen Park oder eine Grünfläche zu schaffen, die allen Bürgern zur Verfügung steht.\n" +
+                    "\n" +
+                    "Wir möchten Sie bitten, die Entscheidung noch einmal zu überdenken und alternative Nutzungsmöglichkeiten für das Gelände in Betracht zu ziehen. Es ist wichtig, dass wir auch in Zukunft ausreichend Grünflächen in Werl haben, die zur Erholung und Freizeitgestaltung genutzt werden können.\n" +
+                    "\n" +
+                    "Wir hoffen auf Ihr Verständnis und Ihre Unterstützung in dieser Angelegenheit.\n" +
+                    "\n" +
+                    "Mit freundlichen Grüßen,\n" +
+                    "Bürgergemeinschaft Werl",
+                datum: "03.06.2023"
             },
             {
-                "id": 4,
-                "titel": "Wie wollen Sie den ÖPNV verbessern?",
-                "text": "Auch wir als BG-Werl beobachten eine Unzufriedenheit der Bürger mit dem ÖPNV und sehen ihn teilweise als ineffektiv an. Die Systeme Bus, Bahn und Fahrrad seien nicht genug aufeinander abgestimmt. Die BG-Werl fordert eine Analyse der gegenwärtigen Situation. Ziel muss es sein, durch eine Optimierung der Buslinien in Bezug auf Fahrtrichtung, Strecke und Auslastung insgesamt kürzere Fahrzeiten zu erreichen. Wir brauchen eine engere Taktung für wirklich nachgefragte Strecken. Eine weitere Möglichkeit wäre der langfristige Umstieg auf deutlich kleinere Busse oder ein Shuttlesystem, das auch bei aktuellem Bedarf spontan in Anspruch genommen werden kann. Außerdem fordern wir, dass die langfristige Planung des ÖPNV sich zum Ziel setzt, den Bürgern sein Angebot kostenfrei zur Verfügung zu stellen. Dies hat nicht nur eine soziale Komponente, sondern ist alleine schon aus umwelt- und klimapolitischer Sicht eine Grundvoraussetzung für eine sichere Zukunft der nächsten Generationen.",
-                "datum": "11.06.2023"
+                id: 4,
+                titel: "Stellungnahme der BG Werl zur Einführung von Umweltzonen in Werl",
+                text: "Sehr geehrte Damen und Herren,\n" +
+                    "\n" +
+                    "die Bürgergemeinschaft Werl setzt sich für den Schutz der Umwelt und die Förderung nachhaltiger Mobilität ein. Aus diesem Grund begrüßen wir die Einführung von Umweltzonen in Werl. Diese Maßnahme dient dazu, die Luftqualität in unserer Stadt zu verbessern und den Ausstoß von schädlichen Emissionen zu reduzieren.\n" +
+                    "\n" +
+                    "Wir unterstützen die geplanten Maßnahmen zur Reduzierung des Autoverkehrs und zur Förderung umweltfreundlicher Verkehrsmittel wie Fahrrad und öffentlicher Nahverkehr. Es ist wichtig, dass wir gemeinsam Verantwortung für unsere Umwelt übernehmen und uns für eine lebenswerte und nachhaltige Stadt einsetzen.\n" +
+                    "\n" +
+                    "Mit freundlichen Grüßen,\n" +
+                    "Bürgergemeinschaft Werl",
+                datum: "04.06.2023"
             },
             {
-                "id": 5,
-                "titel": "Wie wollen Sie Radeln in Werl stärken?",
-                "text": "\"WERL SATTELT UM AUF‘S RAD\"\n" +
-                    "Diesem Slogan hat sich die Bürgergemeinschaft Werl (BG Werl) verschrieben und setzt sich voll für eine nachhaltige Verbesserung der Fahrrad-Infrastruktur ein.\n" +
-                    "Wir fordern mehr und sichere Radwege, beleuchtete Straßen aus den Ortsteilen zu den Schulen, Fahrradstraßen, Abstellanlagen auch mit Lademöglichkeit für e-Bikes, sowie einen Arbeitskreis Rad unter Beteiligung von interessierten Bürgern, der Politik und der Verwaltung mit dem Ziel, 30% Radverkehr zu erreichen.\n" +
-                    "Damit klimaschädliche Emissionen reduziert werden, müssen die mit Benzin- oder Dieselkraftstoff in der Stadt zurückgelegten Kilometer gesenkt werden. Denn Radfahren ist klimafreundlich und radfahrende Menschen sind nachweislich gesünder. Wir müssen es unseren Bürgern leichter machen, das Auto stehen zu lassen und stattdessen das Fahrrad zu benutzen. Eine kostengünstige Lösung, um auch ein höherwertiges Rad zu fahren ist das Leasing über den Arbeitgeber. Hier muss mehr Aufklärungsarbeit bei Arbeitgebern und Arbeitnehmern erfolgen.",
-                "datum": "11.06.2023"
-            },
-            {
-                "id": 6,
-                "titel": "Was wollen Sie für's Werler Klima tun?",
-                "text": "Wir Menschen verbrauchen zu viel Energie, erzeugen ein Übermaß an klimaschädlichen Emissionen und tun nichts, die schädlichen Emissionen aus der Atmosphäre zu beseitigen. In der Folge läuft die Erde seit Jahrzehnten auf eine „Heißzeit“ zu. Eine Klimakatastrophe kann nur noch abgewendet werden, wenn möglichst viele Menschen daran mitwirken. Die BG-Werl bringt sich in den Kampf gegen eine weitere Erderwärmung lokal ein. Die Arbeit muss auf allen Ebenen geführt werden. Wir haben beantragt, Flächen in der Stadt aufzuforsten. Nur 4% der Flächen sind bewaldet, in anderen Städten bis zu 30%. Die Aufklärung der Bürger über das drohende Desaster muss verstärkt werden. Schon junge Menschen sollen an das Problem herangeführt werden, weshalb wir die Anlage eines Schülerwaldes fordern. Wir fordern die Rückgewinnung von Wärme aus Abwasser, die Gewinnung von Biogas aus Klärschlämmen, den Einsatz von Fernwärme. Verfahren zur technischen Eliminierung von schädlichen Klimagasen unterstützen wir. Wir fordern die Verbesserung von Rad- und Busverkehr. Mobilität kann nicht weiter durch mit Benzin und Diesel betriebene Autos stattfinden.",
-                "datum": "11.06.2023"
+                id: 5,
+                titel: "Pressemitteilung der BG Werl zur Neugestaltung des Stadtparks",
+                text: "Werl, 5. Juni 2023\n" +
+                    "\n" +
+                    "Die Bürgergemeinschaft Werl freut sich über die geplante Neugestaltung des Stadtparks. Der Stadtpark ist ein zentraler Ort der Begegnung und Erholung für alle Bürgerinnen und Bürger. Es ist wichtig, dass dieser Ort attraktiv und ansprechend gestaltet wird.\n" +
+                    "\n" +
+                    "Wir unterstützen die Pläne zur Schaffung von Spiel- und Sportflächen, einem barrierefreien Zugang und einer vielfältigen Bepflanzung. Dadurch wird der Stadtpark zu einem Ort, der für Jung und Alt gleichermaßen attraktiv ist.\n" +
+                    "\n" +
+                    "Wir danken der Stadtverwaltung und allen Beteiligten für ihr Engagement und freuen uns auf die Umsetzung der Pläne.\n" +
+                    "\n" +
+                    "Mit freundlichen Grüßen,\n" +
+                    "Bürgergemeinschaft Werl",
+                datum: "05.06.2023"
             }
         ],
         erfolge: [
@@ -151,7 +153,50 @@ export default createStore({
                 img: require('../assets/erfolge/autobahnparkplatz.jpg'),
                 text: '... die BG mit dafür verantwortlich ist, dass es an der Autobahnabfahrt Büderich einen Parkplatz gibt?'
             }
+        ],
+        kommentare: [
+            {
+                id: 1,
+                img: "",
+                titel: "Der Standort der zentralen Bushaltestelle in Holtum, eine Idee der BG",
+                text: "Liebe Mitbürgerinnen und Mitbürger,\nes war vom Rat beziehungsweise Planungsausschuss beschlossen worden, die Busfahrstrecke durch die Agathastraße in Holtum um die Kirche herum zu führen.\n\nWegen des massiven Protestes der Holtumer Bevölkerung haben wir uns die Sache vor Ort genauestens angesehen. Wir haben mit vielen Bürgern gesprochen und sind die Wege allein und in Begleitung mehrfach abgegangen.\n\nAus rein sachlichen Gründen sind wir zu der Auffassung gelangt, dass der Bus wegen der geringen Straßenbreite nur schlecht durch die Agathastraße fahren kann. Wir glauben, dass die neue Pflasterung durch den Bus stark in Mitleidenschaft gezogen wird und hohe Folgekosten verursacht. Zudem werden Besucher von Kindergarten, Kirche und Schützenhalle durch den Busverkehr beeinträchtigt, vielleicht sogar gefährdet, da kein Gehweg vorhanden ist.\n\nWir haben als Alternative die Route Twittenstraße, Singelers Garten vorgeschlagen, mit der Haltestelle vor der Kreuzung, fast gegenüber der alten Haltestelle. Diese Haltestelle ist immer noch zentrumsnah, die Häuser stehen hier nicht so eng zusammen und beide Straßen verfügen über einen Bürgersteig. Wir haben dem Planungsausschuss diese neue Lösung vorgeschlagen und sie wurde mit Mehrheit beschlossen.\n\nNun wird uns vorgehalten, wir würden der Stadt Mehrkosten in Höhe von ca. 18.000 € bescheren, obwohl die Maßnahme „Agathastraße“ deutlich teuer wäre, was aber nicht von der Stadt Werl bezahlt würde, sondern vom Land.. Dies erachten wir als kurzsichtig, da Folgekosten (Altstadtpflaster) entstehen können. Darüber hinaus legen wir großen Wert auf die Sicherheit der Anwohner in der Agathastraße. Wir verstehen unseren politischen Einsatz in Werl so, dass wir für sachlich vernünftige Lösungen eintreten, diese durchsetzen und gleichzeitig ökonomisch und sparsam vorgehen.\n\nDetmar Disselhoff",
+                autor: "Dieter Riewe",
+                datum: "18.01.2014"
+            },
+            {
+                id: 2,
+                img: "",
+                titel: "Windkrafträder in Hilbeck",
+                text: "Liebe Mitbürgerinnen und Bürger,\nbezüglich der 80. Änderung des Flächennutzungsplans der Stadt Werl (Konzentrationsfläche für Windkraftanlagen Westhilbeck) gebe ich folgendes zu bedenken:\n\n1. Naherholung\nDie in der Vorlage ausgewiesene Fläche und ihre Randbereiche dienen in erster Line den Menschen in Hilbeck, Osterflierich, Steinen, sowie allen anderen Bürgerinnen und Bürgern",
+                autor: "Hermann Lindemann",
+                datum: "19.01.2014"
+            },
+            {
+                id: 3,
+                img: "",
+                titel: "Winterzeit Gefahrenzeit?",
+                text: "Liebe Mitbürgerinnen und Mitbürger,\ngibt es eigentlich keine Aufsichtspersonen oder Verantwortlichen bei der Stadt Werl, die dafür sorgen, dass bei Eis und Schnee die Wege und Zugänge für die Fußgänger und Radfahrer gestreut oder wenigstens geräumt werden? Es kann doch wohl nicht sein, dass wir solche Dinge unseren politischen Vertretern überlassen müssen. Oder glaubt jemand wirklich, dass die keine anderen Aufgaben haben? Wir haben in den letzten Tagen bittere Erfahrungen gemacht und uns zum wiederholten Male in unserer Arbeit beeinträchtigt gesehen.\n\nDeshalb unser Appell: Liebe Verwaltung, liebe politische Vertreter, sorgt dafür, dass bei Schnee und Eis die Geh- und Radwege in der Innenstadt und in den Ortsteilen rechtzeitig geräumt und/oder gestreut werden. Schließlich zahlen wir Steuern und Abgaben genug.\n\nIhre BG Fraktion im Rat der Stadt Werl",
+                autor: "Heinrich Görner",
+                datum: "17.01.2014"
+            },
+            {
+                id: 4,
+                img: "",
+                titel: "Bahnunterführung Langenwiedenweg, ja oder nein?",
+                text: "Seit vielen Jahren nun ist die Frage ob es eine Notwendigkeit gibt, die Unterführung am Langenwiedenweg zu bauen, Thema vieler Diskussionen und Streitgespräche. Meinungen prallten aufeinander, Argumente, rationale wie irrationale, wurden angeführt, die jeweiligen Standpunkte zu erhärten.\n\nAlle diese verschiedenen Ansichten erweisen sich nun als relativ schwach vor der Tatsache der leeren Kasse der armen Stadt Werl, welche nun seit vielen Jahren ihren Haushalt nicht mehr ausgleichen kann.\nEinnahmen und Ausgaben stehen in einem krassen Missverhältnis. Selbst der Verkauf der Stadtwerke würde nicht soviel Geld erbringen, dass Werl schuldenfrei wäre. Und der Verkauf der Stadtwerke würde bedeuten, dass das Werler Hallen- und Freibad nicht gehalten werden könnte. Auch die zusätzliche Einstellung aller sogenannten freiwilligen Leistungen, wie die Angebote der städtischen Leihbücherei und der Musikschule und Teile der Volkshochschule würden den Haushalt der Stadt nicht so entlasten, dass Freiheit von Schulden aufträte.\n\nZu allen diesen Schulden kämen die zusätzlichen Schulden, die durch den Bau der Bahnunterführung und deren späteren Unterhaltung notwendig sind. Aus eigener Kraft können die Bürger der Stadt Werl diese Schulden zumindest in absehbarer Zeit nicht abarbeiten.\n\nDiese Schulden werden auch die Kinder und Enkelkinder der jetzt in Werl lebenden Menschen belasten. Die Verschuldung der Stadt und das im Vergleich zu anderen Städten im Kreis Soest und in NRW geringe Steueraufkommen pro Kopf der Einwohner führen schon heute dazu, dass Werl zum Beispiel kostengünstiger fährt, wenn es die Leistungen des Kreisjugendamtes in Anspruch nimmt, als dass es ein eigenes Jugendamt unterhält. Das heißt die Menschen anderer Städte und Dörfer des Kreises Soest werden schon in der Gegenwart durch die Schulden der Stadt Werl mehr belastet.\n\nSicher, das sei an dieser Stelle gesagt, es gibt auch durch gesetzlich festgeschriebene Vorgaben für die Stadt Werl erhebliche finanzielle Verpflichtungen, die den Stand der Schulden der Stadt hochtreiben. Werl ist sicher in Zukunft auf die Hilfe des Landes angewiesen, welches aus unserer Sicht finanzielle Entlastungen gewähren sollte bei der Erfüllung von Aufgaben, für die es eine gesetzliche Verpflichtung für die Stadt gibt. Das Land NRW sollte auch prüfen, ob ein Schuldenfonds eingerichtet werden kann.\n\nUnd vor allem aus diesen finanziellen Gründen haben sich die Mitglieder der BG-Werl vor einigen Jahren gegen den Bau der Bahnunterführung ausgesprochen. Des weiteren haben wir auf die Vernunft der Mehrheit der Bürger der Stadt Werl gesetzt und ein Bürgerbegehren für den Fall gefordert, dass durch eine wie auch immer geartete politische Mehrheit in der Stadt der Bau der Unterführung dennoch durchgesetzt werden sollte. Dazu stehen wir auch weiterhin – auch nach der Erklärung des Fraktionsvorsitzenden der CDU-Werl in der vergangenen Woche, dass der Bau der Unterführung nicht mehr realisiert werden solle.\n\nSiegbert May,\nLeserbrief im Soester Anzeiger vom 2. Februar 2011.",
+                autor: "Siegbert May",
+                datum: "02.02.2011"
+            },
+            {
+                id: 5,
+                img: "",
+                titel: "Radfahren in Werl",
+                text: "Siegbert May von der Bürgergemeinschaft Werl hat einen Antrag an die Stadt gerichtet, in dem zum weiteren Ausbau der Radfahrerstadt Werl angeregt werden soll. Das bedeutet nicht immer 'Geld ausgeben', sondern eben auch 'konzeptionelle Weiterentwicklung':\n\nRadfahren hat viele Überschriften: Energie sparen -\n\nSportliche/gesundheitsförderliche Lebensweise - Wirtschaftliche Vorteile durch tourististische Angebote!\n\nBetrachten wir die Überschriften einzeln!\n\nEnergiesparen:\nBenzin für das Autofahren wird immer knapper und teurer, die Umweltbelastung ist ein ernstzunehmender Fakt. Ziel ist es daher, das Autofahren insbesondere bei kleineren Strecken möglichst zu vermeiden. Das heißt, das Fahrradfahren insbesondere im Alltag zu fördern. D. h. die Verbindungen müssen schnell, sicher, barrierefrei von Kindern, Jugendlichen und den Erwachsenen und älteren Mitbürgerinnen und Mitbürgern gestaltet sein. Und das möglichst auch in den Übergangsjahreszeiten und möglichst auch im Winter. Außerdem sind sichere Abstellmöglichkeiten sehr begrenzt und nasse Sättel reizen auch nicht bei dem vielfachen gemischten Wetter in Werl.\n\nWerl hat in der Vergangenheit einiges getan, um Fahrradwege in der Peripherie anzulegen. Auch der Schilderwald ist munter gewachsen. Aber es fehlt noch einiges an der Vollendung. Radfahrer sind an Kreuzungen oft nur geduldete Beteiligte, die immer auf die Autofahrer Rücksicht nehmen müssen. Im Zweifelsfall (s. Kreuzung Salinenring/Unnaerstraße) sollen sie absteigen und schieben. Viele insbesondere Jugendliche tun dies nicht - aber oft mit einem schlechten Gewissen.\nDas kann und sollte man ändern, Kreuzungsspuren für Radler, vielleicht auch eine grüne Welle für Radler sind denkbar.\nEin Appell an die Arbeitgeber in der Stadt, mehr und bessere Fahrradständer anzubringen, kann das Aufbewahrungsproblem lösen.\n\nVielleicht ist auch ein mobiler 'Notdienst' denkbar, der gegen Mitgliedschaft (wie beim ADAC o.ä.) schnell zu Hilfe kommt, wenn eine Panne eintritt. Wichtig ist, dass es immer weniger Gründe gibt, das Auto auf Kurzstrecken benutzen zu 'müssen'. Vielleicht können wir auch 'Schnellstraßen' für Radfahrer schaffen.\n\nSportliche/gesundheitliche Lebensweise\nEin wichtiger Nebeneffekt der Nutzung des Fahrrads im Alltag ist die Verbesserung der Beweglichkeit der Mitmenschen, über deren positiven Folgen wir hier nicht schreiben müssen. Wichtig ist, dass die Unfallgefahr durch Radfahrverkehr nicht ansteigt - weder bei Kindern, Jugendlichen oder Älteren.\n\nWirtschaftsförderung durch touristische Aspekte\nEin gewaltiger Erfolg für Werl als touristisches Ziel sowohl für Einwohner als auch Zugezogene und Nachbarn und Fremde ist die Ausweisung der 4 Kleeblatt-Routen rund um Werl. Dieses muss man immer wieder betonen. Aber auch hier lässt sich noch etwas daraufsetzen. Vielleicht gibt es Möglichkeiten, auch Rundtouren zu den Nachbargemeinden festzulegen, sei es Wickede, Unna, Bönen, Hamm, Welver, Soest und Ense, so dass die Bürgerinnen und Bürger der Nachbarstädte gerne nach Werl kommen (und umgekehrt). Die durchaus vorhandenen Attraktionen am Wegesrand können betont werden. Für Werl als Innenstadt müsste noch ein Kurzprogramm erstellt werden. Auch Stationen mit Kaffee und Kuchen oder Kunsthandwerk förden den Tourismus.\nDie Nachbarstadt Wickede liegt am Ruhr-Radwanderweg und erlebt seit Definition dieser Strecke ein Vielfaches an Tourismus, insbesondere in der Mittagszeit sind viele Radwanderer in den Cafes und Bistros zu sehen. Werl sollte versuchen, sich inhaltlich an einige überregionale Radfahrstrecken anzubinden oder eigene Strecken mit Nachbargemeinden entwickeln.\n\nBereits beim Schreiben dieser Aspekte fallen dem Autor viele Themen ein, die man auch noch berühren müsste. Zum Beispiel die Kennzeichnung der Stadt Werl durch ein malerisches, gut gestaltetes Ortsschild an allen Einfahrstraßen und -wegen.\n\nDie BG Werl schlägt vor, einen neutralen Arbeitskreis zu gründen, der das Thema vertieft und möglichst viele Aspekte in den nächsten Jahren berücksichtigt und verfolgt. Die Politik in Werl wird sicher zur Unterstützung bereit sein.\n\nDieter Riewe",
+                autor: "Dieter Riewe",
+                datum: "18.01.2014"
+            }
         ]
+
     },
     getters: {
         user: (state) => {
