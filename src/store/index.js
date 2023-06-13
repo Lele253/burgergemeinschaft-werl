@@ -195,7 +195,8 @@ export default createStore({
                 autor: "Dieter Riewe",
                 datum: "18.01.2014"
             }
-        ]
+        ],
+        rat:[]
 
     },
     getters: {
