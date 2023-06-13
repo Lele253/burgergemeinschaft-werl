@@ -35,5 +35,11 @@ export default {
 </script>
 
 <style scoped>
-
+.card {
+  width: 100%;
+  height: 88%;
+  box-shadow: 2px 4px 6px black;
+  border-radius: 13px;
+  overflow-y: auto;
+}
 </style>

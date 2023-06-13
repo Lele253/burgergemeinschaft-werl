@@ -83,8 +83,12 @@
 </template>
 
 <script>
+import {Icon} from "@iconify/vue/dist/iconify";
 export default {
   name: "erfolgeComponent",
+  components:{
+    Icon
+  },
   data(){
     return{
       erfolgAnlegen: true,

@@ -129,8 +129,13 @@
 </template>
 
 <script>
+import {Icon} from "@iconify/vue/dist/iconify";
+
 export default {
   name: "UserComponent",
+  components:{
+    Icon
+  },
   data(){
     return{
       userAnlegen: false,
