@@ -46,19 +46,26 @@
       </v-row>
 
     </v-card>
+
     <v-card v-if="erfolgLoeschen" class="card" style="max-height: 500px">
       <v-card-title class="text-center"> Löschen</v-card-title>
-      <v-row v-for="x in $store.state.erfolge" :key="x" class="mx-0" style="width: 100%">
+      <v-row class="mx-auto my-1" style="width: 95%">
+        <v-col class="text-center" cols="11"><h4>Text</h4></v-col>
+        <v-col class="text-center" cols="1"><h4>Löschen</h4></v-col>
+      </v-row>
+      <v-row v-for="erfolg in erfolge" :key="erfolg"
+             class="mx-auto my-1 mt-5" style="border: black solid 2px;border-radius: 10px; width: 95%">
         <v-col cols="11">
-          <v-card style="height: 90px; width: 100%">
-            <p style="font-size: 12px">{{ x.text }}</p>
-          </v-card>
+          <p class="text-center">{{ erfolg.text }}</p>
         </v-col>
-        <v-col class="d-flex align-center" cols="1">
-          <Icon icon="tabler:trash-x-filled" style="font-size: 30px; color: red; cursor: pointer"/>
+        <v-col class="py-0 pr-1 d-flex align-center justify-center" cols="1">
+          <Icon icon="tabler:trash-x-filled"
+                style="font-size: 30px; color: red; cursor: pointer"
+                @click="deleteErfolg(erfolg)"/>
         </v-col>
       </v-row>
     </v-card>
+
     <v-card v-if="erfolgBearbeiten" class="card" style="height: 500px;">
       <v-card-title class="text-center"> Bearbeiten</v-card-title>
       <v-card v-for="x in $store.state.erfolge" :key="x" class="mx-auto mb-2 pt-3"
@@ -100,12 +107,12 @@ export default {
     return {
       erfolge: this.$store.state.erfolge.sort((a, b) => b.id - a.id),
 
-      erfolgAnlegen: true,
-      erfolgLoeschen: false,
+      erfolgAnlegen: false,
+      erfolgLoeschen: true,
       erfolgBearbeiten: false,
 
-      bild: null,
-      text: '',
+      erfolgBild: null,
+      erfolgText: '',
     }
   },
   methods: {
@@ -119,6 +126,12 @@ export default {
 
       this.bild = null;
       this.text = ''
+    },
+    deleteErfolg(erfolg) {
+      const index = this.erfolge.indexOf(erfolg);
+      if (index > -1) {
+        this.erfolge.splice(index, 1);
+      }
     },
   },
 }

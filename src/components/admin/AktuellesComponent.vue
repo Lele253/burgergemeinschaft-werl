@@ -2,12 +2,12 @@
   <div>
     <v-row class="mb-1 px-0" style="width: 100% ">
       <v-col class="d-flex justify-end">
-        <v-btn class="button-links" @click="anlegen = true; löschen = false">
+        <v-btn :class="{ 'activeComponent': anlegen }" class="button-links" @click="anlegen = true; löschen = false">
           Beitrag anlegen
         </v-btn>
       </v-col>
       <v-col class="d-flex justify-start">
-        <v-btn class="button-links" @click="reloadBeiträge">
+        <v-btn :class="{ 'activeComponent': löschen }" class="button-links" @click="reloadBeiträge">
           Beitrag Löschen
         </v-btn>
       </v-col>
@@ -127,7 +127,6 @@ export default {
     reloadBeiträge() {
       this.anlegen = false;
       this.löschen = true;
-      console.log('passeirt')
       this.beiträge = '';
       this.beiträge = this.$store.state.beiträge.sort((a, b) => b.id - a.id);
     }
@@ -142,10 +141,15 @@ export default {
 .card {
   width: 90%;
   height: 100%;
-  max-height: 550px;
+  max-height: 500px;
   overflow-y: auto;
   background-color: rgba(255, 255, 255, 0.91);
   box-shadow: 4px 6px 8px black;
   border-radius: 20px 20px 20px 20px;
+}
+
+.activeComponent {
+  background-color: #2F53A7;
+  color: white;
 }
 </style>
