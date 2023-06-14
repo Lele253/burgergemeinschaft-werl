@@ -111,6 +111,12 @@ export default {
 .mitglied-button {
   color: white;
   background: blue;
+  box-shadow: 2px 3px 4px black;
+}
+.mitglied-button:active {
+  color: white;
+  background: blue;
+  box-shadow: 1px 1px 2px black;
 }
 
 .nav-cols {

@@ -76,74 +76,16 @@
           <ErfolgeComponent></ErfolgeComponent>
         </v-col>
         <v-col v-if="pressearchivAktive" cols="9">
-          <v-row class="mb-1 px-0" style="width: 100% ">
-            <v-col class="d-flex justify-center">
-              <v-btn class="button-links">
-                Beitrag anlegen
-              </v-btn>
-            </v-col>
-            <v-col class="d-flex justify-center">
-
-              <v-btn class="button-links">
-                Beitrag Löschen
-              </v-btn>
-            </v-col>
-            <v-col class="d-flex justify-center">
-
-              <v-btn class="button-links">
-                Beitrag bearbeiten
-              </v-btn>
-            </v-col>
-          </v-row>
-         <v-card class="card"></v-card>
+          <PressearchivComponent></PressearchivComponent>
         </v-col>
         <v-col v-if="ratAktive" cols="9">
-          <v-row class="mb-1 px-0" style="width: 100% ">
-            <v-col class="d-flex justify-center">
-              <v-btn  class="button-links">
-                Beitrag anlegen
-              </v-btn>
-            </v-col>
-            <v-col class="d-flex justify-center">
-
-              <v-btn class="button-links">
-                Beitrag Löschen
-              </v-btn>
-            </v-col>
-            <v-col class="d-flex justify-center">
-
-              <v-btn class="button-links">
-                Beitrag bearbeiten
-              </v-btn>
-            </v-col>
-          </v-row>
-          <v-card class="card">
-
-          </v-card>
+          <RatComponent></RatComponent>
+        </v-col>
+        <v-col v-if="kommentareAktive" cols="9">
+          <KommentarComponent></KommentarComponent>
         </v-col>
         <v-col v-if="vorstandAktiv" cols="9">
-          <v-row class="mb-1 px-0" style="width: 100% ">
-            <v-col class="d-flex justify-center">
-              <v-btn class="button-links">
-                Beitrag anlegen
-              </v-btn>
-            </v-col>
-            <v-col class="d-flex justify-center">
-
-              <v-btn class="button-links">
-                Beitrag Löschen
-              </v-btn>
-            </v-col>
-            <v-col class="d-flex justify-center">
-
-              <v-btn class="button-links">
-                Beitrag bearbeiten
-              </v-btn>
-            </v-col>
-          </v-row>
-          <v-card class="card">
-
-          </v-card>
+            <VorstandComponent></VorstandComponent>
         </v-col>
         <v-col v-if="bewerbungAktive" cols="9">
           <BewerbungComponent></BewerbungComponent>
@@ -159,6 +101,10 @@ import UserComponent from "@/components/admin/UserComponent";
 import AktuellesComponent from "@/components/admin/AktuellesComponent";
 import ErfolgeComponent from "@/components/admin/ErfolgeComponent";
 import BewerbungComponent from "@/components/admin/BewerbungComponent";
+import PressearchivComponent from "@/components/admin/PressearchivComponent";
+import RatComponent from "@/components/admin/RatComponent";
+import VorstandComponent from "@/components/admin/VorstandComponent";
+import KommentarComponent from "@/components/admin/KommentarComponent";
 
 export default {
   data() {
@@ -176,7 +122,7 @@ export default {
     }
   },
   components: {
-    HeaderComponent,UserComponent,AktuellesComponent,ErfolgeComponent,BewerbungComponent
+    HeaderComponent,UserComponent,AktuellesComponent,ErfolgeComponent,BewerbungComponent,PressearchivComponent,RatComponent,VorstandComponent,KommentarComponent
   },
   methods: {
   },
@@ -203,13 +149,7 @@ export default {
 .col-links {
   padding-bottom: 0;
 }
-.card {
-  width: 100%;
-  height: 88%;
-  box-shadow: 2px 4px 6px black;
-  border-radius: 13px;
-  overflow-y: auto;
-}
+
 .userAktive {
   background-color: #2F53A7;
   color: white;

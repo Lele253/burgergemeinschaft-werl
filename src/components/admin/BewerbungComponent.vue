@@ -45,8 +45,13 @@
 </template>
 
 <script>
+import {Icon} from "@iconify/vue/dist/iconify";
+
 export default {
   name: "BerwerbungComponent",
+  components:{
+    Icon
+  },
   data(){
     return{
       bewerbungenArray: [{

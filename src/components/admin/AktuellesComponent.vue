@@ -3,17 +3,17 @@
     <v-row class="mb-1 px-0" style="width: 100% ">
       <v-col class="d-flex justify-center">
         <v-btn class="button-links" @click="anlegen = true, bearbeiten = false, löschen = false">
-          Beitrag anlegen
+          Aktuelles anlegen
         </v-btn>
       </v-col>
       <v-col class="d-flex justify-center">
         <v-btn class="button-links" @click="anlegen = false; bearbeiten = false; löschen = true">
-          Beitrag Löschen
+          Aktuelles Löschen
         </v-btn>
       </v-col>
       <v-col class="d-flex justify-center">
         <v-btn class="button-links" @click="anlegen = false; bearbeiten = true; löschen = false">
-          Beitrag bearbeiten
+          Aktuelles bearbeiten
         </v-btn>
       </v-col>
     </v-row>
@@ -77,7 +77,7 @@ export default {
   name: "AktuellesComponent",
   data() {
     return {
-      anlegen: false,
+      anlegen: true,
       bearbeiten: false,
       löschen: false,
     }
