@@ -5,7 +5,7 @@
     <v-img :src="background" cover style="height: 81vh">
       <div style="background-color: rgba(255,255,255,0.56);height: 100%; width: 100%">
         <h1 class="text-center pt-5">Wusstest du, dass...</h1>
-        <v-virtual-scroll :item-height="30" :items="$store.state.erfolge" height="65vh">
+        <v-virtual-scroll :item-height="30" :items="this.erfolge" height="65vh">
           <template v-slot="{ item }">
             <div class="d-flex justify-center">
               <v-card class="mt-3 card">
@@ -33,6 +33,8 @@ import HeaderComponent from "@/components/HeaderComponent";
 export default {
   data() {
     return {
+      erfolge: this.$store.state.erfolge.sort((a, b) => b.id - a.id),
+
       name: "Erfolge",
       background: require('../assets/erfolge.png'),
     }

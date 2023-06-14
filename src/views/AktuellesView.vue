@@ -6,7 +6,7 @@
 
         <v-row class="d-flex justify-center mt-n15" style="width: 100%;">
           <v-col class="d-flex justify-center" cols="4">
-            <v-virtual-scroll :item-height="30" :items="$store.state.beiträge" height="500px">
+            <v-virtual-scroll :item-height="30" :items="beiträge.sort((a, b) => a.id - b.id)" height="500px">
               <template v-slot="{ item }">
                 <div class="d-flex justify-center">
                   <v-card v-if="item.titel == this.ausgewählterBeitragTitel" class="mt-3 cardArtikelVorschau cardActive"
@@ -82,6 +82,9 @@ export default {
   data() {
     return {
       name: 'Aktuelles',
+
+      beiträge: this.$store.state.beiträge.sort((a, b) => b.id - a.id),
+
       background: require('../assets/aktuelles.jpeg'),
       ausgewählterBeitragText: '',
       ausgewählterBeitragTitel: ''
@@ -92,12 +95,12 @@ export default {
   },
   methods: {
     setErstenBeitrag() {
-      this.ausgewählterBeitragText = this.$store.state.beiträge[0].text
-      this.ausgewählterBeitragTitel = this.$store.state.beiträge[0].titel
+      this.ausgewählterBeitragText = this.beiträge[0].text
+      this.ausgewählterBeitragTitel = this.beiträge[0].titel
     },
     setBeitrag(itemId) {
-      this.ausgewählterBeitragText = this.$store.state.beiträge[itemId - 1].text
-      this.ausgewählterBeitragTitel = this.$store.state.beiträge[itemId - 1].titel
+      this.ausgewählterBeitragText = this.beiträge[itemId - 1].text
+      this.ausgewählterBeitragTitel = this.beiträge[itemId - 1].titel
     },
     convertTitle(string) {
       if (string.length > 70) {
