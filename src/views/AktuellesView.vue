@@ -9,8 +9,7 @@
             <v-virtual-scroll :item-height="30" :items="$store.state.beiträge" height="500px">
               <template v-slot="{ item }">
                 <div class="d-flex justify-center">
-                  <v-card v-if="item.titel == this.ausgewählterBeitragTitel" class="mt-3 cardArtikelVorschau"
-                          style="background-color: lightskyblue"
+                  <v-card v-if="item.titel == this.ausgewählterBeitragTitel" class="mt-3 cardArtikelVorschau cardActive"
                           @click="setBeitrag(item.id)">
                     <v-row>
                       <v-col class="mt-3" cols="12">
@@ -127,5 +126,9 @@ export default {
   background-color: lightskyblue;
   box-shadow: 4px 6px 8px black;
   border-radius: 20px 20px 20px 20px;
+}
+
+.cardActive {
+  background-color: lightskyblue;
 }
 </style>

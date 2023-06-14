@@ -9,16 +9,15 @@
             <v-virtual-scroll :item-height="30" :items="$store.state.kommentare" height="500px">
               <template v-slot="{ item }">
                 <div class="d-flex justify-center">
-                  <v-card v-if="item.titel == this.ausgewählterBeitragTitel" class="mt-3 cardArtikelVorschau"
-                          style="background-color: lightskyblue"
+                  <v-card v-if="item.titel == this.ausgewählterBeitragTitel" class="mt-3 cardArtikelVorschau cardActive"
                           @click="setBeitrag(item.id)">
                     <v-row>
-                      <v-col cols="4">
+                      <v-col cols="3">
                         <div class="d-flex align-center">
                           <v-img :src="item.img" class="mx-2 my-2"/>
                         </div>
                       </v-col>
-                      <v-col class="mt-3 d-flex align-center" cols="8">
+                      <v-col class="mt-3 d-flex align-center" cols="9">
                         <h3 class="text-center mx-5" style="color: black">
                           {{ item.titel }}</h3>
                       </v-col>
@@ -33,12 +32,12 @@
                           @click="setBeitrag(item.id)">
 
                     <v-row>
-                      <v-col cols="4">
+                      <v-col cols="3">
                         <div class="d-flex align-center">
                           <v-img :src="item.img" class="mx-2 my-2"/>
                         </div>
                       </v-col>
-                      <v-col class="mt-3 d-flex align-center" cols="8">
+                      <v-col class="mt-3 d-flex align-center" cols="9">
                         <h3 class="text-center mx-5" style="color: black">
                           {{ item.titel }}</h3>
                       </v-col>
@@ -136,5 +135,9 @@ export default {
   background-color: lightskyblue;
   box-shadow: 4px 6px 8px black;
   border-radius: 20px 20px 20px 20px;
+}
+
+.cardActive {
+  background-color: lightskyblue;
 }
 </style>

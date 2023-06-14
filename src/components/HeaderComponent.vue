@@ -22,7 +22,7 @@
         </v-col>
       </v-row>
 
-      <div class="d-flex justify-center" style="width: 100%;">
+      <div class="d-flex justify-center" style="width: 100vw;">
         <v-row class="mt-9 d-flex justify-center text-white" style=" width: 100%;">
           <v-col v-if="$store.state.routername == 'Unser Team'" class="nav-cols pt-1" cols="1"
                  style="color: white; cursor:pointer;"
@@ -31,8 +31,7 @@
           </v-col>
           <v-col v-else class="nav-cols titel" cols="1"
                  @click="$router.push('/team')">
-            Unser
-            Team
+            <p>Unser Team</p>
           </v-col>
 
           <v-col v-if="$store.state.routername == 'Aktuelles'" class="nav-cols pt-1" cols="1"

@@ -202,25 +202,30 @@
         <v-col v-if="aktuellesAktive" cols="9">
           <v-row class="mb-1 px-0" style="width: 100% ">
             <v-col class="d-flex justify-center">
-              <v-btn class="button-links">
+              <v-btn class="button-links"
+                     @click="this.beitragAnlegen = true; this.beitragLöschen = false; this.beitragBearbeiten= false">
                 Beitrag anlegen
               </v-btn>
             </v-col>
             <v-col class="d-flex justify-center">
 
-              <v-btn class="button-links">
+              <v-btn class="button-links"
+                     @click="this.beitragAnlegen = false; this.beitragLöschen = true; this.beitragBearbeiten= false">
                 Beitrag Löschen
               </v-btn>
             </v-col>
             <v-col class="d-flex justify-center">
 
-              <v-btn class="button-links">
+              <v-btn class="button-links"
+                     @click="this.beitragAnlegen = false; this.beitragLöschen = false; this.beitragBearbeiten= true">
                 Beitrag bearbeiten
               </v-btn>
             </v-col>
           </v-row>
           <v-card class="card">
-
+            <BeitragLöschenComponent v-if="beitragLöschen"/>
+            <BeitragBearbeitenComponent v-if="beitragBearbeiten"/>
+            <BeitragAnlegenComponent v-if="beitragAnlegen"/>
           </v-card>
         </v-col>
         <v-col v-if="kommentareAktive" cols="9">
@@ -251,19 +256,22 @@
         <v-col v-if="erfolgeAktive" cols="9">
           <v-row class="mb-1 px-0" style="width: 100% ">
             <v-col class="d-flex justify-center">
-              <v-btn @click="erfolgAnlegen=true; erfolgBearbeiten=false; erfolgLoeschen= false" :class="{ 'userAnlegen': erfolgAnlegen }" class="button-links">
+              <v-btn :class="{ 'userAnlegen': erfolgAnlegen }"
+                     class="button-links" @click="erfolgAnlegen=true; erfolgBearbeiten=false; erfolgLoeschen= false">
                 Erfolg anlegen
               </v-btn>
             </v-col>
             <v-col class="d-flex justify-center">
 
-              <v-btn @click="erfolgAnlegen=false; erfolgBearbeiten=false; erfolgLoeschen= true" :class="{ 'userAnlegen': erfolgLoeschen }" class="button-links">
+              <v-btn :class="{ 'userAnlegen': erfolgLoeschen }"
+                     class="button-links" @click="erfolgAnlegen=false; erfolgBearbeiten=false; erfolgLoeschen= true">
                 Erfolg Löschen
               </v-btn>
             </v-col>
             <v-col class="d-flex justify-center">
 
-              <v-btn @click="erfolgAnlegen=false; erfolgBearbeiten=true; erfolgLoeschen= false" :class="{ 'userAnlegen': erfolgBearbeiten }" class="button-links">
+              <v-btn :class="{ 'userAnlegen': erfolgBearbeiten }"
+                     class="button-links" @click="erfolgAnlegen=false; erfolgBearbeiten=true; erfolgLoeschen= false">
                 Erfolg bearbeiten
               </v-btn>
             </v-col>
@@ -271,9 +279,9 @@
           <v-card v-if="erfolgAnlegen" class="card">
             <v-card-title class="text-center"> Anlegen</v-card-title>
             <v-card-subtitle class="text-center">Wusstest du dass...</v-card-subtitle>
-            <v-row style="width: 100%" class="d-flex justify-center">
+            <v-row class="d-flex justify-center" style="width: 100%">
               <v-col cols="9">
-                <v-textarea label="Erfolg eintragen" variant="solo" v-model="erfolgText"></v-textarea>
+                <v-textarea v-model="erfolgText" label="Erfolg eintragen" variant="solo"></v-textarea>
               </v-col>
               <v-col cols="9">
                 <v-file-input
@@ -284,8 +292,8 @@
                 ></v-file-input>
               </v-col>
 
-              <v-col cols="9" class="d-flex justify-center">
-                <v-btn @click="erfolgErstellen" class="text-white " style="background-color: #2F53A7" >
+              <v-col class="d-flex justify-center" cols="9">
+                <v-btn class="text-white " style="background-color: #2F53A7" @click="erfolgErstellen">
                   Erstellen
                 </v-btn>
               </v-col>
@@ -294,25 +302,27 @@
           </v-card>
           <v-card v-if="erfolgLoeschen" class="card" style="max-height: 500px">
             <v-card-title class="text-center"> Löschen</v-card-title>
-            <v-row v-for="x in $store.state.erfolge" :key="x" style="width: 100%" class="mx-0">
+            <v-row v-for="x in $store.state.erfolge" :key="x" class="mx-0" style="width: 100%">
               <v-col cols="11">
                 <v-card style="height: 90px; width: 100%">
-                  <p style="font-size: 12px">{{x.text}}</p>
+                  <p style="font-size: 12px">{{ x.text }}</p>
                 </v-card>
               </v-col>
               <v-col class="d-flex align-center" cols="1">
-                <Icon icon="tabler:trash-x-filled" style="font-size: 30px; color: red; cursor: pointer"/>
+                <Icon icon="tabler:trash-x-filled" style="font-size: 30px; color: red; cursor: pointer"
+                      @click="erfolgLöschen(x.id)"/>
               </v-col>
             </v-row>
           </v-card>
           <v-card v-if="erfolgBearbeiten" class="card">
             <v-card-title class="text-center"> Bearbeiten</v-card-title>
-            <v-card class="mx-auto mb-1 pt-3" v-for="x in $store.state.erfolge" :key="x" style="width: 95%; background-color: #e8e8e8">
-              <v-row style="width: 100%" class="mx-0">
+            <v-card v-for="x in $store.state.erfolge" :key="x" class="mx-auto mb-1 pt-3"
+                    style="width: 95%; background-color: #e8e8e8">
+              <v-row class="mx-0" style="width: 100%">
 
                 <v-col cols="11">
-                  <v-textarea counter no-resize="true"
-                              variant="solo" v-model="x.text" style=" height: 170px; width: 100%">
+                  <v-textarea v-model="x.text" counter
+                              no-resize="true" style=" height: 170px; width: 100%" variant="solo">
 
                   </v-textarea>
                 </v-col>
@@ -320,10 +330,10 @@
                   <Icon icon="fluent-mdl2:accept-medium" style="font-size: 30px; color: green; cursor: pointer"/>
                 </v-col>
                 <v-col>
-                  <v-file-input  accept="image/*"
-                                 label="Wähle ein Bild aus"
-                                 variant="solo"
-                                 v-model="erfolgBild"></v-file-input>
+                  <v-file-input v-model="erfolgBild"
+                                accept="image/*"
+                                label="Wähle ein Bild aus"
+                                variant="solo"></v-file-input>
                 </v-col>
 
               </v-row>
@@ -351,7 +361,7 @@
               </v-btn>
             </v-col>
           </v-row>
-         <v-card class="card"></v-card>
+          <v-card class="card"></v-card>
         </v-col>
         <v-col v-if="teamAktive" cols="9">
           <v-row class="mb-1 px-0" style="width: 100% ">
@@ -453,16 +463,19 @@
 <script>
 import HeaderComponent from "@/components/HeaderComponent";
 import {Icon} from '@iconify/vue';
+import BeitragAnlegenComponent from "@/components/admin/BeitragAnlegenComponent";
+import BeitragLöschenComponent from "@/components/admin/BeitragLöschenComponent";
+import BeitragBearbeitenComponent from "@/components/admin/BeitragBearbeitenComponent";
 
 export default {
   data() {
     return {
       name: 'Admin',
       background: require('../assets/aktuelles.jpeg'),
-      erfolgText:'...',
+      erfolgText: '...',
       userAktive: false,
-      aktuellesAktive: false,
-      erfolgeAktive: true,
+      aktuellesAktive: true,
+      erfolgeAktive: false,
       kommentareAktive: false,
       pressearchivAktive: false,
       teamAktive: false,
@@ -475,132 +488,139 @@ export default {
       erfolgLoeschen: false,
       erfolgBearbeiten: false,
       profilBild: null,
-      erfolgBild:null,
+      erfolgBild: null,
       vorname: '',
       nachname: '',
       email: '',
       passwort: '',
       berechtigung: '',
-      bewerbungenArray: [{
-        vorname: 'stefan',
-        nachname: 'franke',
-        email: 'testmail@web.de',
-        nummer: '01705574750',
-        plz: '44229',
-        ort: 'Dortmund',
-        straße: 'weiße Taube 12'
-      }, {
-        vorname: 'stefan',
-        nachname: 'franke',
-        email: 'testmail@web.de',
-        nummer: '01705574750',
-        plz: '44229',
-        ort: 'Dortmund',
-        straße: 'weiße Taube 12'
-      }, {
-        vorname: 'stefan',
-        nachname: 'franke',
-        email: 'testmail@web.de',
-        nummer: '01705574750',
-        plz: '44229',
-        ort: 'Dortmund',
-        straße: 'weiße Taube 12'
-      }, {
-        vorname: 'stefan',
-        nachname: 'franke',
-        email: 'testmail@web.de',
-        nummer: '01705574750',
-        plz: '44229',
-        ort: 'Dortmund',
-        straße: 'weiße Taube 12'
-      }],
+      bewerbungenArray: [
+        {
+          vorname: 'stefan',
+          nachname: 'franke',
+          email: 'testmail@web.de',
+          nummer: '01705574750',
+          plz: '44229',
+          ort: 'Dortmund',
+          straße: 'weiße Taube 12'
+        }, {
+          vorname: 'stefan',
+          nachname: 'franke',
+          email: 'testmail@web.de',
+          nummer: '01705574750',
+          plz: '44229',
+          ort: 'Dortmund',
+          straße: 'weiße Taube 12'
+        }, {
+          vorname: 'stefan',
+          nachname: 'franke',
+          email: 'testmail@web.de',
+          nummer: '01705574750',
+          plz: '44229',
+          ort: 'Dortmund',
+          straße: 'weiße Taube 12'
+        }, {
+          vorname: 'stefan',
+          nachname: 'franke',
+          email: 'testmail@web.de',
+          nummer: '01705574750',
+          plz: '44229',
+          ort: 'Dortmund',
+          straße: 'weiße Taube 12'
+        }],
       berechtigungenItems: ['Admin', 'Verfasser', 'Keine'],
-      userArray: [{
-        vorname: 'stefan',
-        nachname: 'Franke',
-        email: 'testmail',
-        berechtigung: 'Admin',
-        profilBild: null
-      }, {
-        vorname: 'stefan',
-        nachname: 'Franke',
-        email: 'testmail',
-        berechtigung: 'Admin',
-        profilBild: null
-      }, {
-        vorname: 'stefan',
-        nachname: 'Franke',
-        email: 'testmail',
-        berechtigung: 'Admin',
-        profilBild: null
-      }, {
-        vorname: 'stefan',
-        nachname: 'Franke',
-        email: 'testmail',
-        berechtigung: 'Admin',
-        profilBild: null
-      }, {
-        vorname: 'stefan',
-        nachname: 'Franke',
-        email: 'testmail',
-        berechtigung: 'Admin',
-        profilBild: null
-      }, {
-        vorname: 'stefan',
-        nachname: 'Franke',
-        email: 'testmail',
-        berechtigung: 'Admin',
-        profilBild: null
-      }, {
-        vorname: 'stefan',
-        nachname: 'Franke',
-        email: 'testmail',
-        berechtigung: 'Admin',
-        profilBild: null
-      }, {
-        vorname: 'stefan',
-        nachname: 'Franke',
-        email: 'testmail',
-        berechtigung: 'Admin',
-        profilBild: null
-      }, {
-        vorname: 'stefan',
-        nachname: 'Franke',
-        email: 'testmail',
-        berechtigung: 'Admin',
-        profilBild: null
-      }, {
-        vorname: 'stefan',
-        nachname: 'Franke',
-        email: 'testmail',
-        berechtigung: 'Admin',
-        profilBild: null
-      }, {
-        vorname: 'stefan',
-        nachname: 'Franke',
-        email: 'testmail',
-        berechtigung: 'Admin',
-        profilBild: null
-      }, {
-        vorname: 'stefan',
-        nachname: 'Franke',
-        email: 'testmail',
-        berechtigung: 'Admin',
-        profilBild: null
-      }, {vorname: 'stefan', nachname: 'Franke', email: 'testmail', berechtigung: 'Admin', profilBild: null},]
+      userArray: [
+        {
+          vorname: 'stefan',
+          nachname: 'Franke',
+          email: 'testmail',
+          berechtigung: 'Admin',
+          profilBild: null
+        }, {
+          vorname: 'stefan',
+          nachname: 'Franke',
+          email: 'testmail',
+          berechtigung: 'Admin',
+          profilBild: null
+        }, {
+          vorname: 'stefan',
+          nachname: 'Franke',
+          email: 'testmail',
+          berechtigung: 'Admin',
+          profilBild: null
+        }, {
+          vorname: 'stefan',
+          nachname: 'Franke',
+          email: 'testmail',
+          berechtigung: 'Admin',
+          profilBild: null
+        }, {
+          vorname: 'stefan',
+          nachname: 'Franke',
+          email: 'testmail',
+          berechtigung: 'Admin',
+          profilBild: null
+        }, {
+          vorname: 'stefan',
+          nachname: 'Franke',
+          email: 'testmail',
+          berechtigung: 'Admin',
+          profilBild: null
+        }, {
+          vorname: 'stefan',
+          nachname: 'Franke',
+          email: 'testmail',
+          berechtigung: 'Admin',
+          profilBild: null
+        }, {
+          vorname: 'stefan',
+          nachname: 'Franke',
+          email: 'testmail',
+          berechtigung: 'Admin',
+          profilBild: null
+        }, {
+          vorname: 'stefan',
+          nachname: 'Franke',
+          email: 'testmail',
+          berechtigung: 'Admin',
+          profilBild: null
+        }, {
+          vorname: 'stefan',
+          nachname: 'Franke',
+          email: 'testmail',
+          berechtigung: 'Admin',
+          profilBild: null
+        }, {
+          vorname: 'stefan',
+          nachname: 'Franke',
+          email: 'testmail',
+          berechtigung: 'Admin',
+          profilBild: null
+        }, {
+          vorname: 'stefan',
+          nachname: 'Franke',
+          email: 'testmail',
+          berechtigung: 'Admin',
+          profilBild: null
+        }, {vorname: 'stefan', nachname: 'Franke', email: 'testmail', berechtigung: 'Admin', profilBild: null},],
+      beitragAnlegen: true,
+      beitragLöschen: false,
+      beitragBearbeiten: false,
     }
   },
   components: {
-    HeaderComponent, Icon
+    HeaderComponent, Icon, BeitragAnlegenComponent, BeitragLöschenComponent, BeitragBearbeitenComponent
   },
   methods: {
-    erfolgErstellen(){
-
+    erfolgErstellen() {
       this.$store.state.erfolge.unshift({
         img: this.erfolgBild,
         text: this.erfolgText,
       })
       console.log(this.$store.state.erfolge)
+    },
+    erfolgLöschen(erfolgID) {
+      this.$store.state.erfolge.splice([erfolgID], 1)
     },
     userErstellen() {
       this.userArray.push({
