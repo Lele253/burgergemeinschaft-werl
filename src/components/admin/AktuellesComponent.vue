@@ -1,71 +1,66 @@
 <template>
   <div>
     <v-row class="mb-1 px-0" style="width: 100% ">
-      <v-col class="d-flex justify-center">
-        <v-btn class="button-links" @click="anlegen = true, bearbeiten = false, löschen = false">
-          Aktuelles anlegen
+      <v-col class="d-flex justify-end">
+        <v-btn class="button-links" @click="anlegen = true; löschen = false">
+          Beitrag anlegen
         </v-btn>
       </v-col>
-      <v-col class="d-flex justify-center">
-        <v-btn class="button-links" @click="anlegen = false; bearbeiten = false; löschen = true">
-          Aktuelles Löschen
-        </v-btn>
-      </v-col>
-      <v-col class="d-flex justify-center">
-        <v-btn class="button-links" @click="anlegen = false; bearbeiten = true; löschen = false">
-          Aktuelles bearbeiten
+      <v-col class="d-flex justify-start">
+        <v-btn class="button-links" @click="reloadBeiträge">
+          Beitrag Löschen
         </v-btn>
       </v-col>
     </v-row>
 
     <!--    Anlegen-->
 
-    <v-card v-if="anlegen" class="card">
-      <div>
-        <v-row class="mx-0 my-0 mt-5 d-flex justify-center" style="width: 100%">
+    <div class="d-flex justify-center">
+      <v-card v-if="anlegen" class="card">
+        <v-row class="mx-0 my-0 mt-5 d-flex justify-center " style="width: 100%">
           <v-col cols="5">
             <v-text-field v-model="titel" label="Titel" variant="solo"/>
           </v-col>
           <v-col cols="10">
-            <v-textarea v-model="inhalt" label="Inhalt" no-resize rows="10" variant="solo"/>
+            <v-textarea v-model="text" label="Inhalt" rows="9" variant="solo"/>
           </v-col>
-          <v-col class="d-flex justify-center" cols="10">
+          <v-col class="d-flex justify-center mb-5" cols="10">
             <v-btn color="green" @click="speichern"> Speichern</v-btn>
             <v-btn class="ml-2" color="red" @click="clear"> Leeren</v-btn>
           </v-col>
         </v-row>
-      </div>
-    </v-card>
+      </v-card>
+    </div>
 
     <!--    Löschen-->
 
-    <v-card v-if="löschen" class="card">
-      <div>
-        <v-card-title class="text-center"> Löschen</v-card-title>
-        <v-row v-for="x in $store.state.beiträge" :key="x" class="mx-0" style="width: 100%">
-          <v-col cols="11">
-            <v-card style="height: 90px; width: 100%">
-              <p style="font-size: 12px">{{ x.text }}</p>
-            </v-card>
+    <div class="d-flex justify-center">
+      <v-card v-if="löschen" class="card">
+        <v-row class="mx-auto my-1" style="width: 95%">
+          <v-col class="text-center" cols="3"><h4>Titel</h4></v-col>
+          <v-col class="text-center" cols="6"><h4>Inhalt</h4></v-col>
+          <v-col class="text-center" cols="2"><h4>Datum</h4></v-col>
+          <v-col class="text-center" cols="1"><h4>Löschen</h4></v-col>
+        </v-row>
+        <v-row v-for="beitrag in beiträge" :key="beitrag"
+               class="mx-auto my-1 mt-5" style="border: black solid 2px;border-radius: 10px; width: 95%">
+          <v-col class="text-center mt-6" cols="3">
+            <h4>{{ beitrag.titel }}</h4>
           </v-col>
-          <v-col class="d-flex align-center" cols="1">
-            <Icon icon="tabler:trash-x-filled" style="font-size: 30px; color: red; cursor: pointer"/>
+          <v-col cols="6" style="height: 150px; overflow-y: auto">
+            {{ beitrag.text }}
+          </v-col>
+          <v-col cols="2">
+            <p class="text-center">{{ beitrag.datum }}</p>
+          </v-col>
+          <v-col class="py-0 pr-1 d-flex align-center justify-center" cols="1">
+            <Icon icon="tabler:trash-x-filled"
+                  style="font-size: 30px; color: red; cursor: pointer"
+                  @click="deleteBeitrag(beitrag)"/>
           </v-col>
         </v-row>
-      </div>
-    </v-card>
-
-    <!--    Bearbeiten-->
-
-    <v-card v-if="bearbeiten" class="card">
-      <div>
-        <v-row class="mx-0 my-0 mt-5 d-flex justify-center" style="width: 100%">
-          <v-col cols="5">
-            <v-text-field v-model="titel" label="Titel" variant="solo"/>
-          </v-col>
-        </v-row>
-      </div>
-    </v-card>
+      </v-card>
+    </div>
 
   </div>
 </template>
@@ -77,13 +72,68 @@ export default {
   name: "AktuellesComponent",
   data() {
     return {
+      beiträge: this.$store.state.beiträge.sort((a, b) => b.id - a.id),
+      beitrag: {},
+
+      titel: '',
+      text: '',
+
       anlegen: true,
-      bearbeiten: false,
       löschen: false,
     }
   },
   components: {
     Icon
+  },
+  methods: {
+    setErstenBeitrag() {
+      this.beitrag = this.beiträge[0]
+    },
+    speichern() {
+      let id = this.$store.state.beiträge.length + 1
+      this.$store.state.beiträge.push({
+        id: id,
+        titel: this.titel,
+        text: this.text,
+        datum: this.getDate()
+      })
+      this.titel = '';
+      this.text = ''
+    },
+    deleteBeitrag(beitrag) {
+      const index = this.beiträge.indexOf(beitrag);
+      if (index > -1) {
+        this.beiträge.splice(index, 1);
+      }
+    },
+    clear() {
+      this.titel = '';
+      this.text = ''
+    },
+    getDate() {
+      var datum = new Date();
+      var tag = datum.getDate();
+      var monat = datum.getMonth() + 1; // Monate beginnen bei 0, daher +1
+      var jahr = datum.getFullYear();
+      if (tag < 10) {
+        tag = "0" + tag;
+      }
+      if (monat < 10) {
+        monat = "0" + monat;
+      }
+      var formatiertesDatum = tag + "." + monat + "." + jahr;
+      return formatiertesDatum
+    },
+    reloadBeiträge() {
+      this.anlegen = false;
+      this.löschen = true;
+      console.log('passeirt')
+      this.beiträge = '';
+      this.beiträge = this.$store.state.beiträge.sort((a, b) => b.id - a.id);
+    }
+  },
+  created() {
+    this.setErstenBeitrag()
   }
 }
 </script>
@@ -92,6 +142,8 @@ export default {
 .card {
   width: 90%;
   height: 100%;
+  max-height: 550px;
+  overflow-y: auto;
   background-color: rgba(255, 255, 255, 0.91);
   box-shadow: 4px 6px 8px black;
   border-radius: 20px 20px 20px 20px;
