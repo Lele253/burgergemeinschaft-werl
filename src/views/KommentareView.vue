@@ -3,7 +3,6 @@
     <HeaderComponent/>
     <v-img :src="background" cover style="height: 81vh">
       <div class="d-flex align-center" style="background-color: rgba(255,255,255,0.56);height: 100%; width: 100%">
-
         <v-row class="d-flex justify-center mt-n15" style="width: 100%;">
           <v-col class="d-flex justify-center" cols="4">
             <v-virtual-scroll :item-height="30" :items="$store.state.kommentare" height="500px">

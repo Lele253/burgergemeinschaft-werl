@@ -111,10 +111,10 @@ export default {
     return {
       name: 'Admin',
       background: require('../assets/aktuelles.jpeg'),
-      userAktive: true,
+      userAktive: false,
       aktuellesAktive: false,
       erfolgeAktive: false,
-      kommentareAktive: false,
+      kommentareAktive: true,
       pressearchivAktive: false,
       ratAktive: false,
       vorstandAktiv: false,

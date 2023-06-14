@@ -67,8 +67,6 @@
             </v-card>
           </v-col>
         </v-row>
-
-
       </div>
     </v-img>
   </div>
