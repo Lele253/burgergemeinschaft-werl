@@ -155,10 +155,10 @@
 
 <script>
 import HeaderComponent from "@/components/HeaderComponent";
-import UserComponent from "@/components/Admin/UserComponent";
-import AktuellesComponent from "@/components/Admin/AktuellesComponent";
-import ErfolgeComponent from "@/components/Admin/ErfolgeComponent";
-import BewerbungComponent from "@/components/Admin/BewerbungComponent";
+import UserComponent from "@/components/admin/UserComponent";
+import AktuellesComponent from "@/components/admin/AktuellesComponent";
+import ErfolgeComponent from "@/components/admin/ErfolgeComponent";
+import BewerbungComponent from "@/components/admin/BewerbungComponent";
 
 export default {
   data() {
@@ -173,7 +173,6 @@ export default {
       ratAktive: false,
       vorstandAktiv: false,
       bewerbungAktive: false,
-
     }
   },
   components: {
@@ -195,18 +194,15 @@ export default {
   padding-left: 20px;
   padding-right: 20px;
 }
-
 .button-links {
   width: 90%;
   height: 40px;
   border-radius: 13px;
   box-shadow: 2px 4px 6px black;
 }
-
 .col-links {
   padding-bottom: 0;
 }
-
 .card {
   width: 100%;
   height: 88%;
@@ -214,13 +210,8 @@ export default {
   border-radius: 13px;
   overflow-y: auto;
 }
-
-
-
 .userAktive {
   background-color: #2F53A7;
   color: white;
 }
-
-
 </style>
