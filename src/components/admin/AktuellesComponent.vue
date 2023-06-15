@@ -19,10 +19,10 @@
       <v-card v-if="anlegen" class="card">
         <v-row class="mx-0 my-0 mt-5 d-flex justify-center " style="width: 100%">
           <v-col cols="5">
-            <v-text-field v-model="titel" label="Titel" variant="solo"/>
+            <v-text-field v-model="titel" label="Titel" variant="outlined"/>
           </v-col>
           <v-col cols="10">
-            <v-textarea v-model="text" label="Inhalt" rows="9" variant="solo"/>
+            <v-textarea v-model="text" label="Inhalt" rows="9" variant="outlined"/>
           </v-col>
           <v-col class="d-flex justify-center mb-5" cols="10">
             <v-btn color="green" @click="speichern"> Speichern</v-btn>
@@ -40,7 +40,6 @@
           <v-col class="text-center" cols="3"><h4>Titel</h4></v-col>
           <v-col class="text-center" cols="6"><h4>Inhalt</h4></v-col>
           <v-col class="text-center" cols="2"><h4>Datum</h4></v-col>
-          <v-col class="text-center" cols="1"><h4>Löschen</h4></v-col>
         </v-row>
         <v-row v-for="beitrag in beiträge" :key="beitrag"
                class="mx-auto my-1 mt-5" style="border: black solid 2px;border-radius: 10px; width: 95%">

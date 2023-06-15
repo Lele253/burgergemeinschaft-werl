@@ -27,12 +27,12 @@
             <v-card class="card mx-0">
 
               <v-list->
-                <v-list-item-title>
+                <v-list-item>
                   <h3 class="text-center mt-5 mx-8">
-                    {{ convertTitle(beitrag.titel) }}
+                    {{ beitrag.titel }}
                   </h3>
 
-                </v-list-item-title>
+                </v-list-item>
 
                 <v-list-item class="text-center mt-2">
 
@@ -73,12 +73,6 @@ export default {
     setErstenBeitrag() {
       this.beitrag = this.beiträge[0]
     },
-    convertTitle(string) {
-      if (string.length > 70) {
-        return string.substring(0, 70) + '...'
-      }
-      return string
-    },
     selectCard(selectedBeitrag) {
       this.beiträge.forEach(beitrag => {
         beitrag.selected = (beitrag === selectedBeitrag); // Setze 'selected' auf true, wenn es der ausgewählte Beitrag ist, ansonsten auf false
@@ -106,6 +100,7 @@ export default {
 .card {
   width: 90%;
   height: 100%;
+  height: 500px;
   background-color: lightskyblue;
   box-shadow: 4px 6px 8px black;
   border-radius: 20px 20px 20px 20px;

@@ -1,7 +1,7 @@
 <template>
   <div>
     <HeaderComponent/>
-    <v-img :src="background" cover style="height: 86vh">
+    <v-img :src="background" cover style="height: 81vh">
       <div class="d-flex align-center" style="background-color: rgba(255,255,255,0.56);height: 100%; width: 100%">
 
         <v-row class="d-flex justify-center mt-n15" style="width: 100%;">
@@ -81,12 +81,6 @@ export default {
     setErstenBeitrag() {
       this.beitrag = this.pressearchiv[0]
     },
-    convertTitle(string) {
-      if (string.length > 70) {
-        return string.substring(0, 70) + '...'
-      }
-      return string
-    },
     selectCard(selectedBeitrag) {
       this.pressearchiv.forEach(beitrag => {
         beitrag.selected = (beitrag === selectedBeitrag); // Setze 'selected' auf true, wenn es der ausgewählte Beitrag ist, ansonsten auf false
@@ -108,13 +102,13 @@ export default {
 }
 
 .selected-card {
-  background-color: lightskyblue; /* Hier kannst du die gewünschte Hintergrundfarbe für die ausgewählte Karte festlegen */
+  background-color: lightskyblue;
 }
 
 .card {
   width: 90%;
   height: 100%;
-  max-height: 500px;
+  height: 500px;
   background-color: lightskyblue;
   box-shadow: 4px 6px 8px black;
   border-radius: 20px 20px 20px 20px;
