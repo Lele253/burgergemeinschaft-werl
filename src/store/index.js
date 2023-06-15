@@ -191,61 +191,171 @@ export default createStore({
                 datum: "18.01.2014"
             }
         ],
-        rat: [ {name: 'stefan',
-            titel: 'Professor',
-            bild: null,
-            vita: 'aflknaelfnalfnalfnafnl3qf'
-        },
-            {name: 'Leandro',
-            titel: 'doktor',
-            bild: null,
-            vita: 'a,jvn akjenvkeanvaevnaelv',
+        rat: [
+            {
+                name: 'stefan',
+                titel: 'Professor',
+                bild: null,
+                vita: 'aflknaelfnalfnalfnafnl3qf'
+            },
+            {
+                name: 'Leandro',
+                titel: 'doktor',
+                bild: null,
+                vita: 'a,jvn akjenvkeanvaevnaelv',
             }],
-        vorstand: [ {name: 'stefan',
-            position: 'Vorsitzender',
-            bild: null,
-            vita: 'aflknaelfnalfnalfnafnl3qf'
-        },
-            {name: 'Leandro',
+        vorstand: [
+            {
+                name: 'stefan',
+                position: 'Vorsitzender',
+                bild: null,
+                vita: 'aflknaelfnalfnalfnafnl3qf'
+            },
+            {
+                name: 'Leandro',
                 position: 'stelv. Vorsitzender',
                 bild: null,
                 vita: 'a,jvn akjenvkeanvaevnaelv',
             },
-            {name: 'Leandro',
+            {
+                name: 'Leandro',
                 position: 'stelv. Vorsitzender',
                 bild: null,
                 vita: 'a,jvn akjenvkeanvaevnaelv',
             },
-            {name: 'Leandro',
+            {
+                name: 'Leandro',
                 position: 'stelv. Vorsitzender',
                 bild: null,
                 vita: 'a,jvn akjenvkeanvaevnaelv',
             },
-            {name: 'Leandro',
+            {
+                name: 'Leandro',
                 position: 'stelv. Vorsitzender',
                 bild: null,
                 vita: 'a,jvn akjenvkeanvaevnaelv',
             },
-            {name: 'Leandro',
+            {
+                name: 'Leandro',
                 position: 'stelv. Vorsitzender',
                 bild: null,
                 vita: 'a,jvn akjenvkeanvaevnaelv',
             },
-            {name: 'Leandro',
+            {
+                name: 'Leandro',
                 position: 'stelv. Vorsitzender',
                 bild: null,
                 vita: 'a,jvn akjenvkeanvaevnaelv',
             },
-            {name: 'Leandro',
+            {
+                name: 'Leandro',
                 position: 'stelv. Vorsitzender',
                 bild: null,
                 vita: 'a,jvn akjenvkeanvaevnaelv',
             },
-            {name: 'Leandro',
+            {
+                name: 'Leandro',
                 position: 'stelv. Vorsitzender',
                 bild: null,
                 vita: 'a,jvn akjenvkeanvaevnaelv',
-            }]
+            }],
+        pressearchiv: [
+            {
+                id: 1,
+                titel: "Presseerklärung zum Bebauungsplan 'Bahnhofsumfeld' von Karl-Joseph Lippold",
+                untertitel: "",
+                img: require('../assets/presssearchiv/Lippold.jpg'),
+                text: "Wie durch Anmerkungen anderer Parteien und auch in der Presse festgestellt, hat die BG die ursprüngliche Zustimmung zum 'Bahnhofsprojekt' zurückgenommen. Die Planung des Bahnhofsumfelds mag noch so ansehnlich sein, sie ist wegen der von der Stadt zu tragenden Kosten und Folgekosten in absehbarer Zeit nicht zu realisieren. Zudem werden als Folge der Finanz- und Wirtschaftskrise Steuereinnahmen nicht im bisherigen Umfang zu erwarten sein.\n\nAbschied nehmen von solchen Großprojekten mag schmerzlich sein, ist aber notwendig, wenn neue Erkenntnisse und Sachverhalte dies fordern. Stures Festhalten an früheren Beschlüssen, die unter anderen Gegebenheiten gefasst wurden, mag bestimmten Gesinnungen geschuldet sein, entspringt aber nicht einer Verantwortungsethik, die der Soziologe Max Weber und in seinem jüngsten Werk Helmut Schmidt ('Außer Dienst') Politikern nahe legen.\n\nDie mit der Bahnunterführung verbundene neue Verkehrsführung führt auch zu erheblichen Veränderungen für die dort ansässigen Betriebe. Dies betrifft die Betriebe an der Hammer Straße und der künftigen Stichstraße 'Alter Keller'.\n\nAuch die IHK Arnsberg weist auf erhebliche Schwierigkeiten für diese Betriebe hin, die großenteils durch vorbeifahrende Kunden profitieren, wie der Tankstellenbetrieb oder der Reifendienst. Die Planung vermindert die Standortqualität der Betriebe erheblich, was die Stadt nicht unberücksichtigt lassen kann. Gravierende Flächenverluste auf Grund der Trassenführung können für die betroffenen Firmen Existenz bedrohend sein. Nach Meinung der IHK ist ihnen mit einer finanziellen Entschädigung nicht gedient; Standortverlagerungen werden unausweichlich sein. Auch für die Andienung der bleibenden Unternehmen ist Sorge zu tragen. All dies führt zu weiteren Kosten, die über die im Planverfahren genannten hinausgehen werden.\n\nNach Standortverlagerungen werden Leerstände entstehen, die wegen der dann ungünstigen Flächenzuschnitte und Andienungen wenige Interessenten finden dürften. Es ist dies eben ein sehr schwieriger Abwägungsprozess beim Projekt Bahnhofsumfeld, bei dem man wegen erwünschter Vorzüge nicht nachteilige Folgeerscheinungen außer Acht lassen darf.\n\nAn dieser finanziell alle jetzigen und künftigen Bürgerinnen und Bürger betreffenden Entscheidung sollten diese entsprechend beteiligt werden. Das jedenfalls ist die Auffassung der BG.",
+                autor: "Karl-Joseph Lippold",
+                datum: "21.08.2009",
+                position: "BG – Fraktion Im Rat der Stadt Werl"
+            },
+            {
+                id: 2,
+                titel: "Antrag der BG auf Sondersitzung des Rates der Stadt Werl vor der Kommunalwahl",
+                untertitel: "Gemäß §47 Abs. 1 GO beantragt die Fraktion der BG-Werl die Einberufung des Rates nach Beendigung der Sommerferien in NRW und vor der Kommunalwahl am 30.08.09.",
+                img: "",
+                text: "Sollte der Bürgermeister die Einberufung dieser von uns beantragten Sitzung ablehnen, bestehen wir auf einer Entscheidung zu dieser Frage durch die Aufsichtsbehörde.\n\nWir halten die Einberufung der Sitzung zu diesem Zeitpunkt für erforderlich, weil wir meinen, dass der nachfolgend dargestellte Beratungsgegenstand noch von dem amtierenden Rat vor der anstehenden Kommunalwahl entschieden werden sollte, da er einen elementar wichtigen Gegenstand unserer Stadt darstellt, der weitreichende Folgen für die Gestaltung unserer Stadt hat.\n\nDie BG-Werl beantragt durch Entscheidung des Rates einen Bürgerentscheid nach § 26 GO NRW herbeizuführen, wodurch die Frage geklärt werden soll, ob die Bahnunterführung am Langenwiedenweg gebaut werden soll. Begründung: Die Durchführung der geplanten Unterführung würde auf Jahre die finanzielle Situation der Stadt belasten. Die Bürgerinnen und Bürger der Stadt und deren Nachkommen würden weiterhin und auch höher belastet werden müssen. Notwendige Investitionen an Gebäuden, Straßen und anderen städtischen Einrichtungen müssten weiter verschoben werden, die städtischen Tochtergesellschaften könnten notwendige Rücklagen nicht im erforderlichen Maß bilden und wären damit möglicherweise im Bestand gefährdet. Bereits heute könnten die Gas-, Strom-, Wasserpreise gesenkt werden, wenn die Stadtwerke nicht zur Finanzierung des Schwimmbades in erheblichen Umfang herangezogen würden.\n\nZudem hat sich die Verkehrssituation durch die Schaffung der im Gegenverkehr passierbaren Bahnunterführung an der Schützentrasse in der Stadt verändert. Diese Situation ist bislang planerisch noch in keiner Weise berücksichtigt worden. Dadurch hat sich die Nutzung der Unterführung durch Fahrzeuge nicht entscheidend verändert. Hier bestehen daher Ressourcen, die mit geringerem finanziellem Aufwand als sie durch die Erstellung der Unterführung am Langenwiedenweg entstehen würden. Die Erstellung der Unterführung am Langenwiedenweg zöge in einem weiteren Bauabschnitt die Bebauung des Geländes nördlich des Bahnhofs nach sich. Auch hierdurch sind finanzielle Belastungen für die Stadt nicht auszuschließen.\n\nDie gegenwärtige Planung mit der Ansiedlung von Discountern auf dem Gelände würde mit hoher Wahrscheinlichkeit zu vermehrten Leerständen von Geschäften in der Innenstadt (Fußgängerzone) führen. Aber auch weitere negative Auswirkungen städtebaulicher Art wären zu befürchten. Auch der Bahnhofsvorplatz müsste umfangreich und kostenträchtig erneuert werden, weil durch die gegenwärtig angestrebte und favorisierte Unterführungsplanung Höhendifferenzen ausgeglichen werden müssten und erhebliche Umgestaltungen vorgenommen werden sollen.",
+                autor: "Siegbert May",
+                datum: "21.07.2009",
+                position: "Fraktionsvorsitzender der Bürgergemeinschaft Werl e.V"
+            },
+            {
+                id: 3,
+                titel: "Antwort auf einen Leserbrief des FDP-Mitglieds Julian Kirchherr, der der BG Flickschusterei vorwirft",
+                untertitel: "Antwort zum Leserbrief 'Nur Flickschusterei' des FDP-Ratskandidaten Julian Kirchherr vom 01.08.09",
+                img: require('../assets/presssearchiv/MaySiegbert.jpg'),
+                text: "Die BG-Werl hatte schon zur Kommunalwahl 2004, und auch jetzt wieder, gefordert einen 'Bürgerhaushalt' für Werl zu realisieren. Letztlich ist unser Vorschlag identisch mit dem, was Herr Kirchherr jetzt als 'Beteiligungshaushalt' für Werl fordert.\n\nDer Beteiligungshaushalt ist ein moderiertes Verfahren mit einem externen unabhängigen Moderator, aber letztlich sind die Bürger wieder nur indirekt beteiligt. Das Verfahren ist aufwändig und ungeeignet zur Klärung der Frage Bahnunterführung, ja oder nein.\n\nDer Bürgerentscheid beteiligt die Bürger zu einer aktuellen Frage (z.B.: 'Soll die Bahnunterführung am Langenwiedenweg gebaut werden?') direkt. Und die Bürger übernehmen mit ihrer Antwort direkte Verantwortung. Das Verfahren des Ratsbürgerentscheides wurde im Koalitionsvertrag zwischen CDU und FDP zur Landtagswahl 2005 in NRW vereinbart und 2007 in die Gemeindeordnung eingefügt. Von den Beteiligten wurde es als ein sinnvolles und wichtiges Element der Demokratie bezeichnet.\n\nUns von der BG-Werl, die wir schon 2002 einen Bürgerentscheid in Werl zu der Frage ob der Kommunalbetrieb Werl privatisiert werden sollte, mit initiierten und unterstützten, geht es aktuell wieder um die direkte Beteiligung der Bürger. Denn die Bahnunterführung am Langenwiedenweg wird das Leben aller Bürger in Werl direkt oder indirekt massiv beeinflussen. Es geht nicht nur um städtische Gelder, sondern auch um das Vermögen vieler Bürger, die zum Beispiel ihren Geschäftsstandort verlegen müssten, wenn die Unterführung käme.\n\nEs geht um Änderungen von Verkehrsströmen in der Stadt und den damit verbundenen Belastungen durch Emissionen und viele andere Dinge mehr. Es geht um die zukünftige Gestaltung eines großen Areals nördlich des Bahnhofs, von der viele Mitbewohner direkt (Fußwege, Einkaufsplätze und vieles mehr) und indirekt (Kaufleute und Kunden in der Innenstadt) betroffen sein werden.\n\nEin Beteiligungshaushalt ist das eine, ein Bürgerentscheid das andere. Zur Klärung der Frage, ob eine Bahnunterführung kommen soll oder nicht, ist ein Bürgerentscheid richtig. Den Bürgerentscheid über einen Ratsbeschluss, und nicht über ein vorgeschaltetes Bürgerbegehren, zu bekommen wäre elegant und Zeichen gelebter Demokratie in Werl.\n\nBürgerbeteiligung ist uns, von der BG, ein innerstes Anliegen! Das unterscheidet uns schon von vielen Politikern der etablierten Parteien, die den Begriff Parteiendemokratie lieben und extensiv auslegen.",
+                autor: "Siegbert May",
+                datum: "4.8.09",
+                position: "Fraktionsvorsitzender"
+            },
+            {
+                id: 4,
+                titel: "Rede von Inge Klauk zum 20. Jubiläum der Bürgergemeinschaft im Cafe Dreiklang",
+                untertitel: "",
+                img: require('../assets/presssearchiv/Inge Klauk.jpg'),
+                autor: "Inge Klauk",
+                datum: "20. Juni 2009",
+                text: "Die Bürgergemeinschaft Werl begeht ihren zwanzigsten Geburtstag. Wir feiern, halten Rückschau und blicken in die Zukunft. Für die Rückschau bin ich heute zuständig, für die Zukunft Siegbert May.\n\nWegbereiter der neuen politischen Gruppierung waren – so merkwürdig es klingen mag – Politik und Verwaltung der Stadt Werl. Wer erinnert sich noch an die große Sanierungswelle, die in den siebziger und achtziger Jahren ganz Deutschland erfasste und das Gesicht von Städten und Gemeinden verändern sollte? Auch Werl leistete sich ein aufwendiges Sanierungsprogramm. Ein Büro der Landesentwicklungsgesellschaft - kurz LEG genannt - richtete sich in Werl ein. Der Begriff Flächensanierung löste je nach Standpunkt Begeisterung oder Entsetzen hervor. Wusste doch jeder aufgeklärte Bürger, daß dies das Gesicht der Stadt verändern und nicht ohne finanzielle Belastungen für den städtischen Haushalt und jeden einzelnen Hausbesitzer gehen würde.\n\nIn dieser Zeit des Umbruchs gab es mahnende Stimmen, Historisches zu Bewahren, einer behutsamen Objektsanierung den Weg zu ebnen und Straßen so zu planen, daß das Bild der Stadt nicht zerstört wird und die Interessen von Bürgerinnen und Bürgern nicht übergangen werden.\n\nEs ist wichtig, heute an einen Mahner zu erinnern, der später zu uns gehörte, der Zeit und Geld investierte, um den Ratsmitgliedern eine andere Sichtweise von Stadtplanung aufzuzeigen,. Dr. Hermann Josef Koch.\n\nDr. Koch stand nicht allein da. Viele Bürgerinnen und Bürger wehrten sich. Schon 1975 gab es die Überlegung, eine Bürgergemeinschaft zu gründen. Dr. Koch und seine Mitstreiter entschieden sich aber damals, die Zentrumspartei in Werl zu unterstützen. Tatsächlich konnten zwei Ratssitze errungen werden. Auf Bürgerversammlungen gab es zahlreiche Proteste Stellvertretend aus unserer Runde seien Elke Gawliczek und Jürgen Dröge genannt, die sich in einem langwierigen Rechtsstreit standhaft und erfolgreich mit einer Normenkontrollklage gegen eine Straße zur Wehr setzten, die unter dem Namen „ Westtangente“ in die Geschichte dieser Stadt eingehen sollte. Eine Eltern-Schule-Anwohner-Initiative schloß sich der Klage an und investierte viele tausend Mark.\n\nPolitik und Verwaltung haben es offenbar damals nicht verstanden. auf die mahnenden Stimmen zu hören, den Ideenreichtum vor Ort aufzunehmen und in ihre Vorschläge mit einzubeziehen.\n\nDa bedurfte es nur einer tatkräftigen Person, die all diese Ideen, Mahnungen, Sorgen und Ängste aufnahm, um den Menschen im Rat und in den Ausschüssen eine Stimme zu geben. Diese Person war Roswitha Stoll-Tolkemit. Frau Stoll-Tolkemit war politisch erfahren, geschickt in Wort und Schrift. Sie kam wie ein Wirbelwind in die bis dato selbstsicher agierende politische Landschaft unserer Stadt. In kurzer Zeit sammelte sie Männer und Frauen um sich und überzeugte sie davon, daß es notwendig und richtig sei, hier und jetzt eine neue politische Gemeinschaft zu gründen. Sie investierte Zeit und Geld, überzeugte, überredete, kämpfte und schaffte in kurzer Zeit mit engagierten Bürgern das, was viele nicht glauben mochten: Nur wenige Wochen nach dem ersten Treffen im Cafe Schulte in der Walburgisstraße wurde am 9. Mai 1989 die Bürgergemeinschaft gegründet.\n\nEs sollte ein Zusammenschluß parteiunabhängiger Bürgerinnen und Bürger werden, die eine kritische ideologiefreie Alternative der bestehenden Parteien anbot. In ständiger Diskussion mit den Bürgerinnen und Bürgern sollten Fragen und Probleme der Gemeinde erörtert und einer Lösung nähergebracht werden. Bürgernähe war das Stichwort! Niemand hielt es für möglich, daß die BG in dieser Stadt eine Chance bei den Kommunalwahlen im Herbst 1989 hätte. Zum Erstaunen aller errang die Bürgergemeinschaft auf Anhieb 11,4 % der Stimmen, damit 4 Sitze im Rat und wurde drittstärkste politische Kraft in unserer Stadt.\n\nRoswitha Stoll-Tolkemit, Albert Biele, Peter Thomalla und Bernd Schmidt waren die ersten Ratsvertreter. Die Arbeit konnte beginnen! Auf Kreisebene schlossen wir uns bald der Kreis BG an und konnten 1994 Antonius Weller als Werler Vertreter in den Kreistag entsenden.\n\nIn den folgenden fast 10 Jahren war Walter Moennighoff, unermüdlich für uns im Kreistag und in den verschiedensten Ausschüssen tätig. Die kommunalpolitische Arbeit ist für Politikerinnen und Politiker allgemein ein hartes Brot. Neben dem Beruf muß die verbleibende Freizeit zwischen Familie, Sitzungen, Aktenstudium, Bürgergesprächen, Ortsbesichtigungen, unzähligen Telefonaten etc. aufgeteilt werden. Besonders aber 20 Jahre Oppositionsarbeit zu gestalten, da braucht es schon Begeisterung für dieses Ehrenamt. Stellvertretend für alle seien genannt: Roswitha Stoll-Tolkemit, Peter Thomalla, Walter Moennighoff, Siegbert May, Dieter Riewe, unsere Geschäftsführerin Elisabeth Born-Gummersbach unser Schatzmeister Rolf Torbohm, unsere Schriftführerin Christina Reuther.\n\nDie BG konnte in zwei Jahrzehnten immer wieder neue Mitglieder gewinnen. Wir haben aber auch aus unterschiedlichen Gründen Mitglieder verloren, weil sie den politischen Weg mit uns nicht weiter gehen wollten, weil sie durch Krankheit gehindert wurden, weil sie den Wohnort wechselten oder weil sie verstorben sind Sie alle haben in der Vergangenheit das Bild der BG mitgeprägt\n\nAm Jubiläumstag dürfen wir mit Freude und auch ein wenig Stolz darauf hinweisen, daß unsere Arbeit in den letzten zwanzig Jahren Früchte getragen hat. Wir gaben Denkanstöße im planerischen, schulischen, kulturellen und sozialen Bereich und übten konstruktive Kritik. Aus Zeitmangel können nur einige sichtbare Erfolge heute aufgezählt werden:\n\n- Verhinderung der Westtangente\n- Erfolgreiche Begleitung der Sanierungsbetroffenen vor Gericht\n- Aktive Unterstützung der Vorbereitung und Durchführung des Bürgerbegehrens und \n- Bürgerentscheides zum Erhalt des Kommunalbetriebs Werl\n- Errichtung eines Park-und Ride-Platzes an der Autobahn\n- Anregungen von Kreisverkehren (oft belächelt)\n- Unterstützung der Idee von Dr. Koch, ein Gradierwerk im Kurpark zu errichten\n\nWir waren dabei, als Politik und Bevölkerung sich gegen die Giftmülldeponie stemmte und einige von uns finanzierten das Windrad mit, das auf der vorgesehenen Fläche errichtet wurde (Die Mitinitiatorin der Protestbewegung Marion Jakob kam aus unseren Reihen! )\n\nVHS, Musikschule, Bücherei, Krankenhaus, Kulturbahnhof, Agenda, Syntegration, waren und sind uns wichtige Anliegen. Soziale Träger, Vereine und Verbände und die vielen ehrenamtlichen Bürgerinnen und Bürger haben unsere Anerkennung und Unterstützung.\n\n20 Jahre BG bedeutet: auf demokratische Weise mitzuwirken an der Entwicklung der Stadt zum Wohle der Bürgerinnen und Bürger – bedeutet Ringen in der Fraktion um den richtigen Weg, bedeutet, seinem eigenen Gewissen verpflichtet zu sein, bedeutet Erfolge in Ausschüssen und Rat zu erleben, bedeutet auszuhalten, daß ein starkes Netzwerk der politischen Parteien manches vorab in trockene Tücher bringt, bedeutet, daß Anträge abgelehnt und manchmal -o Wunder- später von anderen aufgegriffen werden. Der politische Wettstreit um den besten Weg treibt eben manchmal seltsame Blüten.\n\nWichtig war und ist uns die bürgernahe politische Arbeit. Wenn auch der größte Teil unserer Arbeit nicht ihren Widerhall in der Presse findet, so haben doch viele Wählerinnen und Wähler unsere Arbeit in den letzten zwanzig Jahren gewürdigt und uns deshalb gewählt. Auch zur Zeit sind wir im Rat durch fünf Mandatsträger vertreten. Viele von uns arbeiten in Ausschüssen, Aufsichtsräten und Arbeitskreisen. Die BG hat sich auch der politischen Verantwortung bei der Wahl des Bürgermeisters gestellt: Siegbert May kandidierte vor 5 Jahren als Bürgermeister für die Stadt Werl und konnte 12,3 % der Stimmen erreichen. Auch in diesem Jahr kandidiert er als Bürgermeister und wir wünschen ihm natürlich dafür viel Erfolg.\n\nEs war wichtig und richtig, vor zwanzig Jahren die BG zu gründen. Die Bürgerinnen und Bürger haben eine Alternative gesucht, um sich einzubringen, um politische Arbeit zu gestalten, um ihre eigenen Ideen einbringen zu können. Dieses Angebot haben wir gemacht und die Menschen in dieser Stadt haben uns aufgenommen. Wir haben gezeigt, daß politische Arbeit im demokratischen Staat von jedem geleistet werden kann und muß.\n\nWenn ich heute zurückblicke, dann denke ich mit Freude an die 20 Jahre zurück, und hoffe, daß die politische Arbeit unserer Gruppe weiterhin Früchte trägt und viele Mitstreiterinnen und Mitstreiter für unsere politische Arbeit gewinnt. Damit wir weiterhin erfolgreich für eine gute Zukunft der Stadt Werl eintreten können.\n\nUnd nun möchte ich Siegbert May bitten, einen Blick in die Zukunft zu wagen.\n\nVielen Dank!"
+            },
+            {
+                id: 5,
+                titel: 'Grundsatzrede des scheidenden Ratsmitgliedes Walter Mönnighoff zur Haushaltsentwicklung in Werl',
+                untertitel: 'Ausschnitt aus der Rede des damaligen Fraktionsvorsitzenden und Ratsherrn Walter Mönnighoff anläßlich seines Ausscheidens aus dem Werler Stadtrat am 30.11.2002 zur Finanzlage der Stadt Werl.',
+                img: require('../assets/presssearchiv/Walter Mönnighoff.jpg'),
+                text: 'Liebe Freunde!\n' +
+                    'Die heutige Klausurtagung der BG Werl soll Rückblick und Ausblick auf die Finanzpolitik unserer Stadt gewähren. Sie fällt zusammen mit meinem Abschied aus der kommunalen Tätigkeit in der Stadt.\n' +
+                    '\n' +
+                    'Gestatten Sie mir daher einen subjektiv gefärbten Bericht über die vergangene und voraussichtlich zukünfiige Entwicklung der Finanzlage der Stadt Werl vorzulegen, der beim kritischen Nachlesen vielleicht Diskussionsanstöße zu vermitteln in der Lage ist.\n' +
+                    '\n' +
+                    'Quid-quid agis, prudenter agas. Et respice finem!\n' +
+                    'Was immer du tust, handle klug. Und bedenke das Ende!\n' +
+                    '\n' +
+                    'Dieser lateinische Wahlspruch (Venhofen) hat mich - neben einer guten betriebswirtschaftlichen Ausbildung auf der Höheren Landbauschule Soest - angeregt, über Finanzpolitik nicht nur im Rahmen von Vorgaben einer Wahlperiode, sondern in ihren weitergehenden finanziellen, sachlichen und personellen Folgekosten - projiziert auf einen längeren Zeitraum - nachzudenken. Sieben Jahre Lehrzeit im Kreis Unna, der Gemeinde Rhynern und in Gremien der Westfälischen Landeskirche führten mich mit Finanzexperten, deren Aussichten nachahmenswert waren, zusammen. Kämmerer Warnke vom Kreis Unna brachte uns bei, im Kreisstraßenbau nicht auf Kreditaufnahme zu setzen, sondern nur die vorhandenen Eigenmittel zu nutzen.\n' +
+                    '\n' +
+                    'Damals bei höherer Zinslast rechnete er Zins- und Tilgungskosten mit rund 10%, 1 Mio. DM heute kreditiert brachten nach seiner Meinung in 10 Jahren die Belastung von 1 Mio. DM. Unterließ man diese Kreditaufnahme, so hatte man nach 10 Jahren Eigenmittel in gleicher Höhe zur Verfügung. Da er - auf diese Weise seit Jahren handelnd - annähernd ausreichende Eigenmittel angesammelt hatte, folgten wir seinen Vorstellungen. Gemeindedirektor Schüerhoff, Rhynern verfolgte eine übervorsichtige Finanzpolitik. Er musste zu investiven Maßnahmen förmlich gedrängt werden. Die Gemeinde Rhynern war der einzige der im Umfeld von Hamm liegenden Orte, der einen Haushaltsüberschuss in die neuzubildende Großstadt einbrachte! Finanzausschussvorsitzender Pfarrer Limberg führte den armen Kirchenkreis Hamm über eine Finanzgemeinschaft aller Kirchengemeinden durch Sparsamkeit zu einem der finanziell bestsituierten Kirchenkreise der Landeskirche von Westfalen. Er legte aus allgemeinen Einkünften eine Baurücklage an, über die er mit Argusaugen wachte und fast ohne Kreditaufnahmen berechtigte Bauwünsche der Ortsgemeinden aus der Rücklage finanzierte. Er war es auch, der mich in die gute Finanzpolitik der Landeskirche einführte und mir späterhin manchen Rat erteilte. Solcherart vorbereitet saß ich als Zuhörer im Rathaussaal der Stadt Werl, als die zweite Stufe der Neuordnung, Rhynern zur Auflösung vorschlug und Hilbeck von Werl beansprucht wurde. Mit Freude erfuhr ich dort von der geringen Verschuldung der Stadt (18 Mio. DM). Gute Aussichten?\n' +
+                    '\n' +
+                    'Im März 1975 in den Stadtrat gewählt, musste ich feststellen, dass die Verschuldung in kürzester Zeit gewaltig hochgetrieben worden war und in der mittelfristigen Finanzplanung 10 - 12 Mio. DM an jährlicher durchschnittlicher Kreditaufnahme vorgesehen war. Ohne Rücksprache mit der Fraktion habe ich damals in öffentlicher Sitzung diese Finanzpolitik als nicht tragbar bezeichnet und dem Haushaltsentwurf nicht zugestimmt. Über das Ansinnen, wieder Kanalanschlussbeiträge einzuführen und Abschreibungsbeiträge zur Reinvestition zu verwenden, um Kreditaufnahmen zu vermindern, kam es zum hefligen Streit mit Stadtdirektor Dirkmann und Teilen der Fraktion. Zitate: ,,Wir passen unsere Einnahmen den Ausgaben an!" ,,Du hast uns gut über betriebswirtschafiliche Kostenrechnungen zu informieren versucht, aber verstanden haben wir dies nicht!!" ,,Warum willst du uns hindern, Kredite aufzunehmen, in 20 Jahren spricht kein Mensch mehr darüber!" All dies wollte mich veranlassen, aus den ersten Reihen der Fraktion, in die ich als Stellvertretender Bürgermeister gerutscht war, in die Hinterbank zu wechseln. Dies ahnend, boten mir Willi Risken und H. -H. Meermann die Funktion des Finanzsprechers an. Ich nahm an, weil ich in grenzenloser Selbstüberschätzung vermutete, mich der Aufgabe gewachsen erzeigen zu können. Die Kanalanschlussbeiträge wurden nicht wieder eingeführt. Es gelang nicht durchzusetzen, die Abschreibungseinnahmen zur Kreditminderung einzusetzen, sie dienten weiterhin zur Befriedigung konsumtiver Ausgaben. Es blieb die direkte Verringerung von Kreditaufnahmen durch Verschiebung und Unterlassung von investiven Aufgaben, die von der Fraktion mitgetragen wurden. Mein Ziel war es, Kreditminderungen in Höhe der Abschreibungssätze aus den kostenrechnenden Einrichtungen in den jährlichen Haushaltsansätzen zu erreichen,\n' +
+                    '\n' +
+                    'Die Verwaltung zog im Gegensatz zur Fraktion nicht mit und brachte in schöner Regelmäßigkeit über Nachtragshaushaltspläne neue ,,unabweisbare" Investitionswünsche ein, die erhöhte Kreditaufnahmen erforderlich machten. Nach etlichen Jahren gab ich frustriert auf und erklärte, in der Finanzpolitik nicht mehr agieren zu wollen, sondern nur noch die Haushaltspläne kritisch kommentierend zu begleiten. In dieser Zeit überschlugen sich Politik und Verwaltung mit immer neuen Investitionswünschen, die erhebliche Kreditaufnahmen erforderlich machten. Meine kritischen Anmerkungen in den Haushaltsreden (ich sprach von gefährlicher Gratwanderung) wurden von Fraktion und Verwaltung nicht ernst genommen, da gelegentlich auftretende unausgeglichene Jahresetats in den nächsten Jahren durch stark steigende Gewerbesteuereinnahmen ausgeglichen wurden. (Mein Kommentar dazu: Die Wirtschaft deckt unsere Fehler zu.)\n' +
+                    '\n' +
+                    'Als ersichtlich wurde, dass die Kosten der deutschen Einheit nicht allein aus Bundesmitteln getragen werden, sondern Länder und Kommunen mit hohen Beiträgen beteiligt werden würden, Werl etwa direkt mit geschätzten 1 Mio. DM und weiteren Belastungen über Weitergabe der Kosten durch Land und Landschaftsverband und Kreis, begann ich wieder zu agieren. Meine Vorschläge betrafen die städtischen Anteile an den Gebühren und die Zinsberechnung in den Gebührensatzungen nach dem Wiederbeschaffungszeitwert. Ersteres wurde von Rat und Verwaltung sofort akzeptiert. Das andere vom Rat zunächst abgelehnt, dann aber von der Verwaltung selbst aufgegriffen. (,,Warum sind wir nicht selbst darauf gekommen?") Die Aktionen sollten 1,3 Mio. DM jährlich insgesamt erbringen, nach neuen rechtlichen Urteilen trat eine Begrenzung des Einnahmegewinnes auf etwa 600 000 - 700 000 DM ein. Meiner inständigen Bitte, diesen jährlichen Betrag zur Kreditminderung zu verwenden, wurde nur in einem Jahr stattgegeben.\n' +
+                    '\n' +
+                    'Da aber inzwischen der Verwaltungshaushalt defizitär geworden war, half diese Summe - dann allerdings unbemerkt - Kassenkredite (Kontokorrent) einzusparen. Der große Wurf, etwa 1,5 Mio. DM im Jahresschnitt durch richtigen Einsatz der Abschreibungserlöse an Krediten einzusparen, ist nicht gelungen. In den 27 Jahren, die ich in Werl überschaue, wären das etwa 40 Mio. DM gewesen, mit einer jährlichen Zins- und Tilgungsersparnis von durchschnittlich 7% nach heutigem Zinsniveau. Im Halbzeitwert gerechnet hätten gut 35 Mio. DM aus eingesparten Zinsund Tilgungsleistungen als Investitionseigenmittel oder aber zur Kassenkreditminderung zur Verfügung gestanden. Positiv verblieben sind aber etwa 6 - 7 Mio. DM aus städtischen Mehreinnahmen an Gebühren zur Entlastung der Kassenkredite.\n' +
+                    '\n' +
+                    'Ich habe diese Ausführungen nicht gemacht, um mir selbst einen Orden an die Brust zu heften, mit dem Hinweis: Hättet ihr, so wäre das! Ich will damit die Hinweise eines meiner Lehrer (Kämmerer Warnke) über die Nachhaltigkeit von Finanzbeschlüssen über eine Wahlperiode hinaus, die ich eingangs schilderte, belegen und zum Bedenken weitergeben.\n' +
+                    '\n' +
+                    'Mit dem Vorgenannten ist der hausgemachte Anteil an der Finanzmisere unserer Stadt belegt worden!\n' +
+                    '\n' +
+                    'Äußere Einflüsse über den Bund, das Land NRW und den Kreis haben ebenfalls negative Wirkungen auf die Etats der Stadt genommen. Zur Erinnerung 1974 Kreditvolumen Kemhaushalt 18 Mio. DM Stadtwerke geschätzt 2 Mio. DM Gesamtverschuldung 20 Mio. DM 2002 Endenach DM gerechnet Investitionskredite (Kemhaushalt) 78 Mio. DM Kassenkredite für Haushaltsfehlbeträge 62 Mio. DM Kredit in Sondervermögen (KBW) 88 Mio. DM BBG 25 Mio. DM GWS 20 Mio. DM Stadtwerke 7 Mio. DM Gesamtverschuldung Ende 2002 280 Mio. DM.\n' +
+                    '\n' +
+                    'BBG und Stadtwerke erkenne ich eine saubere Haushaltsführung zu. Investitionssteuerung und Abschreibungspraxis sind meines Wissen in Ordnung. Es bleibt zu hoffen, dass der Gewinntransfer der Stadtwerke zur BBG steuerbegünstigt bleibt! Eine Gewinnabführung der BBG an den Kemhaushalt trotz eintretender Steuerpflicht dafür, sollte weiterhin angestrebt werden. Eine Beurteilung der GWS ist mir wegen fehlender Kenntnis nicht möglich. Es sollte, wenn irgend möglich, angestrebt werden, die GWS (mit Stadthalle) ohne städtischen Zuschuss zu fahren. Der KBW befindet sich nach dem erfolgreichen Bürgerentscheid - hoffentlich von allen Parteien getragen - in einer Optimierungsphase.\n' +
+                    '\n' +
+                    'Es ist zu hinterfragen, warum die als Zuführung aus den Rücklagen jährlich deklarierten Abschreibungsbeträge geringer sind, als die vereinnahmten Abschreibungsbeträge der kostenrechnenden Einrichtungen. Die Kredite im Sondervermögen sind über Gebühreneinnahmen gedeckt. Starker Gebührenanstieg bei beschleunigten Investitionen im Abwasserbereich ist zu befürchten. Da die Kredite der BBG, der GWS, der Stadtwerke und des KBW für den Kemhaushalt nicht relevant sind, sollen sie bei der weiteren Betrachtung keine Erwähnung mehr finden. Der Kemhaushalt weist wie oben erwähnt Investitionskredite von 78 Mio. DM und Kassenkredite von 62 Mio. DM aus. Nachnchtlich: Netto-Kreditaufnahmen von 2003 - 2005 sind mit 12,6 Mio. DM angegeben. Der Haushalt 2002 weist eine Zins- und Tilgungsverpflichtung von Zinsen der Investitionskredite 4,0 Mio. DM, Zinsen der Kassenkredite 3,2 Mio. DM, Tilgung der Investitionskredite 2,8 Mio. DM insgesamt 10,0 Mio. DM auf.\n' +
+                    '\n' +
+                    'Diese enorme Summe, die im wesentlichen die Defizite im Verwaltungshaushalt verursacht, wird sich zukünftig weiter erhöhen durch ganzjährige Einrechnung der Kreditaufnahmen des Jahres 2002 und der vorgesehenen Nettokreditaufnahmen in den Folgejahren bis 2005. Die angekündigten Zuweisungsminderungen des Landes für 2003 und die erwartete Erhöhung der Kreisumlagehebesätze (geschätzt insgesamt auf circa 5,0 Mio. DM) und das Rechnungsergebnis 2002 lassen erwarten, dass auch in Zukunft weitere Kassenkredite zum Ausgleich des Verwaltungshaushaltes erforderlich werden.\n' +
+                    '\n' +
+                    'Trübe Aussichten? Wenn einem das Wasser bis zum Halse steht, dann soll man den Kopf nicht hängen lassen! Dies sagt ein Spruch auf unserem Wochenkalender in der Küche. Es muss unter allen Umständen versucht werden, die zuvor genannten Auflagen für die städtischen Tochtergesellschaften durchzusetzen, um eine wesentliche Entlastung des Verwaltungshaushaltes zu erreichen. Die Optimierung des KBW ist zu beschleunigen. Abschreibungsbeträge sind zu kontrollieren, schnellere Berechnung und Einzug von Straßenanliegerkosten müssen angestrebt werden. Im Kemhaushalt sind Investitionsmaßnahmen so zu verschieben, dass flexibel gehandhabt - über die nächsten Jahre gesehen - keine Nettoneuverschuldung eintritt.\n' +
+                    '\n' +
+                    'Es ist zu überprüfen, ob bei der notwendigen Verlangsamung der Stadtentwicklung auch eine Verschlankung des Verwaltungsapparates möglich ist, mit Verringerung des Anstiegs der Personalkostenansätze im Etat. Das Land NRW hebt die fiktiven Hebesätze für die kommunalen Steuern an, dies hat zur Folge, das die realen Hebesätze auch in der Stadt Werl angehoben werden müssen, will man nicht erhebliche Verluste an Zuweisungen des Landes hinnehmen. Eine solche Steuererhöhung für die Bürger unserer Stadt sollte aber nur von uns akzeptiert werden, wenn das Land NRW die vorgenommene Erhöhung der Gewerbesteuerumlage zurücknimmt und auch der Kreis Soest weitere Einsparanstrengungen (auch im Personalbereich) unternimmt, um den Anstieg der Kreisumlagehebesätze in Grenzen zu halten. Ohne Besserung der Konjunkturlage und dadurch höhere Steuereinnahmen ist der originäre Hauhaltsausgleich wohl in Bälde nicht zu schaffen. Die von uns geforderte Verlängerungsfrist zum Defizitausgleich und Abbau der Kassenkredite ist auf eine realistische Zeitschiene zu bringen, ohne das Sparbemühungen zurückgefahren werden.\n' +
+                    '\n' +
+                    'Wir haben aus den vorherigen Ausführungen gesehen, wie zunächst klein erscheinende jährliche Fehlhandlungen mit Fehlbeträgen sich über die Länge der Jahre zur erdrückenden Last entwickelten. Im Umkehrschluss lässt sich aber auch vermerken, dass kleine Sparschritte, konsequent über Jahre durchgehalten, die Schritte zur Besserung der Finanzlage einleiten und langsam den Berg abbauen, der sich an Kassenkrediten angesammelt hat.\n' +
+                    '\n' +
+                    'Dies muss das Ziel sein. Es kann nur langfristig angesetzt werden, will man nicht alle kulturellen und sozialen Ansatze im Haushalt rigoros beschneiden, was nicht angestrebt werden darf Vorsichtige Ansätze unter Stadtdirektor Lipphardt, der erfolgreich die Nettokreditaufniahme zunächst auf 0 setzte und dann sogar Kreditrückführung im Investitionshaushalt bewirkte, sind leider nicht fortgeführt werden. Hier gilt es erneut anzusetzen.\n' +
+                    '\n' +
+                    'Durch die Fehlhandlungen der Vergangenheit ist der städtische Haushalt desolat geworden. Unsere Bürger werden durch Steuererhöhungen und Gebührenanstieg arg belastet werden, um einen völligen Zusammenbruch der Etats zu verhindern. Richtige Maßnahmen helfen diese Belastungen hoffentlich in tragbaren Grenzen zu halten. Es ist m.E. darauf zu achten, dass nicht einzelne Bürger besonders getroffen werden. Dies geschieht heute schon durch den Rückzug der Stadt aus der Beteiligung an den Erschließungskosten in Baugebieten, bei gleichbleibender Gebührenbelastung für alle Nutzer von städtischen Anlagen. Größere Ungerechtigkeiten wird es geben, wenn dazu zusätzlich noch außerhalb von Baugebieten liegende Infrastrukturmaßnahmen der Stadt auf die neuen Bauwilligen allein umgelegt werden sollen, ohne Beteiligung der Altbürger. Die Erschließungskosten pendeln sich dann auf den Marktpreis von Baugrundstücken zu (Enteignung zum Nulltarif?). Auf die Entwicklung der Erschließungsbeiträge ist durch Einwirkung auf Erschließungsstandards Einfluß zu nehmen. (O-Ton Graf Brühl: ,,Abrundung der Ecken von Eckgrundstücken" ändert die Deklaration dieser Grundstücke nicht. Dieser Hinweis zeigt aber, wie geringwertig Gerechtigkeit von der Mehrheitsfraktion gehalten wird.)\n' +
+                    '\n' +
+                    'Am Ende meiner kommunalpolitischen Tätigkeit wollte ich Ihnen meine persönliche Sicht der Dinge, die wir in manchen Sitzungen teilweise schon erörtert haben, in der Zusammenfassung wieder oder auch neu schriftlich zur Verfügung stellen.\n' +
+                    '\n' +
+                    'Ich bitte um Kenntnisnahme!',
+                datum: '30.11.2002',
+                autor: 'Dieter Riewe'
+            }
+
+
+        ]
+
 
     },
 
