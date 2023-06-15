@@ -191,9 +191,29 @@ export default createStore({
                 datum: "18.01.2014"
             }
         ],
-        rat: []
+        rat: [ {name: 'stefan',
+            titel: 'Professor',
+            bild: null,
+            vita: 'aflknaelfnalfnalfnafnl3qf'
+        },
+            {name: 'Leandro',
+            titel: 'doktor',
+            bild: null,
+            vita: 'a,jvn akjenvkeanvaevnaelv',
+            }],
+        vorstand: [ {name: 'stefan',
+            position: 'Vorsitzender',
+            bild: null,
+            vita: 'aflknaelfnalfnalfnafnl3qf'
+        },
+            {name: 'Leandro',
+                position: 'stelv. Vorsitzender',
+                bild: null,
+                vita: 'a,jvn akjenvkeanvaevnaelv',
+            }]
 
     },
+
     getters: {
         user: (state) => {
             return state.user

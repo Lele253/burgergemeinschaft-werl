@@ -49,10 +49,7 @@
 
     <v-card v-if="erfolgLoeschen" class="card" style="max-height: 500px">
       <v-card-title class="text-center"> Löschen</v-card-title>
-      <v-row class="mx-auto my-1" style="width: 95%">
-        <v-col class="text-center" cols="11"><h4>Text</h4></v-col>
-        <v-col class="text-center" cols="1"><h4>Löschen</h4></v-col>
-      </v-row>
+
       <v-row v-for="erfolg in erfolge" :key="erfolg"
              class="mx-auto my-1 mt-5" style="border: black solid 2px;border-radius: 10px; width: 95%">
         <v-col cols="11">
@@ -149,6 +146,8 @@ export default {
   box-shadow: 2px 4px 6px black;
   border-radius: 13px;
   overflow-y: auto;
+  background-color: rgba(255, 255, 255, 0.91);
+
 }
 
 </style>

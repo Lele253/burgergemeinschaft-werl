@@ -39,5 +39,7 @@ export default {
   box-shadow: 2px 4px 6px black;
   border-radius: 13px;
   overflow-y: auto;
+  background-color: rgba(255, 255, 255, 0.91);
+
 }
 </style>

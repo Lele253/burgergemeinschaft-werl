@@ -145,7 +145,7 @@ export default {
   overflow-y: auto;
   background-color: rgba(255, 255, 255, 0.91);
   box-shadow: 4px 6px 8px black;
-  border-radius: 20px 20px 20px 20px;
+  border-radius: 13px 13px 13px 13px;
 }
 
 .activeComponent {

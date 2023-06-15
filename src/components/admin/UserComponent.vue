@@ -22,7 +22,7 @@
         </v-btn>
       </v-col>
     </v-row>
-    <v-card class="card" style="max-height: 500px">
+    <v-card class="card" style="height: 500px">
       <div v-if="userAnlegen">
         <v-card-title class="text-center pb-8">User Anlegen</v-card-title>
         <v-row class=" mx-0" style="width: 100%">
@@ -215,6 +215,8 @@ export default {
   box-shadow: 2px 4px 6px black;
   border-radius: 13px;
   overflow-y: auto;
+  background-color: rgba(255, 255, 255, 0.91);
+
 }
 
 

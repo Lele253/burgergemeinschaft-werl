@@ -96,6 +96,7 @@ export default {
 .user-card {
   width: 100%;
   margin: auto;
+  box-shadow: 2px 2px 4px black;
 }
 
 .info-item {

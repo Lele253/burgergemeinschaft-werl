@@ -114,9 +114,9 @@ export default {
       userAktive: false,
       aktuellesAktive: false,
       erfolgeAktive: false,
-      kommentareAktive: true,
+      kommentareAktive: false,
       pressearchivAktive: false,
-      ratAktive: false,
+      ratAktive: true,
       vorstandAktiv: false,
       bewerbungAktive: false,
     }
