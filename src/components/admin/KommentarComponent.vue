@@ -14,6 +14,7 @@
       </v-btn>
     </v-col>
   </v-row>
+
   <v-card v-if="kommentarAnlegen" class="card">
     <v-card-title class="text-center pb-8">Kommentar Anlegen</v-card-title>
     <v-row class="justify-center mx-0" style="width: 100%">

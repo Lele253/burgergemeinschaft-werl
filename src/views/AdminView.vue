@@ -85,7 +85,7 @@
           <KommentarComponent></KommentarComponent>
         </v-col>
         <v-col v-if="vorstandAktiv" cols="9">
-            <VorstandComponent></VorstandComponent>
+          <VorstandComponent></VorstandComponent>
         </v-col>
         <v-col v-if="bewerbungAktive" cols="9">
           <BewerbungComponent></BewerbungComponent>
@@ -115,17 +115,24 @@ export default {
       aktuellesAktive: false,
       erfolgeAktive: false,
       kommentareAktive: false,
-      pressearchivAktive: false,
-      ratAktive: true,
+      pressearchivAktive: true,
+      ratAktive: false,
       vorstandAktiv: false,
       bewerbungAktive: false,
     }
   },
   components: {
-    HeaderComponent,UserComponent,AktuellesComponent,ErfolgeComponent,BewerbungComponent,PressearchivComponent,RatComponent,VorstandComponent,KommentarComponent
+    HeaderComponent,
+    UserComponent,
+    AktuellesComponent,
+    ErfolgeComponent,
+    BewerbungComponent,
+    PressearchivComponent,
+    RatComponent,
+    VorstandComponent,
+    KommentarComponent
   },
-  methods: {
-  },
+  methods: {},
   created() {
     this.$store.state.routername = this.name
   }
@@ -140,12 +147,14 @@ export default {
   padding-left: 20px;
   padding-right: 20px;
 }
+
 .button-links {
   width: 90%;
   height: 40px;
   border-radius: 13px;
   box-shadow: 2px 4px 6px black;
 }
+
 .col-links {
   padding-bottom: 0;
 }
