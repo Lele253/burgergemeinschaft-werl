@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="background mt-3">
-    <HeaderComponent/>
+    <div class="background" style="position:fixed;">
+      <HeaderComponent/>
       <v-row class="d-flex justify-center mt-1">
         <v-col class="d-flex justify-center" cols="7">
           <v-card class=" card">
@@ -54,7 +54,7 @@ export default ({
 
 .background {
   width: 100vw;
-  height: 100vh;
+  height: 10vh;
   background-image: url('../assets/werl.png');
   background-size: cover;
   background-position: center;

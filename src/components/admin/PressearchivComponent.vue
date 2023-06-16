@@ -16,27 +16,30 @@
     <!--    Anlegen-->
 
     <div class="d-flex justify-center">
-      <v-card v-if="anlegen" class="card">
+      <v-card v-if="anlegen" class="cardAnlegen">
         <v-row class="mx-0 my-0 mt-5 d-flex justify-center " style="width: 100%">
-          <v-col cols="5">
-            <v-text-field v-model="titel" label="Titel" variant="solo"/>
+          <v-col cols="12">
+            <h2 class="text-center mt-n5">Beitrag Anlegen</h2>
           </v-col>
           <v-col cols="5">
-            <v-text-field v-model="untertitel" label="Untertitel (optional)" variant="solo"/>
+            <v-text-field v-model="titel" label="Titel" variant="outlined"/>
           </v-col>
-          <v-col cols="3">
-            <v-text-field v-model="autor" label="Autor" variant="solo"/>
+          <v-col cols="5">
+            <v-text-field v-model="untertitel" label="Untertitel (optional)" variant="outlined"/>
           </v-col>
-          <v-col cols="4">
-            <v-file-input v-model="bild" label="Bild (optional)" prepend-icon="mdi-camera" variant="solo"/>
+          <v-col class="mt-n5" cols="3">
+            <v-text-field v-model="autor" label="Autor" variant="outlined"/>
           </v-col>
-          <v-col cols="3">
-            <v-text-field v-model="position" label="Position" variant="solo"/>
+          <v-col class="mt-n5" cols="4">
+            <v-file-input v-model="bild" label="Bild (optional)" prepend-icon="mdi-camera" variant="outlined"/>
           </v-col>
-          <v-col cols="10">
-            <v-textarea v-model="text" label="Inhalt" variant="solo"/>
+          <v-col class="mt-n5" cols="3">
+            <v-text-field v-model="position" label="Position" variant="outlined"/>
           </v-col>
-          <v-col class="d-flex justify-center mb-5" cols="10">
+          <v-col class="mt-n5" cols="10">
+            <v-textarea v-model="text" label="Inhalt" variant="outlined"/>
+          </v-col>
+          <v-col class="d-flex justify-center mt-n5" cols="10">
             <v-btn color="green" @click="speichern"> Speichern</v-btn>
             <v-btn class="ml-2" color="red" @click="clear"> Leeren</v-btn>
           </v-col>
@@ -73,7 +76,7 @@
             <p class="text-center ">{{ beitrag.text }}</p>
           </v-col>
 
-          <v-col cols="2">
+          <v-col class="align-center d-flex justify-center" cols="2">
             <p class="text-center mt-3">{{ beitrag.autor }}</p>
           </v-col>
 
@@ -109,8 +112,8 @@ export default {
       datum: '',
       position: '',
 
-      anlegen: false,
-      löschen: true,
+      anlegen: true,
+      löschen: false,
     }
   },
   components: {
@@ -151,17 +154,17 @@ export default {
       this.text = ''
     },
     getDate() {
-      var datum = new Date();
-      var tag = datum.getDate();
-      var monat = datum.getMonth() + 1; // Monate beginnen bei 0, daher +1
-      var jahr = datum.getFullYear();
+      let datum = new Date();
+      let tag = datum.getDate();
+      let monat = datum.getMonth() + 1; // Monate beginnen bei 0, daher +1
+      let jahr = datum.getFullYear();
       if (tag < 10) {
         tag = "0" + tag;
       }
       if (monat < 10) {
         monat = "0" + monat;
       }
-      var formatiertesDatum = tag + "." + monat + "." + jahr;
+      let formatiertesDatum = tag + "." + monat + "." + jahr;
       return formatiertesDatum
     },
     reloadBeiträge() {
@@ -179,9 +182,17 @@ export default {
 
 <style scoped>
 .card {
+  overflow-y: scroll;
   width: 90%;
-  height: 65vh;
-  overflow-y: auto;
+  height: 500px;
+  background-color: rgba(255, 255, 255, 0.91);
+  box-shadow: 4px 6px 8px black;
+  border-radius: 13px 13px 13px 13px;
+}
+
+.cardAnlegen {
+  width: 90%;
+  height: 500px;
   background-color: rgba(255, 255, 255, 0.91);
   box-shadow: 4px 6px 8px black;
   border-radius: 13px 13px 13px 13px;

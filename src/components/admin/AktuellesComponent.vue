@@ -16,15 +16,19 @@
     <!--    Anlegen-->
 
     <div class="d-flex justify-center">
-      <v-card v-if="anlegen" class="card">
-        <v-row class="mx-0 my-0 mt-5 d-flex justify-center " style="width: 100%">
+      <v-card v-if="anlegen" class="cardAnlegen d-flex align-center">
+
+        <v-row class="mx-0 ml-0 mr-0 my-0 d-flex justify-center " style="width: 100%">
+          <v-col cols="12">
+            <h2 class="text-center">Beitrag Anlegen</h2>
+          </v-col>
           <v-col cols="5">
             <v-text-field v-model="titel" label="Titel" variant="outlined"/>
           </v-col>
           <v-col cols="10">
-            <v-textarea v-model="text" label="Inhalt" rows="9" variant="outlined"/>
+            <v-textarea v-model="text" label="Inhalt" rows="8" variant="outlined"/>
           </v-col>
-          <v-col class="d-flex justify-center mb-5" cols="10">
+          <v-col class="d-flex justify-center align-center mt-n5" cols="10">
             <v-btn color="green" @click="speichern"> Speichern</v-btn>
             <v-btn class="ml-2" color="red" @click="clear"> Leeren</v-btn>
           </v-col>
@@ -37,9 +41,9 @@
     <div class="d-flex justify-center">
       <v-card v-if="löschen" class="card">
         <v-row class="mx-auto my-1" style="width: 95%">
-          <v-col class="text-center" cols="3"><h4>Titel</h4></v-col>
-          <v-col class="text-center" cols="6"><h4>Inhalt</h4></v-col>
-          <v-col class="text-center" cols="2"><h4>Datum</h4></v-col>
+          <v-col class="text-center" cols="3"><h3>Titel</h3></v-col>
+          <v-col class="text-center" cols="6"><h3>Inhalt</h3></v-col>
+          <v-col class="text-center" cols="2"><h3>Datum</h3></v-col>
         </v-row>
         <v-row v-for="beitrag in beiträge" :key="beitrag"
                class="mx-auto my-1 mt-5" style="border: black solid 2px;border-radius: 10px; width: 95%">
@@ -49,7 +53,7 @@
           <v-col cols="6" style="height: 150px; overflow-y: auto">
             {{ beitrag.text }}
           </v-col>
-          <v-col cols="2">
+          <v-col class="d-flex align-center justify-center" cols="2">
             <p class="text-center">{{ beitrag.datum }}</p>
           </v-col>
           <v-col class="py-0 pr-1 d-flex align-center justify-center" cols="1">
@@ -110,17 +114,17 @@ export default {
       this.text = ''
     },
     getDate() {
-      var datum = new Date();
-      var tag = datum.getDate();
-      var monat = datum.getMonth() + 1; // Monate beginnen bei 0, daher +1
-      var jahr = datum.getFullYear();
+      let datum = new Date();
+      let tag = datum.getDate();
+      let monat = datum.getMonth() + 1; // Monate beginnen bei 0, daher +1
+      let jahr = datum.getFullYear();
       if (tag < 10) {
         tag = "0" + tag;
       }
       if (monat < 10) {
         monat = "0" + monat;
       }
-      var formatiertesDatum = tag + "." + monat + "." + jahr;
+      let formatiertesDatum = tag + "." + monat + "." + jahr;
       return formatiertesDatum
     },
     reloadBeiträge() {
@@ -138,10 +142,17 @@ export default {
 
 <style scoped>
 .card {
+  overflow-y: scroll;
   width: 90%;
-  height: 100%;
-  max-height: 500px;
-  overflow-y: auto;
+  height: 500px;
+  background-color: rgba(255, 255, 255, 0.91);
+  box-shadow: 4px 6px 8px black;
+  border-radius: 13px 13px 13px 13px;
+}
+
+.cardAnlegen {
+  width: 90%;
+  height: 500px;
   background-color: rgba(255, 255, 255, 0.91);
   box-shadow: 4px 6px 8px black;
   border-radius: 13px 13px 13px 13px;

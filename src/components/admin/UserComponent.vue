@@ -1,132 +1,138 @@
 <template>
   <div>
+
+    <!--     Menu-->
+
     <v-row class="mb-1 px-0" style="width: 100% ">
-      <v-col class="d-flex justify-center">
+      <v-col class="d-flex justify-end">
         <v-btn :class="{ 'userAnlegen': userAnlegen }"
                class="button-links" @click="userAnlegen= true;userLoeschen=false; userBearbeiten=false">
           User anlegen
         </v-btn>
       </v-col>
-      <v-col class="d-flex justify-center">
+      <v-col class="d-flex justify-start">
 
         <v-btn :class="{ 'userLoeschen': userLoeschen }"
                class="button-links" @click="userAnlegen= false;userLoeschen=true; userBearbeiten=false">
           User Löschen
         </v-btn>
       </v-col>
-      <v-col class="d-flex justify-center">
+      <!--      <v-col class="d-flex justify-center">
 
-        <v-btn :class="{ 'userBearbeiten': userBearbeiten }"
-               class="button-links" @click="userAnlegen= false;userLoeschen=false; userBearbeiten=true">
-          User bearbeiten
-        </v-btn>
-      </v-col>
+              <v-btn :class="{ 'userBearbeiten': userBearbeiten }"
+                     class="button-links" @click="userAnlegen= false;userLoeschen=false; userBearbeiten=true">
+                User bearbeiten
+              </v-btn>
+            </v-col>-->
     </v-row>
-    <v-card class="card" style="height: 500px">
-      <div v-if="userAnlegen">
-        <v-card-title class="text-center pb-8">User Anlegen</v-card-title>
-        <v-row class=" mx-0" style="width: 100%">
-          <v-col cols="6">
-            <v-text-field v-model="vorname" label="Vorname" variant="solo">
 
-            </v-text-field>
-          </v-col>
-          <v-col cols="6">
-            <v-text-field v-model="nachname" label="Nachname" variant="solo">
+    <!--    Inhalt-->
 
-            </v-text-field>
-          </v-col>
-          <v-col cols="6">
-            <v-text-field v-model="email" label="Email" variant="solo">
+    <div class="d-flex justify-center">
+      <v-card class="card" style="height: 500px">
 
-            </v-text-field>
-          </v-col>
-          <v-col cols="6">
-            <v-text-field v-model="passwort" label="Passwort" type="password" variant="solo">
+        <!--      Anlegen-->
 
-            </v-text-field>
-          </v-col>
-          <v-col cols="6">
-            <v-select v-model="berechtigung" :items="berechtigungenItems" label="Berechtigung" variant="solo">
+        <div v-if="userAnlegen">
+          <v-card-item class="text-center pb-10 mt-5"><h2>User Anlegen</h2></v-card-item>
+          <v-row class="d-flex justify-center ml-0" style="width: 100%">
+            <v-col cols="5">
+              <v-text-field v-model="vorname" label="Vorname" variant="outlined"/>
+            </v-col>
+            <v-col cols="5">
+              <v-text-field v-model="nachname" label="Nachname" variant="outlined"/>
+            </v-col>
+            <v-col cols="5">
+              <v-text-field v-model="email" label="Email" variant="outlined"/>
+            </v-col>
+            <v-col cols="5">
+              <v-text-field v-model="passwort" label="Passwort" type="password" variant="outlined"/>
+            </v-col>
+            <v-col cols="5">
+              <v-file-input v-model="profilBild" accept="image/*" label="Bild" prepend-icon="mdi-camera"
+                            variant="outlined"/>
+            </v-col>
+            <v-col cols="5">
+              <v-select v-model="berechtigung" :items="berechtigungenItems" label="Berechtigung" variant="outlined"/>
+            </v-col>
+            <v-col class="d-flex justify-center" cols="12">
+              <v-btn class="text-white" style="background-color: #2F53A7" @click="userErstellen">
+                Erstellen
+              </v-btn>
+            </v-col>
+          </v-row>
+        </div>
 
-            </v-select>
-          </v-col>
-          <v-col cols="6">
-            <v-file-input v-model="profilBild" label="Bild" variant="solo">
+        <!--        Löschen-->
 
-            </v-file-input>
-          </v-col>
-          <v-col class="d-flex justify-center" cols="12">
-            <v-btn class="mt-n5 text-white" style="background-color: #2F53A7" @click="userErstellen">
-              Erstellen
-            </v-btn>
-          </v-col>
-        </v-row>
-      </div>
-      <div v-if="userLoeschen">
-        <v-card-title class="text-center pb-8">User Löschen</v-card-title>
-        <v-row class="mx-auto" style="width: 95%">
-          <v-col cols="3">Vorname</v-col>
-          <v-col cols="3">Nachname</v-col>
-          <v-col cols="3">Email</v-col>
-          <v-col cols="2">Berechtigung</v-col>
-        </v-row>
-        <v-row v-for="x in userArray" :key="x"
-               class="mx-auto my-1" style="border: black solid 2px;border-radius: 10px; width: 95%">
-          <v-col cols="3">
-            {{ x.vorname }}
-          </v-col>
-          <v-col cols="3">
-            {{ x.nachname }}
-          </v-col>
-          <v-col cols="3">
-            {{ x.email }}
-          </v-col>
-          <v-col cols="2">
-            {{ x.berechtigung }}
-          </v-col>
-          <v-col class="py-0 pr-1 d-flex align-center justify-end">
-            <Icon icon="tabler:trash-x-filled" style="font-size: 30px; color: red; cursor: pointer"/>
-          </v-col>
-        </v-row>
-      </div>
-      <div v-if="userBearbeiten">
-        <v-card-title class="text-center pb-8">User Löschen</v-card-title>
-        <v-row class="mx-auto" style="width: 95%">
-          <v-col cols="3">Vorname</v-col>
-          <v-col cols="3">Nachname</v-col>
-          <v-col cols="3">Email</v-col>
-          <v-col cols="2">Berechtigung</v-col>
-        </v-row>
-        <v-row v-for="x in userArray" :key="x" class="mx-auto my-1" style=" width: 95%">
-          <v-col class="pa-0" cols="3">
-            <v-text-field v-model="x.vorname" variant="solo">
+        <div v-if="userLoeschen">
+          <v-card-item class="text-center pb-10 mt-5"><h2>User Anlegen</h2></v-card-item>
+          <v-row class="mx-auto" style="width: 95%">
+            <v-col cols="3">Vorname</v-col>
+            <v-col cols="3">Nachname</v-col>
+            <v-col cols="3">Email</v-col>
+            <v-col cols="2">Berechtigung</v-col>
+          </v-row>
+          <v-row v-for="x in userArray" :key="x"
+                 class="mx-auto my-1" style="border: black solid 2px;border-radius: 10px; width: 95%">
+            <v-col cols="3">
+              {{ x.vorname }}
+            </v-col>
+            <v-col cols="3">
+              {{ x.nachname }}
+            </v-col>
+            <v-col cols="3">
+              {{ x.email }}
+            </v-col>
+            <v-col cols="2">
+              {{ x.berechtigung }}
+            </v-col>
+            <v-col class="py-0 pr-1 d-flex align-center justify-end">
+              <Icon icon="tabler:trash-x-filled" style="font-size: 30px; color: red; cursor: pointer"/>
+            </v-col>
+          </v-row>
+        </div>
 
-            </v-text-field>
+        <!--        Bearbeiten-->
 
-          </v-col>
-          <v-col class="pa-0" cols="3">
-            <v-text-field v-model="x.nachname" variant="solo">
+        <!--      <div v-if="userBearbeiten">
+                <v-card-title class="text-center pb-8">User Löschen</v-card-title>
+                <v-row class="mx-auto" style="width: 95%">
+                  <v-col cols="3">Vorname</v-col>
+                  <v-col cols="3">Nachname</v-col>
+                  <v-col cols="3">Email</v-col>
+                  <v-col cols="2">Berechtigung</v-col>
+                </v-row>
+                <v-row v-for="x in userArray" :key="x" class="mx-auto my-1" style=" width: 95%">
+                  <v-col class="pa-0" cols="3">
+                    <v-text-field v-model="x.vorname" variant="solo">
 
-            </v-text-field>
-          </v-col>
-          <v-col class="pa-0" cols="3">
-            <v-text-field v-model="x.email" variant="solo">
+                    </v-text-field>
 
-            </v-text-field>
-          </v-col>
-          <v-col class="pa-0" cols="2">
-            <v-select v-model="x.berechtigung" :items="berechtigungenItems" variant="solo">
+                  </v-col>
+                  <v-col class="pa-0" cols="3">
+                    <v-text-field v-model="x.nachname" variant="solo">
 
-            </v-select>
+                    </v-text-field>
+                  </v-col>
+                  <v-col class="pa-0" cols="3">
+                    <v-text-field v-model="x.email" variant="solo">
 
-          </v-col>
-          <v-col class="py-0 pr-1 d-flex align-center justify-end">
-            <Icon icon="fluent-mdl2:accept-medium" style="font-size: 30px; color: green; cursor: pointer"/>
-          </v-col>
-        </v-row>
-      </div>
-    </v-card>
+                    </v-text-field>
+                  </v-col>
+                  <v-col class="pa-0" cols="2">
+                    <v-select v-model="x.berechtigung" :items="berechtigungenItems" variant="solo">
+
+                    </v-select>
+
+                  </v-col>
+                  <v-col class="py-0 pr-1 d-flex align-center justify-end">
+                    <Icon icon="fluent-mdl2:accept-medium" style="font-size: 30px; color: green; cursor: pointer"/>
+                  </v-col>
+                </v-row>
+              </div>-->
+      </v-card>
+    </div>
   </div>
 </template>
 
@@ -135,14 +141,13 @@ import {Icon} from "@iconify/vue/dist/iconify";
 
 export default {
   name: "UserComponent",
-  components:{
+  components: {
     Icon
   },
-  data(){
-    return{
-      userAnlegen: false,
+  data() {
+    return {
+      userAnlegen: true,
       userLoeschen: false,
-      userBearbeiten: true,
       berechtigung: '',
       vorname: '',
       nachname: '',
@@ -168,11 +173,77 @@ export default {
         email: 'testmail',
         berechtigung: 'Admin',
         profilBild: null
-      }, ]
+      }, {
+        vorname: 'stefan',
+        nachname: 'Franke',
+        email: 'testmail',
+        berechtigung: 'Admin',
+        profilBild: null
+      }, {
+        vorname: 'stefan',
+        nachname: 'Franke',
+        email: 'testmail',
+        berechtigung: 'Admin',
+        profilBild: null
+      }, {
+        vorname: 'stefan',
+        nachname: 'Franke',
+        email: 'testmail',
+        berechtigung: 'Admin',
+        profilBild: null
+      }, {
+        vorname: 'stefan',
+        nachname: 'Franke',
+        email: 'testmail',
+        berechtigung: 'Admin',
+        profilBild: null
+      }, {
+        vorname: 'stefan',
+        nachname: 'Franke',
+        email: 'testmail',
+        berechtigung: 'Admin',
+        profilBild: null
+      }, {
+        vorname: 'stefan',
+        nachname: 'Franke',
+        email: 'testmail',
+        berechtigung: 'Admin',
+        profilBild: null
+      }, {
+        vorname: 'stefan',
+        nachname: 'Franke',
+        email: 'testmail',
+        berechtigung: 'Admin',
+        profilBild: null
+      }, {
+        vorname: 'stefan',
+        nachname: 'Franke',
+        email: 'testmail',
+        berechtigung: 'Admin',
+        profilBild: null
+      }, {
+        vorname: 'stefan',
+        nachname: 'Franke',
+        email: 'testmail',
+        berechtigung: 'Admin',
+        profilBild: null
+      }, {
+        vorname: 'stefan',
+        nachname: 'Franke',
+        email: 'testmail',
+        berechtigung: 'Admin',
+        profilBild: null
+      }, {
+        vorname: 'stefan',
+        nachname: 'Franke',
+        email: 'testmail',
+        berechtigung: 'Admin',
+        profilBild: null
+      },]
 
     }
   },
-  methods:{
+  methods: {
     userErstellen() {
       this.userArray.push({
         vorname: this.vorname,
@@ -209,14 +280,15 @@ export default {
   background-color: #2F53A7;
   color: white;
 }
+
 .card {
-  width: 100%;
-  height: 88%;
-  box-shadow: 2px 4px 6px black;
-  border-radius: 13px;
+  width: 90%;
+  height: 100%;
+  max-height: 500px;
   overflow-y: auto;
   background-color: rgba(255, 255, 255, 0.91);
-
+  box-shadow: 4px 6px 8px black;
+  border-radius: 13px 13px 13px 13px;
 }
 
 

@@ -1,96 +1,101 @@
 <template>
   <div>
     <HeaderComponent/>
-    <div class="background">
-      <v-row class="px-0" style="height: 100%; width: 100%">
-        <v-col cols="3" style="height: 100%">
-          <div class="d-flex align-center" style="height: 100%">
-            <v-row class=" px-0" style="width: 100%">
-              <v-col class="d-flex justify-center  col-links" cols="11">
-                <v-btn :class="{ 'userAktive': userAktive }"
-                       class="button-links"
-                       @click="vorstandAktiv= false;  userAktive=userAktive = true; aktuellesAktive= false;erfolgeAktive=false;kommentareAktive=false;pressearchivAktive=false;ratAktive=false;bewerbungAktive=false">
-                  User
-                </v-btn>
-              </v-col>
-              <v-col class="d-flex justify-center  col-links" cols="11">
-                <v-btn :class="{ 'userAktive': aktuellesAktive }"
-                       class="button-links"
-                       @click="vorstandAktiv= false; userAktive=userAktive = false; aktuellesAktive= true;erfolgeAktive=false;kommentareAktive=false;pressearchivAktive=false;ratAktive=false;bewerbungAktive=false">
-                  Aktuelles
-                </v-btn>
-              </v-col>
-              <v-col class="d-flex justify-center  col-links" cols="11">
-                <v-btn :class="{ 'userAktive': erfolgeAktive }"
-                       class="button-links"
-                       @click="vorstandAktiv= false; userAktive=userAktive = false; aktuellesAktive= false;erfolgeAktive=true;kommentareAktive=false;pressearchivAktive=false;ratAktive=false;bewerbungAktive=false">
-                  Erfolge
-                </v-btn>
-              </v-col>
-              <v-col class="d-flex justify-center  col-links" cols="11">
-                <v-btn :class="{ 'userAktive': kommentareAktive }"
-                       class="button-links"
-                       @click="vorstandAktiv= false; userAktive=userAktive = false; aktuellesAktive= false;erfolgeAktive=false;kommentareAktive=true;pressearchivAktive=false;ratAktive=false;bewerbungAktive=false">
-                  Kommentare
-                </v-btn>
-              </v-col>
-              <v-col class="d-flex justify-center  col-links" cols="11">
-                <v-btn :class="{ 'userAktive': pressearchivAktive }"
-                       class="button-links"
-                       @click="vorstandAktiv= false; userAktive=userAktive = false; aktuellesAktive= false;erfolgeAktive=false;kommentareAktive=false;pressearchivAktive=true;ratAktive=false;bewerbungAktive=false">
-                  Pressearchiv
-                </v-btn>
-              </v-col>
-              <v-col class="d-flex justify-center  col-links" cols="11">
-                <v-btn :class="{ 'userAktive': ratAktive  }"
-                       class="button-links"
-                       @click=" vorstandAktiv= false; userAktive=userAktive = false; aktuellesAktive= false;erfolgeAktive=false;kommentareAktive=false;pressearchivAktive=false;ratAktive=true;bewerbungAktive=false">
-                  Rat
-                </v-btn>
-              </v-col>
-              <v-col class="d-flex justify-center  col-links" cols="11">
-                <v-btn :class="{ 'userAktive': vorstandAktiv  }"
-                       class="button-links"
-                       @click="vorstandAktiv= true; userAktive=userAktive = false; aktuellesAktive= false;erfolgeAktive=false;kommentareAktive=false;pressearchivAktive=false;ratAktive=false;bewerbungAktive=false">
-                  Vorstand
-                </v-btn>
-              </v-col>
-              <v-col class="d-flex justify-center  col-links" cols="11">
-                <v-btn :class="{ 'userAktive': bewerbungAktive  }"
-                       class="button-links"
-                       @click="vorstandAktiv= false; userAktive=userAktive = false; aktuellesAktive= false;erfolgeAktive=false;kommentareAktive=false;pressearchivAktive=false;ratAktive=false;bewerbungAktive=true">
-                  Bewerbung
-                </v-btn>
-              </v-col>
-            </v-row>
-          </div>
+    <div class="background d-flex justify-center" style="position: fixed; height: 86vh">
+      <!--      <v-row class="px-0" style="height: 100%; width: 100%">-->
+      <!--        <v-col cols="3" style="height: 100%">-->
 
-        </v-col>
-        <v-col v-if="userAktive" cols="9">
-          <UserComponent></UserComponent>
-        </v-col>
-        <v-col v-if="aktuellesAktive" cols="9">
-          <AktuellesComponent></AktuellesComponent>
-        </v-col>
-        <v-col v-if="erfolgeAktive" cols="9">
-          <ErfolgeComponent></ErfolgeComponent>
-        </v-col>
-        <v-col v-if="pressearchivAktive" cols="9">
-          <PressearchivComponent></PressearchivComponent>
-        </v-col>
-        <v-col v-if="ratAktive" cols="9">
-          <RatComponent></RatComponent>
-        </v-col>
-        <v-col v-if="kommentareAktive" cols="9">
-          <KommentarComponent></KommentarComponent>
-        </v-col>
-        <v-col v-if="vorstandAktiv" cols="9">
-          <VorstandComponent></VorstandComponent>
-        </v-col>
-        <v-col v-if="bewerbungAktive" cols="9">
-          <BewerbungComponent></BewerbungComponent>
-        </v-col>
-      </v-row>
+      <div class="d-flex align-center mt-n8" style="height: 100%; width: 20vw">
+        <v-row class=" px-0" style="width: 100%">
+          <v-col class="d-flex justify-center  col-links" cols="12">
+            <v-btn :class="{ 'userAktive': userAktive }"
+                   class="button-links"
+                   @click="vorstandAktiv= false;  userAktive=userAktive = true; aktuellesAktive= false;erfolgeAktive=false;kommentareAktive=false;pressearchivAktive=false;ratAktive=false;bewerbungAktive=false">
+              User
+            </v-btn>
+          </v-col>
+          <v-col class="d-flex justify-center  col-links" cols="12">
+            <v-btn :class="{ 'userAktive': aktuellesAktive }"
+                   class="button-links"
+                   @click="vorstandAktiv= false; userAktive=userAktive = false; aktuellesAktive= true;erfolgeAktive=false;kommentareAktive=false;pressearchivAktive=false;ratAktive=false;bewerbungAktive=false">
+              Aktuelles
+            </v-btn>
+          </v-col>
+          <v-col class="d-flex justify-center  col-links" cols="12">
+            <v-btn :class="{ 'userAktive': erfolgeAktive }"
+                   class="button-links"
+                   @click="vorstandAktiv= false; userAktive=userAktive = false; aktuellesAktive= false;erfolgeAktive=true;kommentareAktive=false;pressearchivAktive=false;ratAktive=false;bewerbungAktive=false">
+              Erfolge
+            </v-btn>
+          </v-col>
+          <v-col class="d-flex justify-center  col-links" cols="12">
+            <v-btn :class="{ 'userAktive': kommentareAktive }"
+                   class="button-links"
+                   @click="vorstandAktiv= false; userAktive=userAktive = false; aktuellesAktive= false;erfolgeAktive=false;kommentareAktive=true;pressearchivAktive=false;ratAktive=false;bewerbungAktive=false">
+              Kommentare
+            </v-btn>
+          </v-col>
+          <v-col class="d-flex justify-center  col-links" cols="12">
+            <v-btn :class="{ 'userAktive': pressearchivAktive }"
+                   class="button-links"
+                   @click="vorstandAktiv= false; userAktive=userAktive = false; aktuellesAktive= false;erfolgeAktive=false;kommentareAktive=false;pressearchivAktive=true;ratAktive=false;bewerbungAktive=false">
+              Pressearchiv
+            </v-btn>
+          </v-col>
+          <v-col class="d-flex justify-center  col-links" cols="12">
+            <v-btn :class="{ 'userAktive': ratAktive  }"
+                   class="button-links"
+                   @click=" vorstandAktiv= false; userAktive=userAktive = false; aktuellesAktive= false;erfolgeAktive=false;kommentareAktive=false;pressearchivAktive=false;ratAktive=true;bewerbungAktive=false">
+              Rat
+            </v-btn>
+          </v-col>
+          <v-col class="d-flex justify-center  col-links" cols="12">
+            <v-btn :class="{ 'userAktive': vorstandAktiv  }"
+                   class="button-links"
+                   @click="vorstandAktiv= true; userAktive=userAktive = false; aktuellesAktive= false;erfolgeAktive=false;kommentareAktive=false;pressearchivAktive=false;ratAktive=false;bewerbungAktive=false">
+              Vorstand
+            </v-btn>
+          </v-col>
+          <v-col class="d-flex justify-center  col-links" cols="12">
+            <v-btn :class="{ 'userAktive': bewerbungAktive  }"
+                   class="button-links"
+                   @click="vorstandAktiv= false; userAktive=userAktive = false; aktuellesAktive= false;erfolgeAktive=false;kommentareAktive=false;pressearchivAktive=false;ratAktive=false;bewerbungAktive=true">
+              Bewerbung
+            </v-btn>
+          </v-col>
+        </v-row>
+      </div>
+
+      <!--        </v-col>-->
+      <div class="d-flex justify-center align-center mt-n10" style="width: 60vw; height: 100%">
+        <v-row style="width: 100%">
+          <v-col v-if="userAktive" cols="12">
+            <UserComponent/>
+          </v-col>
+          <v-col v-if="aktuellesAktive" cols="12">
+            <AktuellesComponent/>
+          </v-col>
+          <v-col v-if="erfolgeAktive" cols="12">
+            <ErfolgeComponent/>
+          </v-col>
+          <v-col v-if="pressearchivAktive" cols="12">
+            <PressearchivComponent/>
+          </v-col>
+          <v-col v-if="ratAktive" cols="12">
+            <RatComponent/>
+          </v-col>
+          <v-col v-if="kommentareAktive" cols="12">
+            <KommentarComponent/>
+          </v-col>
+          <v-col v-if="vorstandAktiv" cols="12">
+            <VorstandComponent/>
+          </v-col>
+          <v-col v-if="bewerbungAktive" cols="12">
+            <BewerbungComponent/>
+          </v-col>
+        </v-row>
+      </div>
+
     </div>
   </div>
 </template>
@@ -111,11 +116,11 @@ export default {
     return {
       name: 'Admin',
       background: require('../assets/aktuelles.jpeg'),
-      userAktive: false,
+      userAktive: true,
       aktuellesAktive: false,
       erfolgeAktive: false,
       kommentareAktive: false,
-      pressearchivAktive: true,
+      pressearchivAktive: false,
       ratAktive: false,
       vorstandAktiv: false,
       bewerbungAktive: false,
@@ -143,6 +148,7 @@ export default {
 .background {
   background-color: rgba(47, 83, 167, 0.52);
   height: 85vh;
+  width: 100vw;
   padding-top: 10px;
   padding-left: 20px;
   padding-right: 20px;

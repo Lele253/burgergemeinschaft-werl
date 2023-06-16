@@ -1,17 +1,15 @@
 <template>
   <div>
     <HeaderComponent/>
-    <v-img :src="background" cover style="height: 81vh">
+    <v-img :src="background" cover style="height: 85vh;position:fixed;">
       <div class="d-flex align-center" style="background-color: rgba(255,255,255,0.56);height: 100%; width: 100%">
-
         <v-row class="d-flex justify-center mt-n15" style="width: 100%;">
-          <v-col cols="4" style="height: 500px; overflow-y: auto">
+          <v-col class="hidden-sm-and-down" cols="4" style="height: 500px; overflow-y: auto">
             <v-row v-for="beitrag in beiträge" :key="beitrag" class="d-flex justify-center">
               <v-card
                   :class="{ 'selected-card': beitrag.selected }"
                   class="mt-3 cardArtikelVorschau"
-                  @click="selectCard(beitrag); this.beitrag = beitrag"
-              >
+                  @click="selectCard(beitrag); this.beitrag = beitrag">
                 <v-col class="mt-3" cols="12">
                   <h3 class="text-center mx-5" style="color: black">{{ beitrag.titel }}</h3>
                 </v-col>
@@ -23,10 +21,10 @@
 
 
           </v-col>
-          <v-col class="d-flex justify-center" cols="6">
+          <v-col class="d-flex justify-center" cols="8">
             <v-card class="card mx-0">
 
-              <v-list->
+              <v-list class="list">
                 <v-list-item>
                   <h3 class="text-center mt-5 mx-8">
                     {{ beitrag.titel }}
@@ -42,9 +40,41 @@
                     </template>
                   </v-virtual-scroll>
                 </v-list-item>
-              </v-list->
+              </v-list>
 
             </v-card>
+          </v-col>
+
+          <v-col class="hidden-md-and-up" cols="10">
+            <v-sheet
+                class="mx-auto"
+                color="transparent"
+                max-width="600"
+            >
+              <v-slide-group
+                  v-model="beitrag"
+                  class="pa-4"
+              >
+                <v-slide-group-item
+                    v-for="beitrag in beiträge"
+                    :key="beitrag"
+                >
+                  <v-card
+                      :class="{ 'selected-card': beitrag.selected }"
+                      @click="selectCard(beitrag); this.beitrag = beitrag">
+                    class="mt-3 mr-3"
+                    height="200"
+                    width="200"
+                    <v-col class="mt-3" cols="12">
+                      <h3 class="text-center mx-5" style="color: black">{{ beitrag.titel }}</h3>
+                    </v-col>
+                    <v-col class="d-flex justify-end" cols="12">
+                      <p class="mr-10">{{ beitrag.datum }}</p>
+                    </v-col>
+                  </v-card>
+                </v-slide-group-item>
+              </v-slide-group>
+            </v-sheet>
           </v-col>
         </v-row>
       </div>
@@ -93,13 +123,18 @@ export default {
   background-color: rgba(245, 245, 220, 0.5);
 }
 
+.cardArtikelVorschauSlider {
+  min-height: 100px;
+  width: 100px;
+  background-color: rgba(245, 245, 220, 0.5);
+}
+
 .selected-card {
   background-color: lightskyblue; /* Hier kannst du die gewünschte Hintergrundfarbe für die ausgewählte Karte festlegen */
 }
 
 .card {
   width: 90%;
-  height: 100%;
   height: 500px;
   background-color: lightskyblue;
   box-shadow: 4px 6px 8px black;
@@ -107,6 +142,10 @@ export default {
 }
 
 .cardActive {
+  background-color: lightskyblue;
+}
+
+.list {
   background-color: lightskyblue;
 }
 </style>

@@ -195,70 +195,92 @@ export default createStore({
             {
                 name: 'stefan',
                 titel: 'Professor',
-                bild: null,
+                bild: require('../assets/presssearchiv/MaySiegbert.jpg'),
                 vita: 'aflknaelfnalfnalfnafnl3qf'
             },
             {
                 name: 'Leandro',
                 titel: 'doktor',
-                bild: null,
+                bild: require('../assets/presssearchiv/MaySiegbert.jpg'),
+                vita: 'a,jvn akjenvkeanvaevnaelv',
+            },
+            {
+                name: 'Leandro',
+                titel: 'doktor',
+                bild: require('../assets/presssearchiv/MaySiegbert.jpg'),
+                vita: 'a,jvn akjenvkeanvaevnaelv',
+            },
+            {
+                name: 'Leandro',
+                titel: 'doktor',
+                bild: require('../assets/presssearchiv/MaySiegbert.jpg'),
+                vita: 'a,jvn akjenvkeanvaevnaelv',
+            },
+            {
+                name: 'Leandro',
+                titel: 'doktor',
+                bild: require('../assets/presssearchiv/MaySiegbert.jpg'),
+                vita: 'a,jvn akjenvkeanvaevnaelv',
+            },
+            {
+                name: 'Leandro',
+                titel: 'doktor',
+                bild: require('../assets/presssearchiv/MaySiegbert.jpg'),
+                vita: 'a,jvn akjenvkeanvaevnaelv',
+            },
+            {
+                name: 'Leandro',
+                titel: 'doktor',
+                bild: require('../assets/presssearchiv/MaySiegbert.jpg'),
+                vita: 'a,jvn akjenvkeanvaevnaelv',
+            },
+            {
+                name: 'Leandro',
+                titel: 'doktor',
+                bild: require('../assets/presssearchiv/MaySiegbert.jpg'),
+                vita: 'a,jvn akjenvkeanvaevnaelv',
+            },
+            {
+                name: 'Leandro',
+                titel: 'doktor',
+                bild: require('../assets/presssearchiv/MaySiegbert.jpg'),
+                vita: 'a,jvn akjenvkeanvaevnaelv',
+            },
+            {
+                name: 'Leandro',
+                titel: 'doktor',
+                bild: require('../assets/presssearchiv/MaySiegbert.jpg'),
                 vita: 'a,jvn akjenvkeanvaevnaelv',
             }],
         vorstand: [
             {
-                name: 'stefan',
-                position: 'Vorsitzender',
-                bild: null,
-                vita: 'aflknaelfnalfnalfnafnl3qf'
+                name: "Jens Schmigowski",
+                position: "Vorsitzender",
+                img: require('../assets/vorstand/SchmigowskiJens20.jpg')
             },
             {
-                name: 'Leandro',
-                position: 'stelv. Vorsitzender',
-                bild: null,
-                vita: 'a,jvn akjenvkeanvaevnaelv',
+                name: "Veronika König",
+                position: "stellv. Vorsitzende",
+                img: require('../assets/vorstand/KoenigVeronika20.jpg')
+            },
+            {name: "Sara Kranemann", position: "Schriftführerin", img: require('../assets/vorstand/KranemannSara.jpg')},
+            {name: "Elisabeth May", position: "Kassenwartin", img: require('../assets/vorstand/MayElisabeth20.jpg')},
+            {
+                name: "Wilhelm Kranemann",
+                position: "Beisitzer",
+                img: require('../assets/vorstand/KranemannWilhelm20.jpg')
             },
             {
-                name: 'Leandro',
-                position: 'stelv. Vorsitzender',
-                bild: null,
-                vita: 'a,jvn akjenvkeanvaevnaelv',
+                name: "Christoph Prünte",
+                position: "Beisitzer",
+                img: require('../assets/vorstand/PruenteChristoph20.jpg')
             },
             {
-                name: 'Leandro',
-                position: 'stelv. Vorsitzender',
-                bild: null,
-                vita: 'a,jvn akjenvkeanvaevnaelv',
-            },
-            {
-                name: 'Leandro',
-                position: 'stelv. Vorsitzender',
-                bild: null,
-                vita: 'a,jvn akjenvkeanvaevnaelv',
-            },
-            {
-                name: 'Leandro',
-                position: 'stelv. Vorsitzender',
-                bild: null,
-                vita: 'a,jvn akjenvkeanvaevnaelv',
-            },
-            {
-                name: 'Leandro',
-                position: 'stelv. Vorsitzender',
-                bild: null,
-                vita: 'a,jvn akjenvkeanvaevnaelv',
-            },
-            {
-                name: 'Leandro',
-                position: 'stelv. Vorsitzender',
-                bild: null,
-                vita: 'a,jvn akjenvkeanvaevnaelv',
-            },
-            {
-                name: 'Leandro',
-                position: 'stelv. Vorsitzender',
-                bild: null,
-                vita: 'a,jvn akjenvkeanvaevnaelv',
-            }],
+                name: "Detmar Disselhoff",
+                position: "Beisitzer",
+                img: require('../assets/vorstand/DisselhoffDetmar20.jpg')
+            }
+        ],
         pressearchiv: [
             {
                 id: 1,

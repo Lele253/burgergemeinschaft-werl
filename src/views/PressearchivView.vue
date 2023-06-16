@@ -1,7 +1,7 @@
 <template>
   <div>
     <HeaderComponent/>
-    <v-img :src="background" cover style="height: 81vh">
+    <v-img :src="background" cover style="height: 81vh; position:fixed;">
       <div class="d-flex align-center" style="background-color: rgba(255,255,255,0.56);height: 100%; width: 100%">
 
         <v-row class="d-flex justify-center mt-n15" style="width: 100%;">
@@ -13,7 +13,7 @@
                 @click="selectCard(artikel); this.beitrag = artikel">
 
               <v-row>
-                <v-col cols="3">
+                <v-col class="d-flex align-center" cols="3">
                   <v-img :src="artikel.img" class="mx-2 my-2"/>
                 </v-col>
 
@@ -26,13 +26,11 @@
                 </v-col>
               </v-row>
             </v-card>
-
-
           </v-col>
-          <v-col class="d-flex justify-center" cols="6">
-            <v-card class="card mx-0">
 
-              <v-list->
+          <v-col class="d-flex justify-center" cols="8">
+            <v-card class="card mx-0">
+              <v-list class="list">
                 <v-list-item>
                   <h3 class="text-center mt-5 mx-8">
                     {{ beitrag.titel }}
@@ -42,16 +40,14 @@
                   </h4>
                 </v-list-item>
 
-
                 <v-list-item class="text-center mt-2">
-
-                  <v-virtual-scroll :height="420" :items="[beitrag.text]">
+                  <v-virtual-scroll :height="350" :items="[beitrag.text]">
                     <template v-slot:default="{ item }">
                       <p class="mx-10">{{ item }}</p>
                     </template>
                   </v-virtual-scroll>
                 </v-list-item>
-              </v-list->
+              </v-list>
 
             </v-card>
           </v-col>
@@ -97,7 +93,6 @@ export default {
 <style scoped>
 .cardArtikelVorschau {
   min-height: 100px;
-  width: 500px;
   background-color: rgba(245, 245, 220, 0.5);
 }
 
@@ -108,13 +103,17 @@ export default {
 .card {
   width: 90%;
   height: 100%;
-  height: 500px;
+  max-height: 500px;
   background-color: lightskyblue;
   box-shadow: 4px 6px 8px black;
   border-radius: 20px 20px 20px 20px;
 }
 
 .cardActive {
+  background-color: lightskyblue;
+}
+
+.list {
   background-color: lightskyblue;
 }
 </style>

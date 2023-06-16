@@ -1,4 +1,7 @@
 <template>
+
+  <!--  Menu-->
+
   <v-row class="mb-1 px-0" style="width: 100% ">
     <v-col class="d-flex justify-end">
       <v-btn :class="{ 'btn-active': kommentarAnlegen }" class="button-links"
@@ -15,44 +18,57 @@
     </v-col>
   </v-row>
 
-  <v-card v-if="kommentarAnlegen" class="card">
-    <v-card-title class="text-center pb-8">Kommentar Anlegen</v-card-title>
-    <v-row class="justify-center mx-0" style="width: 100%">
-      <v-col class="mt-n6" cols="5">
-        <v-text-field v-model="autor" label="Autor" variant="solo"></v-text-field>
-      </v-col>
-      <v-col class="mt-n6" cols="5">
-        <v-file-input v-model="bild" label="Bild" variant="solo"></v-file-input>
+  <!--  Anlegen-->
+  <div class="d-flex justify-center">
+    <v-card v-if="kommentarAnlegen" class="card d-flex align-center">
+      <v-row class="justify-center mx-0 my-0" style="width: 100%; height: 100%">
+        <v-col cols="12">
+          <h2 class="text-center">
+            Kommentar Anlegen
+          </h2>
+        </v-col>
+        <v-col class="mt-n6" cols="5">
+          <v-text-field v-model="autor" label="Autor" variant="outlined"/>
+        </v-col>
+        <v-col class="mt-n6" cols="5">
+          <v-file-input v-model="bild" accept="image/*" label="Bild" prepend-icon="mdi-camera" variant="outlined"/>
+        </v-col>
+        <v-col class="mt-n6" cols="10">
+          <v-text-field v-model="titel" label="Titel" variant="outlined"/>
+        </v-col>
+        <v-col class="mt-n6" cols="10">
+          <v-textarea v-model="text" label="Kommentar" variant="outlined"/>
+        </v-col>
+        <v-col class="mt-n6 d-flex justify-center" cols="10">
+          <v-btn class="text-white" style="background-color: #2F53A7" @click="erstelleKommentar">
+            Kommentar erstellen
+          </v-btn>
+        </v-col>
+      </v-row>
+    </v-card>
+  </div>
 
-      </v-col>
-      <v-col class="mt-n6" cols="10">
-        <v-text-field v-model="titel" label="Titel" variant="solo"></v-text-field>
-      </v-col>
-      <v-col class="mt-n6" cols="10">
-        <v-textarea v-model="text" label="Kommentar" variant="solo"></v-textarea>
-      </v-col>
-      <v-col class="mt-n6 d-flex justify-center" cols="10">
-        <v-btn class="text-white" style="background-color: #2F53A7" @click="erstelleKommentar">
-          Kommentar erstellen
-        </v-btn>
-      </v-col>
-    </v-row>
-  </v-card>
-  <v-card v-if="kommentarLoeschen" class="card">
-    <v-card-title class="text-center pb-8">Kommentar Löschen</v-card-title>
-    <v-row class=" mx-0" style="width: 100%">
-      <v-col v-for="kommentar in kommentare" :key="kommentar" cols="3">
-        <v-card class=" px-1" style="height: 200px;width: 100% ">
-          <v-card-subtitle class="text-center">{{ kommentar.autor }}</v-card-subtitle>
-          <p class="text-center" style="height: 53px; overflow: scroll; font-size: 13px">{{ kommentar.titel }}</p>
-          <p class="mt-1" style="height: 44%; font-size: 10px ; overflow: scroll">{{ kommentar.text }}</p>
-          <Icon class="text-center" icon="tabler:trash-x-filled"
-                style="position: absolute; bottom: 2px; width: 100%; font-size: 24px; margin-top: 8px; color: red; cursor: pointer"
-                @click="deleteKommentar(kommentar)"/>
-        </v-card>
-      </v-col>
-    </v-row>
-  </v-card>
+  <!--  Löschen-->
+
+  <div class="d-flex justify-center">
+    <v-card v-if="kommentarLoeschen" class="card" style="overflow-y: scroll">
+      <v-row class="mx-0" style="width: 100%">
+        <v-col class="text-center mt-5" cols="12">
+          <h2>Kommentar Löschen</h2>
+        </v-col>
+        <v-col v-for="kommentar in kommentare" :key="kommentar" cols="3">
+          <v-card class=" px-1" style="height: 200px;width: 100% ">
+            <v-card-subtitle class="text-center">{{ kommentar.autor }}</v-card-subtitle>
+            <p class="text-center" style="height: 53px; overflow: scroll; font-size: 13px">{{ kommentar.titel }}</p>
+            <p class="mt-1" style="height: 44%; font-size: 10px ; overflow: scroll">{{ kommentar.text }}</p>
+            <Icon class="text-center" icon="tabler:trash-x-filled"
+                  style="position: absolute; bottom: 2px; width: 100%; font-size: 24px; margin-top: 8px; color: red; cursor: pointer"
+                  @click="deleteKommentar(kommentar)"/>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-card>
+  </div>
 </template>
 
 <script>
@@ -77,17 +93,17 @@ export default {
   },
   methods: {
     getDate() {
-      var datum = new Date();
-      var tag = datum.getDate();
-      var monat = datum.getMonth() + 1; // Monate beginnen bei 0, daher +1
-      var jahr = datum.getFullYear();
+      let datum = new Date();
+      let tag = datum.getDate();
+      let monat = datum.getMonth() + 1; // Monate beginnen bei 0, daher +1
+      let jahr = datum.getFullYear();
       if (tag < 10) {
         tag = "0" + tag;
       }
       if (monat < 10) {
         monat = "0" + monat;
       }
-      var formatiertesDatum = tag + "." + monat + "." + jahr;
+      let formatiertesDatum = tag + "." + monat + "." + jahr;
       return formatiertesDatum
     },
     erstelleKommentar() {
@@ -118,13 +134,11 @@ export default {
 
 <style scoped>
 .card {
-  width: 100%;
-  height: 88%;
-  box-shadow: 2px 4px 6px black;
-  border-radius: 13px;
-  overflow-y: auto;
+  width: 90%;
+  height: 500px;
   background-color: rgba(255, 255, 255, 0.91);
-
+  box-shadow: 4px 6px 8px black;
+  border-radius: 13px 13px 13px 13px;
 }
 
 .btn-active {

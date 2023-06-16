@@ -2,22 +2,28 @@
 
   <div>
     <HeaderComponent/>
-    <v-img :src="background" cover style="height: 81vh">
+    <v-img :src="background" cover style="height: 85vh; width: 100vw; position: fixed">
       <div style="background-color: rgba(255,255,255,0.56);height: 100%; width: 100%">
         <h1 class="text-center pt-5">Wusstest du, dass...</h1>
         <v-virtual-scroll :item-height="30" :items="this.erfolge" height="65vh">
           <template v-slot="{ item }">
             <div class="d-flex justify-center">
-              <v-card class="mt-3 card">
-                <v-row>
-                  <v-col cols="2">
-                    <v-img v-if="item.img !=''" :src="item.img" width="200"/>
-                  </v-col>
-                  <v-col class="d-flex align-center" cols="10">
-                    <p class="text-center mx-2 my-2 text-white">{{ item.text }}</p>
-                  </v-col>
-                </v-row>
-              </v-card>
+              <div>
+                <div class="d-flex justify-center">
+                  <v-img v-if="item.img !=''" :src="item.img" class="pt-5 hidden-md-and-up" max-height="400"
+                         width="150"/>
+                </div>
+                <v-card class="mt-3 card">
+                  <v-row class="justify-center align-center d-flex">
+                    <v-col class="hidden-sm-and-down" cols="2">
+                      <v-img v-if="item.img !=''" :src="item.img" width="200"/>
+                    </v-col>
+                    <v-col class="d-flex align-center" cols="10">
+                      <p class="text-center mx-2 my-2 text-white">{{ item.text }}</p>
+                    </v-col>
+                  </v-row>
+                </v-card>
+              </div>
             </div>
           </template>
         </v-virtual-scroll>

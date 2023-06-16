@@ -1,7 +1,5 @@
 import {createRouter, createWebHistory} from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import PressearchivView from "@/views/PressearchivView";
-import UnserTeamView from "@/views/UnserTeamView";
 import AktuellesView from "@/views/AktuellesView";
 import ErfolgeView from "@/views/ErfolgeView";
 import PositionView from "@/views/PositionView";
@@ -10,6 +8,8 @@ import MitgliedView from "@/views/MitgliedView";
 import AdminView from "@/views/AdminView";
 import ImpressumView from "@/views/ImpressumView";
 import linksView from "@/views/LinksView";
+import PressearchivView from "@/views/PressearchivView";
+import UnserTeamViewNeu from "@/views/UnserTeamViewNeu";
 
 const routes = [
     {
@@ -50,7 +50,7 @@ const routes = [
     {
         path: '/team',
         name: 'team',
-        component: UnserTeamView
+        component: UnserTeamViewNeu
     },
     {
         path: '/mitglied',

@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-main style="background-color: rgba(47, 83, 167, 0.56)">
+    <v-main>
       <router-view/>
     </v-main>
     <FooterComponent/>
