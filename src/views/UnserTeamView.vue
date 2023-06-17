@@ -24,8 +24,9 @@
                   height="300"
                   width="200"
               >
-                <div class="d-flex fill-height align-center justify-center">
-                </div>
+                <v-img :src="n.bild">
+
+                </v-img>
               </v-card>
             </v-slide-group-item>
           </v-slide-group>
@@ -84,6 +85,14 @@ export default {
 .slide-group > :first-child > :first-child,
 .slide-group > :last-child > :first-child {
   font-size: 80px;
+}
+.slide-card:hover{
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+  box-shadow: 1px 1px 11px  #2F53A7;
+}
+.slide-card {
+  transition: transform 0.3s ease;
 }
 
 </style>

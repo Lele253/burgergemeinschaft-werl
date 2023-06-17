@@ -106,5 +106,6 @@ export default {
 .btn-active {
   background-color: #2F53A7;
   color: white;
+
 }
 </style>
