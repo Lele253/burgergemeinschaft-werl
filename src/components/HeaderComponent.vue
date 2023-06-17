@@ -84,7 +84,7 @@
     </div>-->
   <v-app-bar height="125" style="background-color: #2F53A7">
 
-    <v-row class="d-flex justify-center" style="width: 100vw">
+    <v-row class="d-flex justify-center mx-0" style="width: 100%">
       <v-col cols="2">
         <v-img :src="background" height="70" @click="$router.push('/')"/>
       </v-col>

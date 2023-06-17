@@ -85,7 +85,7 @@
                   </v-col>
                   <v-col class="d-flex justify-center mb-3 pt-0" cols="12">
                     <v-btn v-if="ausgefüllt" type="submit" width="150">Abschicken</v-btn>
-                    <v-btn v-if="!ausgefüllt" style="color: gray; background: rgba(128,128,128,0.11)"
+                    <v-btn v-if="!ausgefüllt" style="color: white; background-color: #2F53A7"
                            width="150">Abschicken
                     </v-btn>
                   </v-col>
@@ -149,7 +149,7 @@ export default {
 .card {
   width: 90%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.91);
+  background-color: rgba(217, 214, 214, 0.85);
   box-shadow: 4px 6px 8px black;
   border-radius: 20px 20px 20px 20px;
 }

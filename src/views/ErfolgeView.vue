@@ -59,6 +59,9 @@ export default {
   color: black;
   min-height: 60px;
   width: 75vw;
-  background-color: rgba(128, 128, 128, 0.65);
+  background-color: rgba(47, 83, 167, 0.65);
+
+  box-shadow: 2px 4px 6px black;
+  border-radius: 20px;
 }
 </style>

@@ -79,7 +79,7 @@
 </template>-->
 
 <template>
-  <v-footer app height="70" style="background-color: #2F53A7">
+  <v-footer app height="55" style="background-color: #2F53A7">
     <v-row class="mt-n3" justify="center" no-gutters>
       <v-col class="text-center text-white mt-4" cols="12">
         {{ new Date().getFullYear() }} — <strong>BG Werl</strong>

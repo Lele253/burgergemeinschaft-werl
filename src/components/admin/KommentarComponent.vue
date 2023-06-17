@@ -51,7 +51,7 @@
   <!--  Löschen-->
 
   <div class="d-flex justify-center">
-    <v-card v-if="kommentarLoeschen" class="card" style="overflow-y: scroll">
+    <v-card v-if="kommentarLoeschen" class="card" style="overflow: scroll">
       <v-row class="mx-0" style="width: 100%">
         <v-col class="text-center mt-5" cols="12">
           <h2>Kommentar Löschen</h2>

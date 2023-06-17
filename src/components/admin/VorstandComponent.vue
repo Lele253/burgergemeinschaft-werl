@@ -33,7 +33,7 @@
           <v-text-field v-model="position" label="Position" variant="outlined"/>
         </v-col>
         <v-col class="mb-n2" cols="10">
-          <v-file-input v-model="bild" label="Bild" variant="outlined"/>
+          <v-file-input v-model="bild" label="Bild" prepend-icon="mdi-camera" variant="outlined"/>
         </v-col>
         <v-col class="d-flex justify-center mb-n5" cols="10">
           <v-btn class="text-white" style="background-color: #2F53A7"> Vorstandsmitglied erstellen</v-btn>

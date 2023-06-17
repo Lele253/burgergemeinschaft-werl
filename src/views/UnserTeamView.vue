@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-img :src="background" class="pb-16" cover style="position:fixed">
+    <v-img :src="background" cover style="height: 100vh">
       <HeaderComponent/>
       <div class="d-flex justify-center" style="background-color: rgba(255,255,255,0);height: 100%; width: 100%">
         <v-sheet

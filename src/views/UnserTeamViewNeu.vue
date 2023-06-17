@@ -31,16 +31,23 @@
                     <v-col cols="12">
                       <v-card-subtitle class="text-center mt-3">{{ p.position }}</v-card-subtitle>
                     </v-col>
-                    <v-col cols="12">
+                    <!--                    <v-col cols="12">
+                                          <div class="pa-5" style="height:  100%; width: 100%">
+                                            <v-img v-if="isSelected" :src="p.img" class="mt-3 bild"/>
+                                            <v-img v-if="!isSelected" :src="p.img" class="mt-3 bildActive"/>
+                                          </div>
+                                        </v-col>-->
+                  </v-row>
+                  <v-card-item>
+                    <div class="pa-5" style="height:  100%; width: 100%">
                       <v-img v-if="isSelected" :src="p.img" class="mt-3 bild"/>
                       <v-img v-if="!isSelected" :src="p.img" class="mt-3 bildActive"/>
-                    </v-col>
-                  </v-row>
+                    </div>
+                  </v-card-item>
                 </v-card>
               </v-slide-group-item>
             </v-slide-group>
           </v-sheet>
-
         </div>
 
       </div>
@@ -57,6 +64,7 @@ export default {
 
   data() {
     return {
+      name: 'Vorstand',
       background: require('../assets/VorstandUndRat.png'),
       vorstand: this.$store.state.vorstand,
       person: '',
@@ -81,17 +89,17 @@ export default {
 <style scoped>
 .bild {
   height: 400px;
-  border-radius: 20px 20px 20px 20px !important;
+  border-radius: 13px;
   border-style: wave;
 }
 
 .bildActive {
   height: 300px;
-  border-radius: 20px 20px 20px 20px !important;
+  border-radius: 13px;
 }
 
 .v-img__img {
-  border-radius: 20px 20px 20px 20px !important;
+  border-radius: 13px;
 }
 
 </style>

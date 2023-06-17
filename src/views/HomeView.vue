@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="background" style="position:fixed;">
+    <div class="background" style="height: 81vh; position: fixed">
       <HeaderComponent/>
       <v-row class="d-flex justify-center mt-1">
         <v-col class="d-flex justify-center" cols="7">

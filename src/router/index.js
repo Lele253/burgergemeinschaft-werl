@@ -9,7 +9,7 @@ import AdminView from "@/views/AdminView";
 import ImpressumView from "@/views/ImpressumView";
 import linksView from "@/views/LinksView";
 import PressearchivView from "@/views/PressearchivView";
-import UnserTeamViewNeu from "@/views/UnserTeamViewNeu";
+import UnserTeamView from "@/views/UnserTeamView";
 
 const routes = [
     {
@@ -50,7 +50,7 @@ const routes = [
     {
         path: '/team',
         name: 'team',
-        component: UnserTeamViewNeu
+        component: UnserTeamView
     },
     {
         path: '/mitglied',
