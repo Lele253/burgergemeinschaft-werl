@@ -1,8 +1,19 @@
 <template>
   <div>
-    <v-img :src="background" cover style="height: 100vh">
+    <v-img :src="background" cover style="height: 100vh; position: fixed; width: 100vw">
       <HeaderComponent/>
       <div class="d-flex justify-center" style="background-color: rgba(255,255,255,0);height: 100%; width: 100%">
+
+        <!--          Vorstand / Rat-->
+
+        <div class="d-flex mt-5 justify-center" style="z-index: 1000; width: 100%; height: 50px">
+          <h1 class="text-end mr-2" style="cursor: pointer" @click="$router.push('/vorstand')">Vorstand</h1>
+          <h1 class="text-center">/</h1>
+          <h1 class="text-start text-white ml-2" style="cursor: pointer" @click="$router.push('/rat')">Rat</h1>
+        </div>
+
+        <!--        Slider-->
+
         <v-sheet
             class="bg-transparent"
             elevation="8"
@@ -31,6 +42,7 @@
             </v-slide-group-item>
           </v-slide-group>
         </v-sheet>
+        
       </div>
     </v-img>
   </div>
@@ -42,7 +54,7 @@ import HeaderComponent from "@/components/HeaderComponent";
 export default {
   data() {
     return {
-      name: "Unser Team",
+      name: "Unser Team: Rat",
       background: require('../assets/VorstandUndRat.png'),
       model: [],
     }
@@ -86,11 +98,13 @@ export default {
 .slide-group > :last-child > :first-child {
   font-size: 80px;
 }
-.slide-card:hover{
+
+.slide-card:hover {
   transform: scale(1.1);
   transition: transform 0.3s ease;
-  box-shadow: 1px 1px 11px  #2F53A7;
+  box-shadow: 1px 1px 11px #2F53A7;
 }
+
 .slide-card {
   transition: transform 0.3s ease;
 }

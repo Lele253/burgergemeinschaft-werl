@@ -5,13 +5,20 @@ import ErfolgeView from "@/views/ErfolgeView";
 import PositionView from "@/views/PositionView";
 import kommentareView from "@/views/KommentareView";
 import MitgliedView from "@/views/MitgliedView";
-import AdminView from "@/views/AdminView";
+import VerwaltungView from "@/views/VerwaltungView";
 import ImpressumView from "@/views/ImpressumView";
 import linksView from "@/views/LinksView";
 import PressearchivView from "@/views/PressearchivView";
-import UnserTeamView from "@/views/UnserTeamView";
+import VorstandView from "@/views/VorstandView";
+import RatView from "@/views/RatView";
+import HomeViewNeu from "@/views/HomeViewNeu";
 
 const routes = [
+    {
+        path: '/',
+        name: 'neu',
+        component: HomeViewNeu
+    },
     {
         path: '/',
         name: 'home',
@@ -40,7 +47,7 @@ const routes = [
     {
         path: '/admin',
         name: 'Admin',
-        component: AdminView
+        component: VerwaltungView
     },
     {
         path: '/pressearchiv',
@@ -48,9 +55,14 @@ const routes = [
         component: PressearchivView
     },
     {
-        path: '/team',
-        name: 'team',
-        component: UnserTeamView
+        path: '/rat',
+        name: 'rat',
+        component: RatView
+    },
+    {
+        path: '/vorstand',
+        name: 'vorstand',
+        component: VorstandView
     },
     {
         path: '/mitglied',

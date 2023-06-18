@@ -40,7 +40,7 @@
           <v-textarea v-model="vita" label="Vita" variant="outlined"></v-textarea>
         </v-col>
         <v-col class="d-flex justify-center mt-n5" cols="10">
-          <v-btn class="text-white" style="background-color: #2F53A7"> Ratsmitglied erstellen</v-btn>
+          <v-btn class="text-white" style="background-color: #2F53A7" @click="speichern"> Ratsmitglied erstellen</v-btn>
         </v-col>
       </v-row>
     </v-card>
@@ -57,7 +57,7 @@
         <v-col v-for="x in rat" :key="x" class="mt-5 d-flex justify-space-between"
                cols="9" style="border-radius: 8px;border: black solid 2px">
           <p>{{ x.name }}</p>
-          <Icon icon="tabler:trash-x-filled" style="font-size: 30px; color: red; cursor: pointer"/>
+          <Icon icon="tabler:trash-x-filled" style="font-size: 30px; color: red; cursor: pointer" @click="löschen(x)"/>
         </v-col>
       </v-row>
     </v-card>
@@ -83,6 +83,26 @@ export default {
       bild: null,
       vita: '',
     }
+  },
+  methods: {
+    speichern() {
+      this.$store.state.rat.push({
+        name: this.name,
+        title: this.titel,
+        bild: this.bild,
+        vita: this.vita,
+      })
+      this.name = '';
+      this.titel = ''
+      this.bild = ''
+      this.vita = ''
+    },
+    löschen(person) {
+      const index = this.rat.indexOf(person);
+      if (index > -1) {
+        this.rat.splice(index, 1);
+      }
+    }
   }
 }
 
@@ -95,7 +115,7 @@ export default {
   height: 500px;
   background-color: rgba(255, 255, 255, 0.91);
   box-shadow: 4px 6px 8px black;
-  border-radius: 13px 13px 13px 13px;
+  border-radius: 20px;
 }
 
 .cardAnlegen {
@@ -103,7 +123,7 @@ export default {
   height: 500px;
   background-color: rgba(255, 255, 255, 0.91);
   box-shadow: 4px 6px 8px black;
-  border-radius: 13px 13px 13px 13px;
+  border-radius: 20px;
 }
 
 .btn-active {

@@ -85,22 +85,23 @@
   <v-app-bar height="125" style="background-color: #2F53A7">
 
     <v-row class="d-flex justify-center mx-0" style="width: 100%">
-      <v-col cols="2">
+      <v-col class="d-flex justify-start" cols="2">
         <v-img :src="background" height="70" @click="$router.push('/')"/>
       </v-col>
-      <v-col cols="8">
+      <v-col cols="2"/>
+      <v-col cols="4">
         <h1 class="text-center text-white" @click="$router.push('/')">
           {{ $store.state.routername }}
         </h1>
       </v-col>
-      <v-col class="d-flex align-center" cols="2">
-        <v-btn color="white" variant="outlined" @click="$router.push('/mitglied')">Mitglied werden</v-btn>
+      <v-col class="d-flex align-center pr-10 justify-end" cols="4">
+        <v-btn class="mr-2" color="white" variant="outlined" @click="$router.push('/mitglied')">Mitglied werden</v-btn>
       </v-col>
 
       <v-col cols="8">
         <v-row class="d-flex mt-n10">
           <v-col>
-            <p class="text-center text-white" @click="$router.push('/team')">
+            <p class="text-center text-white" @click="$router.push('/vorstand')">
               Unser Team
             </p>
           </v-col>

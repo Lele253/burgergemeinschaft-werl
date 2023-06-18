@@ -29,8 +29,7 @@
             <v-textarea v-model="text" label="Inhalt" rows="8" variant="outlined"/>
           </v-col>
           <v-col class="d-flex justify-center align-center mt-n5" cols="10">
-            <v-btn color="green" @click="speichern"> Speichern</v-btn>
-            <v-btn class="ml-2" color="red" @click="clear"> Leeren</v-btn>
+            <v-btn class="text-white" style="background-color: #2F53A7" @click="speichern"> Anlegen</v-btn>
           </v-col>
         </v-row>
       </v-card>
@@ -109,10 +108,6 @@ export default {
         this.beiträge.splice(index, 1);
       }
     },
-    clear() {
-      this.titel = '';
-      this.text = ''
-    },
     getDate() {
       let datum = new Date();
       let tag = datum.getDate();
@@ -147,7 +142,7 @@ export default {
   height: 500px;
   background-color: rgba(255, 255, 255, 0.91);
   box-shadow: 4px 6px 8px black;
-  border-radius: 13px 13px 13px 13px;
+  border-radius: 20px;
 }
 
 .cardAnlegen {

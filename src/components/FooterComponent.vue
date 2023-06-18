@@ -79,12 +79,12 @@
 </template>-->
 
 <template>
-  <v-footer app height="55" style="background-color: #2F53A7">
-    <v-row class="mt-n3" justify="center" no-gutters>
-      <v-col class="text-center text-white mt-4" cols="12">
-        {{ new Date().getFullYear() }} — <strong>BG Werl</strong>
-      </v-col>
-      <v-col class="d-flex justify-end">
+  <v-footer app height="30" style="background-color: #2F53A7">
+    <v-row justify="center" no-gutters>
+      <!--      <v-col class="text-center text-white mt-4" cols="12">
+              {{ new Date().getFullYear() }} — <strong>BG Werl</strong>
+            </v-col>-->
+      <v-col class="d-flex justify-center" cols="1">
         <div class="text-center ml-2">
           <h3 class="footer-text text-white" style="cursor:pointer;" @click="snackbarKontakt = true">Kontakt</h3>
           <v-snackbar v-model="snackbarKontakt" width="80">
@@ -112,8 +112,13 @@
           </v-snackbar>
         </div>
       </v-col>
-      <v-col class="d-flex justify-start">
-        <div class="text-center ml-2">
+
+      <v-col cols="1">
+        <h3 class="text-center text-white" style="cursor: pointer" @click="$router.push('/admin')">Verwaltung</h3>
+      </v-col>
+
+      <v-col class="d-flex justify-center" cols="1">
+        <div class="text-center">
           <h3 class="ml-2 footer-text text-white" style="cursor:pointer;" @click="snackbarLinks = true">Links</h3>
           <v-snackbar v-model="snackbarLinks" width="80">
             <h3 class="text-center">Links</h3>
@@ -153,6 +158,7 @@
           </v-snackbar>
         </div>
       </v-col>
+
 
     </v-row>
   </v-footer>

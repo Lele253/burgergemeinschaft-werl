@@ -40,8 +40,7 @@
             <v-textarea v-model="text" label="Inhalt" variant="outlined"/>
           </v-col>
           <v-col class="d-flex justify-center mt-n5" cols="10">
-            <v-btn color="green" @click="speichern"> Speichern</v-btn>
-            <v-btn class="ml-2" color="red" @click="clear"> Leeren</v-btn>
+            <v-btn class="text-white" style="background-color: #2F53A7" @click="speichern"> Anlegen</v-btn>
           </v-col>
         </v-row>
       </v-card>
@@ -61,7 +60,7 @@
         <v-row v-for="beitrag in beiträge" :key="beitrag" class="mx-auto my-1 mt-5"
                style="border: black solid 2px;border-radius: 10px; width: 95%">
           <v-col class="text-center mt-3" cols="2">
-            <v-img :src="beitrag.img" style="max-height: 200px"/>
+            <v-img :src="beitrag.img" style="max-height: 200px; border-radius: 13px"/>
           </v-col>
 
           <v-col class="text-center mt-3" cols="2">
@@ -149,10 +148,6 @@ export default {
         this.beiträge.splice(index, 1);
       }
     },
-    clear() {
-      this.titel = '';
-      this.text = ''
-    },
     getDate() {
       let datum = new Date();
       let tag = datum.getDate();
@@ -187,7 +182,7 @@ export default {
   height: 500px;
   background-color: rgba(255, 255, 255, 0.91);
   box-shadow: 4px 6px 8px black;
-  border-radius: 13px 13px 13px 13px;
+  border-radius: 20px;
 }
 
 .cardAnlegen {
@@ -195,7 +190,7 @@ export default {
   height: 500px;
   background-color: rgba(255, 255, 255, 0.91);
   box-shadow: 4px 6px 8px black;
-  border-radius: 13px 13px 13px 13px;
+  border-radius: 20px;
 }
 
 .activeComponent {

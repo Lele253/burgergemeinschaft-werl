@@ -84,9 +84,14 @@
                     ></v-text-field>
                   </v-col>
                   <v-col class="d-flex justify-center mb-3 pt-0" cols="12">
-                    <v-btn v-if="ausgefüllt" type="submit" width="150">Abschicken</v-btn>
-                    <v-btn v-if="!ausgefüllt" style="color: white; background-color: #2F53A7"
-                           width="150">Abschicken
+                    <v-btn v-if="!ausgefüllt" style="color: grey; background-color: rgba(128,128,128,0.18)">
+                      Abschicken
+                    </v-btn>
+                    <v-btn
+                        v-if="ausgefüllt"
+                        style="color: white; background-color: #2F53A7"
+                        width="150"
+                        @click="clear">Abschicken
                     </v-btn>
                   </v-col>
                 </v-row>
@@ -129,6 +134,15 @@ export default {
     abschicken() {
       console.log('Funktion kommt noch')
     },
+    clear() {
+      this.vorname = null
+      this.nachname = null
+      this.email = null
+      this.handynummer = null
+      this.ort = null
+      this.plz = null
+      this.adresse = null
+    }
   },
 
   computed: {

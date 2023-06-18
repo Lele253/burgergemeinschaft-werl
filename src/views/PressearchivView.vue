@@ -11,7 +11,7 @@
             <v-card
                 v-for="artikel in pressearchiv" :key="artikel"
                 :class="{ 'selected-card': artikel.selected }"
-                class="mt-3 cardArtikelVorschau d-flex justify-center"
+                class="mb-3 cardArtikelVorschau d-flex justify-center"
                 @click="selectCard(artikel); this.beitrag = artikel">
 
               <v-row>

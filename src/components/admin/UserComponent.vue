@@ -17,13 +17,6 @@
           User Löschen
         </v-btn>
       </v-col>
-      <!--      <v-col class="d-flex justify-center">
-
-              <v-btn :class="{ 'userBearbeiten': userBearbeiten }"
-                     class="button-links" @click="userAnlegen= false;userLoeschen=false; userBearbeiten=true">
-                User bearbeiten
-              </v-btn>
-            </v-col>-->
     </v-row>
 
     <!--    Inhalt-->
@@ -73,64 +66,27 @@
             <v-col cols="3">Email</v-col>
             <v-col cols="2">Berechtigung</v-col>
           </v-row>
-          <v-row v-for="x in userArray" :key="x"
+          <v-row v-for="user in userArray" :key="user"
                  class="mx-auto my-1" style="border: black solid 2px;border-radius: 10px; width: 95%">
             <v-col cols="3">
-              {{ x.vorname }}
+              {{ user.vorname }}
             </v-col>
             <v-col cols="3">
-              {{ x.nachname }}
+              {{ user.nachname }}
             </v-col>
             <v-col cols="3">
-              {{ x.email }}
+              {{ user.email }}
             </v-col>
             <v-col cols="2">
-              {{ x.berechtigung }}
+              {{ user.berechtigung }}
             </v-col>
             <v-col class="py-0 pr-1 d-flex align-center justify-end">
-              <Icon icon="tabler:trash-x-filled" style="font-size: 30px; color: red; cursor: pointer"/>
+              <Icon icon="tabler:trash-x-filled" style="font-size: 30px; color: red; cursor: pointer"
+                    @click="löschen(user)"/>
             </v-col>
           </v-row>
         </div>
 
-        <!--        Bearbeiten-->
-
-        <!--      <div v-if="userBearbeiten">
-                <v-card-title class="text-center pb-8">User Löschen</v-card-title>
-                <v-row class="mx-auto" style="width: 95%">
-                  <v-col cols="3">Vorname</v-col>
-                  <v-col cols="3">Nachname</v-col>
-                  <v-col cols="3">Email</v-col>
-                  <v-col cols="2">Berechtigung</v-col>
-                </v-row>
-                <v-row v-for="x in userArray" :key="x" class="mx-auto my-1" style=" width: 95%">
-                  <v-col class="pa-0" cols="3">
-                    <v-text-field v-model="x.vorname" variant="solo">
-
-                    </v-text-field>
-
-                  </v-col>
-                  <v-col class="pa-0" cols="3">
-                    <v-text-field v-model="x.nachname" variant="solo">
-
-                    </v-text-field>
-                  </v-col>
-                  <v-col class="pa-0" cols="3">
-                    <v-text-field v-model="x.email" variant="solo">
-
-                    </v-text-field>
-                  </v-col>
-                  <v-col class="pa-0" cols="2">
-                    <v-select v-model="x.berechtigung" :items="berechtigungenItems" variant="solo">
-
-                    </v-select>
-
-                  </v-col>
-                  <v-col class="py-0 pr-1 d-flex align-center justify-end">
-                    <Icon icon="fluent-mdl2:accept-medium" style="font-size: 30px; color: green; cursor: pointer"/>
-                  </v-col>
-                </v-row>
-              </div>-->
       </v-card>
     </div>
   </div>
@@ -155,92 +111,92 @@ export default {
       passwort: '',
       profilBild: null,
       berechtigungenItems: ['Admin', 'Verfasser', 'Keine'],
-      userArray: [{
-        vorname: 'stefan',
-        nachname: 'Franke',
-        email: 'testmail',
-        berechtigung: 'Admin',
-        profilBild: null
-      }, {
-        vorname: 'stefan',
-        nachname: 'Franke',
-        email: 'testmail',
-        berechtigung: 'Admin',
-        profilBild: null
-      }, {
-        vorname: 'stefan',
-        nachname: 'Franke',
-        email: 'testmail',
-        berechtigung: 'Admin',
-        profilBild: null
-      }, {
-        vorname: 'stefan',
-        nachname: 'Franke',
-        email: 'testmail',
-        berechtigung: 'Admin',
-        profilBild: null
-      }, {
-        vorname: 'stefan',
-        nachname: 'Franke',
-        email: 'testmail',
-        berechtigung: 'Admin',
-        profilBild: null
-      }, {
-        vorname: 'stefan',
-        nachname: 'Franke',
-        email: 'testmail',
-        berechtigung: 'Admin',
-        profilBild: null
-      }, {
-        vorname: 'stefan',
-        nachname: 'Franke',
-        email: 'testmail',
-        berechtigung: 'Admin',
-        profilBild: null
-      }, {
-        vorname: 'stefan',
-        nachname: 'Franke',
-        email: 'testmail',
-        berechtigung: 'Admin',
-        profilBild: null
-      }, {
-        vorname: 'stefan',
-        nachname: 'Franke',
-        email: 'testmail',
-        berechtigung: 'Admin',
-        profilBild: null
-      }, {
-        vorname: 'stefan',
-        nachname: 'Franke',
-        email: 'testmail',
-        berechtigung: 'Admin',
-        profilBild: null
-      }, {
-        vorname: 'stefan',
-        nachname: 'Franke',
-        email: 'testmail',
-        berechtigung: 'Admin',
-        profilBild: null
-      }, {
-        vorname: 'stefan',
-        nachname: 'Franke',
-        email: 'testmail',
-        berechtigung: 'Admin',
-        profilBild: null
-      }, {
-        vorname: 'stefan',
-        nachname: 'Franke',
-        email: 'testmail',
-        berechtigung: 'Admin',
-        profilBild: null
-      }, {
-        vorname: 'stefan',
-        nachname: 'Franke',
-        email: 'testmail',
-        berechtigung: 'Admin',
-        profilBild: null
-      },]
-
+      userArray: [
+        {
+          vorname: 'stefan',
+          nachname: 'Franke',
+          email: 'testmail',
+          berechtigung: 'Admin',
+          profilBild: null
+        }, {
+          vorname: 'stefan',
+          nachname: 'Franke',
+          email: 'testmail',
+          berechtigung: 'Admin',
+          profilBild: null
+        }, {
+          vorname: 'stefan',
+          nachname: 'Franke',
+          email: 'testmail',
+          berechtigung: 'Admin',
+          profilBild: null
+        }, {
+          vorname: 'stefan',
+          nachname: 'Franke',
+          email: 'testmail',
+          berechtigung: 'Admin',
+          profilBild: null
+        }, {
+          vorname: 'stefan',
+          nachname: 'Franke',
+          email: 'testmail',
+          berechtigung: 'Admin',
+          profilBild: null
+        }, {
+          vorname: 'stefan',
+          nachname: 'Franke',
+          email: 'testmail',
+          berechtigung: 'Admin',
+          profilBild: null
+        }, {
+          vorname: 'stefan',
+          nachname: 'Franke',
+          email: 'testmail',
+          berechtigung: 'Admin',
+          profilBild: null
+        }, {
+          vorname: 'stefan',
+          nachname: 'Franke',
+          email: 'testmail',
+          berechtigung: 'Admin',
+          profilBild: null
+        }, {
+          vorname: 'stefan',
+          nachname: 'Franke',
+          email: 'testmail',
+          berechtigung: 'Admin',
+          profilBild: null
+        }, {
+          vorname: 'stefan',
+          nachname: 'Franke',
+          email: 'testmail',
+          berechtigung: 'Admin',
+          profilBild: null
+        }, {
+          vorname: 'stefan',
+          nachname: 'Franke',
+          email: 'testmail',
+          berechtigung: 'Admin',
+          profilBild: null
+        }, {
+          vorname: 'stefan',
+          nachname: 'Franke',
+          email: 'testmail',
+          berechtigung: 'Admin',
+          profilBild: null
+        }, {
+          vorname: 'stefan',
+          nachname: 'Franke',
+          email: 'testmail',
+          berechtigung: 'Admin',
+          profilBild: null
+        }, {
+          vorname: 'stefan',
+          nachname: 'Franke',
+          email: 'testmail',
+          berechtigung: 'Admin',
+          profilBild: null
+        },]
     }
   },
   methods: {
@@ -259,6 +215,12 @@ export default {
       this.email = ''
       this.passwort = ''
       this.berechtigung = ''
+    },
+    löschen(beitrag) {
+      const index = this.userArray.indexOf(beitrag);
+      if (index > -1) {
+        this.userArray.splice(index, 1);
+      }
     }
 
   }
@@ -288,7 +250,7 @@ export default {
   overflow-y: auto;
   background-color: rgba(255, 255, 255, 0.91);
   box-shadow: 4px 6px 8px black;
-  border-radius: 13px 13px 13px 13px;
+  border-radius: 20px;
 }
 
 

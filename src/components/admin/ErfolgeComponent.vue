@@ -167,6 +167,6 @@ export default {
   height: 500px;
   background-color: rgba(255, 255, 255, 0.91);
   box-shadow: 4px 6px 8px black;
-  border-radius: 13px 13px 13px 13px;
+  border-radius: 20px;
 }
 </style>

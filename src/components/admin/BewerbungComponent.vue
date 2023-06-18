@@ -39,7 +39,8 @@
               </div>
             </v-card-text>
             <v-card-actions class="d-flex justify-center">
-              <Icon icon="tabler:trash-x-filled" style="font-size: 30px; color: red; cursor: pointer"/>
+              <Icon icon="tabler:trash-x-filled" style="font-size: 30px; color: red; cursor: pointer"
+                    @click="löschen(user)"/>
 
             </v-card-actions>
           </v-card>
@@ -59,39 +60,48 @@ export default {
   },
   data() {
     return {
-      bewerbungenArray: [{
-        vorname: 'stefan',
-        nachname: 'franke',
-        email: 'testmail@web.de',
-        nummer: '01705574750',
-        plz: '44229',
-        ort: 'Dortmund',
-        straße: 'weiße Taube 12'
-      }, {
-        vorname: 'stefan',
-        nachname: 'franke',
-        email: 'testmail@web.de',
-        nummer: '01705574750',
-        plz: '44229',
-        ort: 'Dortmund',
-        straße: 'weiße Taube 12'
-      }, {
-        vorname: 'stefan',
-        nachname: 'franke',
-        email: 'testmail@web.de',
-        nummer: '01705574750',
-        plz: '44229',
-        ort: 'Dortmund',
-        straße: 'weiße Taube 12'
-      }, {
-        vorname: 'stefan',
-        nachname: 'franke',
-        email: 'testmail@web.de',
-        nummer: '01705574750',
-        plz: '44229',
-        ort: 'Dortmund',
-        straße: 'weiße Taube 12'
-      }],
+      bewerbungenArray: [
+        {
+          vorname: 'stefan',
+          nachname: 'franke',
+          email: 'testmail@web.de',
+          nummer: '01705574750',
+          plz: '44229',
+          ort: 'Dortmund',
+          straße: 'weiße Taube 12'
+        }, {
+          vorname: 'stefan',
+          nachname: 'franke',
+          email: 'testmail@web.de',
+          nummer: '01705574750',
+          plz: '44229',
+          ort: 'Dortmund',
+          straße: 'weiße Taube 12'
+        }, {
+          vorname: 'stefan',
+          nachname: 'franke',
+          email: 'testmail@web.de',
+          nummer: '01705574750',
+          plz: '44229',
+          ort: 'Dortmund',
+          straße: 'weiße Taube 12'
+        }, {
+          vorname: 'stefan',
+          nachname: 'franke',
+          email: 'testmail@web.de',
+          nummer: '01705574750',
+          plz: '44229',
+          ort: 'Dortmund',
+          straße: 'weiße Taube 12'
+        }],
+    }
+  },
+  methods: {
+    löschen(person) {
+      const index = this.bewerbungenArray.indexOf(person);
+      if (index > -1) {
+        this.bewerbungenArray.splice(index, 1);
+      }
     }
   }
 }
@@ -120,6 +130,6 @@ export default {
   height: 550px;
   background-color: rgba(255, 255, 255, 0.91);
   box-shadow: 4px 6px 8px black;
-  border-radius: 13px 13px 13px 13px;
+  border-radius: 20px;
 }
 </style>

@@ -1,30 +1,28 @@
 <template>
-  <div>
-    <div class="background" style="height: 81vh; position: fixed">
-      <HeaderComponent/>
-      <v-row class="d-flex justify-center mt-1">
-        <v-col class="d-flex justify-center" cols="7">
-          <v-card class=" card">
-            <h2 class="px-10 pt-3 text-center">Herzlich Willkommen auf den
-              Seiten der Bürgergemeinschaft Werl e.V.!
-            </h2>
-            <p class="px-5 pt-15 text-center">
-              Die Bürgergemeinschaft Werl e.V. (BG-Werl) ist ein Zusammenschluss parteiunabhängiger Bürgerinnen und
-              Bürger, die auf kommunaler Ebene bürgernahe politische Arbeit leisten. Die BG ist eine ideologiefreie
-              kommunale Wählergemeinschaft, die alle Fragen und Probleme unserer Stadt in ständiger Diskussion gemeinsam
-              mit und für die Bürgerinnen und Bürger zu lösen versucht. Wir entscheiden frei von Weisungen und
-              Programmen eines Landes- oder Bundesverbandes und orientieren uns allein am Wohl der Stadt. Die
-              Mandatsträger entscheiden frei nach ihrem Gewissen und unterliegen keinem Fraktionszwang.
-            </p>
-          </v-card>
-        </v-col>
-        <v-col class="d-flex justify-center" cols="5">
-          <v-card class="card">
-            <v-img :src="bildRechts" cover></v-img>
-          </v-card>
-        </v-col>
-      </v-row>
-    </div>
+  <div class="background" style="height: 85vh; position: fixed">
+    <HeaderComponent/>
+    <v-row class="d-flex justify-center mt-1">
+      <v-col class="d-flex justify-center" cols="7">
+        <v-card class=" card">
+          <h2 class="px-10 pt-3 text-center">Herzlich Willkommen auf den
+            Seiten der Bürgergemeinschaft Werl e.V.!
+          </h2>
+          <p class="px-5 pt-15 text-center">
+            Die Bürgergemeinschaft Werl e.V. (BG-Werl) ist ein Zusammenschluss parteiunabhängiger Bürgerinnen und
+            Bürger, die auf kommunaler Ebene bürgernahe politische Arbeit leisten. Die BG ist eine ideologiefreie
+            kommunale Wählergemeinschaft, die alle Fragen und Probleme unserer Stadt in ständiger Diskussion gemeinsam
+            mit und für die Bürgerinnen und Bürger zu lösen versucht. Wir entscheiden frei von Weisungen und
+            Programmen eines Landes- oder Bundesverbandes und orientieren uns allein am Wohl der Stadt. Die
+            Mandatsträger entscheiden frei nach ihrem Gewissen und unterliegen keinem Fraktionszwang.
+          </p>
+        </v-card>
+      </v-col>
+      <v-col class="d-flex justify-center" cols="5">
+        <v-card class="card">
+          <v-img :src="bildRechts" cover></v-img>
+        </v-card>
+      </v-col>
+    </v-row>
   </div>
 
 

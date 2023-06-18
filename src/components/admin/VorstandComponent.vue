@@ -36,7 +36,8 @@
           <v-file-input v-model="bild" label="Bild" prepend-icon="mdi-camera" variant="outlined"/>
         </v-col>
         <v-col class="d-flex justify-center mb-n5" cols="10">
-          <v-btn class="text-white" style="background-color: #2F53A7"> Vorstandsmitglied erstellen</v-btn>
+          <v-btn class="text-white" style="background-color: #2F53A7" @click="speichern"> Vorstandsmitglied erstellen
+          </v-btn>
         </v-col>
       </v-row>
     </v-card>
@@ -54,7 +55,7 @@
                cols="9" style="border-radius: 8px;border: black solid 2px">
           <p>{{ x.name }}</p>
           <p>{{ x.position }}</p>
-          <Icon icon="tabler:trash-x-filled" style="font-size: 30px; color: red; cursor: pointer"/>
+          <Icon icon="tabler:trash-x-filled" style="font-size: 30px; color: red; cursor: pointer" @click="löschen(x)"/>
         </v-col>
       </v-row>
     </v-card>
@@ -79,7 +80,24 @@ export default {
       name: '',
       position: '',
       bild: null,
-
+    }
+  },
+  methods: {
+    speichern() {
+      this.$store.state.vorstand.push({
+        name: this.name,
+        position: this.position,
+        img: this.bild,
+      })
+      this.name = '';
+      this.position = ''
+      this.bild = ''
+    },
+    löschen(person) {
+      const index = this.vorstand.indexOf(person);
+      if (index > -1) {
+        this.vorstand.splice(index, 1);
+      }
     }
   }
 }
@@ -92,7 +110,7 @@ export default {
   height: 500px;
   background-color: rgba(255, 255, 255, 0.91);
   box-shadow: 4px 6px 8px black;
-  border-radius: 13px 13px 13px 13px;
+  border-radius: 20px;
 }
 
 .cardAnlegen {
@@ -100,7 +118,7 @@ export default {
   height: 500px;
   background-color: rgba(255, 255, 255, 0.91);
   box-shadow: 4px 6px 8px black;
-  border-radius: 13px 13px 13px 13px;
+  border-radius: 20px;
 }
 
 .btn-active {

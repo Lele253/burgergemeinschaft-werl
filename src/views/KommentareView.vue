@@ -11,7 +11,7 @@
             <v-card
                 v-for="kommentar in kommentare" :key="kommentar"
                 :class="{ 'selected-card': kommentar.selected }"
-                class="mt-3 cardArtikelVorschau d-flex justify-center"
+                class="mb-3 cardArtikelVorschau d-flex justify-center"
                 @click="selectCard(kommentar); this.kommentar = kommentar">
 
               <v-row class="mx-0" style="width: 100%">

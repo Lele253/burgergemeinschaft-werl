@@ -2,6 +2,7 @@
   <div>
     <HeaderComponent/>
     <v-img :src="background" cover style="height: 85vh;position:fixed;">
+
       <div class="d-flex align-center" style="background-color: rgba(255,255,255,0.56);height: 100%; width: 100%">
         <v-row class="d-flex justify-center mt-n15 mx-0" style="width: 100%;">
           <v-col cols="12">
@@ -11,7 +12,7 @@
             <v-row v-for="beitrag in beiträge" :key="beitrag" class="d-flex justify-center">
               <v-card
                   :class="{ 'selected-card': beitrag.selected }"
-                  class="mt-3 cardArtikelVorschau"
+                  class="mb-3 cardArtikelVorschau"
                   @click="selectCard(beitrag); this.beitrag = beitrag">
                 <v-col class="mt-3" cols="12">
                   <h3 class="text-center mx-5">{{ beitrag.titel }}</h3>

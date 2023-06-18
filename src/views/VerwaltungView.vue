@@ -2,8 +2,66 @@
   <div>
     <HeaderComponent/>
     <div class="background d-flex justify-center" style="position: fixed; height: 86vh">
-      <!--      <v-row class="px-0" style="height: 100%; width: 100%">-->
-      <!--        <v-col cols="3" style="height: 100%">-->
+
+      <!--    Anmelde Dialog-->
+
+      <div v-if="user">
+        <v-row justify="center">
+          <v-dialog
+              v-model="dialog"
+              persistent
+              style="background-color: #2F53A7"
+              width="500">
+            <v-card>
+              <v-card-title class="text-center">
+                <span class="text-h5">Einloggen</span>
+              </v-card-title>
+              <v-card-text>
+                <v-container>
+                  <v-row class="d-flex justify-center" style="width: 100%">
+                    <v-col
+                        cols="12">
+                      <v-text-field
+                          v-model="username"
+                          label="Benutzername"
+                          required
+                      ></v-text-field>
+                    </v-col>
+                    <v-col
+                        cols="12">
+                      <v-text-field
+                          v-model="password"
+                          label="Passwort"
+                          persistent-hint
+                          required
+                      ></v-text-field>
+                    </v-col>
+                  </v-row>
+                </v-container>
+                <v-alert class="text-center text-h6" text="Bitte einfach auf einloggen drücken" type="warning"/>
+              </v-card-text>
+              <v-card-actions class="d-flex justify-center">
+                <v-btn
+                    color="white"
+                    style="background-color: #2F53A7"
+                    variant="text"
+                    @click="$router.push('/')">
+                  Abbrechen
+                </v-btn>
+                <v-btn
+                    color="white"
+                    style="background-color: #2F53A7"
+                    variant="text"
+                    @click="dialog = false">
+                  Einloggen
+                </v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-dialog>
+        </v-row>
+      </div>
+
+      <!--      Agenda -->
 
       <div class="d-flex align-center mt-n8" style="height: 100%; width: 20vw">
         <v-row class=" px-0" style="width: 100%">
@@ -66,7 +124,8 @@
         </v-row>
       </div>
 
-      <!--        </v-col>-->
+      <!--      Inhalt Card-->
+
       <div class="d-flex justify-center align-center mt-n10" style="width: 60vw; height: 100%">
         <v-row style="width: 100%">
           <v-col v-if="userAktive" cols="12">
@@ -110,12 +169,19 @@ import PressearchivComponent from "@/components/admin/PressearchivComponent";
 import RatComponent from "@/components/admin/RatComponent";
 import VorstandComponent from "@/components/admin/VorstandComponent";
 import KommentarComponent from "@/components/admin/KommentarComponent";
+import {mapGetters} from "vuex";
 
 export default {
   data() {
     return {
       name: 'Admin',
       background: require('../assets/aktuelles.jpeg'),
+
+      dialog: true,
+
+      username: '',
+      password: '',
+
       userAktive: true,
       aktuellesAktive: false,
       erfolgeAktive: false,
@@ -140,6 +206,9 @@ export default {
   methods: {},
   created() {
     this.$store.state.routername = this.name
+  },
+  computed: {
+    ...mapGetters(['user']),
   }
 }
 </script>
