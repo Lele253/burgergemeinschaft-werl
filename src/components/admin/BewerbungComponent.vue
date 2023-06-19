@@ -6,8 +6,8 @@
         <v-col cols="12">
           <h2 class="text-center"> Bewerbungen</h2>
         </v-col>
-        <v-col v-for="user in bewerbungenArray" :key="user.name" cols="4">
-          <v-card class="user-card">
+        <v-col v-for="user in bewerbungen" :key="user.name" cols="4">
+          <v-card :class="user.bearbeitet ? 'bearbeitet' : 'nichtBearbeitet'" class="user-card">
             <v-card-text class="pb-0">
               <div class="info-item">
                 <span class="info-label">Vorname:</span>
@@ -34,13 +34,23 @@
                 <span>{{ user.ort }}</span>
               </div>
               <div class="info-item">
-                <span class="info-label">Straße:</span>
-                <span>{{ user.straße }}</span>
+                <span class="info-label">Adresse:</span>
+                <span>{{ user.adresse }}</span>
               </div>
             </v-card-text>
             <v-card-actions class="d-flex justify-center">
-              <Icon icon="tabler:trash-x-filled" style="font-size: 30px; color: red; cursor: pointer"
+
+              <Icon v-if="user.bearbeitet" class="mr-1" icon="tabler:trash-x-filled"
+                    style="font-size: 30px; color: red; cursor: pointer"
                     @click="löschen(user)"/>
+
+              <Icon v-if="!user.bearbeitet" class="ml-1"
+                    icon="mdi:eye-outline" style="font-size: 30px; cursor: pointer"
+                    @click="user.bearbeitet = true"/>
+
+              <Icon v-if="user.bearbeitet" class="ml-1" icon="mdi:eye-off-outline"
+                    style="font-size: 30px;cursor: pointer"
+                    @click="user.bearbeitet = false"/>
 
             </v-card-actions>
           </v-card>
@@ -60,49 +70,25 @@ export default {
   },
   data() {
     return {
-      bewerbungenArray: [
-        {
-          vorname: 'stefan',
-          nachname: 'franke',
-          email: 'testmail@web.de',
-          nummer: '01705574750',
-          plz: '44229',
-          ort: 'Dortmund',
-          straße: 'weiße Taube 12'
-        }, {
-          vorname: 'stefan',
-          nachname: 'franke',
-          email: 'testmail@web.de',
-          nummer: '01705574750',
-          plz: '44229',
-          ort: 'Dortmund',
-          straße: 'weiße Taube 12'
-        }, {
-          vorname: 'stefan',
-          nachname: 'franke',
-          email: 'testmail@web.de',
-          nummer: '01705574750',
-          plz: '44229',
-          ort: 'Dortmund',
-          straße: 'weiße Taube 12'
-        }, {
-          vorname: 'stefan',
-          nachname: 'franke',
-          email: 'testmail@web.de',
-          nummer: '01705574750',
-          plz: '44229',
-          ort: 'Dortmund',
-          straße: 'weiße Taube 12'
-        }],
+      variable: false,
+
+      bewerbungen: ''
     }
   },
   methods: {
+    setbewerbungen() {
+      this.bewerbungen = this.$store.state.bewerbungen
+      console.log('gesetzt')
+    },
     löschen(person) {
-      const index = this.bewerbungenArray.indexOf(person);
+      const index = this.bewerbungen.indexOf(person);
       if (index > -1) {
-        this.bewerbungenArray.splice(index, 1);
+        this.bewerbungen.splice(index, 1);
       }
     }
+  },
+  created() {
+    this.setbewerbungen()
   }
 }
 </script>
@@ -131,5 +117,13 @@ export default {
   background-color: rgba(255, 255, 255, 0.91);
   box-shadow: 4px 6px 8px black;
   border-radius: 20px;
+}
+
+.bearbeitet {
+  background-color: #51bd51
+}
+
+.nichtBearbeitet {
+  background-color: white;
 }
 </style>

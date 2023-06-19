@@ -193,65 +193,66 @@ export default createStore({
         ],
         rat: [
             {
-                name: 'stefan',
-                titel: 'Professor',
-                bild: require('../assets/presssearchiv/MaySiegbert.jpg'),
-                vita: 'aflknaelfnalfnalfnafnl3qf'
+                name: "Siegbert May",
+                titel: "Facharzt für Nervenheilkunde und öffentliches Gesundheitswesen, Medizinaldirektor i.R., Ratsherr",
+                bild: require('../assets/rat/MaySiegbert20.jpg'),
+                vita: "Siegbert May ist ein erfahrener Facharzt für Nervenheilkunde und war lange Zeit als Medizinaldirektor tätig. Er bringt sein medizinisches Know-how in den Rat ein und setzt sich für das Wohl der Bürger ein."
             },
             {
-                name: 'Leandro',
-                titel: 'doktor',
-                bild: require('../assets/presssearchiv/MaySiegbert.jpg'),
-                vita: 'a,jvn akjenvkeanvaevnaelv',
+                name: "Christoph Prünte",
+                titel: "Lehrer, Ratsherr",
+                bild: require('../assets/rat/PruenteChristoph20.jpg'),
+                vita: "Christoph Prünte ist Lehrer und engagiert sich als Ratsherr für die Belange der Bürger. Mit seiner pädagogischen Erfahrung setzt er sich für eine gute Bildung und Förderung der Jugend ein."
             },
             {
-                name: 'Leandro',
-                titel: 'doktor',
-                bild: require('../assets/presssearchiv/MaySiegbert.jpg'),
-                vita: 'a,jvn akjenvkeanvaevnaelv',
+                name: "Detmar Disselhoff",
+                titel: "Fleischfachassistent, Ratsherr",
+                bild: require('../assets/rat/DisselhoffDetmar20.jpg'),
+                vita: "Detmar Disselhoff ist ein erfahrener Fleischfachassistent und bringt sein Fachwissen in den Rat ein. Als Ratsherr setzt er sich für eine nachhaltige Landwirtschaft und den Schutz der Verbraucher ein."
             },
             {
-                name: 'Leandro',
-                titel: 'doktor',
-                bild: require('../assets/presssearchiv/MaySiegbert.jpg'),
-                vita: 'a,jvn akjenvkeanvaevnaelv',
+                name: "Veronika König",
+                titel: "Bilanzbuchhalterin, Sachkundige Bürgerin",
+                bild: require('../assets/rat/KoenigVeronika20.jpg'),
+                vita: "Veronika König ist eine erfahrene Bilanzbuchhalterin und engagiert sich als sachkundige Bürgerin für die finanziellen Belange der Gemeinde. Sie setzt sich für eine solide Haushaltsführung und transparente Finanzpolitik ein."
             },
             {
-                name: 'Leandro',
-                titel: 'doktor',
-                bild: require('../assets/presssearchiv/MaySiegbert.jpg'),
-                vita: 'a,jvn akjenvkeanvaevnaelv',
+                name: "Wilhelm Kranemann",
+                titel: "Industriefachwirt, Bilanzbuchhalter, Sachkundiger Bürger",
+                bild: require('../assets/rat/KranemannWilhelm20.jpg'),
+                vita: "Wilhelm Kranemann verfügt über umfangreiches Fachwissen als Industriefachwirt und Bilanzbuchhalter. Als sachkundiger Bürger setzt er sich für eine nachhaltige wirtschaftliche Entwicklung und die Förderung lokaler Unternehmen ein."
             },
             {
-                name: 'Leandro',
-                titel: 'doktor',
-                bild: require('../assets/presssearchiv/MaySiegbert.jpg'),
-                vita: 'a,jvn akjenvkeanvaevnaelv',
+                name: "Sara Kranemann",
+                titel: "Steuerbetriebsassistentin, Sachkundige Bürgerin",
+                bild: require('../assets/rat/KranemannSara.jpg'),
+                vita: "Sara Kranemann ist eine kompetente Steuerbetriebsassistentin und setzt sich als sachkundige Bürgerin für eine gerechte Steuerpolitik und eine effiziente Verwaltung ein. Sie ist eine engagierte Ansprechpartnerin für die Anliegen der Bürger."
             },
             {
-                name: 'Leandro',
-                titel: 'doktor',
-                bild: require('../assets/presssearchiv/MaySiegbert.jpg'),
-                vita: 'a,jvn akjenvkeanvaevnaelv',
+                name: "Jan Kranemann",
+                titel: "Dipl. Kaufmann, Sachkundiger Bürger",
+                bild: require('../assets/rat/KranemannJan.jpg'),
+                vita: "Jan Kranemann ist ein Diplom-Kaufmann und verfügt über umfangreiches Fachwissen in den Bereichen Finanzen und Unternehmensführung. Als sachkundiger Bürger setzt er sich für eine nachhaltige Entwicklung und die Stärkung der Wirtschaft vor Ort ein."
             },
             {
-                name: 'Leandro',
-                titel: 'doktor',
-                bild: require('../assets/presssearchiv/MaySiegbert.jpg'),
-                vita: 'a,jvn akjenvkeanvaevnaelv',
+                name: "Jens Schmigowski",
+                titel: "Bank- und Industriekaufmann, Sachkundiger Bürger",
+                bild: require('../assets/rat/SchmigowskiJens20.jpg'),
+                vita: "Jens Schmigowski ist ein erfahrener Bank- und Industriekaufmann. Als sachkundiger Bürger setzt er sich für eine verantwortungsvolle Finanzpolitik und eine nachhaltige wirtschaftliche Entwicklung ein."
             },
             {
-                name: 'Leandro',
-                titel: 'doktor',
-                bild: require('../assets/presssearchiv/MaySiegbert.jpg'),
-                vita: 'a,jvn akjenvkeanvaevnaelv',
+                name: "Christina Rinsche",
+                titel: "Fachgesundheits- und Krankenpflegerin für Psychiatrie, Sachkundige Bürgerin",
+                bild: require('../assets/rat/RinscheChristina20.jpg'),
+                vita: "Christina Rinsche ist eine engagierte Fachgesundheits- und Krankenpflegerin für Psychiatrie. Als sachkundige Bürgerin setzt sie sich für eine bessere psychische Gesundheitsversorgung und eine Stärkung des Sozialwesens ein."
             },
             {
-                name: 'Leandro',
-                titel: 'doktor',
-                bild: require('../assets/presssearchiv/MaySiegbert.jpg'),
-                vita: 'a,jvn akjenvkeanvaevnaelv',
-            }],
+                name: "Iris Prünte",
+                titel: "Biologisch-Technische Assistentin, Sachkundige Bürgerin",
+                bild: require('../assets/rat/PruenteIris20.jpg'),
+                vita: "Iris Prünte ist eine erfahrene Biologisch-Technische Assistentin und setzt sich als sachkundige Bürgerin für den Schutz der Umwelt und eine nachhaltige Entwicklung ein. Sie ist eine engagierte Stimme für den Naturschutz in der Gemeinde."
+            }
+        ],
         vorstand: [
             {
                 name: "Jens Schmigowski",
@@ -376,7 +377,45 @@ export default createStore({
             }
 
 
-        ]
+        ],
+        bewerbungen: [
+            {
+                vorname: 'stefan',
+                nachname: 'franke',
+                email: 'testmail@web.de',
+                nummer: '01705574750',
+                plz: '44229',
+                ort: 'Dortmund',
+                adresse: 'weiße Taube 12',
+                bearbeitet: false
+            }, {
+                vorname: 'stefan',
+                nachname: 'franke',
+                email: 'testmail@web.de',
+                nummer: '01705574750',
+                plz: '44229',
+                ort: 'Dortmund',
+                adresse: 'weiße Taube 12',
+                bearbeitet: false
+            }, {
+                vorname: 'stefan',
+                nachname: 'franke',
+                email: 'testmail@web.de',
+                nummer: '01705574750',
+                plz: '44229',
+                ort: 'Dortmund',
+                adresse: 'weiße Taube 12',
+                bearbeitet: false
+            }, {
+                vorname: 'stefan',
+                nachname: 'franke',
+                email: 'testmail@web.de',
+                nummer: '01705574750',
+                plz: '44229',
+                ort: 'Dortmund',
+                adresse: 'weiße Taube 12',
+                bearbeitet: false
+            }],
 
 
     },

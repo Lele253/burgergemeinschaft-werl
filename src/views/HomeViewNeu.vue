@@ -24,7 +24,6 @@
       <v-col cols="1"/>
 
       <v-col class="d-flex align-center justify-center" cols="4">
-        <!--        <v-img :src="image" class="image" width="500"/>-->
         <v-carousel
             :interval="5000"
             :show-arrows="false"
@@ -35,11 +34,15 @@
           <v-carousel-item
               v-for="image in images"
               :key="image">
-            <v-img :src="image.url"/>
+            <v-tooltip :text="image.text" location="bottom">
+              <template v-slot:activator="{ props }">
+                <v-img :src="image.url" class="image" cover v-bind="props"/>
+              </template>
+            </v-tooltip>
           </v-carousel-item>
         </v-carousel>
       </v-col>
-      
+
     </v-row>
   </div>
 
@@ -58,19 +61,24 @@ export default ({
 
       images: [
         {
-          url: require('../assets/home/images.jpeg')
+          url: require('../assets/home/images.jpeg'),
+          text: 'Bürgergemeinschaft Werl'
         },
         {
-          url: require('../assets/home/273037602_469812634818383_3897029102871763589_n.jpg')
+          url: require('../assets/home/273037602_469812634818383_3897029102871763589_n.jpg'),
+          text: 'Jens Schmigowski | Vorsitzender'
         },
         {
-          url: require('../assets/home/112409825_112576980541952_3415738472525881347_n.jpg')
+          url: require('../assets/home/112409825_112576980541952_3415738472525881347_n.jpg'),
+          text: 'Vorstand der Bürgergemeinschaft Werl'
         },
         {
-          url: require('../assets/home/117409729_127034065762910_3253618623528389260_n.jpg')
+          url: require('../assets/home/117409729_127034065762910_3253618623528389260_n.jpg'),
+          text: 'Junge Frauen-Power in unserer BG Werl'
         },
         {
-          url: require('../assets/home/346867890_211897704968189_3681748391991571383_n.jpg')
+          url: require('../assets/home/346867890_211897704968189_3681748391991571383_n.jpg'),
+          text: 'BG-Werl ist ein Zusammenschluss parteiunabhängiger Bürgerinnen und Bürger'
         }
       ]
 
@@ -106,6 +114,6 @@ export default ({
 }
 
 .image {
-  box-shadow: 2px 4px 6px white;
+  border-radius: 20px;
 }
 </style>

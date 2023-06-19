@@ -1,7 +1,7 @@
 <template>
   <div>
     <HeaderComponent/>
-    <v-img :src="background" cover style="height: 85vh; position: fixed">
+    <v-img :src="background" cover style="height: 85vh; position: fixed; width: 150vw">
       <div class="d-flex align-center"
            style="background-color: rgba(255,255,255,0.21);height: 100%; width: 100%">
         <v-row class="d-flex justify-center mt-n15">
@@ -23,7 +23,6 @@
           </v-col>
           <v-col class="d-flex justify-center" cols="6">
             <v-card class="card mx-0">
-
               <v-form class="mt-10 mx-10 d-flex justify-center" @submit="abschicken">
                 <v-row style="width: 100%">
                   <v-col class="py-0" cols="6">
@@ -91,7 +90,7 @@
                         v-if="ausgefüllt"
                         style="color: white; background-color: #2F53A7"
                         width="150"
-                        @click="clear">Abschicken
+                        @click="abschicken">Abschicken
                     </v-btn>
                   </v-col>
                 </v-row>
@@ -99,8 +98,36 @@
             </v-card>
           </v-col>
         </v-row>
-
       </div>
+
+      <v-row justify="center">
+        <v-dialog
+            v-model="dialog"
+            style="color: #2F53A7;"
+            transition="dialog-bottom-transition"
+            width="500">
+          <v-card class="d-flex align-center" style="background-color: #2F53A7; height: 225px">
+            <v-card-title class="text-h5 text-white text-center">
+              Vielen Dank für Ihre Bewerbung
+            </v-card-title>
+            <v-card-text class="text-center text-white mx-10">
+              Ihre Bewerbung ist bei uns eingeganen. Wir bedanken uns herzlich dafür und werden uns so schnell wie
+              möglich bei Ihnen
+              melden.
+            </v-card-text>
+            <v-card-actions class="d-flex justify-center">
+              <v-btn
+                  color="white"
+                  style="background-color: #2F53A7"
+                  variant="outlined"
+                  @click="dialog = false">
+                Okay
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-dialog>
+      </v-row>
+
     </v-img>
   </div>
 </template>
@@ -114,6 +141,9 @@ export default {
       name: "Mitglied werden",
       background: require('../assets/mitglied werden.jpeg'),
       bild: require('../assets/dokumentIcon.png'),
+
+      dialog: false,
+
       vorname: null,
       nachname: '',
       email: '',
@@ -132,7 +162,17 @@ export default {
   },
   methods: {
     abschicken() {
-      console.log('Funktion kommt noch')
+      this.$store.state.bewerbungen.push({
+        vorname: this.vorname,
+        nachname: this.nachname,
+        email: this.email,
+        nummer: this.handynummer,
+        plz: this.plz,
+        ort: this.ort,
+        adresse: this.adresse,
+        bearbeitet: false
+      }),
+          this.clear()
     },
     clear() {
       this.vorname = null
@@ -142,6 +182,7 @@ export default {
       this.ort = null
       this.plz = null
       this.adresse = null
+      this.dialog = true
     }
   },
 

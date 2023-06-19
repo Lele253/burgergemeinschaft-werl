@@ -45,8 +45,8 @@ const routes = [
         component: kommentareView
     },
     {
-        path: '/admin',
-        name: 'Admin',
+        path: '/verwaltung',
+        name: 'verwaltung',
         component: VerwaltungView
     },
     {
