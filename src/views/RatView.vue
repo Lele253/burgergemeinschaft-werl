@@ -20,7 +20,7 @@
 
 
         <v-row class="justify-center"
-               style="width: 100%; position:absolute;margin-top: 230px; z-index: 1200">
+               style="width: 100%; position:absolute;margin-top: 25vh; z-index: 1200">
           <v-col cols="3">
             <v-card class="mainCard ">
               <v-img :src="person.bild" cover/>
@@ -50,7 +50,6 @@
         <v-sheet
             class="bg-transparent d-flex justify-center"
             style="position: fixed;bottom: 4%;width: 100%; height: 100%"
-
         >
           <v-slide-group
               v-model="model"
