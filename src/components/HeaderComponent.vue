@@ -10,9 +10,9 @@
         <v-col cols="2"/>
 
         <v-col cols="4">
-          <p class="text-center text-white text-lg-h4" @click="$router.push('/')">
+          <h1 class="text-center text-white" @click="$router.push('/')">
             {{ $store.state.routername }}
-          </p>
+          </h1>
         </v-col>
 
         <v-col class="d-flex align-center pr-10 justify-end" cols="4">
@@ -23,39 +23,58 @@
         <v-col cols="8">
           <v-row class="d-flex mt-n10">
             <v-col>
-              <p class="text-center text-white" @click="$router.push('/vorstand')">
-                Team
-              </p>
+              <v-menu>
+                <template v-slot:activator="{ props }">
+                  <v-btn
+                      class="ml-13"
+                      color="white"
+                      v-bind="props"
+                  >
+                    Team
+                  </v-btn>
+                </template>
+                <v-list style="background-color: #2F53A7; border-radius: 20px; position:relative; left: -10px">
+                  <v-list-item class="text-white"
+                               @click="$router.push('/rat')">
+                    Rat
+                  </v-list-item>
+                  <v-divider color="black" thickness="3"></v-divider>
+                  <v-list-item class="text-white" @click="$router.push('/vorstand')">
+                    Vorstand
+                  </v-list-item>
+                </v-list>
+              </v-menu>
             </v-col>
             <v-col>
-              <p class="text-center text-white" @click="$router.push('/aktuelles')">
+              <v-btn class="text-center text-white" @click="$router.push('/aktuelles')">
                 Aktuelles
-              </p>
+              </v-btn>
             </v-col>
             <v-col>
-              <p class="text-center text-white" @click="weiterleiten('https://leandro-graf.de/positionspapier.pdf')">
+              <v-btn class="text-center text-white"
+                     @click="weiterleiten('https://leandro-graf.de/positionspapier.pdf')">
                 Position
-              </p>
+              </v-btn>
             </v-col>
             <v-col>
-              <p class="text-center text-white" @click="$router.push('/erfolge')">
+              <v-btn class="text-center text-white" @click="$router.push('/erfolge')">
                 Erfolge
-              </p>
+              </v-btn>
             </v-col>
             <v-col>
-              <p class="text-center text-white" @click="$router.push('/kommentare')">
+              <v-btn class="text-center text-white" @click="$router.push('/kommentare')">
                 Kommentare
-              </p>
+              </v-btn>
             </v-col>
             <v-col>
-              <p class="text-center text-white" @click="$router.push('/pressearchiv')">
+              <v-btn class="text-center text-white" @click="$router.push('/pressearchiv')">
                 Pressearchiv
-              </p>
+              </v-btn>
             </v-col>
             <v-col>
-              <p class="text-center text-white" @click="weiterleiten('https://sessionnet.krz.de/werl/bi/info.asp')">
+              <v-btn class="text-center text-white" @click="weiterleiten('https://sessionnet.krz.de/werl/bi/info.asp')">
                 Tagesordnung
-              </p>
+              </v-btn>
             </v-col>
           </v-row>
         </v-col>
@@ -73,6 +92,8 @@ export default {
       name: "HeaderComponent",
 
       drawer: true,
+      team: ['Vorstand', 'Rat'],
+      selected: 'Team',
 
       views: [
         {

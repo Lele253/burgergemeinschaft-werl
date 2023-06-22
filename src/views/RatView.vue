@@ -4,23 +4,11 @@
     <v-img :src="background" cover style="height: 100vh; position: fixed; width: 100vw; margin-top: -160px">
       <div class="d-flex justify-center" style="background-color: rgba(255,255,255,0);height: 100%; width: 100%">
 
-        <!--          Vorstand / Rat-->
-
-        <div class="d-flex mt-5 justify-center"
-             style="z-index: 1000; width: 100%; height: 50px">
-          <h1 class="text-end mr-2" style="cursor: pointer; margin-top: 160px" @click="$router.push('/vorstand')">
-            Vorstand</h1>
-          <h1 class="text-center" style="margin-top: 160px">/</h1>
-          <h1 class="text-start text-white ml-2"
-              style="cursor: pointer; margin-top: 160px; text-shadow: 2px 2px 2px black"
-              @click="$router.push('/rat')">Rat</h1>
-        </div>
-
         <!--        Main Card-->
 
 
         <v-row class="justify-center"
-               style="width: 100%; position:absolute;margin-top: 25vh; z-index: 1200">
+               style="width: 100%; position:absolute;margin-top: 20vh; z-index: 1200">
           <v-col cols="3">
             <v-card class="mainCard ">
               <v-img :src="person.bild" cover/>
@@ -86,7 +74,7 @@ import HeaderComponent from "@/components/HeaderComponent";
 export default {
   data() {
     return {
-      name: "Unser Team: Rat",
+      name: "Rat",
       background: require('../assets/VorstandUndRat.png'),
       model: [],
 
@@ -131,13 +119,13 @@ export default {
 
 .slide-group > :first-child > :first-child > :first-child,
 .slide-group > :last-child > :first-child > :first-child {
-  min-width: 80px;
-  min-height: 80px;
+  width: 0px;
+  height: 0px;
 }
 
 .slide-group > :first-child > :first-child,
 .slide-group > :last-child > :first-child {
-  font-size: 80px;
+  font-size: 0px;
   min-width: 80px;
 }
 
@@ -150,14 +138,14 @@ export default {
 }
 
 .mainCard {
-  height: 370px;
+  height: 400px;
   width: 100%;
   max-width: 300px;
   border-radius: 20px;
 }
 
 .secondCard {
-  height: 370px;
+  height: 400px;
   width: 100%;
   border-radius: 20px;
   background-color: #2F53A7;

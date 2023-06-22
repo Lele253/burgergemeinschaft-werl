@@ -5,15 +5,6 @@
       <div class="d-flex justify-center" style="background-color: rgba(255,255,255,0);height: 100%; width: 100%">
         <div>
 
-          <!--          Vorstand / Rat-->
-
-          <div class="d-flex mt-5 justify-center" style="z-index: 1000; width: 100%">
-            <h1 class="text-end mr-2 text-white" style="cursor: pointer" @click="$router.push('/vorstand')">
-              Vorstand</h1>
-            <h1 class="text-center">/</h1>
-            <h1 class="text-start ml-2" style="cursor: pointer" @click="$router.push('/rat')">Rat</h1>
-          </div>
-
           <!--          Slider-->
 
           <div class="d-flex align-center mt-n10" style="height: 88%">
@@ -61,7 +52,7 @@ export default {
 
   data() {
     return {
-      name: 'Unser Team: Vorstand',
+      name: 'Vorstand',
       background: require('../assets/VorstandUndRat.png'),
       vorstand: this.$store.state.vorstand,
       person: '',
