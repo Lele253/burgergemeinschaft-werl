@@ -1,49 +1,133 @@
 <template>
-  <div class="background d-flex align-center" style="height: 85vh; position: fixed">
+  <div :style="setMainHeight" class="background d-flex align-center main" style="width: 100vw; position: fixed">
     <HeaderComponent/>
 
-    <v-row class="justify-center d-flex align-center mt-n15" style="width: 80%; height: 80vh">
+    <!--    Dekstop-->
 
-      <v-col class="card align-center d-flex justify-center" cols="5">
-        <div>
-          <h2 class="text-white text-center mb-5">Willkommen bei der Bürgergemeinschaft Werl!</h2>
-          <p class="text-center text-white mx-10">
-            Hier in Werl arbeiten wir als engagierte Bürger zusammen, um unsere Stadt lebendig und lebenswert zu
-            gestalten. Von unserer faszinierenden Geschichte über unsere bezaubernde Altstadt bis hin zu unserer
-            leidenschaftlichen Bürgerschaft, die keine Herausforderung scheut - wir sind stolz auf das, was wir
-            erreichen können.<br><br>
-            Auf unserer Website finden Sie alle relevanten Informationen über aktuelle Projekte, Veranstaltungen,
-            Möglichkeiten zur Mitwirkung und Neuigkeiten rund um Werl. Ganz gleich, ob Sie seit Langem in Werl leben
-            oder neu hier sind - wir laden Sie herzlich ein, Teil unserer Gemeinschaft zu werden und gemeinsam mit uns
-            die Zukunft Werls zu gestalten.<br><br>
-            Gemeinsam können wir Großes erreichen! Willkommen bei der Bürgergemeinschaft Werl!
-          </p>
-        </div>
-      </v-col>
+    <div class="hidden-xs" style="width: 100vw; height: 85vh">
+      <v-row class="justify-center align-center" style="width: 103vw; height: 80vh">
 
-      <v-col cols="1"/>
+        <v-col class="d-flex justify-center" cols="12" md="5" sm="10">
+          <v-card class="card">
+            <h2 class="text-white text-center mb-5">Willkommen bei der Bürgergemeinschaft Werl!</h2>
+            <v-card-item>
+              <p class="hidden-lg-and-up text-white text-center ">Die Bürgergemeinschaft Werl arbeitet engagiert
+                daran,
+                unsere Stadt lebendig
+                und
+                lebenswert zu machen. Wir
+                sind stolz auf unsere faszinierende Geschichte, bezaubernde Altstadt und leidenschaftliche
+                Bürgerschaft.
+                Besuchen Sie unsere Website für Informationen zu aktuellen Projekten, Veranstaltungen und
+                Möglichkeiten
+                zur Mitwirkung. Werl ist offen für alle, die Teil unserer Gemeinschaft werden und gemeinsam mit uns
+                die
+                Zukunft gestalten möchten. Willkommen bei der Bürgergemeinschaft Werl!</p>
 
-      <v-col class="d-flex align-center justify-center" cols="4">
-        <v-carousel
-            :interval="5000"
-            :show-arrows="false"
-            cycle
-            height="400"
-            hide-delimiter-background
-            hide-delimiters>
-          <v-carousel-item
-              v-for="image in images"
-              :key="image">
-            <v-tooltip :text="image.text" location="bottom">
-              <template v-slot:activator="{ props }">
-                <v-img :src="image.url" class="image" cover v-bind="props"/>
-              </template>
-            </v-tooltip>
-          </v-carousel-item>
-        </v-carousel>
-      </v-col>
+              <p class="text-center text-white mx-10 hidden-md-and-down">
+                Hier in Werl arbeiten wir als engagierte Bürger zusammen, um unsere Stadt lebendig und lebenswert zu
+                gestalten. Von unserer faszinierenden Geschichte über unsere bezaubernde Altstadt bis hin zu unserer
+                leidenschaftlichen Bürgerschaft, die keine Herausforderung scheut - wir sind stolz auf das, was wir
+                erreichen können.<br><br>
+                Auf unserer Website finden Sie alle relevanten Informationen über aktuelle Projekte, Veranstaltungen,
+                Möglichkeiten zur Mitwirkung und Neuigkeiten rund um Werl. Ganz gleich, ob Sie seit Langem in Werl
+                leben
+                oder neu hier sind - wir laden Sie herzlich ein, Teil unserer Gemeinschaft zu werden und gemeinsam mit
+                uns
+                die Zukunft Werls zu gestalten.<br><br>
+                Gemeinsam können wir Großes erreichen! Willkommen bei der Bürgergemeinschaft Werl!
+              </p>
+            </v-card-item>
+          </v-card>
+        </v-col>
 
-    </v-row>
+
+        <v-col class="d-flex align-center justify-center" cols="10" md="5" sm="9">
+          <v-carousel
+              :interval="5000"
+              :show-arrows="false"
+              cycle
+              hide-delimiter-background
+              hide-delimiters>
+            <v-carousel-item
+                v-for="image in images"
+                :key="image">
+              <v-tooltip :text="image.text" location="bottom">
+                <template v-slot:activator="{ props }">
+                  <v-img :src="image.url" class="image" cover style="object-position: center center;"
+                         v-bind="props"/>
+                </template>
+              </v-tooltip>
+            </v-carousel-item>
+          </v-carousel>
+        </v-col>
+
+      </v-row>
+    </div>
+
+    <!--Mobile-->
+
+    <div class="hidden-sm-and-up" style="width: 100vw; height: 85vh; overflow-y: scroll">
+      <v-row class="justify-center align-center" style="width: 103vw; height: 80vh">
+
+        <v-col class="d-flex justify-center" cols="12" md="5" sm="10">
+          <v-card class="card">
+            <h2 class="text-white text-center mb-5">Willkommen bei der Bürgergemeinschaft Werl!</h2>
+            <v-card-item>
+              <p class="hidden-lg-and-up text-white text-center ">Die Bürgergemeinschaft Werl arbeitet engagiert
+                daran,
+                unsere Stadt lebendig
+                und
+                lebenswert zu machen. Wir
+                sind stolz auf unsere faszinierende Geschichte, bezaubernde Altstadt und leidenschaftliche
+                Bürgerschaft.
+                Besuchen Sie unsere Website für Informationen zu aktuellen Projekten, Veranstaltungen und
+                Möglichkeiten
+                zur Mitwirkung. Werl ist offen für alle, die Teil unserer Gemeinschaft werden und gemeinsam mit uns
+                die
+                Zukunft gestalten möchten. Willkommen bei der Bürgergemeinschaft Werl!</p>
+
+              <p class="text-center text-white mx-10 hidden-md-and-down">
+                Hier in Werl arbeiten wir als engagierte Bürger zusammen, um unsere Stadt lebendig und lebenswert zu
+                gestalten. Von unserer faszinierenden Geschichte über unsere bezaubernde Altstadt bis hin zu unserer
+                leidenschaftlichen Bürgerschaft, die keine Herausforderung scheut - wir sind stolz auf das, was wir
+                erreichen können.<br><br>
+                Auf unserer Website finden Sie alle relevanten Informationen über aktuelle Projekte, Veranstaltungen,
+                Möglichkeiten zur Mitwirkung und Neuigkeiten rund um Werl. Ganz gleich, ob Sie seit Langem in Werl
+                leben
+                oder neu hier sind - wir laden Sie herzlich ein, Teil unserer Gemeinschaft zu werden und gemeinsam mit
+                uns
+                die Zukunft Werls zu gestalten.<br><br>
+                Gemeinsam können wir Großes erreichen! Willkommen bei der Bürgergemeinschaft Werl!
+              </p>
+            </v-card-item>
+          </v-card>
+        </v-col>
+
+
+        <v-col class="d-flex align-center justify-center" cols="10" md="5" sm="9">
+          <v-carousel
+              :interval="5000"
+              :show-arrows="false"
+              cycle
+              height="500"
+              hide-delimiter-background
+              hide-delimiters>
+            <v-carousel-item
+                v-for="image in images"
+                :key="image">
+              <v-tooltip :text="image.text" location="bottom">
+                <template v-slot:activator="{ props }">
+                  <v-img :src="image.url" class="image" cover v-bind="props"/>
+                </template>
+              </v-tooltip>
+            </v-carousel-item>
+          </v-carousel>
+        </v-col>
+
+      </v-row>
+    </div>
+
   </div>
 
 </template>
@@ -56,7 +140,7 @@ export default ({
   data() {
     return {
       name: 'Bürgergemeinschaft Werl',
-
+      mobile: '',
       image: require('../assets/vorstandneu.jpeg'),
 
       images: [
@@ -84,19 +168,49 @@ export default ({
 
     }
   },
+  computed: {
+    setMainHeight() {
+      if (this.mobile) {
+        return {
+          height: '92vh'
+        };
+      } else {
+        return {
+          height: '85vh'
+        };
+      }
+    }
+  },
   components: {
     HeaderComponent,
   },
   created() {
     this.$store.state.routername = this.name
+  },
+  mounted() {
+    this.checkMobileView();
+    window.addEventListener('resize', this.checkMobileView);
+  },
+  beforeUnmount() {
+    window.removeEventListener('resize', this.checkMobileView);
+  },
+  methods: {
+    checkMobileView() {
+      if (window.innerWidth <= 1605) {
+        this.mobile = true;
+      } else {
+        this.mobile = false;
+      }
+    }
   }
-});
+})
 </script>
 
 <style scoped>
 
 .background {
   width: 100vw;
+  padding-top: 0 !important;
   height: 10vh;
   background-image: url('../assets/werl.png');
   background-size: cover;
@@ -106,8 +220,11 @@ export default ({
 }
 
 .card {
+  overflow-y: scroll;
   width: 90%;
-  height: 450px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  max-height: 500px;
   background-color: #2F53A7;
   box-shadow: 2px 4px 6px black;
   border-radius: 20px;

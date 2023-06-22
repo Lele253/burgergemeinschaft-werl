@@ -1,7 +1,9 @@
 <template>
-
   <div>
-    <v-app-bar height="125" style="background-color: #2F53A7">
+
+    <!--    Header Desktop-->
+
+    <v-app-bar v-if="!mobile" class="header" height="125">
       <v-row class=" d-flex justify-center mx-0" style="width: 100%">
         <v-col class="d-flex justify-start" cols="2">
           <v-img :src="background" height="70" @click="$router.push('/')"/>
@@ -72,7 +74,8 @@
               </v-btn>
             </v-col>
             <v-col>
-              <v-btn class="text-center text-white" @click="weiterleiten('https://sessionnet.krz.de/werl/bi/info.asp')">
+              <v-btn class="text-center text-white"
+                     @click="weiterleiten('https://sessionnet.krz.de/werl/bi/info.asp')">
                 Tagesordnung
               </v-btn>
             </v-col>
@@ -80,69 +83,94 @@
         </v-col>
       </v-row>
     </v-app-bar>
-  </div>
 
+    <!--    Header Mobile-->
+
+    <v-app-bar v-if="mobile" class="header" height="60" style="width: 100vw;">
+      <v-row class="d-flex align-center justify-center" style="width: 100%">
+        <v-col class=" justify-center text-white" cols="3">
+          <Icon icon="iconamoon:menu-burger-horizontal-bold" style="font-size: 35px"
+                @click="drawer = !drawer"/>
+        </v-col>
+        <v-col class="d-flex align-center justify-center" cols="6">
+          <h3 class="text-center text-white" @click="$router.push('/')">
+            {{ this.$store.state.routername }}
+          </h3>
+        </v-col>
+        <v-col cols="3">
+          <v-img :src="background" height="40" @click="$router.push('/')"/>
+        </v-col>
+      </v-row>
+    </v-app-bar>
+
+    <!--    Navigation drawer-->
+
+    <v-navigation-drawer
+        v-model="drawer"
+        style="background-color: #2F53A7"
+        temporary
+        width="150"
+    >
+      <v-list>
+        <v-list-item v-for="link in links" :key="link" class="text-center text-white" @click="weiterleiten(link.url)">
+          {{ link.titel }}
+          <v-divider></v-divider>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+  </div>
 </template>
 
 <script>
+import {Icon} from "@iconify/vue";
+
 export default {
+  components: {Icon},
   data() {
     return {
       background: require('../assets/bg-werl-logo.png'),
       name: "HeaderComponent",
 
-      drawer: true,
+      mobile: false,
+
+      drawer: false,
       team: ['Vorstand', 'Rat'],
       selected: 'Team',
 
-      views: [
-        {
-          name: 'test',
-          path: 'test',
-          icon: 'mdi:eye-off-outline'
-        }, {
-          name: 'test',
-          path: 'test',
-          icon: 'mdi:eye-off-outline'
-        }, {
-          name: 'test',
-          path: 'test',
-          icon: 'mdi:eye-off-outline'
-        }, {
-          name: 'test',
-          path: 'test',
-          icon: 'mdi:eye-off-outline'
-        }, {
-          name: 'test',
-          path: 'test',
-          icon: 'mdi:eye-off-outline'
-        }, {
-          name: 'test',
-          path: 'test',
-          icon: 'mdi:eye-off-outline'
-        }, {
-          name: 'test',
-          path: 'test',
-          icon: 'mdi:eye-off-outline'
-        }, {
-          name: 'test',
-          path: 'test',
-          icon: 'mdi:eye-off-outline'
-        }, {
-          name: 'test',
-          path: 'test',
-          icon: 'mdi:eye-off-outline'
-        }, {
-          name: 'test',
-          path: 'test',
-          icon: 'mdi:eye-off-outline'
-        },
+      links: [
+        {titel: 'Home', url: '/'},
+        {titel: 'Rat', url: '/rat'},
+        {titel: 'Vorstand', url: '/vorstand'},
+        {titel: 'Aktuelles', url: '/aktuelles'},
+        {titel: 'Position', url: 'https://leandro-graf.de/positionspapier.pdf'},
+        {titel: 'Erfolge', url: '/erfolge'},
+        {titel: 'Kommentare', url: '/kommentare'},
+        {titel: 'Pressearchiv', url: '/pressearchiv'},
+        {titel: 'Tagesordnung', url: 'https://sessionnet.krz.de/werl/bi/info.asp'}
       ]
-    }
+    };
+  },
+  mounted() {
+    this.checkMobileView();
+    window.addEventListener('resize', this.checkMobileView);
+  },
+  beforeUnmount() {
+    window.removeEventListener('resize', this.checkMobileView);
   },
   methods: {
+    checkMobileView() {
+      if (window.innerWidth <= 1605) {
+        this.mobile = true;
+      } else {
+        this.mobile = false;
+      }
+    },
     weiterleiten(url) {
-      window.open(url)
+      if (url.startsWith('/')) {
+        this.$router.push(url)
+      } else {
+        window.open(url)
+      }
     }
   }
 }
@@ -150,11 +178,7 @@ export default {
 
 <style scoped>
 .header {
-  position: relative;
-  z-index: 999;
-  height: 150px;
-  background: #2F53A7;
-  box-shadow: 0px 3px 6px black;
+  background-color: #2F53A7
 }
 
 .mitglied-button {

@@ -1,5 +1,4 @@
 import {createRouter, createWebHistory} from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 import AktuellesView from "@/views/AktuellesView";
 import ErfolgeView from "@/views/ErfolgeView";
 import PositionView from "@/views/PositionView";
@@ -16,13 +15,8 @@ import HomeViewNeu from "@/views/HomeViewNeu";
 const routes = [
     {
         path: '/',
-        name: 'neu',
-        component: HomeViewNeu
-    },
-    {
-        path: '/',
         name: 'home',
-        component: HomeView
+        component: HomeViewNeu
     },
     {
         path: '/aktuelles',

@@ -3,84 +3,76 @@
     <HeaderComponent/>
     <v-img :src="background" cover style="height: 85vh;position:fixed;">
 
-      <div class="d-flex align-center" style="background-color: rgba(255,255,255,0.56);height: 100%; width: 100%">
-        <v-row class="d-flex justify-center mt-n15 mx-0" style="width: 100%;">
-          <v-col cols="12">
-            <h1 class="text-center mt-n12 mb-5">Bleib immer auf dem Laufendem</h1>
-          </v-col>
-          <v-col class="hidden-sm-and-down" cols="4" style="height: 500px; overflow-y: auto">
-            <v-row v-for="beitrag in beiträge" :key="beitrag" class="d-flex justify-center">
-              <v-card
-                  :class="{ 'selected-card': beitrag.selected }"
-                  class="mb-3 cardArtikelVorschau"
-                  @click="selectCard(beitrag); this.beitrag = beitrag">
-                <v-col class="mt-3" cols="12">
-                  <h3 class="text-center mx-5">{{ beitrag.titel }}</h3>
-                </v-col>
-                <v-col class="d-flex justify-end" cols="12">
-                  <p class="mr-10">{{ beitrag.datum }}</p>
-                </v-col>
+      <div class="d-flex align-center"
+           style="background-color: rgba(255,255,255,0.56);height: 100%; width: 100%">
+
+        <div class="hidden-xs">
+          <v-row class="d-flex justify-center mt-n15 mx-0" style="width: 100%;">
+            <v-col cols="12">
+              <h1 class="text-center mt-n12 mb-5">Bleib immer auf dem Laufendem</h1>
+            </v-col>
+            <v-col cols="4" style="height: 500px; overflow-y: auto">
+              <v-row v-for="beitrag in beiträge" :key="beitrag" class="d-flex justify-center">
+                <v-card
+                    :class="{ 'selected-card': beitrag.selected }"
+                    class="mb-3 cardArtikelVorschau"
+                    @click="selectCard(beitrag); this.beitrag = beitrag">
+                  <v-col class="mt-3" cols="12">
+                    <h3 class="text-center mx-5">{{ beitrag.titel }}</h3>
+                  </v-col>
+                  <v-col class="d-flex justify-end" cols="12">
+                    <p class="mr-10">{{ beitrag.datum }}</p>
+                  </v-col>
+                </v-card>
+              </v-row>
+            </v-col>
+            <v-col class="d-flex justify-center" cols="7">
+              <v-card class="card mx-0">
+
+                <v-list class="list">
+                  <v-list-item>
+                    <h3 class="text-center mt-5 mx-8 text-white">
+                      {{ beitrag.titel }}
+                    </h3>
+
+                  </v-list-item>
+
+                  <v-list-item class="text-center mt-2">
+
+                    <v-virtual-scroll :height="420" :items="[beitrag.text]">
+                      <template v-slot:default="{ item }">
+                        <p class="mx-10 text-white">{{ item }}</p>
+                      </template>
+                    </v-virtual-scroll>
+                  </v-list-item>
+                </v-list>
               </v-card>
-            </v-row>
+            </v-col>
+          </v-row>
+        </div>
 
 
-          </v-col>
-          <v-col class="d-flex justify-center" cols="7">
-            <v-card class="card mx-0">
+        <div class="hidden-sm-and-up">
+          <h3 class="text-center mt-10">Bleib immer auf dem Laufenden</h3>
+          <div class="d-flex justify-center">
+            <div style="overflow-y: scroll; height: 80vh">
+              <v-card-item>
+                <v-expansion-panels>
+                  <v-expansion-panel
+                      v-for="beitrag in beiträge"
+                      :key="beitrag"
+                      :text="beitrag.text"
+                      :title="beitrag.titel"
+                      class="text-center mt-3 mb-2"
+                      style=" background-color: #2F53A7; color: white; border-radius: 20px"
+                  ></v-expansion-panel>
+                </v-expansion-panels>
+              </v-card-item>
+            </div>
+          </div>
+        </div>
 
-              <v-list class="list">
-                <v-list-item>
-                  <h3 class="text-center mt-5 mx-8 text-white">
-                    {{ beitrag.titel }}
-                  </h3>
 
-                </v-list-item>
-
-                <v-list-item class="text-center mt-2">
-
-                  <v-virtual-scroll :height="420" :items="[beitrag.text]">
-                    <template v-slot:default="{ item }">
-                      <p class="mx-10 text-white">{{ item }}</p>
-                    </template>
-                  </v-virtual-scroll>
-                </v-list-item>
-              </v-list>
-
-            </v-card>
-          </v-col>
-
-          <v-col class="hidden-md-and-up" cols="10">
-            <v-sheet
-                class="mx-auto"
-                color="transparent"
-                max-width="600"
-            >
-              <v-slide-group
-                  v-model="beitrag"
-                  class="pa-4"
-              >
-                <v-slide-group-item
-                    v-for="beitrag in beiträge"
-                    :key="beitrag"
-                >
-                  <v-card
-                      :class="{ 'selected-card': beitrag.selected }"
-                      @click="selectCard(beitrag); this.beitrag = beitrag">
-                    class="mt-3 mr-3"
-                    height="200"
-                    width="200"
-                    <v-col class="mt-3" cols="12">
-                      <h3 class="text-center mx-5 text-white" style="color: white">{{ beitrag.titel }}</h3>
-                    </v-col>
-                    <v-col class="d-flex justify-end" cols="12">
-                      <p class="mr-10 text-white">{{ beitrag.datum }}</p>
-                    </v-col>
-                  </v-card>
-                </v-slide-group-item>
-              </v-slide-group>
-            </v-sheet>
-          </v-col>
-        </v-row>
       </div>
     </v-img>
   </div>
@@ -95,6 +87,7 @@ export default {
     return {
       name: 'Aktuelles',
 
+      panel: 0,
       beiträge: this.$store.state.beiträge.sort((a, b) => b.id - a.id),
       background: require('../assets/aktuelles.jpeg'),
       beitrag: {}
