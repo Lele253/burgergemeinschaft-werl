@@ -88,7 +88,7 @@
 
     <v-app-bar v-if="mobile" class="header" height="60" style="width: 100vw;">
       <v-row class="d-flex align-center justify-center" style="width: 100%">
-        <v-col class=" justify-center text-white" cols="3">
+        <v-col class="d-flex justify-center text-white" cols="3">
           <Icon icon="iconamoon:menu-burger-horizontal-bold" style="font-size: 35px"
                 @click="drawer = !drawer"/>
         </v-col>
