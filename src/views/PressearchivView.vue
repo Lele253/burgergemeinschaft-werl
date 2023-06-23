@@ -59,10 +59,10 @@
           </v-row>
         </div>
 
-        <div class="hidden-sm-and-up" style="height: 80vh">
+        <div class="hidden-sm-and-up" style="height: 65vh; margin-bottom: 100px">
           <h3 class="text-center">Ein Blick in die Vergangenheit <br> und die Gegenwart</h3>
           <div class="d-flex justify-center pb-5">
-            <div style="overflow-y: scroll; height: 80vh">
+            <div style="overflow-y: scroll; height: 70vh">
               <v-card-item>
                 <v-expansion-panels>
                   <v-expansion-panel

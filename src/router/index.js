@@ -1,6 +1,5 @@
 import {createRouter, createWebHistory} from 'vue-router'
 import AktuellesView from "@/views/AktuellesView";
-import ErfolgeView from "@/views/ErfolgeView";
 import PositionView from "@/views/PositionView";
 import kommentareView from "@/views/KommentareView";
 import MitgliedView from "@/views/MitgliedView";
@@ -11,6 +10,7 @@ import PressearchivView from "@/views/PressearchivView";
 import VorstandView from "@/views/VorstandView";
 import RatView from "@/views/RatView";
 import HomeViewNeu from "@/views/HomeViewNeu";
+import ErfolgeNeuView from "@/views/ErfolgeNeuView";
 
 const routes = [
     {
@@ -26,7 +26,7 @@ const routes = [
     {
         path: '/erfolge',
         name: 'erfolge',
-        component: ErfolgeView
+        component: ErfolgeNeuView
     },
     {
         path: '/position',

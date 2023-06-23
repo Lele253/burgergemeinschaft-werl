@@ -47,6 +47,7 @@
               :interval="5000"
               :show-arrows="false"
               cycle
+              height="450"
               hide-delimiter-background
               hide-delimiters>
             <v-carousel-item
@@ -110,7 +111,7 @@
               :interval="5000"
               :show-arrows="false"
               cycle
-              height="500"
+              height="350"
               hide-delimiter-background
               hide-delimiters>
             <v-carousel-item

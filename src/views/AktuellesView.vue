@@ -1,10 +1,12 @@
 <template>
   <div>
     <HeaderComponent/>
-    <v-img :src="background" cover style="height: 85vh;position:fixed;">
+    <v-img :src="background" cover style="height: 100vh;position:fixed;">
 
       <div class="d-flex align-center"
            style="background-color: rgba(255,255,255,0.56);height: 100%; width: 100%">
+
+        <!--        Desktop-->
 
         <div class="hidden-xs">
           <v-row class="d-flex justify-center mt-n15 mx-0" style="width: 100%;">
@@ -51,27 +53,57 @@
           </v-row>
         </div>
 
+        <!--        Mobile-->
 
-        <div class="hidden-sm-and-up">
-          <h3 class="text-center mt-10">Bleib immer auf dem Laufenden</h3>
-          <div class="d-flex justify-center">
-            <div style="overflow-y: scroll; height: 80vh">
-              <v-card-item>
-                <v-expansion-panels>
-                  <v-expansion-panel
-                      v-for="beitrag in beiträge"
-                      :key="beitrag"
-                      :text="beitrag.text"
-                      :title="beitrag.titel"
-                      class="text-center mt-3 mb-2"
-                      style=" background-color: #2F53A7; color: white; border-radius: 20px"
-                  ></v-expansion-panel>
-                </v-expansion-panels>
-              </v-card-item>
-            </div>
+        <!--        <div class="hidden-sm-and-up">
+                  <h3 class="text-center mt-10">Bleib immer auf dem Laufenden</h3>
+                  <div class="d-flex justify-center">
+                    <div style="overflow-y: scroll; height: 80vh">
+                      <v-card-item>
+                        <v-expansion-panels>
+                          <v-expansion-panel
+                              v-for="beitrag in beiträge"
+                              :key="beitrag"
+                              :text="beitrag.text"
+                              :title="beitrag.titel"
+                              class="text-center mt-3 mb-2"
+                              style=" background-color: #2F53A7; color: white; border-radius: 20px"
+                          ></v-expansion-panel>
+                        </v-expansion-panels>
+                      </v-card-item>
+                    </div>
+                  </div>
+                </div>-->
+
+        <!--        Mobile Neu-->
+
+        <div class="d-flex justify-center" style="margin-bottom: 65vh; width: 100vw">
+          <div style="overflow-y:scroll; height: 70vh; margin-top: 300px">
+            <v-card v-for="beitrag in beiträge" :key="beitrag" class="mx-10 mt-10"
+                    style="background-color: #2F53A7; border-radius: 20px">
+              <v-row class="d-flex justify-center mx-0" style="width: 100%;">
+                <v-col class="mt-4" cols="10">
+                  <h3 class="text-white text-center">{{ beitrag.titel }}</h3>
+                </v-col>
+                <v-col cols="12">
+                  <v-expansion-panels>
+                    <v-expansion-panel
+                        :title="beitrag.titel"
+                        class="text-white"
+                        color="#2F53A7"
+                        style=" background-color: rgba(116,116,122,0.73); border: gray solid 2px "
+                    >
+                      <v-expansion-panel-text class="text-center">{{ beitrag.text }}</v-expansion-panel-text>
+                    </v-expansion-panel>
+                  </v-expansion-panels>
+                </v-col>
+                <v-col cols="10">
+                  <p class="text-grey">{{ beitrag.datum }}</p>
+                </v-col>
+              </v-row>
+            </v-card>
           </div>
         </div>
-
 
       </div>
     </v-img>
@@ -114,6 +146,11 @@ export default {
 </script>
 
 <style scoped>
+p {
+  color: white;
+  text-align: center;
+}
+
 .cardArtikelVorschau {
   min-height: 100px;
   width: 500px;
