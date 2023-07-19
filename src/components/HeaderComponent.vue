@@ -22,7 +22,7 @@
           </v-btn>
         </v-col>
 
-        <v-col cols="8">
+        <v-col cols="11">
           <v-row class="d-flex mt-n10">
             <v-col>
               <v-menu>
@@ -159,10 +159,13 @@ export default {
   },
   methods: {
     checkMobileView() {
-      if (window.innerWidth <= 1605) {
+      if (window.innerWidth <= 1205) {
         this.mobile = true;
+        this.$store.state.mobile =true;
       } else {
         this.mobile = false;
+        this.$store.state.mobile =false;
+
       }
     },
     weiterleiten(url) {

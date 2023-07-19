@@ -1,17 +1,18 @@
 <template>
   <div>
     <HeaderComponent/>
-    <v-img :src="background" cover style="height: 85vh; position: fixed">
-      <div class="d-flex align-center justify-center"
-           style="background-color: rgba(255,255,255,0.56);height: 100%; width: 100%">
+    <v-img :src="background" cover style="height: 100vh; position: fixed">
+      <div class="d-flex justify-center "
+           style="background-color: rgba(255,255,255,0.56);height: 100%; width: 100% ;" >
 
-        <div class="hidden-xs">
-          <v-row class="d-flex justify-center mt-n15" style="width: 100%;">
+        <div v-if="!$store.state.mobile" style="padding-top: 125px" >
+          <v-row class="d-flex justify-center mt-n15" style="width: 100%; ">
             <v-col cols="12">
               <h1 class="text-center mt-n12 mb-5">Ihre Meinung ist uns wichtig</h1>
             </v-col>
             <v-col cols="4" style="height: 500px; overflow-y: auto">
               <v-card
+                  style="width: 95%"
                   v-for="kommentar in kommentare" :key="kommentar"
                   :class="{ 'selected-card': kommentar.selected }"
                   class="mb-3 cardArtikelVorschau d-flex justify-center"
@@ -60,28 +61,35 @@
           </v-row>
         </div>
 
-        <div class="hidden-sm-and-up">
-          <h3 class="text-center mt-10">Ihre Meinung ist uns wichtig</h3>
-          <div class="d-flex justify-center pb-5">
-            <div style="overflow-y: scroll; height: 80vh">
-              <v-card-item>
-                <v-expansion-panels>
-                  <v-expansion-panel
-                      v-for="kommentar in kommentare"
-                      :key="kommentar"
-                      class="text-center mt-3 mb-2"
-                      style=" background-color: #2F53A7; color: white; border-radius: 20px">
-                    <v-expansion-panel-title class="text-center">
-                      <h4 class="text-center">{{ kommentar.titel }}</h4>
-                    </v-expansion-panel-title>
-                    <v-expansion-panel-text>
-                      {{ kommentar.text }}
-                    </v-expansion-panel-text>
-                    <h4 class="text-grey">{{ kommentar.autor }}, {{ kommentar.datum }}</h4>
-                  </v-expansion-panel>
-                </v-expansion-panels>
-              </v-card-item>
-            </div>
+
+        <div v-if="$store.state.mobile" class="d-flex justify-center" style=" width: 100vw">
+          <div style="overflow-y:scroll; height: 100vh; padding-bottom: 120px">
+            <v-card v-for="beitrag in kommentare" :key="beitrag" class="mx-10 mt-10"
+                    style="background-color: #2F53A7; border-radius: 20px">
+              <v-row class="d-flex justify-center mx-0" style="width: 100%;">
+                <v-col class="mt-4" cols="10">
+                  <h3 class="text-white text-center">{{ beitrag.titel }}</h3>
+                </v-col>
+                <v-col class="pt-0" cols="10">
+                  <p class="text-center" style="color: #69a6f1">{{ beitrag.autor }}</p>
+                </v-col>
+                <v-col cols="12">
+                  <v-expansion-panels>
+                    <v-expansion-panel
+                        :title="beitrag.titel"
+                        class="text-white"
+                        color="#2F53A7"
+                        style=" background-color: rgba(97,153,218,0.73); border: #69a6f1 solid 2px; border-radius: 20px  "
+                    >
+                      <v-expansion-panel-text class="text-center">{{ beitrag.text }}</v-expansion-panel-text>
+                    </v-expansion-panel>
+                  </v-expansion-panels>
+                </v-col>
+                <v-col cols="10">
+                  <p style="color: #69a6f1" class="text-center"> {{ beitrag.datum }}</p>
+                </v-col>
+              </v-row>
+            </v-card>
           </div>
         </div>
 

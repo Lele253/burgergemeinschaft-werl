@@ -4,6 +4,7 @@ export default createStore({
     state: {
         user: 'false',
         routername: 'BG Werl',
+        mobile: false,
         beiträge: [
             {
                 id: 1,

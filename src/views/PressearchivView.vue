@@ -1,17 +1,18 @@
 <template>
   <div>
     <HeaderComponent/>
-    <v-img :src="background" cover style="height: 85vh; position:fixed;">
+    <v-img :src="background" cover style="height: 100vh; position:fixed;">
       <div class="d-flex align-center justify-center"
            style="background-color: rgba(255,255,255,0.56);height: 100%; width: 100%">
 
-        <div class="hidden-xs">
+        <div v-if="!$store.state.mobile">
           <v-row class="d-flex justify-center mt-n15" style="width: 100%;">
             <v-col cols="12">
               <h1 class="text-center mt-n12 mb-5">Ein Blick in die Vergangenheit und die Gegenwart</h1>
             </v-col>
             <v-col cols="4" style="height: 500px; overflow-y: auto">
               <v-card
+                  style="width: 95%"
                   v-for="artikel in pressearchiv" :key="artikel"
                   :class="{ 'selected-card': artikel.selected }"
                   class="mb-3 cardArtikelVorschau d-flex justify-center"
@@ -58,30 +59,39 @@
             </v-col>
           </v-row>
         </div>
-
-        <div class="hidden-sm-and-up" style="height: 65vh; margin-bottom: 100px">
+        <div v-if="$store.state.mobile"  style=" width: 100vw; padding-top: 125px">
           <h3 class="text-center">Ein Blick in die Vergangenheit <br> und die Gegenwart</h3>
-          <div class="d-flex justify-center pb-5">
-            <div style="overflow-y: scroll; height: 70vh">
-              <v-card-item>
-                <v-expansion-panels>
-                  <v-expansion-panel
-                      v-for="beitrag in pressearchiv"
-                      :key="beitrag"
-                      class="text-center mt-3 mb-2"
-                      style=" background-color: #2F53A7; color: white; border-radius: 20px">
-                    <v-expansion-panel-title class="text-center">
-                      <h4 class="text-center">{{ beitrag.titel }}</h4>
-                    </v-expansion-panel-title>
-                    <v-expansion-panel-text>
-                      {{ beitrag.text }}
-                    </v-expansion-panel-text>
-                    <h4 class="text-grey">{{ beitrag.autor }}, {{ beitrag.datum }}</h4>
-                  </v-expansion-panel>
-                </v-expansion-panels>
-              </v-card-item>
+            <div  class="d-flex justify-center">
+              <div style="overflow-y:scroll; height: 100vh; padding-bottom: 120px">
+                <v-card v-for="beitrag in pressearchiv" :key="beitrag" class="mx-10 mt-10"
+                        style="background-color: #2F53A7; border-radius: 20px ">
+                  <v-row class="d-flex justify-center mx-0" style="width: 100%;">
+                    <v-col class="mt-4" cols="10">
+                      <h3 class="text-white text-center">{{ beitrag.titel }}</h3>
+                    </v-col>
+                    <v-col class="pt-0" cols="10">
+                      <p class="text-center" style="color: #69a6f1">{{ beitrag.autor }}</p>
+                    </v-col>
+                    <v-col cols="12">
+                      <v-expansion-panels>
+                        <v-expansion-panel
+                            :title="beitrag.titel"
+                            class="text-white"
+                            color="#2F53A7"
+                            style=" background-color: rgba(97,153,218,0.73); border: #69a6f1 solid 2px; border-radius: 20px  "
+                        >
+                          <v-expansion-panel-text class="text-center">{{ beitrag.text }}</v-expansion-panel-text>
+                        </v-expansion-panel>
+                      </v-expansion-panels>
+                    </v-col>
+                    <v-col cols="10">
+                      <p style="color: #69a6f1" class="text-center"> {{ beitrag.datum }}</p>
+                    </v-col>
+                  </v-row>
+                </v-card>
+              </div>
+
             </div>
-          </div>
         </div>
 
       </div>
