@@ -30,7 +30,7 @@
 
           <div v-if="$store.state.mobile">
             <h2 class="text-center mt-5">Wusstest du, dass...</h2>
-            <div class="mt-2" style="height: 100vh;padding-bottom: 200px; overflow-y: scroll">
+            <div class="mt-2" style="height: 100vh;padding-bottom: 250px; overflow-y: scroll">
               <v-card v-for="erfolg in erfolge" :key="erfolg"
                       style="width: 80vw;max-width: 600px; margin-bottom: 20px; background-color: rgba(47, 83, 167, 0.65); border-radius: 20px">
 

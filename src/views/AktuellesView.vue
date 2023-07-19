@@ -57,7 +57,7 @@
 
 
         <div v-if="$store.state.mobile" class="d-flex justify-center" style=" width: 100vw">
-          <div style="overflow-y:scroll; height: 100vh; padding-bottom: 120px">
+          <div style="overflow-y:scroll; height: 100vh; padding-bottom: 250px">
             <v-card v-for="beitrag in beiträge" :key="beitrag" class="mx-10 mt-10"
                     style="background-color: #2F53A7; border-radius: 20px">
               <v-row class="d-flex justify-center mx-0" style="width: 100%;">
