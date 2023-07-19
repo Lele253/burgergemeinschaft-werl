@@ -5,7 +5,8 @@
               {{ new Date().getFullYear() }} — <strong>BG Werl</strong>
             </v-col>-->
       <v-col v-if="!$store.state.mobile" cols="4" lg="1" md="4" sm="4">
-        <h3 class="text-center text-white" style="cursor: pointer" @click="$router.push('/datenschutz')">Datenschutz</h3>
+        <h3 class="text-center text-white" style="cursor: pointer" @click="$router.push('/datenschutz')">
+          Datenschutz</h3>
       </v-col>
       <v-col class="d-flex justify-center" cols="4" lg="1" md="4" sm="4">
         <div class="text-center ml-2">
@@ -46,32 +47,32 @@
           <v-snackbar v-model="snackbarLinks" width="80">
             <h3 class="text-center">Links</h3>
             <p class="text-center mt-2" style="cursor: pointer"
-               @click="weiterleiten('https://www.brandwatch.com/de/wp-content/themes/brandwatch/src/core/endpoints/resize.php?image=uploads/brandwatch/troll.jpg&width=469')">
+               @click="weiterleiten('https://www.werl.de')">
               <u>Stadt Werl</u>
             </p>
             <p class="text-center mt-2" style="cursor: pointer"
-               @click="weiterleiten('https://www.brandwatch.com/de/wp-content/themes/brandwatch/src/core/endpoints/resize.php?image=uploads/brandwatch/troll.jpg&width=469')">
+               @click="weiterleiten('https://www.mg-werl.de')">
               <u>Mariengymnasium</u></p>
             <p class="text-center mt-2" style="cursor: pointer"
-               @click="weiterleiten('https://www.brandwatch.com/de/wp-content/themes/brandwatch/src/core/endpoints/resize.php?image=uploads/brandwatch/troll.jpg&width=469')">
+               @click="weiterleiten('https://www.saelzer-sekundarschule-werl.de/')">
               <u>Sekundarschule</u></p>
             <p class="text-center mt-2" style="cursor: pointer"
-               @click="weiterleiten('https://www.brandwatch.com/de/wp-content/themes/brandwatch/src/core/endpoints/resize.php?image=uploads/brandwatch/troll.jpg&width=469')">
-              <u>Ursilinengymnasium</u>
+               @click="weiterleiten('https://ursulinenschulen-werl.de/')">
+              <u>Ursulinengymnasium</u>
             </p>
             <p class="text-center mt-2" style="cursor: pointer"
-               @click="weiterleiten('https://www.brandwatch.com/de/wp-content/themes/brandwatch/src/core/endpoints/resize.php?image=uploads/brandwatch/troll.jpg&width=469')">
-              <u>Ursilinenrealschule</u>
+               @click="weiterleiten('http://www.ursulinenrealschule.de/')">
+              <u>Ursulinenrealschule</u>
             </p>
             <p class="text-center mt-2" style="cursor: pointer"
-               @click="weiterleiten('https://www.brandwatch.com/de/wp-content/themes/brandwatch/src/core/endpoints/resize.php?image=uploads/brandwatch/troll.jpg&width=469')">
+               @click="weiterleiten('https://www.marienschule-buederich.de')">
               <u>Marienschule
                 Büderich</u></p>
             <p class="text-center mt-2" style="cursor: pointer"
-               @click="weiterleiten('https://www.brandwatch.com/de/wp-content/themes/brandwatch/src/core/endpoints/resize.php?image=uploads/brandwatch/troll.jpg&width=469')">
+               @click="weiterleiten('https://www.norbertschule-werl.de/')">
               <u>Norbertschule</u></p>
             <p class="text-center mt-2" style="cursor: pointer"
-               @click="weiterleiten('https://www.brandwatch.com/de/wp-content/themes/brandwatch/src/core/endpoints/resize.php?image=uploads/brandwatch/troll.jpg&width=469')">
+               @click="weiterleiten('https://www.walburgisschule.de/startseite.html')">
               <u>Walburgisschule </u></p>
             <div class="d-flex justify-center mt-2">
               <v-btn color="red" variant="text" @click="snackbarLinks = false">
@@ -82,7 +83,8 @@
         </div>
       </v-col>
       <v-col class="hidden-sm-and-down" cols="4" lg="1" md="4" sm="4">
-        <h3 v-if="!$store.state.mobile" class="text-white text-center" style="cursor: pointer" @click="$router.push('/impressum')">Impressum</h3>
+        <h3 v-if="!$store.state.mobile" class="text-white text-center" style="cursor: pointer"
+            @click="$router.push('/impressum')">Impressum</h3>
       </v-col>
 
 
