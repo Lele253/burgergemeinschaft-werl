@@ -69,7 +69,7 @@
 
 
     <v-img v-if="$store.state.mobile" :src="background" cover style="height: 100vh; position: fixed; width: 100vw; ">
-      <div style="padding-top: 10px; padding-bottom: 100px; overflow: scroll;height: 100% ">
+      <div style="padding-top: 10px; padding-bottom: 120px; overflow: scroll;height: 100% ">
         <h2 class="text-center text-white mb-2">Unser Rat</h2>
       <v-row  class="justify-center mx-0" style="width: 100%" >
 

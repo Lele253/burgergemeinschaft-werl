@@ -2,10 +2,10 @@
   <div>
     <HeaderComponent/>
     <v-img :src="background" cover style="height: 100vh; position:fixed;">
-      <div class="d-flex  justify-center"
-           style="background-color: rgba(255,255,255,0.56);height: 100%; width: 100%; padding-top: 125px">
+      <div class="d-flex justify-center"
+           style="background-color: rgba(255,255,255,0.56);height: 100%; width: 100%; ">
 
-        <div v-if="!$store.state.mobile">
+        <div v-if="!$store.state.mobile" style="padding-top: 125px">
           <v-row class="d-flex justify-center mt-n15" style="width: 100%;">
             <v-col cols="12">
               <h1 class="text-center mt-n12 mb-5">Ein Blick in die Vergangenheit und die Gegenwart</h1>
@@ -59,7 +59,7 @@
             </v-col>
           </v-row>
         </div>
-        <div v-if="$store.state.mobile"  style=" width: 100vw; padding-top: 125px">
+        <div v-if="$store.state.mobile"  style=" width: 100vw; ">
           <h3 class="text-center">Ein Blick in die Vergangenheit <br> und die Gegenwart</h3>
             <div  class="d-flex justify-center">
               <div style="overflow-y:scroll; height: 100vh; padding-bottom: 120px">

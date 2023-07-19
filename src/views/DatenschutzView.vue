@@ -323,7 +323,7 @@ import HeaderComponent from "@/components/HeaderComponent";
 export default {
   data(){
     return{
-      name: "DatenschutzView",
+      name: "Datenschutz",
     }
   },
   components: {
