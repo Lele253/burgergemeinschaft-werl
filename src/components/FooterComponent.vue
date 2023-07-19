@@ -22,7 +22,7 @@
               <v-col class="text-center" cols="12">
                 <p>Oder senden Sie einen Brief an:</p>
                 <p>Jens Schmigowski</p>
-                <p>Kupuzinerring 30</p>
+                <p>Kapuzinerring 30</p>
                 <p>59457 Werl</p>
                 <p style="cursor: pointer" @click="weiterleiten('tel:+4929228820732')"><u>Tel: 02922-8820732</u></p>
               </v-col>

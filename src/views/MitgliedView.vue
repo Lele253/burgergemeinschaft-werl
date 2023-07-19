@@ -108,10 +108,11 @@
             width="500">
           <v-card class="d-flex align-center" style="background-color: #2F53A7; height: 225px">
             <v-card-title class="text-h5 text-white text-center">
-              Vielen Dank für Ihre Bewerbung
+              Vielen Dank für Ihren Mitgliedsantrag
             </v-card-title>
             <v-card-text class="text-center text-white mx-10">
-              Ihre Bewerbung ist bei uns eingeganen. Wir bedanken uns herzlich dafür und werden uns so schnell wie
+              Ihre Mitgliedsantrag ist bei uns eingegangen. Wir bedanken uns herzlich dafür und werden uns so schnell
+              wie
               möglich bei Ihnen
               melden.
             </v-card-text>
