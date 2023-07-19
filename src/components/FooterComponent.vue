@@ -61,7 +61,7 @@
               <u>Ursulinengymnasium</u>
             </p>
             <p class="text-center mt-2" style="cursor: pointer"
-               @click="weiterleiten('http://www.ursulinenrealschule.de/')">
+               @click="weiterleiten('https://www.ursulinenschulen-werl.de/index.php/ursulinenrealschule')">
               <u>Ursulinenrealschule</u>
             </p>
             <p class="text-center mt-2" style="cursor: pointer"
