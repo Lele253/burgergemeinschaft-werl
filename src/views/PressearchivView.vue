@@ -62,7 +62,7 @@
         <div v-if="$store.state.mobile"  style=" width: 100vw; ">
           <h3 class="text-center">Ein Blick in die Vergangenheit <br> und die Gegenwart</h3>
             <div  class="d-flex justify-center">
-              <div style="overflow-y:scroll; height: 100vh; padding-bottom: 120px">
+              <div style="overflow-y:scroll; height: 100vh; padding-bottom: 200px">
                 <v-card v-for="beitrag in pressearchiv" :key="beitrag" class="mx-10 mt-10"
                         style="background-color: #2F53A7; border-radius: 20px ">
                   <v-row class="d-flex justify-center mx-0" style="width: 100%;">
