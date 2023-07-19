@@ -68,9 +68,28 @@
 
     <!--Mobile-->
 
-    <div v-if="$store.state.mobile" style="width: 100vw; height: 85vh; overflow-y: scroll">
-      <v-row class="justify-center align-center" style="width: 103vw; height: 80vh">
-
+    <div v-if="$store.state.mobile" style="width: 100vw; height: 100vh; overflow-y: scroll">
+      <v-row class="justify-center align-center" style="width: 100vw;">
+        <v-col class="d-flex align-center justify-center" cols="11" md="5" sm="9" >
+          <v-carousel
+              style="margin-top: 10px; max-height: 200px"
+              :interval="5000"
+              :show-arrows="false"
+              cycle
+              hide-delimiter-background
+              hide-delimiters>
+            <v-carousel-item
+                style="max-height: 300px"
+                v-for="image in images"
+                :key="image">
+              <v-tooltip :text="image.text" location="bottom">
+                <template v-slot:activator="{ props }">
+                  <v-img style="max-height: 200px" :src="image.url" class="image" cover v-bind="props"/>
+                </template>
+              </v-tooltip>
+            </v-carousel-item>
+          </v-carousel>
+        </v-col>
         <v-col class="d-flex justify-center" cols="12" md="5" sm="10">
           <v-card class="card">
             <h2 class="text-white text-center mb-5">Willkommen bei der Bürgergemeinschaft Werl!</h2>
@@ -106,24 +125,7 @@
         </v-col>
 
 
-        <v-col class="d-flex align-center justify-center" cols="10" md="5" sm="9" style="height: 20%">
-          <v-carousel
-              :interval="5000"
-              :show-arrows="false"
-              cycle
-              hide-delimiter-background
-              hide-delimiters>
-            <v-carousel-item
-                v-for="image in images"
-                :key="image">
-              <v-tooltip :text="image.text" location="bottom">
-                <template v-slot:activator="{ props }">
-                  <v-img :src="image.url" class="image" cover v-bind="props"/>
-                </template>
-              </v-tooltip>
-            </v-carousel-item>
-          </v-carousel>
-        </v-col>
+
 
       </v-row>
     </div>

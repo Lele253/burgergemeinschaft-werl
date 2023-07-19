@@ -4,11 +4,11 @@
     <v-img :src="background" cover style="height: 100vh;position:fixed;">
 
       <div class="d-flex"
-           style="background-color: rgba(255,255,255,0.56);height: 100%; width: 100%; padding-top: 125px">
+           style="background-color: rgba(255,255,255,0.56);height: 100%; width: 100%; ">
 
         <!--        Desktop-->
 
-        <div v-if="!$store.state.mobile">
+        <div v-if="!$store.state.mobile" style="padding-top: 125px" >
           <v-row class="d-flex justify-center mt-n15 mx-0" style="width: 100%;">
             <v-col cols="12">
               <h1 class="text-center mt-n12 mb-5">Bleib immer auf dem Laufendem</h1>
@@ -55,27 +55,6 @@
 
         <!--        Mobile-->
 
-        <!--        <div class="hidden-sm-and-up">
-                  <h3 class="text-center mt-10">Bleib immer auf dem Laufenden</h3>
-                  <div class="d-flex justify-center">
-                    <div style="overflow-y: scroll; height: 80vh">
-                      <v-card-item>
-                        <v-expansion-panels>
-                          <v-expansion-panel
-                              v-for="beitrag in beiträge"
-                              :key="beitrag"
-                              :text="beitrag.text"
-                              :title="beitrag.titel"
-                              class="text-center mt-3 mb-2"
-                              style=" background-color: #2F53A7; color: white; border-radius: 20px"
-                          ></v-expansion-panel>
-                        </v-expansion-panels>
-                      </v-card-item>
-                    </div>
-                  </div>
-                </div>-->
-
-        <!--        Mobile Neu-->
 
         <div v-if="$store.state.mobile" class="d-flex justify-center" style=" width: 100vw">
           <div style="overflow-y:scroll; height: 100vh; padding-bottom: 120px">
