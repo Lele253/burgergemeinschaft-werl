@@ -6,7 +6,7 @@
     <v-app-bar v-if="!mobile" class="header" height="125">
       <v-row class=" d-flex justify-center mx-0" style="width: 100%">
         <v-col class="d-flex justify-start" cols="2">
-          <v-img :src="background" height="70" @click="$router.push('/')"/>
+          <v-img style="cursor: pointer" :src="background" height="70" @click="$router.push('/')"/>
         </v-col>
 
         <v-col cols="2"/>

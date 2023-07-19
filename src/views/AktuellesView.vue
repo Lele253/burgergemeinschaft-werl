@@ -3,7 +3,7 @@
     <HeaderComponent/>
     <v-img :src="background" cover style="height: 100vh;position:fixed;">
 
-      <div class="d-flex "
+      <div class="d-flex"
            style="background-color: rgba(255,255,255,0.56);height: 100%; width: 100%; padding-top: 125px">
 
         <!--        Desktop-->

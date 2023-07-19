@@ -1,14 +1,14 @@
 <template>
   <div>
     <HeaderComponent/>
-    <v-img :src="background" cover style="height: 102vh; width: 100vw; position: fixed">
-      <div style="background-color: rgba(255,255,255,0.56);height: 100%; width: 100%">
+    <v-img :src="background" cover style="height: 100vh; width: 100vw; position: fixed;">
+      <div style="background-color: rgba(255,255,255,0.56);height: 100%; width: 100%;">
 
-        <div class="d-flex justify-center align-center" style="width: 100vw; height: 88vh;">
+        <div class="d-flex justify-center" style="width: 100vw; height: 100vh;padding-top: 0px;">
 
-          <div class="hidden-md-and-down">
+          <div v-if="!$store.state.mobile">
             <h1 class="text-center pt-5">Wusstest du, dass...</h1>
-            <div class="mt-2" style="height: 82vh; overflow-y: scroll">
+            <div class="mt-2" style="height: 82vh; overflow-y: scroll; padding-bottom: 80px">
               <v-card v-for="erfolg in erfolge" :key="erfolg"
                       style="width: 80vw;max-width: 800px; margin-bottom: 20px; background-color: rgba(47, 83, 167, 0.65); border-radius: 20px">
                 <v-card-item>
@@ -28,7 +28,7 @@
           </div>
 
 
-          <div class="hidden-lg-and-up">
+          <div v-if="$store.state.mobile">
             <h2 class="text-center mt-5">Wusstest du, dass...</h2>
             <div class="mt-2" style="height: 82vh; overflow-y: scroll">
               <v-card v-for="erfolg in erfolge" :key="erfolg"

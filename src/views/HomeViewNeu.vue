@@ -1,11 +1,11 @@
 <template>
-  <div :style="setMainHeight" class="background d-flex align-center main" style="width: 100vw; position: fixed">
+  <div class="background d-flex main" style="width: 100vw; height: 100vh; position: fixed">
     <HeaderComponent/>
 
     <!--    Dekstop-->
 
-    <div class="hidden-xs" style="width: 100vw; height: 85vh">
-      <v-row class="justify-center align-center" style="width: 103vw; height: 80vh">
+    <div class="hidden-xs" style="width: 100vw; height: 100vh ; padding-bottom: 100px">
+      <v-row class="justify-center align-center" style="width: 100vw; height: 100%">
 
         <v-col class="d-flex justify-center" cols="12" md="5" sm="10">
           <v-card class="card">
