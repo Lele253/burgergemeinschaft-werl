@@ -321,10 +321,18 @@
 import HeaderComponent from "@/components/HeaderComponent";
 
 export default {
-  name: "DatenschutzView",
+  data(){
+    return{
+      name: "DatenschutzView",
+    }
+  },
   components: {
     HeaderComponent
+  },
+  created() {
+    this.$store.state.routername = this.name
   }
+
 }
 </script>
 

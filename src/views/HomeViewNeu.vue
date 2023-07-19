@@ -68,7 +68,7 @@
 
     <!--Mobile-->
 
-    <div v-if="$store.state.mobile" style="width: 100vw; height: 100vh; padding-bottom: 110px;  overflow-y: scroll">
+    <div v-if="$store.state.mobile" style="width: 100vw; height: 100vh; padding-bottom: 200px;  overflow-y: scroll">
       <v-row class="justify-center align-center mx-0" style="width: 100%; ">
         <v-col class="d-flex align-center justify-center" cols="11" md="5" sm="9" >
           <v-carousel

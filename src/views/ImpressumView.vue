@@ -1,7 +1,7 @@
 <template>
   <div>
     <HeaderComponent/>
-    <div style="background-color: #e3dede; height: 100vh " class="pa-5">
+    <div style="background-color: #e3dede; min-height: 100vh " class="pa-5">
       <v-row>
         <v-col cols="12">
           <v-card class="pa-5">
@@ -36,9 +36,16 @@
 import HeaderComponent from "@/components/HeaderComponent";
 
 export default {
-  name: "ImpressumView",
+  data(){
+    return{
+      name: "Impressum",
+    }
+  },
   components: {
     HeaderComponent
+  },
+  created() {
+    this.$store.state.routername = this.name
   }
 }
 </script>
