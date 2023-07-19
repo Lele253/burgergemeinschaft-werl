@@ -197,7 +197,7 @@ export default createStore({
                 name: "Siegbert May",
                 titel: "Facharzt für Nervenheilkunde und öffentliches Gesundheitswesen, Medizinaldirektor i.R., Ratsherr",
                 bild: require('../assets/rat/MaySiegbert20.jpg'),
-                vita: "Siegbert May ist ein erfahrener Facharzt für Nervenheilkunde und war lange Zeit als Medizinaldirektor tätig. Er bringt sein medizinisches Know-how in den Rat ein und setzt sich für das Wohl der Bürger ein."
+                vita: "Siegbert May ist ein erfahrener Facharzt für Nervenheilkunde und war lange Zeit als Medizinaldirektor tätig. Er bringt sein medizinisches Know-how in den Rat ein und setzt sich für das Wohl der Bürger ein.",
             },
             {
                 name: "Christoph Prünte",

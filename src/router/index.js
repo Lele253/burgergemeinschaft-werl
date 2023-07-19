@@ -11,12 +11,18 @@ import VorstandView from "@/views/VorstandView";
 import RatView from "@/views/RatView";
 import HomeViewNeu from "@/views/HomeViewNeu";
 import ErfolgeNeuView from "@/views/ErfolgeNeuView";
+import DatenschutzView from "@/views/DatenschutzView";
 
 const routes = [
     {
         path: '/',
         name: 'home',
         component: HomeViewNeu
+    },
+    {
+        path: '/datenschutz',
+        name: 'datenschutz',
+        component: DatenschutzView
     },
     {
         path: '/aktuelles',

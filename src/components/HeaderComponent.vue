@@ -146,7 +146,10 @@ export default {
         {titel: 'Erfolge', url: '/erfolge'},
         {titel: 'Kommentare', url: '/kommentare'},
         {titel: 'Pressearchiv', url: '/pressearchiv'},
-        {titel: 'Tagesordnung', url: 'https://sessionnet.krz.de/werl/bi/info.asp'}
+        {titel: 'Tagesordnung', url: 'https://sessionnet.krz.de/werl/bi/info.asp'},
+        {titel: 'Impressum', url: '/impressum'},
+        {titel: 'Datenschutz', url: '/datenschutz'},
+
       ]
     };
   },
