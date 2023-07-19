@@ -111,7 +111,7 @@
               Vielen Dank für Ihren Mitgliedsantrag
             </v-card-title>
             <v-card-text class="text-center text-white mx-10">
-              Ihre Mitgliedsantrag ist bei uns eingegangen. Wir bedanken uns herzlich dafür und werden uns so schnell
+              Ihr Mitgliedsantrag ist bei uns eingegangen. Wir bedanken uns herzlich dafür und werden uns so schnell
               wie
               möglich bei Ihnen
               melden.

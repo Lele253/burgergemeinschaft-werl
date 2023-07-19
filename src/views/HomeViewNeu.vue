@@ -4,10 +4,10 @@
 
     <!--    Dekstop-->
 
-    <div class="hidden-xs" style="width: 100vw; height: 100vh ; padding-bottom: 100px">
+    <div v-if="!$store.state.mobile" style="width: 100vw; height: 100vh ; padding-bottom: 100px">
       <v-row class="justify-center align-center" style="width: 100vw; height: 100%">
 
-        <v-col class="d-flex justify-center" cols="12" md="5" sm="10">
+        <v-col class="d-flex justify-center" cols="12" md="5" sm="10" style="height: 60%">
           <v-card class="card">
             <h2 class="text-white text-center mb-5">Willkommen bei der Bürgergemeinschaft Werl!</h2>
             <v-card-item>
@@ -68,7 +68,7 @@
 
     <!--Mobile-->
 
-    <div class="hidden-sm-and-up" style="width: 100vw; height: 85vh; overflow-y: scroll">
+    <div v-if="$store.state.mobile" style="width: 100vw; height: 85vh; overflow-y: scroll">
       <v-row class="justify-center align-center" style="width: 103vw; height: 80vh">
 
         <v-col class="d-flex justify-center" cols="12" md="5" sm="10">
@@ -106,12 +106,11 @@
         </v-col>
 
 
-        <v-col class="d-flex align-center justify-center" cols="10" md="5" sm="9">
+        <v-col class="d-flex align-center justify-center" cols="10" md="5" sm="9" style="height: 20%">
           <v-carousel
               :interval="5000"
               :show-arrows="false"
               cycle
-              height="350"
               hide-delimiter-background
               hide-delimiters>
             <v-carousel-item
@@ -225,7 +224,7 @@ export default ({
   width: 90%;
   padding-bottom: 20px;
   padding-top: 20px;
-  max-height: 500px;
+  height: 100%;
   background-color: #2F53A7;
   box-shadow: 2px 4px 6px black;
   border-radius: 20px;
