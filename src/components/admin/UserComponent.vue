@@ -42,10 +42,6 @@
               <v-text-field v-model="passwort" label="Passwort" type="password" variant="outlined"/>
             </v-col>
             <v-col cols="5">
-              <v-file-input v-model="profilBild" accept="image/*" label="Bild" prepend-icon="mdi-camera"
-                            variant="outlined"/>
-            </v-col>
-            <v-col cols="5">
               <v-select v-model="berechtigung" :items="berechtigungenItems" label="Berechtigung" variant="outlined"/>
             </v-col>
             <v-col class="d-flex justify-center" cols="12">
@@ -94,6 +90,7 @@
 
 <script>
 import {Icon} from "@iconify/vue/dist/iconify";
+import axios from "axios";
 
 export default {
   name: "UserComponent",
@@ -109,118 +106,48 @@ export default {
       nachname: '',
       email: '',
       passwort: '',
-      profilBild: null,
       berechtigungenItems: ['Admin', 'Verfasser', 'Keine'],
-      userArray: [
-        {
-          vorname: 'stefan',
-          nachname: 'Franke',
-          email: 'testmail',
-          berechtigung: 'Admin',
-          profilBild: null
-        }, {
-          vorname: 'stefan',
-          nachname: 'Franke',
-          email: 'testmail',
-          berechtigung: 'Admin',
-          profilBild: null
-        }, {
-          vorname: 'stefan',
-          nachname: 'Franke',
-          email: 'testmail',
-          berechtigung: 'Admin',
-          profilBild: null
-        }, {
-          vorname: 'stefan',
-          nachname: 'Franke',
-          email: 'testmail',
-          berechtigung: 'Admin',
-          profilBild: null
-        }, {
-          vorname: 'stefan',
-          nachname: 'Franke',
-          email: 'testmail',
-          berechtigung: 'Admin',
-          profilBild: null
-        }, {
-          vorname: 'stefan',
-          nachname: 'Franke',
-          email: 'testmail',
-          berechtigung: 'Admin',
-          profilBild: null
-        }, {
-          vorname: 'stefan',
-          nachname: 'Franke',
-          email: 'testmail',
-          berechtigung: 'Admin',
-          profilBild: null
-        }, {
-          vorname: 'stefan',
-          nachname: 'Franke',
-          email: 'testmail',
-          berechtigung: 'Admin',
-          profilBild: null
-        }, {
-          vorname: 'stefan',
-          nachname: 'Franke',
-          email: 'testmail',
-          berechtigung: 'Admin',
-          profilBild: null
-        }, {
-          vorname: 'stefan',
-          nachname: 'Franke',
-          email: 'testmail',
-          berechtigung: 'Admin',
-          profilBild: null
-        }, {
-          vorname: 'stefan',
-          nachname: 'Franke',
-          email: 'testmail',
-          berechtigung: 'Admin',
-          profilBild: null
-        }, {
-          vorname: 'stefan',
-          nachname: 'Franke',
-          email: 'testmail',
-          berechtigung: 'Admin',
-          profilBild: null
-        }, {
-          vorname: 'stefan',
-          nachname: 'Franke',
-          email: 'testmail',
-          berechtigung: 'Admin',
-          profilBild: null
-        }, {
-          vorname: 'stefan',
-          nachname: 'Franke',
-          email: 'testmail',
-          berechtigung: 'Admin',
-          profilBild: null
-        },]
+      userArray: []
     }
   },
+  mounted() {
+    this.getAllUser()
+  },
   methods: {
-    userErstellen() {
-      this.userArray.push({
+    async userErstellen() {
+      await axios.post('/regist', {
+        password: this.passwort,
+        email: this.email,
+        status: this.berechtigung,
         vorname: this.vorname,
         nachname: this.nachname,
-        email: this.email,
-        berechtigung: this.berechtigung,
-        profilBild: this.profilBild
       })
 
-      this.profilBild = null
+      this.userArray.push({
+        password: this.passwort,
+        email: this.email,
+        status: this.berechtigung,
+        vorname: this.vorname,
+        nachname: this.nachname,
+      })
+
       this.vorname = ''
       this.nachname = ''
       this.email = ''
       this.passwort = ''
       this.berechtigung = ''
     },
-    löschen(beitrag) {
-      const index = this.userArray.indexOf(beitrag);
+    async getAllUser() {
+      const response = await axios.get('/user/all')
+      this.userArray = response.data
+    },
+    async löschen(user) {
+      const index = this.userArray.indexOf(user);
       if (index > -1) {
         this.userArray.splice(index, 1);
       }
+
+      await axios.delete('/user/all/' + user.nutzerId,)
     }
 
   }

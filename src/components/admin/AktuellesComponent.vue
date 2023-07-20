@@ -21,6 +21,8 @@
         <v-row class="mx-0 ml-0 mr-0 my-0 d-flex justify-center " style="width: 100%">
           <v-col cols="12">
             <h2 class="text-center">Beitrag Anlegen</h2>
+            titel: {{ titel }}
+            text: {{ text }}
           </v-col>
           <v-col cols="5">
             <v-text-field v-model="titel" label="Titel" variant="outlined"/>
@@ -69,12 +71,13 @@
 
 <script>
 import {Icon} from "@iconify/vue/dist/iconify";
+import axios from "axios";
 
 export default {
   name: "AktuellesComponent",
   data() {
     return {
-      beiträge: this.$store.state.beiträge.sort((a, b) => b.id - a.id),
+      beiträge: [],
       beitrag: {},
 
       titel: '',
@@ -89,24 +92,43 @@ export default {
   },
   methods: {
     setErstenBeitrag() {
-      this.beitrag = this.beiträge[0]
+      this.beitrag = this.$store.state.beiträge
     },
-    speichern() {
-      let id = this.$store.state.beiträge.length + 1
-      this.$store.state.beiträge.push({
-        id: id,
-        titel: this.titel,
-        text: this.text,
-        datum: this.getDate()
-      })
-      this.titel = '';
-      this.text = ''
-    },
-    deleteBeitrag(beitrag) {
-      const index = this.beiträge.indexOf(beitrag);
-      if (index > -1) {
-        this.beiträge.splice(index, 1);
+    async speichern() {
+      try {
+        await axios.post('/aktuelles', {
+          titel: this.titel,
+          inhalt: this.text,
+          datum: this.getDate()
+        })
+
+
+        let id = this.$store.state.beiträge.length + 1
+        this.$store.state.beiträge.push({
+          id: id,
+          titel: this.titel,
+          text: this.text,
+          datum: this.getDate()
+        })
+        this.titel = '';
+        this.text = ''
+      } catch (e) {
+        console.log(e)
       }
+
+    },
+    async deleteBeitrag(beitrag) {
+      try {
+        await axios.delete('/aktuelles/' + beitrag.id)
+
+        const index = this.beiträge.indexOf(beitrag);
+        if (index > -1) {
+          this.beiträge.splice(index, 1);
+        }
+      } catch (e) {
+        console.log(e)
+      }
+
     },
     getDate() {
       let datum = new Date();
@@ -127,10 +149,17 @@ export default {
       this.löschen = true;
       this.beiträge = '';
       this.beiträge = this.$store.state.beiträge.sort((a, b) => b.id - a.id);
+    },
+    async getAllAktuelles() {
+      const response = await axios.get('/aktuelles')
+      this.$store.state.beiträge = response.data
     }
   },
   created() {
     this.setErstenBeitrag()
+  },
+  mounted() {
+    this.getAllAktuelles()
   }
 }
 </script>

@@ -8,7 +8,7 @@
 
         <!--        Desktop-->
 
-        <div v-if="!$store.state.mobile" style="padding-top: 125px" >
+        <div v-if="!$store.state.mobile" style="padding-top: 125px">
           <v-row class="d-flex justify-center mt-n15 mx-0" style="width: 100%;">
             <v-col cols="12">
               <h1 class="text-center mt-n12 mb-5">Bleib immer auf dem Laufendem</h1>
@@ -99,7 +99,7 @@ export default {
       name: 'Aktuelles',
 
       panel: 0,
-      beiträge: this.$store.state.beiträge.sort((a, b) => b.id - a.id),
+      beiträge: [],
       background: require('../assets/aktuelles.jpeg'),
       beitrag: {}
     }
@@ -109,7 +109,8 @@ export default {
   },
   methods: {
     setErstenBeitrag() {
-      this.beitrag = this.beiträge[0]
+      if (this.beitrag.length >= 0)
+        this.beitrag = this.beiträge[0]
     },
     selectCard(selectedBeitrag) {
       this.beiträge.forEach(beitrag => {
