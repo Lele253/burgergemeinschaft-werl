@@ -114,15 +114,19 @@ export default {
   methods: {
     async erfolgErstellen() {
       try {
-        const formdata = new FormData()
-        formdata.append('bild', 'test')
-        console.log(formdata.get('bild'))
+        let formData = new FormData();
+        for (var i = 0; i < this.img.length; i++) {
+          let file = this.img[i];
+          formData.append('files', file);
 
-        await axios.post('/erfolge', formdata, {
-          headers: {
-            'Content-Type': 'multipart/form-data'
-          }
-        })
+          await axios.post('/erfolge', formData, {
+            headers: {
+              'Content-Type': 'multipart/form-data'
+            }
+
+          })
+        }
+
 
 
         this.$store.state.erfolge.push({
