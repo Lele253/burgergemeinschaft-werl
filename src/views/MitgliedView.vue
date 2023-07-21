@@ -135,6 +135,7 @@
 
 <script>
 import HeaderComponent from "@/components/HeaderComponent";
+import axios from "axios";
 
 export default {
   data() {
@@ -162,18 +163,22 @@ export default {
     }
   },
   methods: {
-    abschicken() {
-      this.$store.state.bewerbungen.push({
-        vorname: this.vorname,
-        nachname: this.nachname,
-        email: this.email,
-        nummer: this.handynummer,
-        plz: this.plz,
-        ort: this.ort,
-        adresse: this.adresse,
-        bearbeitet: false
-      }),
-          this.clear()
+    async abschicken() {
+      try {
+        await axios.post('/bewerbung', {
+          vorname: this.vorname,
+          nachname: this.nachname,
+          email: this.email,
+          nummer: this.handynummer,
+          plz: this.plz,
+          ort: this.ort,
+          straße: this.adresse,
+          bearbeitet: false
+        })
+        this.clear()
+      } catch (e) {
+        console.log(e)
+      }
     },
     clear() {
       this.vorname = null

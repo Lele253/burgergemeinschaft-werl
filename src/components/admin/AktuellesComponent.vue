@@ -21,8 +21,6 @@
         <v-row class="mx-0 ml-0 mr-0 my-0 d-flex justify-center " style="width: 100%">
           <v-col cols="12">
             <h2 class="text-center">Beitrag Anlegen</h2>
-            titel: {{ titel }}
-            text: {{ text }}
           </v-col>
           <v-col cols="5">
             <v-text-field v-model="titel" label="Titel" variant="outlined"/>

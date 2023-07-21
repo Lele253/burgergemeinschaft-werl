@@ -65,6 +65,7 @@
 
 <script>
 import {Icon} from "@iconify/vue/dist/iconify";
+import axios from "axios";
 
 export default {
   name: "VorstandComponent",
@@ -73,7 +74,7 @@ export default {
   },
   data() {
     return {
-      vorstand: this.$store.state.vorstand,
+      vorstand: [],
 
       vorstandAnlegen: true,
       vorstandLoeschen: false,
@@ -82,21 +83,46 @@ export default {
       bild: null,
     }
   },
+  mounted() {
+    this.getAllVorstand()
+  },
   methods: {
-    speichern() {
-      this.$store.state.vorstand.push({
-        name: this.name,
-        position: this.position,
-        img: this.bild,
-      })
-      this.name = '';
-      this.position = ''
-      this.bild = ''
+    async getAllVorstand() {
+      const response = await axios.get('/vorstand')
+      this.$store.state.vorstand = response.data
+
+      this.vorstand = this.$store.state.vorstand
     },
-    löschen(person) {
-      const index = this.vorstand.indexOf(person);
-      if (index > -1) {
-        this.vorstand.splice(index, 1);
+    async speichern() {
+      try {
+        await axios.post('/vorstand', {
+          name: this.name,
+          position: this.position,
+          img: this.bild,
+        })
+
+        this.$store.state.vorstand.push({
+          name: this.name,
+          position: this.position,
+          img: this.bild,
+        })
+        this.name = '';
+        this.position = ''
+        this.bild = ''
+      } catch (e) {
+        console.log(e)
+      }
+    },
+    async löschen(person) {
+      try {
+        await axios.delete('/vorstand/' + person.id)
+
+        const index = this.vorstand.indexOf(person);
+        if (index > -1) {
+          this.vorstand.splice(index, 1);
+        }
+      } catch (e) {
+        console.log(e)
       }
     }
   }

@@ -95,12 +95,13 @@
 <script>
 
 import {Icon} from "@iconify/vue/dist/iconify";
+import axios from "axios";
 
 export default {
   name: "PressearchivComponent",
   data() {
     return {
-      beiträge: this.$store.state.pressearchiv.sort((a, b) => b.id - a.id),
+      beiträge: [],
       beitrag: {},
 
       titel: '',
@@ -118,35 +119,65 @@ export default {
   components: {
     Icon
   },
+  mounted() {
+    this.getAllPressearchiv()
+  },
   methods: {
-    setErstenBeitrag() {
-      this.beitrag = this.beiträge[0]
+    async getAllPressearchiv() {
+      const response = await axios.get('/pressearchiv')
+      this.$store.state.pressearchiv = response.data
+
+      this.beiträge = this.$store.state.pressearchiv
     },
-    speichern() {
-      let id = this.$store.state.pressearchiv.length + 1
-      this.$store.state.pressearchiv.push({
-        id: id,
-        titel: this.titel,
-        untertitel: this.untertitel,
-        bild: this.bild,
-        text: this.text,
-        autor: this.autor,
-        datum: this.getDate(),
-        position: this.position
-      })
-      this.titel = '';
-      this.untertitel = '';
-      this.bild = '';
-      this.text = '';
-      this.autor = '';
-      this.datum = '';
-      this.position = '';
-    },
-    deleteBeitrag(beitrag) {
-      const index = this.beiträge.indexOf(beitrag);
-      if (index > -1) {
-        this.beiträge.splice(index, 1);
+    async speichern() {
+      try {
+        await axios.post('/pressearchiv', {
+          titel: this.titel,
+          untertitel: this.untertitel,
+          bild: this.bild,
+          text: this.text,
+          autor: this.autor,
+          datum: this.getDate(),
+          position: this.position
+        })
+
+
+        /*let id = this.$store.state.pressearchiv.length + 1*/
+        this.$store.state.pressearchiv.push({
+          /*id: id,*/
+          titel: this.titel,
+          untertitel: this.untertitel,
+          bild: this.bild,
+          text: this.text,
+          autor: this.autor,
+          datum: this.getDate(),
+          position: this.position
+        })
+        this.titel = '';
+        this.untertitel = '';
+        this.bild = '';
+        this.text = '';
+        this.autor = '';
+        this.datum = '';
+        this.position = '';
+      } catch (e) {
+        console.log(e)
       }
+
+    },
+    async deleteBeitrag(beitrag) {
+      try {
+        await axios.delete('/pressearchiv/' + beitrag.id)
+
+
+        const index = this.beiträge.indexOf(beitrag);
+        if (index > -1) {
+          this.beiträge.splice(index, 1);
+        }
+      } catch (e) {
+        console.log(e)
+      }
+
     },
     getDate() {
       let datum = new Date();
@@ -169,9 +200,6 @@ export default {
       this.beiträge = this.$store.state.pressearchiv.sort((a, b) => b.id - a.id);
     }
   },
-  created() {
-    this.setErstenBeitrag()
-  }
 }
 </script>
 

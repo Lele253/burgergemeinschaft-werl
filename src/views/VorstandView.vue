@@ -78,6 +78,7 @@
 
 <script>
 import HeaderComponent from "@/components/HeaderComponent";
+import axios from "axios";
 
 export default {
   name: "UnserTeamViewNeu.vue",
@@ -86,7 +87,7 @@ export default {
     return {
       name: 'Vorstand',
       background: require('../assets/VorstandUndRat.png'),
-      vorstand: this.$store.state.vorstand,
+      vorstand: [],
       person: '',
       model: null
     }
@@ -95,13 +96,15 @@ export default {
     HeaderComponent
   },
   methods: {
-    setFirstPerson() {
-      this.person = this.$store.state.vorstand
-    }
+    async getAllVorstand() {
+      const response = await axios.get('/vorstand')
+      this.$store.state.vorstand = response.data
+
+      this.vorstand = this.$store.state.vorstand
+    },
   },
   created() {
     this.$store.state.routername = this.name
-    this.setFirstPerson()
   }
 }
 </script>

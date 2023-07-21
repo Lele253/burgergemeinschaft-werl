@@ -117,6 +117,7 @@
 
 <script>
 import {Icon} from "@iconify/vue/dist/iconify";
+import axios from "axios";
 
 export default {
   name: "erfolgeComponent",
@@ -127,6 +128,8 @@ export default {
     return {
       erfolge: this.$store.state.erfolge.sort((a, b) => b.id - a.id),
 
+      error: null,
+
       erfolgAnlegen: true,
       erfolgLoeschen: false,
 
@@ -134,24 +137,52 @@ export default {
       erfolgText: '',
     }
   },
+  mounted() {
+    this.getAllErfolge()
+  },
   methods: {
-    erfolgErstellen() {
-      let id = (this.$store.state.erfolge[this.$store.state.erfolge.length - 1].id + 1)
-      this.$store.state.erfolge.push({
-        id: id,
-        img: this.erfolgBild,
-        text: this.erfolgText,
-      });
+    async erfolgErstellen() {
+      try {
+        await axios.post('/erfolge', {
+          img: this.erfolgBild,
+          text: this.erfolgText,
+        })
 
-      this.bild = null;
-      this.text = ''
-    },
-    deleteErfolg(erfolg) {
-      const index = this.erfolge.indexOf(erfolg);
-      if (index > -1) {
-        this.erfolge.splice(index, 1);
+
+        /*let id = (this.$store.state.erfolge[this.$store.state.erfolge.length - 1].id + 1)*/
+        this.$store.state.erfolge.push({
+          /*id: id,*/
+          img: this.erfolgBild,
+          text: this.erfolgText,
+        })
+
+        this.erfolgBild = null;
+        this.erfolgText = ''
+
+      } catch (e) {
+        this.error = e;
+        console.log(e)
       }
     },
+    async deleteErfolg(erfolg) {
+      try {
+        await axios.delete('/erfolge/' + erfolg.id)
+
+        const index = this.erfolge.indexOf(erfolg);
+        if (index > -1) {
+          this.erfolge.splice(index, 1);
+        }
+      } catch (e) {
+        console.log(e)
+      }
+
+    },
+    async getAllErfolge() {
+      const response = await axios.get('/erfolge')
+      this.$store.state.erfolge = response.data
+
+      this.erfolge = this.$store.state.erfolge
+    }
   },
 }
 </script>

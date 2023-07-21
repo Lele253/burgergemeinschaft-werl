@@ -73,6 +73,7 @@
 
 <script>
 import {Icon} from "@iconify/vue/dist/iconify";
+import axios from "axios";
 
 export default {
   name: "KommentarComponent",
@@ -81,7 +82,7 @@ export default {
   },
   data() {
     return {
-      kommentare: this.$store.state.kommentare.sort((a, b) => b.id - a.id),
+      kommentare: [],
 
       autor: '',
       titel: '',
@@ -91,7 +92,16 @@ export default {
       kommentarLoeschen: false,
     }
   },
+  mounted() {
+    this.getAllKommentare()
+  },
   methods: {
+    async getAllKommentare() {
+      const response = await axios.get('/kommentare')
+      this.$store.state.kommentare = response.data
+
+      this.kommentare = this.$store.state.kommentare
+    },
     getDate() {
       let datum = new Date();
       let tag = datum.getDate();
@@ -106,27 +116,52 @@ export default {
       let formatiertesDatum = tag + "." + monat + "." + jahr;
       return formatiertesDatum
     },
-    erstelleKommentar() {
-      let id = (this.$store.state.kommentare.length + 1)
-      this.$store.state.kommentare.push({
-        id: id,
-        img: null,
-        titel: this.titel,
-        text: this.text,
-        autor: this.autor,
-        datum: this.getDate()
-      })
+    async erstelleKommentar() {
+      try {
+        await axios.post('/kommentare', {
+          img: this.bild,
+          titel: this.titel,
+          text: this.text,
+          autor: this.autor,
+          datum: this.getDate()
+        })
 
-      this.autor = '';
-      this.titel = '';
-      this.kommentar = '';
-      this.bild = '';
-    },
-    deleteKommentar(kommentar) {
-      const index = this.kommentare.indexOf(kommentar);
-      if (index > -1) {
-        this.kommentare.splice(index, 1);
+
+        /*let id = (this.$store.state.kommentare.length + 1)*/
+        this.$store.state.kommentare.push({
+          /*id: id,*/
+          img: null,
+          titel: this.titel,
+          text: this.text,
+          autor: this.autor,
+          datum: this.getDate()
+        })
+
+        this.autor = '';
+        this.titel = '';
+        this.text = '';
+        this.kommentar = '';
+        this.bild = '';
+      } catch (e) {
+        console.log(e)
       }
+
+
+    },
+    async deleteKommentar(kommentar) {
+      try {
+        await axios.delete('/kommentare/' + kommentar.id)
+
+
+        const index = this.kommentare.indexOf(kommentar);
+        if (index > -1) {
+          this.kommentare.splice(index, 1);
+        }
+      } catch (e) {
+        console.log(e)
+      }
+
+
     },
   }
 }

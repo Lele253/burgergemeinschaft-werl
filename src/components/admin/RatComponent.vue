@@ -66,6 +66,7 @@
 
 <script>
 import {Icon} from "@iconify/vue/dist/iconify";
+import axios from "axios";
 
 export default {
   name: "RatComponent",
@@ -74,7 +75,7 @@ export default {
   },
   data() {
     return {
-      rat: this.$store.state.rat,
+      rat: [],
 
       ratAnlegen: true,
       ratLoeschen: false,
@@ -84,23 +85,51 @@ export default {
       vita: '',
     }
   },
+  mounted() {
+    this.getAllRat()
+  },
   methods: {
-    speichern() {
-      this.$store.state.rat.push({
-        name: this.name,
-        title: this.titel,
-        bild: this.bild,
-        vita: this.vita,
-      })
-      this.name = '';
-      this.titel = ''
-      this.bild = ''
-      this.vita = ''
+    async getAllRat() {
+      const response = await axios.get('/rat')
+      this.$store.state.rat = response.data
+
+      this.rat = this.$store.state.rat
     },
-    löschen(person) {
-      const index = this.rat.indexOf(person);
-      if (index > -1) {
-        this.rat.splice(index, 1);
+    async speichern() {
+      try {
+        await axios.post('/rat', {
+          name: this.name,
+          titel: this.titel,
+          bild: this.bild,
+          vita: this.vita,
+        })
+
+        console.log("Titel: " + this.titel)
+
+        this.$store.state.rat.push({
+          name: this.name,
+          titel: this.titel,
+          bild: this.bild,
+          vita: this.vita,
+        })
+        this.name = '';
+        this.titel = ''
+        this.bild = ''
+        this.vita = ''
+      } catch (e) {
+        console.log(e)
+      }
+    },
+    async löschen(person) {
+      try {
+        await axios.delete('/rat/' + person.id)
+
+        const index = this.rat.indexOf(person);
+        if (index > -1) {
+          this.rat.splice(index, 1);
+        }
+      } catch (e) {
+        console.log(e)
       }
     }
   }

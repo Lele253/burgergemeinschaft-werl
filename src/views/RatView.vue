@@ -1,7 +1,8 @@
 <template>
   <div>
     <HeaderComponent/>
-    <v-img v-if="!$store.state.mobile" :src="background" cover style="height: 100vh; position: fixed; width: 100vw; margin-top: -160px">
+    <v-img v-if="!$store.state.mobile" :src="background" cover
+           style="height: 100vh; position: fixed; width: 100vw; margin-top: -160px">
       <div class="d-flex justify-center" style="background-color: rgba(255,255,255,0);height: 100%; width: 100%">
 
         <!--        Main Card-->
@@ -67,30 +68,30 @@
     </v-img>
 
 
-
     <v-img v-if="$store.state.mobile" :src="background" cover style="height: 100vh; position: fixed; width: 100vw; ">
       <div style="padding-top: 10px; padding-bottom: 120px; overflow: scroll;height: 100% ">
         <h2 class="text-center text-white mb-2">Unser Rat</h2>
-      <v-row  class="justify-center mx-0" style="width: 100%" >
+        <v-row class="justify-center mx-0" style="width: 100%">
 
-        <v-col cols="10" v-for="x in $store.state.rat" :key="x.id">
-          <v-card style="box-shadow: 2px 4px 6px black; width: 100%; min-height: 450px; background-color: #2F53A7; border-radius: 20px">
-            <v-img cover :src="x.bild" style="height: 90% " ></v-img>
-            <div class="d-flex justify-center">
-              <v-expansion-panels>
-                <v-expansion-panel
-                    :title=" x.name"
-                    class="text-white"
-                    color="#2F53A7"
-                    style=" background-color: rgba(97,153,218,0.73); border: #69a6f1 solid 2px; border-radius: 0px 0px 20px 20px ; "
-                >
-                  <v-expansion-panel-text class="text-center">{{ x.vita }}</v-expansion-panel-text>
-                </v-expansion-panel>
-              </v-expansion-panels>
-            </div>
-          </v-card>
-        </v-col>
-      </v-row>
+          <v-col v-for="x in $store.state.rat" :key="x.id" cols="10">
+            <v-card
+                style="box-shadow: 2px 4px 6px black; width: 100%; min-height: 450px; background-color: #2F53A7; border-radius: 20px">
+              <v-img :src="x.bild" cover style="height: 90% "></v-img>
+              <div class="d-flex justify-center">
+                <v-expansion-panels>
+                  <v-expansion-panel
+                      :title=" x.name"
+                      class="text-white"
+                      color="#2F53A7"
+                      style=" background-color: rgba(97,153,218,0.73); border: #69a6f1 solid 2px; border-radius: 0px 0px 20px 20px ; "
+                  >
+                    <v-expansion-panel-text class="text-center">{{ x.vita }}</v-expansion-panel-text>
+                  </v-expansion-panel>
+                </v-expansion-panels>
+              </div>
+            </v-card>
+          </v-col>
+        </v-row>
       </div>
     </v-img>
 
@@ -99,6 +100,8 @@
 
 <script>
 import HeaderComponent from "@/components/HeaderComponent";
+import axios from "axios";
+
 export default {
   data() {
     return {
@@ -112,14 +115,23 @@ export default {
   components: {
     HeaderComponent,
   },
+  mounted() {
+    this.getAllRat()
+  },
   methods: {
-    setFirstPerson() {
+    async getAllRat() {
+      const response = await axios.get('/rat')
+      this.$store.state.rat = response.data
+
+      this.person = this.$store.state.rat
+    },
+    /*setFirstPerson() {
       this.person = this.$store.state.rat[0];
-    }
+    }*/
   },
   created() {
     this.$store.state.routername = this.name
-    this.setFirstPerson()
+    /*this.setFirstPerson()*/
   }
 }
 </script>
@@ -178,7 +190,8 @@ export default {
   border-radius: 20px;
   background-color: #2F53A7;
 }
-.selectedCardMobile{
+
+.selectedCardMobile {
   height: 900px;
 }
 </style>

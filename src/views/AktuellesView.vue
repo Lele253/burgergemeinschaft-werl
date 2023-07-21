@@ -1,7 +1,7 @@
 <template>
   <div>
     <HeaderComponent/>
-    <v-img :src="background" cover style="height: 100vh;position:fixed;">
+    <v-img :src="background" cover style="height: 100vh; width: 100vw; position:fixed;">
 
       <div class="d-flex"
            style="background-color: rgba(255,255,255,0.56);height: 100%; width: 100%; ">
@@ -9,7 +9,7 @@
         <!--        Desktop-->
 
         <div v-if="!$store.state.mobile" style="padding-top: 125px">
-          <v-row class="d-flex justify-center mt-n15 mx-0" style="width: 100%;">
+          <v-row class="d-flex justify-center mt-n15 mx-0" style="width: 100vw;">
             <v-col cols="12">
               <h1 class="text-center mt-n12 mb-5">Bleib immer auf dem Laufendem</h1>
             </v-col>
@@ -41,7 +41,7 @@
 
                   <v-list-item class="text-center mt-2">
 
-                    <v-virtual-scroll :height="420" :items="[beitrag.text]">
+                    <v-virtual-scroll :height="420" :items="[beitrag.inhalt]">
                       <template v-slot:default="{ item }">
                         <p class="mx-10 text-white">{{ item }}</p>
                       </template>
@@ -92,6 +92,7 @@
 
 <script>
 import HeaderComponent from "@/components/HeaderComponent";
+import axios from "axios";
 
 export default {
   data() {
@@ -108,8 +109,12 @@ export default {
     HeaderComponent
   },
   methods: {
-    setErstenBeitrag() {
-      if (this.beitrag.length >= 0)
+    async setErstenBeitrag() {
+      const response = await axios.get('/aktuelles')
+      this.$store.state.beiträge = response.data
+
+      this.beiträge = this.$store.state.beiträge;
+      if (this.beiträge.length != undefined)
         this.beitrag = this.beiträge[0]
     },
     selectCard(selectedBeitrag) {

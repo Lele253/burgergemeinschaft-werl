@@ -1,21 +1,21 @@
 <template>
   <div>
     <HeaderComponent/>
-    <v-img :src="background" cover style="height: 100vh; position: fixed">
+    <v-img :src="background" cover style="height: 100vh;width: 100vw; position: fixed">
       <div class="d-flex justify-center "
-           style="background-color: rgba(255,255,255,0.56);height: 100%; width: 100% ;" >
+           style="background-color: rgba(255,255,255,0.56);height: 100%; width: 100% ;">
 
-        <div v-if="!$store.state.mobile" style="padding-top: 125px" >
-          <v-row class="d-flex justify-center mt-n15" style="width: 100%; ">
+        <div v-if="!$store.state.mobile" style="padding-top: 125px">
+          <v-row class="d-flex justify-center mt-n15" style="width: 100vw; ">
             <v-col cols="12">
               <h1 class="text-center mt-n12 mb-5">Ihre Meinung ist uns wichtig</h1>
             </v-col>
             <v-col cols="4" style="height: 500px; overflow-y: auto">
               <v-card
-                  style="width: 95%"
-                  v-for="kommentar in kommentare" :key="kommentar"
-                  :class="{ 'selected-card': kommentar.selected }"
+                  v-for="kommentar in kommentare"
+                  :key="kommentar" :class="{ 'selected-card': kommentar.selected }"
                   class="mb-3 cardArtikelVorschau d-flex justify-center"
+                  style="width: 95%"
                   @click="selectCard(kommentar); this.kommentar = kommentar">
 
                 <v-row class="mx-0" style="width: 100%">
@@ -86,7 +86,7 @@
                   </v-expansion-panels>
                 </v-col>
                 <v-col cols="10">
-                  <p style="color: #69a6f1" class="text-center"> {{ beitrag.datum }}</p>
+                  <p class="text-center" style="color: #69a6f1"> {{ beitrag.datum }}</p>
                 </v-col>
               </v-row>
             </v-card>
@@ -101,6 +101,7 @@
 
 <script>
 import HeaderComponent from "@/components/HeaderComponent";
+import axios from "axios";
 
 export default {
   data() {
@@ -117,19 +118,15 @@ export default {
   components: {
     HeaderComponent
   },
+  mounted() {
+    this.getAllKommentare()
+  },
   methods: {
-    setErstenBeitrag() {
-      this.kommentar = this.kommentare[0]
-    },
-    setBeitrag(itemId) {
-      this.ausgewählterBeitragText = this.kommentare[itemId - 1].text
-      this.ausgewählterBeitragTitel = this.kommentare[itemId - 1].titel
-    },
-    convertTitle(string) {
-      if (string.length > 70) {
-        return string.substring(0, 70) + '...'
-      }
-      return string
+    async getAllKommentare() {
+      const response = await axios.get('/kommentare')
+      this.$store.state.kommentare = response.data
+
+      this.kommentare = this.$store.state.kommentare
     },
     selectCard(selectedKommentar) {
       this.kommentare.forEach(kommentar => {
@@ -139,7 +136,6 @@ export default {
   },
   created() {
     this.$store.state.routername = this.name
-    this.setErstenBeitrag()
   }
 
 }

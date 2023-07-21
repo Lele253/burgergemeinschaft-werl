@@ -35,7 +35,7 @@
               </div>
               <div class="info-item">
                 <span class="info-label">Adresse:</span>
-                <span>{{ user.adresse }}</span>
+                <span>{{ user.straße }}</span>
               </div>
             </v-card-text>
             <v-card-actions class="d-flex justify-center">
@@ -62,6 +62,7 @@
 
 <script>
 import {Icon} from "@iconify/vue/dist/iconify";
+import axios from "axios";
 
 export default {
   name: "BerwerbungComponent",
@@ -72,24 +73,33 @@ export default {
     return {
       variable: false,
 
-      bewerbungen: ''
+      bewerbungen: []
     }
   },
+  mounted() {
+    this.getAllBewerbungen()
+  },
   methods: {
-    setbewerbungen() {
+    async getAllBewerbungen() {
+      const response = await axios.get('/bewerbung')
+      this.$store.state.bewerbungen = response.data
+
       this.bewerbungen = this.$store.state.bewerbungen
-      console.log('gesetzt')
     },
-    löschen(person) {
-      const index = this.bewerbungen.indexOf(person);
-      if (index > -1) {
-        this.bewerbungen.splice(index, 1);
+    async löschen(person) {
+      try {
+        await axios.delete('/bewerbung/' + person.id)
+
+
+        const index = this.bewerbungen.indexOf(person);
+        if (index > -1) {
+          this.bewerbungen.splice(index, 1);
+        }
+      } catch (e) {
+        console.log(e)
       }
     }
   },
-  created() {
-    this.setbewerbungen()
-  }
 }
 </script>
 
