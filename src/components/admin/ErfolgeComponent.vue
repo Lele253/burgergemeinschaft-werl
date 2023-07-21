@@ -120,7 +120,7 @@ export default {
           formData.append('files', file);
 
           await axios.post('/erfolge', formData, {
-            headers: {
+            headers: { 
               'Content-Type': 'multipart/form-data'
             }
 
