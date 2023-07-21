@@ -109,13 +109,11 @@ export default {
     HeaderComponent
   },
   methods: {
-    async setErstenBeitrag() {
+    async getAllBeiträge() {
       const response = await axios.get('/aktuelles')
       this.$store.state.beiträge = response.data
 
       this.beiträge = this.$store.state.beiträge;
-      if (this.beiträge.length != undefined)
-        this.beitrag = this.beiträge[0]
     },
     selectCard(selectedBeitrag) {
       this.beiträge.forEach(beitrag => {
@@ -125,7 +123,7 @@ export default {
   },
   created() {
     this.$store.state.routername = this.name
-    this.setErstenBeitrag()
+    this.getAllBeiträge()
   }
 }
 </script>

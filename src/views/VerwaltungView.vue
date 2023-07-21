@@ -4,6 +4,7 @@
     <div class="background d-flex justify-center" style="position: fixed; height: 86vh">
 
 
+      <!--      ToDo Fehlermeldungen in jeder component richtig abfangen, auswerten und dem User anzeigen-->
       <!--    Anmelde Dialog-->
 
       <div v-if="!user">
@@ -13,59 +14,61 @@
               persistent
               style="background-color: #2F53A7"
               width="500">
-            <v-card>
-              <v-card-title class="text-center">
-                <span class="text-h5">Einloggen</span>
-              </v-card-title>
-              <v-card-text>
-                <v-container>
-                  <v-row class="d-flex justify-center" style="width: 100%">
-                    <v-col
-                        cols="12">
-                      <v-text-field
-                          v-model="email"
-                          label="Email"
-                          required
-                      ></v-text-field>
-                    </v-col>
-                    <v-col
-                        cols="12">
-                      <v-text-field
-                          v-model="password"
-                          label="Passwort"
-                          persistent-hint
-                          required
-                      ></v-text-field>
-                    </v-col>
-                  </v-row>
-                </v-container>
-                <v-alert v-if="error == 'AxiosError: Request failed with status code 401'"
-                         class="text-center text-black" type="error">
-                  Benutzername oder Passwort ist falsch.
-                </v-alert>
+            <v-form @submit.prevent="login">
+              <v-card>
+                <v-card-title class="text-center">
+                  <span class="text-h5">Einloggen</span>
+                </v-card-title>
+                <v-card-text>
+                  <v-container>
+                    <v-row class="d-flex justify-center" style="width: 100%">
+                      <v-col
+                          cols="12">
+                        <v-text-field
+                            v-model="email"
+                            label="Email"
+                            required
+                        ></v-text-field>
+                      </v-col>
+                      <v-col
+                          cols="12">
+                        <v-text-field
+                            v-model="password"
+                            label="Passwort"
+                            persistent-hint
+                            required
+                        ></v-text-field>
+                      </v-col>
+                    </v-row>
+                  </v-container>
+                  <v-alert v-if="error == 'AxiosError: Request failed with status code 401'"
+                           class="text-center text-black" type="error">
+                    Benutzername oder Passwort ist falsch.
+                  </v-alert>
 
-                <v-alert v-if="error != 'AxiosError: Request failed with status code 401' && error != null"
-                         class="text-center text-black" type="error">
-                  Einloggen ist momentan nicht möglich. Bitte wenden Sie sich an den Admin
-                </v-alert>
-              </v-card-text>
-              <v-card-actions class="d-flex justify-center">
-                <v-btn
-                    color="white"
-                    style="background-color: #2F53A7"
-                    variant="text"
-                    @click="$router.push('/')">
-                  Abbrechen
-                </v-btn>
-                <v-btn
-                    color="white"
-                    style="background-color: #2F53A7"
-                    variant="text"
-                    @click="login">
-                  Einloggen
-                </v-btn>
-              </v-card-actions>
-            </v-card>
+                  <v-alert v-if="error != 'AxiosError: Request failed with status code 401' && error != null"
+                           class="text-center text-black" type="error">
+                    Einloggen ist momentan nicht möglich. Bitte wenden Sie sich an den Admin
+                  </v-alert>
+                </v-card-text>
+                <v-card-actions class="d-flex justify-center">
+                  <v-btn
+                      color="white"
+                      style="background-color: #2F53A7"
+                      variant="text"
+                      @click="$router.push('/')">
+                    Abbrechen
+                  </v-btn>
+                  <v-btn
+                      color="white"
+                      style="background-color: #2F53A7"
+                      type="submit"
+                      @click="login">
+                    Einloggen
+                  </v-btn>
+                </v-card-actions>
+              </v-card>
+            </v-form>
           </v-dialog>
         </v-row>
       </div>

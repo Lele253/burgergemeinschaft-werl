@@ -40,11 +40,11 @@
               <p class="text-center">Wusstest du dass...</p>
             </v-col>
             <v-col cols="9">
-              <v-textarea v-model="erfolgText" label="Erfolg eintragen" variant="outlined"></v-textarea>
+              <v-textarea v-model="text" label="Erfolg eintragen" variant="outlined"></v-textarea>
             </v-col>
             <v-col cols="9">
               <v-file-input
-                  v-model="erfolgBild"
+                  v-model="img"
                   accept="image/*"
                   label="Wähle ein Bild aus"
                   prepend-icon="mdi-camera"
@@ -83,35 +83,6 @@
       </v-card>
     </div>
 
-    <!--    Bearbeiten-->
-
-    <!--    <v-card v-if="erfolgBearbeiten" class="card" style="height: 500px;">
-          <v-card-title class="text-center"> Bearbeiten</v-card-title>
-          <v-card v-for="x in $store.state.erfolge" :key="x" class="mx-auto mb-2 pt-3"
-                  style="width: 95%; background-color: #e8e8e8">
-            <v-row class="mx-0" style="width: 100%">
-
-              <v-col cols="11">
-                <v-textarea v-model="x.text" counter
-                            no-resize="true" style=" height: 170px; width: 100%" variant="outlined">
-
-                </v-textarea>
-              </v-col>
-              <v-col class="d-flex align-center" cols="1">
-                <Icon icon="fluent-mdl2:accept-medium" style="font-size: 30px; color: green; cursor: pointer"/>
-              </v-col>
-              <v-col>
-                <v-file-input v-model="erfolgBild"
-                              accept="image/*"
-                              label="Wähle ein Bild aus"
-                              variant="outlined"></v-file-input>
-              </v-col>
-
-            </v-row>
-          </v-card>
-
-        </v-card>-->
-
   </div>
 </template>
 
@@ -133,8 +104,8 @@ export default {
       erfolgAnlegen: true,
       erfolgLoeschen: false,
 
-      erfolgBild: null,
-      erfolgText: '',
+      img: null,
+      text: '',
     }
   },
   mounted() {
@@ -143,21 +114,24 @@ export default {
   methods: {
     async erfolgErstellen() {
       try {
-        await axios.post('/erfolge', {
-          img: this.erfolgBild,
-          text: this.erfolgText,
+        const formdata = new FormData()
+        formdata.append('bild', 'test')
+        console.log(formdata.get('bild'))
+
+        await axios.post('/erfolge', formdata, {
+          headers: {
+            'Content-Type': 'multipart/form-data'
+          }
         })
 
 
-        /*let id = (this.$store.state.erfolge[this.$store.state.erfolge.length - 1].id + 1)*/
         this.$store.state.erfolge.push({
-          /*id: id,*/
-          img: this.erfolgBild,
-          text: this.erfolgText,
+          img: this.img,
+          text: this.text,
         })
 
-        this.erfolgBild = null;
-        this.erfolgText = ''
+        this.img = null;
+        this.text = ''
 
       } catch (e) {
         this.error = e;
