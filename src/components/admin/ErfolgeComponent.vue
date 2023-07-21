@@ -110,14 +110,17 @@ export default {
   },
   mounted() {
     this.getAllErfolge()
+
   },
   methods: {
+
     async erfolgErstellen() {
       try {
         let formData = new FormData();
         for (var i = 0; i < this.img.length; i++) {
           let file = this.img[i];
           formData.append('files', file);
+          formData.append('text', this.text);
 
           await axios.post('/erfolge', formData, {
             headers: {
@@ -160,6 +163,7 @@ export default {
       this.$store.state.erfolge = response.data
 
       this.erfolge = this.$store.state.erfolge
+
     }
   },
 }

@@ -13,8 +13,8 @@
                       style="width: 80vw;max-width: 800px; margin-bottom: 20px; background-color: rgba(47, 83, 167, 0.65); border-radius: 20px">
                 <v-card-item>
                   <v-row>
-                    <v-col v-if="erfolg.img != '' ">
-                      <v-img :src="erfolg.img" style="border-radius: 20px"/>
+                    <v-col v-if="erfolg.image != '' ">
+                      <v-img :src="erfolg.image" style="border-radius: 20px"/>
                     </v-col>
                     <v-col class="d-flex align-center">
                       <p class="text-center text-white">
@@ -35,7 +35,7 @@
                       style="width: 80vw;max-width: 600px; margin-bottom: 20px; background-color: rgba(47, 83, 167, 0.65); border-radius: 20px">
 
                 <v-card-item>
-                  <v-img :src="erfolg.img" style="border-radius: 20px"/>
+                  <v-img :src="erfolg.image" style=" border-radius: 20px"/>
                   <p class="text-center text-white my-2 mx-10">
                     {{ erfolg.text }}
                   </p>
@@ -52,19 +52,38 @@
 
 <script>
 import HeaderComponent from "@/components/HeaderComponent";
+import axios from "axios";
 
 export default {
   name: "ErfolgeNeuView",
   data() {
     return {
       name: 'Erfolge',
+      bild: '',
       background: require('../assets/aktuelles.jpeg'),
 
       erfolge: this.$store.state.erfolge
     }
   },
   created() {
+    this.getAllErfolge()
     this.$store.state.routername = this.name
+  },
+  methods:{
+
+    async getAllErfolge() {
+      const response = await axios.get('/erfolge')
+      this.$store.state.erfolge = response.data
+      this.erfolge = this.$store.state.erfolge
+
+      this.erfolge.forEach(item => {
+
+          // Base64-String in eine Bild-URL umwandeln und im Objekt speichern
+          item.image = `data:image/jpeg;base64,${item.image}`;
+
+      });
+      console.log(this.bild)
+    }
   },
   components: {HeaderComponent}
 }
