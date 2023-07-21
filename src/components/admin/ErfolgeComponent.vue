@@ -104,7 +104,7 @@ export default {
       erfolgAnlegen: true,
       erfolgLoeschen: false,
 
-      img: null,
+      img: true,
       text: '',
     }
   },
@@ -113,10 +113,10 @@ export default {
   },
   methods: {
     async erfolgErstellen() {
+      console.log(this.img.name)
       try {
         const formdata = new FormData()
-        formdata.append('bild', 'test')
-        console.log(formdata.get('bild'))
+        formdata.append('bild', this.img)
 
         await axios.post('/erfolge', formdata, {
           headers: {
