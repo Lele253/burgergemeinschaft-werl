@@ -20,7 +20,7 @@
 
                 <v-row class="mx-0" style="width: 100%">
                   <v-col cols="3">
-                    <v-img :src="kommentar.img" class="mx-2 my-2 image"/>
+                    <v-img :src="kommentar.image" class="mx-2 my-2 image"/>
                   </v-col>
 
                   <v-col class="mt-3 d-flex align-center" cols="9">
@@ -127,6 +127,10 @@ export default {
       this.$store.state.kommentare = response.data
 
       this.kommentare = this.$store.state.kommentare
+
+      this.kommentare.forEach(item => {
+        item.image = `data:image/jpeg;base64,${item.image}`;
+      });
     },
     selectCard(selectedKommentar) {
       this.kommentare.forEach(kommentar => {

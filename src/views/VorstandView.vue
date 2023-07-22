@@ -30,7 +30,7 @@
                       <h2 class="text-center">{{ p.name }}</h2>
                       <h5 class="text-center">{{ p.position }}</h5>
                       <v-img
-                          :src="p.img"
+                          :src="p.image"
                           class="image"
                           height="350" min-width="233"/>
                     </div>
@@ -59,7 +59,7 @@
                       <h2 class="text-center">{{ p.name }}</h2>
                       <h5 class="text-center">{{ p.position }}</h5>
                       <v-img
-                          :src="p.img" class="image" cover
+                          :src="p.image" class="image" cover
                           height="350" max-width="240"/>
                     </div>
                   </v-card>
@@ -101,10 +101,17 @@ export default {
       this.$store.state.vorstand = response.data
 
       this.vorstand = this.$store.state.vorstand
+
+      this.vorstand.forEach(item => {
+        item.image = `data:image/jpeg;base64,${item.image}`;
+      });
     },
   },
   created() {
     this.$store.state.routername = this.name
+  },
+  mounted() {
+    this.getAllVorstand()
   }
 }
 </script>

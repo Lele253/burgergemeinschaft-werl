@@ -12,7 +12,7 @@
                style="width: 100%; position:absolute;margin-top: 20vh; z-index: 1200">
           <v-col cols="3">
             <v-card class="mainCard ">
-              <v-img :src="person.bild" cover/>
+              <v-img :src="person.image" cover/>
             </v-card>
           </v-col>
           <v-col cols="6">
@@ -38,7 +38,7 @@
 
         <v-sheet
             class="bg-transparent d-flex justify-center"
-            style="position: fixed;bottom: 4%;width: 100%; height: 100%"
+            style="position: fixed;bottom: 0vh;width: 100%; height: 100%"
         >
           <v-slide-group
               v-model="model"
@@ -47,7 +47,7 @@
               style="height: 100%; width: 94%"
           >
             <v-slide-group-item
-                v-for="n in $store.state.rat"
+                v-for="n in rat"
                 :key="n"
                 v-slot="{ isSelected, toggle }"
             >
@@ -56,7 +56,7 @@
                   style="height: 200px; width: 200px"
               >
                 <div style="width: 140px" @click="this.person = n">
-                  <v-img :class="{ 'selectedCard': isSelected }" :src="n.bild" class="bild"
+                  <v-img :class="{ 'selectedCard': isSelected }" :src="n.image" class="bild"
                          @click="toggle"/>
                 </div>
               </div>
@@ -76,7 +76,7 @@
           <v-col v-for="x in $store.state.rat" :key="x.id" cols="10">
             <v-card
                 style="box-shadow: 2px 4px 6px black; width: 100%; min-height: 450px; background-color: #2F53A7; border-radius: 20px">
-              <v-img :src="x.bild" cover style="height: 90% "></v-img>
+              <v-img :src="x.image" cover style="height: 90% "></v-img>
               <div class="d-flex justify-center">
                 <v-expansion-panels>
                   <v-expansion-panel
@@ -109,6 +109,8 @@ export default {
       background: require('../assets/VorstandUndRat.png'),
       model: [],
 
+      rat: [],
+
       person: {}
     }
   },
@@ -123,15 +125,20 @@ export default {
       const response = await axios.get('/rat')
       this.$store.state.rat = response.data
 
-      this.person = this.$store.state.rat
+      this.rat = this.$store.state.rat
+
+      this.rat.forEach(item => {
+        item.image = `data:image/jpeg;base64,${item.image}`;
+      });
+
+      this.person = this.$store.state.rat[0]
+
+
     },
-    /*setFirstPerson() {
-      this.person = this.$store.state.rat[0];
-    }*/
+
   },
   created() {
     this.$store.state.routername = this.name
-    /*this.setFirstPerson()*/
   }
 }
 </script>

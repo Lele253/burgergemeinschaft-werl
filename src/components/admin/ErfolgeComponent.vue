@@ -110,7 +110,6 @@ export default {
   },
   mounted() {
     this.getAllErfolge()
-
   },
   methods: {
 
@@ -129,7 +128,6 @@ export default {
 
           })
         }
-
 
 
         this.$store.state.erfolge.push({

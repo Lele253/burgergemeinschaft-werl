@@ -6,6 +6,8 @@
 
         <div class="d-flex justify-center" style="width: 100vw; height: 100vh;padding-top: 0px;">
 
+          <!--          Desktopansicht-->
+
           <div v-if="!$store.state.mobile">
             <h1 class="text-center pt-5">Wusstest du, dass...</h1>
             <div class="mt-2" style="height: 82vh; overflow-y: scroll; padding-bottom: 80px">
@@ -27,6 +29,7 @@
             </div>
           </div>
 
+          <!--          Handyansicht-->
 
           <div v-if="$store.state.mobile">
             <h2 class="text-center mt-5">Wusstest du, dass...</h2>
@@ -69,7 +72,7 @@ export default {
     this.getAllErfolge()
     this.$store.state.routername = this.name
   },
-  methods:{
+  methods: {
 
     async getAllErfolge() {
       const response = await axios.get('/erfolge')
@@ -78,11 +81,10 @@ export default {
 
       this.erfolge.forEach(item => {
 
-          // Base64-String in eine Bild-URL umwandeln und im Objekt speichern
-          item.image = `data:image/jpeg;base64,${item.image}`;
+        // Base64-String in eine Bild-URL umwandeln und im Objekt speichern
+        item.image = `data:image/jpeg;base64,${item.image}`;
 
       });
-      console.log(this.bild)
     }
   },
   components: {HeaderComponent}

@@ -99,7 +99,6 @@ export default {
     async getAllKommentare() {
       const response = await axios.get('/kommentare')
       this.$store.state.kommentare = response.data
-
       this.kommentare = this.$store.state.kommentare
     },
     getDate() {
@@ -118,18 +117,20 @@ export default {
     },
     async erstelleKommentar() {
       try {
-        await axios.post('/kommentare', {
-          img: this.bild,
-          titel: this.titel,
-          text: this.text,
-          autor: this.autor,
-          datum: this.getDate()
+        const formdata = new FormData()
+        formdata.append('image', this.bild[0])
+        formdata.append('titel', this.titel)
+        formdata.append('text', this.text)
+        formdata.append('autor', this.autor)
+        formdata.append('datum', this.getDate())
+
+        await axios.post('/kommentare', formdata, {
+          headers: {
+            'Content-Type': 'multipart/form-data'
+          }
         })
 
-
-        /*let id = (this.$store.state.kommentare.length + 1)*/
         this.$store.state.kommentare.push({
-          /*id: id,*/
           img: null,
           titel: this.titel,
           text: this.text,

@@ -20,7 +20,7 @@
 
                 <v-row>
                   <v-col class="d-flex align-center" cols="3">
-                    <v-img :src="artikel.img" class="mx-2 my-2 image"/>
+                    <v-img :src="artikel.image" class="mx-2 my-2 image"/>
                   </v-col>
 
                   <v-col class="mt-3 d-flex align-center" cols="9">
@@ -125,6 +125,10 @@ export default {
       this.$store.state.pressearchiv = response.data
 
       this.pressearchiv = this.$store.state.pressearchiv
+
+      this.pressearchiv.forEach(item => {
+        item.image = `data:image/jpeg;base64,${item.image}`;
+      });
     },
     selectCard(selectedBeitrag) {
       this.pressearchiv.forEach(beitrag => {

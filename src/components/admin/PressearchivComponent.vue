@@ -131,20 +131,23 @@ export default {
     },
     async speichern() {
       try {
-        await axios.post('/pressearchiv', {
-          titel: this.titel,
-          untertitel: this.untertitel,
-          bild: this.bild,
-          text: this.text,
-          autor: this.autor,
-          datum: this.getDate(),
-          position: this.position
+        const formdata = new FormData()
+        formdata.append('image', this.bild[0])
+        formdata.append('titel', this.titel)
+        formdata.append('untertitel', this.untertitel)
+        formdata.append('text', this.text)
+        formdata.append('autor', this.autor)
+        formdata.append('datum', this.getDate())
+        formdata.append('position', this.position)
+
+        await axios.post('/pressearchiv', formdata, {
+          headers: {
+            'Content-Type': 'multipart/form-data'
+          }
         })
+        
 
-
-        /*let id = this.$store.state.pressearchiv.length + 1*/
         this.$store.state.pressearchiv.push({
-          /*id: id,*/
           titel: this.titel,
           untertitel: this.untertitel,
           bild: this.bild,

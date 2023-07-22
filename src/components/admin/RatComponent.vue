@@ -97,14 +97,17 @@ export default {
     },
     async speichern() {
       try {
-        await axios.post('/rat', {
-          name: this.name,
-          titel: this.titel,
-          bild: this.bild,
-          vita: this.vita,
-        })
+        const formdata = new FormData()
+        formdata.append('name', this.name)
+        formdata.append('titel', this.titel)
+        formdata.append('image', this.bild[0])
+        formdata.append('vita', this.vita)
 
-        console.log("Titel: " + this.titel)
+        await axios.post('/rat', formdata, {
+          headers: {
+            'Content-Type': 'multipart/form-data'
+          }
+        })
 
         this.$store.state.rat.push({
           name: this.name,

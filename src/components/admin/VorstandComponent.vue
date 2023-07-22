@@ -95,10 +95,15 @@ export default {
     },
     async speichern() {
       try {
-        await axios.post('/vorstand', {
-          name: this.name,
-          position: this.position,
-          img: this.bild,
+        const formdata = new FormData()
+        formdata.append('name', this.name)
+        formdata.append('position', this.position)
+        formdata.append('image', this.bild[0])
+
+        await axios.post('/vorstand', formdata, {
+          headers: {
+            'Content-Type': 'multipart/form-data'
+          }
         })
 
         this.$store.state.vorstand.push({
