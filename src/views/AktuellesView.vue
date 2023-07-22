@@ -15,7 +15,6 @@
 
             <v-col cols="4" style="height: 80%; overflow-y: scroll">
               <div style="overflow-y: scroll; height: 100%">
-                
                 <v-card
                     v-for="beitrag in beiträge"
                     :key="beitrag" :class="{ 'selected-card': beitrag.selected }"
