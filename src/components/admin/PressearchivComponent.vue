@@ -31,7 +31,7 @@
             <v-text-field v-model="autor" label="Autor" variant="outlined"/>
           </v-col>
           <v-col class="mt-n5" cols="4">
-            <v-file-input v-model="bild" label="Bild (optional)" prepend-icon="mdi-camera" variant="outlined"/>
+            <v-file-input v-model="image" label="Bild (optional)" prepend-icon="mdi-camera" variant="outlined"/>
           </v-col>
           <v-col class="mt-n5" cols="3">
             <v-text-field v-model="position" label="Position" variant="outlined"/>
@@ -106,7 +106,7 @@ export default {
 
       titel: '',
       untertitel: '',
-      bild: '',
+      image: null,
       text: '',
       autor: '',
       datum: '',
@@ -130,42 +130,81 @@ export default {
       this.beiträge = this.$store.state.pressearchiv
     },
     async speichern() {
-      try {
-        const formdata = new FormData()
-        formdata.append('image', this.bild[0])
-        formdata.append('titel', this.titel)
-        formdata.append('untertitel', this.untertitel)
-        formdata.append('text', this.text)
-        formdata.append('autor', this.autor)
-        formdata.append('datum', this.getDate())
-        formdata.append('position', this.position)
+      if (this.image != null) {
+        try {
+          const formdata = new FormData()
+          formdata.append('image', this.image[0])
+          formdata.append('titel', this.titel)
+          formdata.append('untertitel', this.untertitel)
+          formdata.append('text', this.text)
+          formdata.append('autor', this.autor)
+          formdata.append('datum', this.getDate())
+          formdata.append('position', this.position)
 
-        await axios.post('/pressearchiv', formdata, {
-          headers: {
-            'Content-Type': 'multipart/form-data'
-          }
-        })
-        
+          await axios.post('/pressearchiv', formdata, {
+            headers: {
+              'Content-Type': 'multipart/form-data'
+            }
+          })
 
-        this.$store.state.pressearchiv.push({
-          titel: this.titel,
-          untertitel: this.untertitel,
-          bild: this.bild,
-          text: this.text,
-          autor: this.autor,
-          datum: this.getDate(),
-          position: this.position
-        })
-        this.titel = '';
-        this.untertitel = '';
-        this.bild = '';
-        this.text = '';
-        this.autor = '';
-        this.datum = '';
-        this.position = '';
-      } catch (e) {
-        console.log(e)
+
+          this.$store.state.pressearchiv.push({
+            titel: this.titel,
+            untertitel: this.untertitel,
+            bild: this.image,
+            text: this.text,
+            autor: this.autor,
+            datum: this.getDate(),
+            position: this.position
+          })
+          this.titel = '';
+          this.untertitel = '';
+          this.image = '';
+          this.text = '';
+          this.autor = '';
+          this.datum = '';
+          this.position = '';
+        } catch (e) {
+          alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut. Falls das Problem weiterhin besteht, kontaktieren Sie Bitte den Administrator.")
+        }
+      } else {
+        try {
+          const formdata = new FormData()
+          formdata.append('titel', this.titel)
+          formdata.append('untertitel', this.untertitel)
+          formdata.append('text', this.text)
+          formdata.append('autor', this.autor)
+          formdata.append('datum', this.getDate())
+          formdata.append('position', this.position)
+
+          await axios.post('/pressearchiv/withoutImage', formdata, {
+            headers: {
+              'Content-Type': 'multipart/form-data'
+            }
+          })
+
+
+          this.$store.state.pressearchiv.push({
+            titel: this.titel,
+            untertitel: this.untertitel,
+            bild: this.image,
+            text: this.text,
+            autor: this.autor,
+            datum: this.getDate(),
+            position: this.position
+          })
+          this.titel = '';
+          this.untertitel = '';
+          this.image = '';
+          this.text = '';
+          this.autor = '';
+          this.datum = '';
+          this.position = '';
+        } catch (e) {
+          alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut. Falls das Problem weiterhin besteht, kontaktieren Sie Bitte den Administrator.")
+        }
       }
+
 
     },
     async deleteBeitrag(beitrag) {
@@ -178,7 +217,7 @@ export default {
           this.beiträge.splice(index, 1);
         }
       } catch (e) {
-        console.log(e)
+        alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut. Falls das Problem weiterhin besteht, kontaktieren Sie Bitte den Administrator.")
       }
 
     },

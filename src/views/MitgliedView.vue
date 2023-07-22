@@ -177,7 +177,7 @@ export default {
         })
         this.clear()
       } catch (e) {
-        console.log(e)
+        alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut. Falls das Problem weiterhin besteht, kontaktieren Sie Bitte den Administrator.")
       }
     },
     clear() {

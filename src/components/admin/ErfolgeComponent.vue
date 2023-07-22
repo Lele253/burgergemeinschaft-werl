@@ -104,7 +104,7 @@ export default {
       erfolgAnlegen: true,
       erfolgLoeschen: false,
 
-      img: [],
+      img: null,
       text: '',
     }
   },
@@ -114,11 +114,10 @@ export default {
   methods: {
 
     async erfolgErstellen() {
-      try {
-        let formData = new FormData();
-        for (var i = 0; i < this.img.length; i++) {
-          let file = this.img[i];
-          formData.append('files', file);
+      if (this.img != null) {
+        try {
+          let formData = new FormData();
+          formData.append('files', this.img[0]);
           formData.append('text', this.text);
 
           await axios.post('/erfolge', formData, {
@@ -127,20 +126,41 @@ export default {
             }
 
           })
+
+          this.$store.state.erfolge.push({
+            img: this.img,
+            text: this.text,
+          })
+
+          this.img = null;
+          this.text = ''
+
+        } catch (e) {
+          alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut. Falls das Problem weiterhin besteht, kontaktieren Sie Bitte den Administrator.")
         }
+      } else {
+        try {
+          let formData = new FormData();
+          formData.append('text', this.text);
 
+          await axios.post('/erfolge/withoutImage', formData, {
+            headers: {
+              'Content-Type': 'multipart/form-data'
+            }
 
-        this.$store.state.erfolge.push({
-          img: this.img,
-          text: this.text,
-        })
+          })
 
-        this.img = null;
-        this.text = ''
+          this.$store.state.erfolge.push({
+            img: this.img,
+            text: this.text,
+          })
 
-      } catch (e) {
-        this.error = e;
-        console.log(e)
+          this.img = null;
+          this.text = ''
+
+        } catch (e) {
+          alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut. Falls das Problem weiterhin besteht, kontaktieren Sie Bitte den Administrator.")
+        }
       }
     },
     async deleteErfolg(erfolg) {
@@ -152,7 +172,7 @@ export default {
           this.erfolge.splice(index, 1);
         }
       } catch (e) {
-        console.log(e)
+        alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut. Falls das Problem weiterhin besteht, kontaktieren Sie Bitte den Administrator.")
       }
 
     },

@@ -122,17 +122,19 @@ export default {
   },
   methods: {
     async getAllRat() {
-      const response = await axios.get('/rat')
-      this.$store.state.rat = response.data
+      try {
+        const response = await axios.get('/rat')
+        this.$store.state.rat = response.data
 
-      this.rat = this.$store.state.rat
+        this.rat = this.$store.state.rat
 
-      this.rat.forEach(item => {
-        item.image = `data:image/jpeg;base64,${item.image}`;
-      });
-
-      this.person = this.$store.state.rat[0]
-
+        this.rat.forEach(item => {
+          item.image = `data:image/jpeg;base64,${item.image}`;
+        });
+        this.person = this.$store.state.rat[0]
+      } catch (e) {
+        alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut. Falls das Problem weiterhin besteht, kontaktieren Sie Bitte den Administrator.")
+      }
 
     },
 

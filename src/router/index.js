@@ -1,11 +1,9 @@
 import {createRouter, createWebHistory} from 'vue-router'
 import AktuellesView from "@/views/AktuellesView";
-import PositionView from "@/views/PositionView";
 import kommentareView from "@/views/KommentareView";
 import MitgliedView from "@/views/MitgliedView";
 import VerwaltungView from "@/views/VerwaltungView";
 import ImpressumView from "@/views/ImpressumView";
-import linksView from "@/views/LinksView";
 import PressearchivView from "@/views/PressearchivView";
 import VorstandView from "@/views/VorstandView";
 import RatView from "@/views/RatView";
@@ -33,11 +31,6 @@ const routes = [
         path: '/erfolge',
         name: 'erfolge',
         component: ErfolgeNeuView
-    },
-    {
-        path: '/position',
-        name: 'position',
-        component: PositionView
     },
     {
         path: '/kommentare',
@@ -74,11 +67,6 @@ const routes = [
         name: 'Impressum',
         component: ImpressumView
     },
-    {
-        path: '/links',
-        name: 'Links',
-        component: linksView
-    }
 
 ]
 

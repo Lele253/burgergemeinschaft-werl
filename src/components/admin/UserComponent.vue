@@ -39,7 +39,7 @@
               <v-text-field v-model="email" label="Email" variant="outlined"/>
             </v-col>
             <v-col cols="5">
-              <v-text-field v-model="passwort" label="Passwort" type="password" variant="outlined"/>
+              <v-text-field v-model="passwort" label="Passwort" variant="outlined"/>
             </v-col>
             <v-col cols="5">
               <v-select v-model="berechtigung" :items="berechtigungenItems" label="Berechtigung" variant="outlined"/>
@@ -77,7 +77,8 @@
               {{ user.berechtigung }}
             </v-col>
             <v-col class="py-0 pr-1 d-flex align-center justify-end">
-              <Icon icon="tabler:trash-x-filled" style="font-size: 30px; color: red; cursor: pointer"
+              <Icon v-if="user.status != 'Admin'" icon="tabler:trash-x-filled"
+                    style="font-size: 30px; color: red; cursor: pointer"
                     @click="löschen(user)"/>
             </v-col>
           </v-row>
@@ -142,12 +143,14 @@ export default {
       this.userArray = response.data
     },
     async löschen(user) {
-      const index = this.userArray.indexOf(user);
-      if (index > -1) {
+      try {
+        const index = this.userArray.indexOf(user);
         this.userArray.splice(index, 1);
-      }
 
-      await axios.delete('/user/all/' + user.nutzerId,)
+        await axios.delete('/user/all/' + user.nutzerId,)
+      } catch (e) {
+        alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut. Falls das Problem weiterhin besteht, kontaktieren Sie Bitte den Administrator.")
+      }
     }
 
   }

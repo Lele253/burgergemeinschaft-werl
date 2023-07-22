@@ -97,14 +97,18 @@ export default {
   },
   methods: {
     async getAllVorstand() {
-      const response = await axios.get('/vorstand')
-      this.$store.state.vorstand = response.data
+      try {
+        const response = await axios.get('/vorstand')
+        this.$store.state.vorstand = response.data
 
-      this.vorstand = this.$store.state.vorstand
+        this.vorstand = this.$store.state.vorstand
 
-      this.vorstand.forEach(item => {
-        item.image = `data:image/jpeg;base64,${item.image}`;
-      });
+        this.vorstand.forEach(item => {
+          item.image = `data:image/jpeg;base64,${item.image}`;
+        });
+      } catch (e) {
+        alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut. Falls das Problem weiterhin besteht, kontaktieren Sie Bitte den Administrator.")
+      }
     },
   },
   created() {

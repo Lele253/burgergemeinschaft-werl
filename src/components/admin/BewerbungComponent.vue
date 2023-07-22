@@ -46,11 +46,11 @@
 
               <Icon v-if="!user.bearbeitet" class="ml-1"
                     icon="mdi:eye-outline" style="font-size: 30px; cursor: pointer"
-                    @click="user.bearbeitet = true"/>
+                    @click="user.bearbeitet = updateBewerbung(user)"/>
 
               <Icon v-if="user.bearbeitet" class="ml-1" icon="mdi:eye-off-outline"
                     style="font-size: 30px;cursor: pointer"
-                    @click="user.bearbeitet = false"/>
+                    @click="user.bearbeitet = updateBewerbung(user)"/>
 
             </v-card-actions>
           </v-card>
@@ -65,7 +65,7 @@ import {Icon} from "@iconify/vue/dist/iconify";
 import axios from "axios";
 
 export default {
-  name: "BerwerbungComponent",
+  name: "BewerbungComponent",
   components: {
     Icon
   },
@@ -80,6 +80,13 @@ export default {
     this.getAllBewerbungen()
   },
   methods: {
+    async updateBewerbung(person) {
+      person.bearbeitet = !person.bearbeitet
+
+      await axios.put('/bewerbung/' + person.id)
+      await this.getAllBewerbungen()
+
+    },
     async getAllBewerbungen() {
       const response = await axios.get('/bewerbung')
       this.$store.state.bewerbungen = response.data
@@ -90,13 +97,12 @@ export default {
       try {
         await axios.delete('/bewerbung/' + person.id)
 
-
         const index = this.bewerbungen.indexOf(person);
         if (index > -1) {
           this.bewerbungen.splice(index, 1);
         }
       } catch (e) {
-        console.log(e)
+        alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut. Falls das Problem weiterhin besteht, kontaktieren Sie Bitte den Administrator.")
       }
     }
   },

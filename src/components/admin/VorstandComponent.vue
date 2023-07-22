@@ -115,7 +115,7 @@ export default {
         this.position = ''
         this.bild = ''
       } catch (e) {
-        console.log(e)
+        alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut. Falls das Problem weiterhin besteht, kontaktieren Sie Bitte den Administrator.")
       }
     },
     async löschen(person) {
@@ -127,7 +127,7 @@ export default {
           this.vorstand.splice(index, 1);
         }
       } catch (e) {
-        console.log(e)
+        alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut. Falls das Problem weiterhin besteht, kontaktieren Sie Bitte den Administrator.")
       }
     }
   }

@@ -25,6 +25,9 @@
           <v-col cols="5">
             <v-text-field v-model="titel" label="Titel" variant="outlined"/>
           </v-col>
+          <v-col cols="5">
+            <v-file-input v-model="image" label="Bild" variant="outlined"/>
+          </v-col>
           <v-col cols="10">
             <v-textarea v-model="text" label="Inhalt" rows="8" variant="outlined"/>
           </v-col>
@@ -79,6 +82,7 @@ export default {
       beitrag: {},
 
       titel: '',
+      image: null,
       text: '',
 
       anlegen: true,
@@ -93,25 +97,63 @@ export default {
       this.beitrag = this.$store.state.beiträge
     },
     async speichern() {
-      try {
-        await axios.post('/aktuelles', {
-          titel: this.titel,
-          inhalt: this.text,
-          datum: this.getDate()
-        })
+      if (this.image != null) {
+        try {
+          const formdata = new FormData()
+          formdata.append('titel', this.titel)
+          console.log(":" + this.image + ":")
+          formdata.append('files', this.image[0])
+          formdata.append('inhalt', this.text)
+          formdata.append('datum', this.getDate())
+
+          await axios.post('/aktuelles', formdata, {
+            headers: {
+              'Content-Type': 'multipart/form-data'
+            }
+          })
 
 
-        let id = this.$store.state.beiträge.length + 1
-        this.$store.state.beiträge.push({
-          id: id,
-          titel: this.titel,
-          text: this.text,
-          datum: this.getDate()
-        })
-        this.titel = '';
-        this.text = ''
-      } catch (e) {
-        console.log(e)
+          let id = this.$store.state.beiträge.length + 1
+          this.$store.state.beiträge.push({
+            id: id,
+            titel: this.titel,
+            text: this.text,
+            datum: this.getDate()
+          })
+          this.titel = '';
+          this.text = ''
+          this.image = ''
+        } catch (e) {
+          alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut. Falls das Problem weiterhin besteht, kontaktieren Sie Bitte den Administrator.")
+        }
+      } else {
+        if (this.image == null) {
+          try {
+            const formdata = new FormData()
+            formdata.append('titel', this.titel)
+            formdata.append('inhalt', this.text)
+            formdata.append('datum', this.getDate())
+
+            await axios.post('/aktuelles/withoutImage', formdata, {
+              headers: {
+                'Content-Type': 'multipart/form-data'
+              }
+            })
+
+            let id = this.$store.state.beiträge.length + 1
+            this.$store.state.beiträge.push({
+              id: id,
+              titel: this.titel,
+              text: this.text,
+              datum: this.getDate()
+            })
+            this.titel = '';
+            this.text = ''
+            this.image = null
+          } catch (e) {
+            alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut. Falls das Problem weiterhin besteht, kontaktieren Sie Bitte den Administrator.")
+          }
+        }
       }
 
     },
@@ -124,7 +166,7 @@ export default {
           this.beiträge.splice(index, 1);
         }
       } catch (e) {
-        console.log(e)
+        alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut. Falls das Problem weiterhin besteht, kontaktieren Sie Bitte den Administrator.")
       }
 
     },

@@ -75,16 +75,17 @@ export default {
   methods: {
 
     async getAllErfolge() {
-      const response = await axios.get('/erfolge')
-      this.$store.state.erfolge = response.data
-      this.erfolge = this.$store.state.erfolge
+      try {
+        const response = await axios.get('/erfolge')
+        this.$store.state.erfolge = response.data
+        this.erfolge = this.$store.state.erfolge
 
-      this.erfolge.forEach(item => {
-
-        // Base64-String in eine Bild-URL umwandeln und im Objekt speichern
-        item.image = `data:image/jpeg;base64,${item.image}`;
-
-      });
+        this.erfolge.forEach(item => {
+          item.image = `data:image/jpeg;base64,${item.image}`;
+        });
+      } catch (e) {
+        alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut. Falls das Problem weiterhin besteht, kontaktieren Sie Bitte den Administrator.")
+      }
     }
   },
   components: {HeaderComponent}

@@ -240,8 +240,7 @@ export default {
         this.$store.state.user = true
         this.dialog = false
       } catch (e) {
-        this.error = e
-        console.log(e)
+        alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut. Falls das Problem weiterhin besteht, kontaktieren Sie Bitte den Administrator.")
       }
     },
     async getUser() {
@@ -249,7 +248,7 @@ export default {
         const user = await axios.get('/user')
         this.$store.dispatch('user', user.data)
       } catch (error) {
-        console.log(error)
+        alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut. Falls das Problem weiterhin besteht, kontaktieren Sie Bitte den Administrator.")
       }
 
       if (this.$store.state.user !== null) {

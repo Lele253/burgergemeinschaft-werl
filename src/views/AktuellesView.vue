@@ -3,34 +3,45 @@
     <HeaderComponent/>
     <v-img :src="background" cover style="height: 100vh; width: 100vw; position:fixed;">
 
-      <div class="d-flex"
-           style="background-color: rgba(255,255,255,0.56);height: 100%; width: 100%; ">
+      <div style="background-color: rgba(255,255,255,0.56);height: 100%; width: 100%; ">
 
         <!--        Desktop-->
 
         <div v-if="!$store.state.mobile" style="padding-top: 125px">
-          <v-row class="d-flex justify-center mt-n15 mx-0" style="width: 100vw;">
+          <v-row class="d-flex justify-center mt-n15 mx-0" style="width: 100vw;height: 100%">
             <v-col cols="12">
               <h1 class="text-center mt-n12 mb-5">Bleib immer auf dem Laufendem</h1>
             </v-col>
-            <v-col cols="4" style="height: 500px; overflow-y: auto">
-              <v-row v-for="beitrag in beiträge" :key="beitrag" class="d-flex justify-center">
+
+            <v-col cols="4" style="height: 80%; overflow-y: scroll">
+              <div style="overflow-y: scroll; height: 100%">
                 <v-card
-                    :class="{ 'selected-card': beitrag.selected }"
-                    class="mb-3 cardArtikelVorschau"
+                    v-for="beitrag in beiträge"
+                    :key="beitrag" :class="{ 'selected-card': beitrag.selected }"
+                    class="mb-3 cardArtikelVorschau d-flex justify-center"
+                    style="width: 95%"
                     @click="selectCard(beitrag); this.beitrag = beitrag">
-                  <v-col class="mt-3" cols="12">
-                    <h3 class="text-center mx-5">{{ beitrag.titel }}</h3>
-                  </v-col>
-                  <v-col class="d-flex justify-end" cols="12">
-                    <p class="mr-10">{{ beitrag.datum }}</p>
-                  </v-col>
+
+                  <v-row class="mx-0" style="width: 100%">
+                    <v-col cols="3">
+                      <v-img :src="beitrag.image" class="mx-2 my-2 image"/>
+                    </v-col>
+
+                    <v-col class="mt-3 d-flex align-center" cols="9">
+                      <h3 class="text-center mx-5">{{ beitrag.titel }}</h3>
+                    </v-col>
+
+                    <v-col class="d-flex justify-end" cols="12">
+                      <p v-if="beitrag !== this.beitrag" class="mr-10 text-black">{{ beitrag.datum }}</p>
+                      <p v-if="beitrag == this.beitrag" class="mr-10 text-white">{{ beitrag.datum }}</p>
+                    </v-col>
+                  </v-row>
                 </v-card>
-              </v-row>
+              </div>
             </v-col>
+
             <v-col class="d-flex justify-center" cols="7">
               <v-card class="card mx-0">
-
                 <v-list class="list">
                   <v-list-item>
                     <h3 class="text-center mt-5 mx-8 text-white">
@@ -110,10 +121,19 @@ export default {
   },
   methods: {
     async getAllBeiträge() {
-      const response = await axios.get('/aktuelles')
-      this.$store.state.beiträge = response.data
+      try {
+        const response = await axios.get('/aktuelles')
+        this.$store.state.beiträge = response.data
 
-      this.beiträge = this.$store.state.beiträge;
+        this.beiträge = this.$store.state.beiträge;
+
+        this.beiträge.forEach(item => {
+          item.image = `data:image/jpeg;base64,${item.image}`;
+        });
+      } catch (e) {
+        alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut. Falls das Problem weiterhin besteht, kontaktieren Sie Bitte den Administrator.")
+      }
+
     },
     selectCard(selectedBeitrag) {
       this.beiträge.forEach(beitrag => {
@@ -142,11 +162,6 @@ p {
   border-radius: 20px;
 }
 
-.cardArtikelVorschauSlider {
-  min-height: 100px;
-  width: 100px;
-  background-color: white;
-}
 
 .selected-card {
   background-color: #2F53A7;

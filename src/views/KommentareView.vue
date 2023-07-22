@@ -5,6 +5,8 @@
       <div class="d-flex justify-center "
            style="background-color: rgba(255,255,255,0.56);height: 100%; width: 100% ;">
 
+        <!--        Desktopansicht-->
+
         <div v-if="!$store.state.mobile" style="padding-top: 125px">
           <v-row class="d-flex justify-center mt-n15" style="width: 100vw; ">
             <v-col cols="12">
@@ -32,9 +34,8 @@
                   </v-col>
                 </v-row>
               </v-card>
-
-
             </v-col>
+
             <v-col class="d-flex justify-center" cols="7">
               <v-card class="card mx-0">
 
@@ -61,6 +62,7 @@
           </v-row>
         </div>
 
+        <!--        Handyansicht-->
 
         <div v-if="$store.state.mobile" class="d-flex justify-center" style=" width: 100vw ;">
           <div style="overflow-y:scroll; height: 100vh; padding-bottom: 200px">
@@ -123,14 +125,18 @@ export default {
   },
   methods: {
     async getAllKommentare() {
-      const response = await axios.get('/kommentare')
-      this.$store.state.kommentare = response.data
+      try {
+        const response = await axios.get('/kommentare')
+        this.$store.state.kommentare = response.data
 
-      this.kommentare = this.$store.state.kommentare
+        this.kommentare = this.$store.state.kommentare
 
-      this.kommentare.forEach(item => {
-        item.image = `data:image/jpeg;base64,${item.image}`;
-      });
+        this.kommentare.forEach(item => {
+          item.image = `data:image/jpeg;base64,${item.image}`;
+        });
+      } catch (e) {
+        alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut. Falls das Problem weiterhin besteht, kontaktieren Sie Bitte den Administrator.")
+      }
     },
     selectCard(selectedKommentar) {
       this.kommentare.forEach(kommentar => {

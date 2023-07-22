@@ -31,7 +31,7 @@
           <v-text-field v-model="autor" label="Autor" variant="outlined"/>
         </v-col>
         <v-col class="mt-n6" cols="5">
-          <v-file-input v-model="bild" accept="image/*" label="Bild" prepend-icon="mdi-camera" variant="outlined"/>
+          <v-file-input v-model="image" accept="image/*" label="Bild" prepend-icon="mdi-camera" variant="outlined"/>
         </v-col>
         <v-col class="mt-n6" cols="10">
           <v-text-field v-model="titel" label="Titel" variant="outlined"/>
@@ -86,7 +86,7 @@ export default {
 
       autor: '',
       titel: '',
-      bild: null,
+      image: null,
       text: '',
       kommentarAnlegen: true,
       kommentarLoeschen: false,
@@ -116,35 +116,67 @@ export default {
       return formatiertesDatum
     },
     async erstelleKommentar() {
-      try {
-        const formdata = new FormData()
-        formdata.append('image', this.bild[0])
-        formdata.append('titel', this.titel)
-        formdata.append('text', this.text)
-        formdata.append('autor', this.autor)
-        formdata.append('datum', this.getDate())
+      if (this.image != null) {
+        try {
+          const formdata = new FormData()
+          formdata.append('image', this.image[0])
+          formdata.append('titel', this.titel)
+          formdata.append('text', this.text)
+          formdata.append('autor', this.autor)
+          formdata.append('datum', this.getDate())
 
-        await axios.post('/kommentare', formdata, {
-          headers: {
-            'Content-Type': 'multipart/form-data'
-          }
-        })
+          await axios.post('/kommentare', formdata, {
+            headers: {
+              'Content-Type': 'multipart/form-data'
+            }
+          })
 
-        this.$store.state.kommentare.push({
-          img: null,
-          titel: this.titel,
-          text: this.text,
-          autor: this.autor,
-          datum: this.getDate()
-        })
+          this.$store.state.kommentare.push({
+            img: null,
+            titel: this.titel,
+            text: this.text,
+            autor: this.autor,
+            datum: this.getDate()
+          })
 
-        this.autor = '';
-        this.titel = '';
-        this.text = '';
-        this.kommentar = '';
-        this.bild = '';
-      } catch (e) {
-        console.log(e)
+          this.autor = '';
+          this.titel = '';
+          this.text = '';
+          this.kommentar = '';
+          this.image = '';
+        } catch (e) {
+          alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut. Falls das Problem weiterhin besteht, kontaktieren Sie Bitte den Administrator.")
+        }
+      } else {
+        try {
+          const formdata = new FormData()
+          formdata.append('titel', this.titel)
+          formdata.append('text', this.text)
+          formdata.append('autor', this.autor)
+          formdata.append('datum', this.getDate())
+
+          await axios.post('/kommentare/withoutImage', formdata, {
+            headers: {
+              'Content-Type': 'multipart/form-data'
+            }
+          })
+
+          this.$store.state.kommentare.push({
+            img: null,
+            titel: this.titel,
+            text: this.text,
+            autor: this.autor,
+            datum: this.getDate()
+          })
+
+          this.autor = '';
+          this.titel = '';
+          this.text = '';
+          this.kommentar = '';
+          this.image = '';
+        } catch (e) {
+          alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut. Falls das Problem weiterhin besteht, kontaktieren Sie Bitte den Administrator.")
+        }
       }
 
 
@@ -159,7 +191,7 @@ export default {
           this.kommentare.splice(index, 1);
         }
       } catch (e) {
-        console.log(e)
+        alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut. Falls das Problem weiterhin besteht, kontaktieren Sie Bitte den Administrator.")
       }
 
 
