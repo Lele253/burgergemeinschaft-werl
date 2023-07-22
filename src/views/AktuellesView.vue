@@ -102,7 +102,7 @@ export default {
       panel: 0,
       beiträge: [],
       background: require('../assets/aktuelles.jpeg'),
-      beitrag: {}
+      beitrag: {inhalt: "Bitte wählen Sie einen beitrag aus"}
     }
   },
   components: {

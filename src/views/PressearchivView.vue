@@ -110,7 +110,7 @@ export default {
       background: require('../assets/VorstandUndRat.png'),
 
       pressearchiv: [],
-      beitrag: ''
+      beitrag: {text: "Bitte wählen Sie einen beitrag aus"},
     }
   },
   components: {

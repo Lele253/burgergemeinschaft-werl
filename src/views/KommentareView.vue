@@ -109,7 +109,7 @@ export default {
       name: 'Kommentare',
 
       kommentare: this.$store.state.kommentare,
-      kommentar: '',
+      kommentar: {text: "Bitte wählen Sie einen Kommentar aus"},
       background: require('../assets/aktuelles.jpeg'),
       ausgewählterBeitragText: '',
       ausgewählterBeitragTitel: ''

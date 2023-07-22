@@ -38,7 +38,7 @@
 
         <v-sheet
             class="bg-transparent d-flex justify-center"
-            style="position: fixed;bottom: 0vh;width: 100%; height: 100%"
+            style="position: relative;top: 35%;width: 100%; height: 100%"
         >
           <v-slide-group
               v-model="model"
