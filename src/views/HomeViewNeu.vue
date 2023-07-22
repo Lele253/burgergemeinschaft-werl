@@ -144,7 +144,6 @@ export default ({
       name: 'Bürgergemeinschaft Werl',
       mobile: '',
       image: require('../assets/vorstandneu.jpeg'),
-
       images: [
         {
           url: require('../assets/home/images.jpeg'),
