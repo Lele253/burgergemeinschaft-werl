@@ -7,15 +7,15 @@ import ImpressumView from "@/views/ImpressumView";
 import PressearchivView from "@/views/PressearchivView";
 import VorstandView from "@/views/VorstandView";
 import RatView from "@/views/RatView";
-import HomeViewNeu from "@/views/HomeViewNeu";
 import ErfolgeNeuView from "@/views/ErfolgeNeuView";
 import DatenschutzView from "@/views/DatenschutzView";
+import HomeNeuView from "@/views/HomeNeuView";
 
 const routes = [
     {
         path: '/',
         name: 'home',
-        component: HomeViewNeu
+        component: HomeNeuView
     },
     {
         path: '/datenschutz',

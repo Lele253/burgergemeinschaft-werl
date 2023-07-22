@@ -7,36 +7,39 @@
 
         <!--        Desktopansicht-->
 
-        <div v-if="!$store.state.mobile" style="padding-top: 125px">
-          <v-row class="d-flex justify-center mt-n15" style="width: 100vw; ">
-            <v-col cols="12">
-              <h1 class="text-center mt-n12 mb-5">Ihre Meinung ist uns wichtig</h1>
+        <div v-if="!$store.state.mobile" >
+          <v-row class="d-flex justify-center " style="width: 100vw; height: 100% ">
+            <v-col style="max-height: 80px" class="mt-5" cols="12">
+              <h1 class="text-center">Ihre Meinung ist uns wichtig</h1>
             </v-col>
-            <v-col cols="4" style="height: 500px; overflow-y: auto">
-              <v-card
-                  v-for="kommentar in kommentare"
-                  :key="kommentar" :class="{ 'selected-card': kommentar.selected }"
-                  class="mb-3 cardArtikelVorschau d-flex justify-center"
-                  style="width: 95%"
-                  @click="selectCard(kommentar); this.kommentar = kommentar">
+            <v-col cols="4" style="height: 500px; margin-top: -120px; overflow-y: auto">
+              <div style="height: 100%; overflow-y: scroll">
+                <v-card
+                    v-for="kommentar in kommentare"
+                    :key="kommentar" :class="{ 'selected-card': kommentar.selected }"
+                    class="mb-3 cardArtikelVorschau d-flex justify-center"
+                    style="width: 95%"
+                    @click="selectCard(kommentar); this.kommentar = kommentar">
 
-                <v-row class="mx-0" style="width: 100%">
-                  <v-col cols="3">
-                    <v-img :src="kommentar.image" class="mx-2 my-2 image"/>
-                  </v-col>
+                  <v-row class="mx-0" style="width: 100%">
+                    <v-col cols="3">
+                      <v-img :src="kommentar.image" class="mx-2 my-2 image"/>
+                    </v-col>
 
-                  <v-col class="mt-3 d-flex align-center" cols="9">
-                    <h3 class="text-center mx-5">{{ kommentar.titel }}</h3>
-                  </v-col>
+                    <v-col class="mt-3 d-flex align-center" cols="9">
+                      <h3 class="text-center mx-5">{{ kommentar.titel }}</h3>
+                    </v-col>
 
-                  <v-col class="d-flex justify-end" cols="12">
-                    <p class="mr-10">{{ kommentar.datum }}</p>
-                  </v-col>
-                </v-row>
-              </v-card>
+                    <v-col class="d-flex justify-end" cols="12">
+                      <p class="mr-10">{{ kommentar.datum }}</p>
+                    </v-col>
+                  </v-row>
+                </v-card>
+
+              </div>
             </v-col>
 
-            <v-col class="d-flex justify-center" cols="7">
+            <v-col class="d-flex justify-center" style="margin-top: -120px" cols="7">
               <v-card class="card mx-0">
 
                 <v-list class="list">

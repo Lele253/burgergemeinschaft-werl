@@ -13,9 +13,9 @@
               <h1 class="text-center mt-n12 mb-5">Bleib immer auf dem Laufendem</h1>
             </v-col>
 
-            <v-col cols="4" style="height: 80%; overflow-y: scroll">
-              <div style="overflow-y: scroll; height: 100%">
-                
+            <v-col cols="4" style="overflow-y: scroll !important;">
+              <div style="height: 65%; overflow-y: scroll !important;">
+
                 <v-card
                     v-for="beitrag in beiträge"
                     :key="beitrag" :class="{ 'selected-card': beitrag.selected }"
@@ -84,7 +84,7 @@
                         color="#2F53A7"
                         style=" background-color: rgba(97,153,218,0.73); border: #69a6f1 solid 2px; border-radius: 20px  "
                     >
-                      <v-expansion-panel-text class="text-center">{{ beitrag.text }}</v-expansion-panel-text>
+                      <v-expansion-panel-text class="text-center">{{ beitrag.inhalt }}</v-expansion-panel-text>
                     </v-expansion-panel>
                   </v-expansion-panels>
                 </v-col>
