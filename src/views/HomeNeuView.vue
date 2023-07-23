@@ -8,6 +8,10 @@
           <v-row  style="overflow-y: scroll; width: 100%; height: 100%" class="ma-0 pb-0">
             <v-col class="d-flex align-center" style="height: 100%; width: 100%;" md="5" cols="12" >
               <v-card style="overflow-y: scroll " class="card ">
+                <div   style="position: relative; left: 40%;  z-index: 200;  height: 7px; width: 100px; border-radius: 0px 0px 50px 50px; background-color: white">
+
+                </div>
+
                 <h2 class="mx-3 text-white text-center mt-2">Willkommen bei der Bürgergemeinschaft Werl!</h2>
 
                 <v-card-item >
@@ -43,35 +47,44 @@
             </v-col>
             <v-spacer></v-spacer>
             <v-col  style="height: 100%; width: 100%;" cols="12" md="5" >
-              <v-card class="card my-auto ">
-                <v-row justify="center">
-                  <v-col class="d-flex justify-center" cols="12">
-                    <h1 class="mb-8 text-center text-white">
-                      {{ animatedText }}
+              <v-card class="card-rechts my-auto ">
+                <div   style="position: absolute; left: 40%;  z-index: 200;  height: 7px; width: 100px; border-radius: 0px 0px 50px 50px; background-color: white">
 
-                    </h1>
+                </div>
+                <div   style="position: absolute; bottom:0px; left: 42%;  z-index: 200;  height: 7px; width: 100px; border-radius: 50px 50px 0px 00px; background-color: white">
 
-                  </v-col>
-                </v-row>
-                <v-carousel
-                    :interval="2000"
-                    :show-arrows="false"
-                    cycle
-                    class="d-flex my-auto align-center"
-                    hide-delimiter-background
-                    hide-delimiters>
-                  <v-carousel-item
-                      class="d-flex my-auto justify-center align-center"
-                      v-for="image in images"
-                      :key="image">
-                    <v-tooltip :text="image.text" location="bottom">
-                      <template  v-slot:activator="{ props }">
-                        <v-img  :src="image.url" class="d-flex mx-auto align-center"  cover style=" border-radius: 13px; width: 80% "
-                               v-bind="props"/>
-                      </template>
-                    </v-tooltip>
-                  </v-carousel-item>
-                </v-carousel>
+                </div>
+                <v-card class="innercard mx-auto my-auto">
+                  <v-row justify="center">
+                    <v-col class="d-flex justify-center" cols="12">
+                      <h1 class="mb-8 text-center text-white">
+                        {{ animatedText }}
+
+                      </h1>
+
+                    </v-col>
+                  </v-row>
+                  <v-carousel
+                      :interval="2000"
+                      :show-arrows="false"
+                      cycle
+                      class="d-flex my-auto align-center"
+                      hide-delimiter-background
+                      hide-delimiters>
+                    <v-carousel-item
+                        class="d-flex my-auto justify-center align-center"
+                        v-for="image in images"
+                        :key="image">
+                      <v-tooltip :text="image.text" location="bottom">
+                        <template  v-slot:activator="{ props }">
+                          <v-img  :src="image.url" class="d-flex mx-auto align-center"  cover style=" border-radius: 13px; width: 80% "
+                                  v-bind="props"/>
+                        </template>
+                      </v-tooltip>
+                    </v-carousel-item>
+                  </v-carousel>
+
+                </v-card>
 
               </v-card>
             </v-col>
@@ -146,5 +159,26 @@ export default {
   height: 100%;
   width: 100%;
   background-color: rgba(47, 83, 167, 0.76);
+  border: 3px solid #2b7dda;
+
+
+}
+.card-rechts{
+  border-radius: 20px;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(47, 83, 167, 0.76);
+  border: 3px solid #2b7dda;
+  display: flex;
+
+}
+.innercard{
+  height: 95%;
+  width: 95%;
+  background-color: transparent;
+  border: 2px solid #2b7dda;
+  border-radius: 20px;
+
+
 }
 </style>
