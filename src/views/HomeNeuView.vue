@@ -178,6 +178,7 @@ export default {
   background-color: transparent;
   border: 2px solid #2b7dda;
   border-radius: 20px;
+  box-shadow: 0px 0px 30px 5px black;
 
 
 }
