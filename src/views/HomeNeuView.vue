@@ -4,11 +4,11 @@
   <div style="height: 100vh ">
     <v-img cover :src="background" style="position: fixed; height: 100vh;">
       <div class="d-flex align-center justify-center" style="height: 100%; padding-bottom: 150px">
-        <v-card style=" box-shadow: 0 0 20px 30px rgba(0,0,0,0.5); height: 90%; width: 90%; background-color: rgba(255,255,255,0.01); color: transparent">
+        <v-card style=" border-radius: 0px; box-shadow: 0 0 10px 10px rgba(0,0,0,0.5); height: 90%; width: 90%; background-color: rgba(255,255,255,0.07); color: transparent">
           <v-row  style="overflow-y: scroll; width: 100%; height: 100%" class="ma-0 pb-0">
             <v-col class="d-flex align-center" style="height: 100%; width: 100%;" md="5" cols="12" >
               <v-card style="overflow-y: scroll " class="card ">
-                <h2 class="text-white text-center mt-2">Willkommen bei der Bürgergemeinschaft Werl!</h2>
+                <h2 class="mx-3 text-white text-center mt-2">Willkommen bei der Bürgergemeinschaft Werl!</h2>
 
                 <v-card-item >
                   <p class="d-block text-white ma-2 ">Die Bürgergemeinschaft Werl arbeitet engagiert
@@ -43,7 +43,16 @@
             </v-col>
             <v-spacer></v-spacer>
             <v-col  style="height: 100%; width: 100%;" cols="12" md="5" >
-              <v-card class="card my-auto d-flex align-center">
+              <v-card class="card my-auto ">
+                <v-row justify="center">
+                  <v-col class="d-flex justify-center" cols="12">
+                    <h1 class="mb-8 text-center text-white">
+                      {{ animatedText }}
+
+                    </h1>
+
+                  </v-col>
+                </v-row>
                 <v-carousel
                     :interval="2000"
                     :show-arrows="false"
@@ -84,6 +93,8 @@ export default {
   name: "HomeNeuView",
   data(){
     return{
+      text:'Bürgergemeinschaft Werl',
+      animatedText: '',
       background: require('../assets/werl1.jpeg'),
       images: [
         {
@@ -107,13 +118,31 @@ export default {
 
     }
   },
-  components: {HeaderComponent}
+  components: {HeaderComponent},
+  mounted() {
+    this.animateText();
+
+  },
+  methods:{
+    animateText() {
+      let index = 0;
+      const intervalId = setInterval(() => {
+        if (index < this.text.length) {
+          this.animatedText += this.text.charAt(index);
+          index++;
+        } else {
+          clearInterval(intervalId);
+        }
+      }, 200);
+    }
+  }
 
 }
 </script>
 
 <style scoped>
 .card{
+  border-radius: 20px;
   height: 100%;
   width: 100%;
   background-color: rgba(47, 83, 167, 0.76);

@@ -1,54 +1,55 @@
 <template>
   <div>
     <HeaderComponent/>
-    <v-img :src="background" cover style="height: 100vh;width: 100vw; position: fixed">
-      <div class="d-flex justify-center "
-           style="background-color: rgba(255,255,255,0.56);height: 100%; width: 100% ;">
+    <v-img :src="background" cover style="height: 100vh; width: 100vw; position:fixed;">
 
-        <!--        Desktopansicht-->
+      <div style="background-color: rgba(255,255,255,0.56);height: 100%; width: 100%; ">
 
-        <div v-if="!$store.state.mobile" >
-          <v-row class="d-flex justify-center " style="width: 100vw; height: 100% ">
-            <v-col style="max-height: 80px" class="mt-5" cols="12">
-              <h1 class="text-center">Ihre Meinung ist uns wichtig</h1>
+        <!--        Desktop-->
+
+        <div v-if="!$store.state.mobile" style="padding-top: 125px">
+          <v-row class="d-flex justify-center mt-n15 mx-0" style="width: 100vw;height: 100%">
+            <v-col cols="12">
+              <h1 class="text-center mt-n12 mb-5">Eure Meinung ist uns Wichtig </h1>
             </v-col>
-            <v-col cols="4" style="height: 500px; margin-top: -120px; overflow-y: auto">
-              <div style="height: 100%; overflow-y: scroll">
+
+            <v-col cols="4" style="overflow-y: scroll !important;">
+              <div style="height: 60%; overflow-y: scroll !important;">
+
                 <v-card
-                    v-for="kommentar in kommentare"
-                    :key="kommentar" :class="{ 'selected-card': kommentar.selected }"
+                    v-for="beitrag in kommentare"
+                    :key="beitrag" :class="{ 'selected-card': beitrag.selected }"
                     class="mb-3 cardArtikelVorschau d-flex justify-center"
                     style="width: 95%"
-                    @click="selectCard(kommentar); this.kommentar = kommentar">
+                    @click="selectCard(beitrag); this.kommentar = beitrag">
 
                   <v-row class="mx-0" style="width: 100%">
                     <v-col cols="3">
-                      <v-img :src="kommentar.image" class="mx-2 my-2 image"/>
+                      <v-img :src="beitrag.image" class="mx-2 my-2 image"/>
                     </v-col>
 
                     <v-col class="mt-3 d-flex align-center" cols="9">
-                      <h3 class="text-center mx-5">{{ kommentar.titel }}</h3>
+                      <h3 class="text-center mx-5">{{ beitrag.titel }}</h3>
                     </v-col>
 
                     <v-col class="d-flex justify-end" cols="12">
-                      <p class="mr-10">{{ kommentar.datum }}</p>
+                      <p v-if="beitrag !== this.kommentar" class="mr-10 text-black">{{ beitrag.datum }}</p>
+                      <p v-if="beitrag == this.kommentar" class="mr-10 text-white">{{ beitrag.datum }}</p>
                     </v-col>
                   </v-row>
                 </v-card>
-
               </div>
             </v-col>
 
-            <v-col class="d-flex justify-center" style="margin-top: -120px" cols="7">
+            <v-col class="d-flex justify-center" cols="7">
               <v-card class="card mx-0">
-
                 <v-list class="list">
                   <v-list-item>
                     <h3 class="text-center mt-5 mx-8 text-white">
                       {{ kommentar.titel }}
                     </h3>
-                  </v-list-item>
 
+                  </v-list-item>
 
                   <v-list-item class="text-center mt-2">
 
@@ -59,24 +60,21 @@
                     </v-virtual-scroll>
                   </v-list-item>
                 </v-list>
-
               </v-card>
             </v-col>
           </v-row>
         </div>
 
-        <!--        Handyansicht-->
+        <!--        Mobile-->
 
-        <div v-if="$store.state.mobile" class="d-flex justify-center" style=" width: 100vw ;">
-          <div style="overflow-y:scroll; height: 100vh; padding-bottom: 200px">
+
+        <div v-if="$store.state.mobile" class="d-flex justify-center" style=" width: 100vw">
+          <div style="overflow-y:scroll; height: 100vh; padding-bottom: 250px">
             <v-card v-for="beitrag in kommentare" :key="beitrag" class="mx-10 mt-10"
                     style="background-color: #2F53A7; border-radius: 20px">
               <v-row class="d-flex justify-center mx-0" style="width: 100%;">
                 <v-col class="mt-4" cols="10">
                   <h3 class="text-white text-center">{{ beitrag.titel }}</h3>
-                </v-col>
-                <v-col class="pt-0" cols="10">
-                  <p class="text-center" style="color: #69a6f1">{{ beitrag.autor }}</p>
                 </v-col>
                 <v-col cols="12">
                   <v-expansion-panels>
@@ -91,7 +89,7 @@
                   </v-expansion-panels>
                 </v-col>
                 <v-col cols="10">
-                  <p class="text-center" style="color: #69a6f1"> {{ beitrag.datum }}</p>
+                  <p style="color: #69a6f1"> {{ beitrag.datum }}</p>
                 </v-col>
               </v-row>
             </v-card>
