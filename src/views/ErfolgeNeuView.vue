@@ -11,8 +11,8 @@
           <div v-if="!$store.state.mobile">
             <h1 class="text-center pt-5">Wusstest du, dass...</h1>
             <div class="mt-2" style="height: 82vh; overflow-y: scroll; padding-bottom: 80px">
-              <v-card v-for="erfolg in erfolge" :key="erfolg"
-                      style="width: 80vw;max-width: 800px; margin-bottom: 20px; background-color: rgba(47, 83, 167, 0.65); border-radius: 20px">
+              <v-card v-for="erfolg in erfolge"  :key="erfolg"
+                      style="width: 80vw;max-width: 800px; box-shadow: 4px 6px 8px black; width: 98%; margin-bottom: 20px; background-color: rgba(47, 83, 167, 0.65); border-radius: 20px">
                 <v-card-item>
                   <v-row>
                     <v-col v-if="erfolg.image != '' ">
@@ -33,9 +33,10 @@
 
           <div v-if="$store.state.mobile">
             <h2 class="text-center mt-5">Wusstest du, dass...</h2>
-            <div class="mt-2" style="height: 100vh;padding-bottom: 250px; overflow-y: scroll">
+            <div class="mt-2 " style="height: 100vh;padding-bottom: 250px; overflow-y: scroll">
               <v-card v-for="erfolg in erfolge" :key="erfolg"
-                      style="width: 80vw;max-width: 600px; margin-bottom: 20px; background-color: rgba(47, 83, 167, 0.65); border-radius: 20px">
+                      class="mx-auto"
+                      style="width: 80vw;max-width: 600px; box-shadow: 3px 6px 8px black; width: 96%; margin-bottom: 20px; background-color: rgba(47, 83, 167, 0.65); border-radius: 20px">
 
                 <v-card-item>
                   <v-img :src="erfolg.image" style=" border-radius: 20px"/>
