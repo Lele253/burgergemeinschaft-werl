@@ -173,7 +173,7 @@ export default {
           this.titel = '';
           this.text = '';
           this.kommentar = '';
-          this.image = '';
+          this.image = null;
         } catch (e) {
           alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut. Falls das Problem weiterhin besteht, kontaktieren Sie Bitte den Administrator.")
         }

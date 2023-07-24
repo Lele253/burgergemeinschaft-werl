@@ -14,7 +14,7 @@
             </v-col>
 
             <v-col cols="4" style="overflow-y: scroll !important;">
-              <div style="height: 60%; overflow-y: scroll !important;">
+              <div style="height: 65vh !important; overflow-y: scroll !important;">
 
                 <v-card
                     v-for="beitrag in beiträge"
@@ -114,7 +114,7 @@ export default {
       panel: 0,
       beiträge: [],
       background: require('../assets/aktuelles.jpeg'),
-      beitrag: {inhalt: "Bitte wählen Sie einen beitrag aus"}
+      beitrag: {inhalt: "Bitte wählen Sie einen Beitrag aus"}
     }
   },
   components: {
