@@ -5,7 +5,7 @@
       <v-img :src="background" cover style="position: fixed; height: 100vh;">
         <div class="d-flex align-center justify-center" style="height: 100%; padding-bottom: 150px">
           <v-card
-              style=" border-radius: 0px; box-shadow: 0 0 10px 10px rgba(0,0,0,0.5); height: 90%; width: 90%; background-color: rgba(0,0,0,0.6); color: transparent">
+              style=" border-radius: 0px; box-shadow: 0 0 10px 10px rgba(0,0,0,0.5); height: 90%; width: 90%; background-color: rgba(0,0,0,0.6); color: transparent; max-height: 750px">
             <v-row class="ma-0 pb-0" style="overflow-y: scroll; width: 100%; height: 100%">
               <v-col class="" cols="12" md="5" style="height: 100%; width: 100%;">
 
