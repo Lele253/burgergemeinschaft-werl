@@ -25,13 +25,12 @@
                     zur Mitwirkung. Werl ist offen für alle, die Teil unserer Gemeinschaft werden und gemeinsam mit uns
                     die
                     Zukunft gestalten möchten. Willkommen bei der Bürgergemeinschaft Werl!</p>
-
                 </div>
-
-
+                <v-btn class="text-white" style="background-color: #2F53A7">Endecke Unsere Erfolge</v-btn>
+                <v-btn class="text-white ml-5" style="background-color: #2F53A7">Bleib up-to-date</v-btn>
               </v-col>
               <v-spacer></v-spacer>
-              <v-col cols="12" md="5" style="height: 100%; width: 100%;">
+              <v-col cols="12" md="6" style="height: 100%; width: 100%;">
                 <v-card class="card-rechts my-auto ">
                   <div
                       style="position: absolute; left: 40%;  z-index: 200;  height: 7px; width: 100px; border-radius: 0px 0px 50px 50px; background-color: white">
@@ -42,71 +41,71 @@
 
                   </div>
                   <v-card class="innercard mx-auto my-auto">
-                    <v-row justify="center">
-                      <v-col class="d-flex justify-center" cols="12">
-                        <!--                      <h1 class="mb-8 text-center text-white">
-                                                {{ animatedText }}
+                    <!--                      <h1 class="mb-8 text-center text-white">
+                                            {{ animatedText }}
 
-                                              </h1>-->
-                        <v-timeline>
-                          <v-timeline-item
-                              dot-color="purple-lighten-2"
-                              fill-dot
-                              size="x-small"
+                                          </h1>-->
+                    <v-timeline>
+                      <v-timeline-item
+                          dot-color="purple-lighten-2"
+                          fill-dot
+                          size="x-small"
+                          style="cursor: pointer"
+                          @click="$router.push('/aktuelles')">
+                        <v-card class="timeline-card mx-3">
+                          <v-card-title class="bg-purple-lighten-2">
+                            <h4 class="font-weight-light">
+                              {{ beitrag.titel }}
+                            </h4>
+                          </v-card-title>
+                          <v-card-text class="mt-2">
+                            {{ beitrag.inhalt }}
+                          </v-card-text>
+                        </v-card>
+                      </v-timeline-item>
 
-                          >
-                            <v-card class="timeline-card mx-3">
-                              <v-card-title class="bg-purple-lighten-2">
-                                <h4 class="font-weight-light">
-                                  {{ beitrag.titel }}
-                                </h4>
-                              </v-card-title>
-                              <v-card-text class="mt-2">
-                                {{ beitrag.inhalt }}
-                              </v-card-text>
-                            </v-card>
-                          </v-timeline-item>
+                      <v-timeline-item
+                          dot-color="amber-lighten-1"
+                          fill-dot
+                          size="x-small"
+                          style="cursor: pointer"
+                          @click="$router.push('/kommentare')"
+                      >
+                        <v-card class="mx-3 timeline-card">
+                          <v-card-title class="bg-amber-lighten-1 justify-end">
+                            <h4 class="me-4 font-weight-light">
+                              {{ kommentar.titel }}
+                            </h4>
 
-                          <v-timeline-item
-                              dot-color="amber-lighten-1"
-                              fill-dot
-                              size="x-small"
-                          >
-                            <v-card class="mx-3 timeline-card">
-                              <v-card-title class="bg-amber-lighten-1 justify-end">
-                                <h4 class="me-4 font-weight-light">
-                                  {{ kommentar.titel }}
-                                </h4>
+                          </v-card-title>
+                          <v-card-text class="mt-2">
+                            {{ kommentar.text }}
+                          </v-card-text>
+                        </v-card>
+                      </v-timeline-item>
 
-                              </v-card-title>
-                              <v-card-text class="mt-2">
-                                {{ kommentar.text }}
-                              </v-card-text>
-                            </v-card>
-                          </v-timeline-item>
+                      <v-timeline-item
+                          dot-color="cyan-lighten-1"
+                          fill-dot
+                          size="x-small"
+                          style="cursor: pointer"
+                          @click="$router.push('/erfolge')"
 
-                          <v-timeline-item
-                              dot-color="cyan-lighten-1"
-                              fill-dot
-                              size="x-small"
+                      >
+                        <v-card class="mx-3 timeline-card">
+                          <v-card-title class="bg-cyan-lighten-1">
 
-                          >
-                            <v-card class="mx-3 timeline-card">
-                              <v-card-title class="bg-cyan-lighten-1">
+                            <h4 class="font-weight-light">
+                              Wussten du?
+                            </h4>
+                          </v-card-title>
+                          <v-card-text class="mt-2">
+                            {{ erfolg.text }}
+                          </v-card-text>
+                        </v-card>
+                      </v-timeline-item>
 
-                                <h4 class="font-weight-light">
-                                  Wussten du?
-                                </h4>
-                              </v-card-title>
-                              <v-card-text class="mt-2">
-                                {{ erfolg.text }}
-                              </v-card-text>
-                            </v-card>
-                          </v-timeline-item>
-
-                        </v-timeline>
-                      </v-col>
-                    </v-row>
+                    </v-timeline>
                   </v-card>
                 </v-card>
               </v-col>
@@ -248,6 +247,19 @@ export default {
 }
 
 .timeline-card {
+  box-shadow: 4px 6px 8px black;
+  min-width: 220px;
+  max-width: 300px;
+}
+
+.timeline-card:hover {
+  box-shadow: 10px 12px 8px black;
+  min-width: 220px;
+  max-width: 300px;
+}
+
+.timeline-card:active {
+  box-shadow: 0px 0px 0px black;
   min-width: 220px;
   max-width: 300px;
 }
