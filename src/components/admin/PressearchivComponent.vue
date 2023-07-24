@@ -159,7 +159,7 @@ export default {
           })
           this.titel = '';
           this.untertitel = '';
-          this.image = '';
+          this.image = null;
           this.text = '';
           this.autor = '';
           this.datum = '';
@@ -195,7 +195,7 @@ export default {
           })
           this.titel = '';
           this.untertitel = '';
-          this.image = '';
+          this.image = null;
           this.text = '';
           this.autor = '';
           this.datum = '';
