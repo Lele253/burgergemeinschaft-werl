@@ -3,17 +3,31 @@
     <HeaderComponent></HeaderComponent>
     <div style="height: 100vh ">
       <v-img :src="background" cover style="position: fixed; height: 100vh;">
-        <div class="d-flex align-center justify-center" style="height: 100%; padding-bottom: 150px">
+        <div class="d-flex align-center justify-center" style="height: 100%; padding-bottom: 100px">
           <v-card
+              v-if="!$store.state.mobile"
               style=" border-radius: 0px; box-shadow: 0 0 10px 10px rgba(0,0,0,0.5); height: 90%; width: 90%; background-color: rgba(0,0,0,0.6); color: transparent; max-height: 750px">
             <v-row class="ma-0 pb-0" style="overflow-y: scroll; width: 100%; height: 100%">
               <v-col class="" cols="12" md="5" style="height: 100%; width: 100%;">
 
 
-                <h1 class="mt-15 mx-3 text-white text-center mt-2">Willkommen bei der Bürgergemeinschaft Werl!</h1>
+                <h1 v-if="!$store.state.mobile" class="mt-15 mx-3 text-white text-center mt-2">Willkommen bei der Bürgergemeinschaft Werl!</h1>
+                <h2 v-if="$store.state.mobile" class=" mx-3 text-white text-center mt-2">Willkommen bei der Bürgergemeinschaft Werl!</h2>
 
                 <div>
-                  <p class="my-15 d-block text-white ma-2 ">Die Bürgergemeinschaft Werl arbeitet engagiert
+                  <p v-if="$store.state.mobile" class="mt-2 mb-12 d-block text-white ma-2 ">Die Bürgergemeinschaft Werl arbeitet engagiert
+                    daran,
+                    unsere Stadt lebendig
+                    und
+                    lebenswert zu machen. Wir
+                    sind stolz auf unsere faszinierende Geschichte, bezaubernde Altstadt und leidenschaftliche
+                    Bürgerschaft.
+                    Besuchen Sie unsere Website für Informationen zu aktuellen Projekten, Veranstaltungen und
+                    Möglichkeiten
+                    zur Mitwirkung. Werl ist offen für alle, die Teil unserer Gemeinschaft werden und gemeinsam mit uns
+                    die
+                    Zukunft gestalten möchten. Willkommen bei der Bürgergemeinschaft Werl!</p>
+                  <p v-if="!$store.state.mobile" class="my-15 d-block text-white ma-2 ">Die Bürgergemeinschaft Werl arbeitet engagiert
                     daran,
                     unsere Stadt lebendig
                     und
@@ -26,26 +40,36 @@
                     die
                     Zukunft gestalten möchten. Willkommen bei der Bürgergemeinschaft Werl!</p>
                 </div>
-                <v-btn class="text-white" style="background-color: #2F53A7">Endecke Unsere Erfolge</v-btn>
-                <v-btn class="text-white ml-5" style="background-color: #2F53A7">Bleib up-to-date</v-btn>
+                <v-row style="width: 100%" class="mx-0">
+                  <v-col class=" d-flex justify-center" md="6" cols="12">
+                    <v-btn class="mt-n4 text-white" style="background-color: #2F53A7">Endecke Unsere Erfolge</v-btn>
+                  </v-col>
+                  <v-col class=" d-flex justify-center" md="6" cols="12">
+                    <v-btn class="mt-n4 text-white " style="background-color: #2F53A7">Bleib up-to-date</v-btn>
+                  </v-col>
+                </v-row>
               </v-col>
+
+
+
+
               <v-spacer></v-spacer>
-              <v-col cols="12" md="6" style="height: 100%; width: 100%;">
-                <v-card class="card-rechts my-auto ">
+              <v-col v-if="!$store.state.mobile" cols="12" md="6" style="height: 100%; width: 100%;">
+                <v-card  class="card-rechts my-auto ">
                   <div
-                      style="position: absolute; left: 40%;  z-index: 200;  height: 7px; width: 100px; border-radius: 0px 0px 50px 50px; background-color: white">
+                      style="position: absolute; left: 42%;  z-index: 200;  height: 7px; width: 100px; border-radius: 0px 0px 50px 50px; background-color: white">
 
                   </div>
                   <div
                       style="position: absolute; bottom:0px; left: 42%;  z-index: 200;  height: 7px; width: 100px; border-radius: 50px 50px 0px 00px; background-color: white">
 
                   </div>
-                  <v-card class="innercard mx-auto my-auto">
+                  <v-card  class="innercard mx-auto my-auto">
                     <!--                      <h1 class="mb-8 text-center text-white">
                                             {{ animatedText }}
 
                                           </h1>-->
-                    <v-timeline>
+                    <v-timeline  >
                       <v-timeline-item
                           dot-color="purple-lighten-2"
                           fill-dot
@@ -106,11 +130,145 @@
                       </v-timeline-item>
 
                     </v-timeline>
+
                   </v-card>
                 </v-card>
               </v-col>
             </v-row>
           </v-card>
+          <v-card
+              v-if="$store.state.mobile"
+              style=" border-radius: 0px; box-shadow: 0 0 10px 10px rgba(0,0,0,0.5); height: 98%; width: 90%; background-color: rgba(0,0,0,0.6); color: transparent; ">
+            <v-row class="ma-0 pb-0" style="overflow-y: scroll; width: 100%; height: 100%">
+              <v-col class="" cols="12" md="5" style="height: 100%; width: 100%;">
+
+
+                <h1 v-if="!$store.state.mobile" class="mt-15 mx-3 text-white text-center mt-2">Willkommen bei der Bürgergemeinschaft Werl!</h1>
+                <h2 v-if="$store.state.mobile" class=" mx-3 text-white text-center mt-2">Willkommen bei der Bürgergemeinschaft Werl!</h2>
+
+                <div>
+                  <p v-if="$store.state.mobile" class="mt-2 mb-12 d-block text-white ma-2 ">Die Bürgergemeinschaft Werl arbeitet engagiert
+                    daran,
+                    unsere Stadt lebendig
+                    und
+                    lebenswert zu machen. Wir
+                    sind stolz auf unsere faszinierende Geschichte, bezaubernde Altstadt und leidenschaftliche
+                    Bürgerschaft.
+                    Besuchen Sie unsere Website für Informationen zu aktuellen Projekten, Veranstaltungen und
+                    Möglichkeiten
+                    zur Mitwirkung. Werl ist offen für alle, die Teil unserer Gemeinschaft werden und gemeinsam mit uns
+                    die
+                    Zukunft gestalten möchten. Willkommen bei der Bürgergemeinschaft Werl!</p>
+                  <p v-if="!$store.state.mobile" class="my-15 d-block text-white ma-2 ">Die Bürgergemeinschaft Werl arbeitet engagiert
+                    daran,
+                    unsere Stadt lebendig
+                    und
+                    lebenswert zu machen. Wir
+                    sind stolz auf unsere faszinierende Geschichte, bezaubernde Altstadt und leidenschaftliche
+                    Bürgerschaft.
+                    Besuchen Sie unsere Website für Informationen zu aktuellen Projekten, Veranstaltungen und
+                    Möglichkeiten
+                    zur Mitwirkung. Werl ist offen für alle, die Teil unserer Gemeinschaft werden und gemeinsam mit uns
+                    die
+                    Zukunft gestalten möchten. Willkommen bei der Bürgergemeinschaft Werl!</p>
+                </div>
+                <v-row style="width: 100%" class="mx-0">
+                  <v-col class=" d-flex justify-center" md="6" cols="12">
+                    <v-btn class="mt-n4 text-white" style="background-color: #2F53A7">Endecke Unsere Erfolge</v-btn>
+                  </v-col>
+                  <v-col class=" d-flex justify-center" md="6" cols="12">
+                    <v-btn class="mt-n4 text-white " style="background-color: #2F53A7">Bleib up-to-date</v-btn>
+                  </v-col>
+                </v-row>
+              </v-col>
+
+
+
+
+              <v-spacer></v-spacer>
+              <v-col v-if="!$store.state.mobile" cols="12" md="6" style="height: 100%; width: 100%;">
+                <v-card  class="card-rechts my-auto ">
+                  <div
+                      style="position: absolute; left: 42%;  z-index: 200;  height: 7px; width: 100px; border-radius: 0px 0px 50px 50px; background-color: white">
+
+                  </div>
+                  <div
+                      style="position: absolute; bottom:0px; left: 42%;  z-index: 200;  height: 7px; width: 100px; border-radius: 50px 50px 0px 00px; background-color: white">
+
+                  </div>
+                  <v-card  class="innercard mx-auto my-auto">
+                    <!--                      <h1 class="mb-8 text-center text-white">
+                                            {{ animatedText }}
+
+                                          </h1>-->
+                    <v-timeline  >
+                      <v-timeline-item
+                          dot-color="purple-lighten-2"
+                          fill-dot
+                          size="x-small"
+                          style="cursor: pointer"
+                          @click="$router.push('/aktuelles')">
+                        <v-card class="timeline-card mx-3">
+                          <v-card-title class="bg-purple-lighten-2">
+                            <h4 class="font-weight-light">
+                              {{ beitrag.titel }}
+                            </h4>
+                          </v-card-title>
+                          <v-card-text class="mt-2">
+                            {{ beitrag.inhalt }}
+                          </v-card-text>
+                        </v-card>
+                      </v-timeline-item>
+
+                      <v-timeline-item
+                          dot-color="amber-lighten-1"
+                          fill-dot
+                          size="x-small"
+                          style="cursor: pointer"
+                          @click="$router.push('/kommentare')"
+                      >
+                        <v-card class="mx-3 timeline-card">
+                          <v-card-title class="bg-amber-lighten-1 justify-end">
+                            <h4 class="me-4 font-weight-light">
+                              {{ kommentar.titel }}
+                            </h4>
+
+                          </v-card-title>
+                          <v-card-text class="mt-2">
+                            {{ kommentar.text }}
+                          </v-card-text>
+                        </v-card>
+                      </v-timeline-item>
+
+                      <v-timeline-item
+                          dot-color="cyan-lighten-1"
+                          fill-dot
+                          size="x-small"
+                          style="cursor: pointer"
+                          @click="$router.push('/erfolge')"
+
+                      >
+                        <v-card class="mx-3 timeline-card">
+                          <v-card-title class="bg-cyan-lighten-1">
+
+                            <h4 class="font-weight-light">
+                              Wussten du?
+                            </h4>
+                          </v-card-title>
+                          <v-card-text class="mt-2">
+                            {{ erfolg.text }}
+                          </v-card-text>
+                        </v-card>
+                      </v-timeline-item>
+
+                    </v-timeline>
+
+                  </v-card>
+                </v-card>
+              </v-col>
+            </v-row>
+          </v-card>
+
         </div>
 
       </v-img>
