@@ -12,11 +12,14 @@
               <v-col class="" cols="12" md="5" style="height: 100%; width: 100%;">
 
 
-                <h1 v-if="!$store.state.mobile" class="mt-15 mx-3 text-white text-center mt-2">Willkommen bei der Bürgergemeinschaft Werl!</h1>
-                <h2 v-if="$store.state.mobile" class=" mx-3 text-white text-center mt-2">Willkommen bei der Bürgergemeinschaft Werl!</h2>
+                <h1 v-if="!$store.state.mobile" class="mt-15 mx-3 text-white text-center mt-2">Willkommen bei der
+                  Bürgergemeinschaft Werl!</h1>
+                <h2 v-if="$store.state.mobile" class=" mx-3 text-white text-center mt-2">Willkommen bei der
+                  Bürgergemeinschaft Werl!</h2>
 
                 <div>
-                  <p v-if="$store.state.mobile" class="mt-2 mb-12 d-block text-white ma-2 ">Die Bürgergemeinschaft Werl arbeitet engagiert
+                  <p v-if="$store.state.mobile" class="mt-2 mb-12 d-block text-white ma-2 ">Die Bürgergemeinschaft Werl
+                    arbeitet engagiert
                     daran,
                     unsere Stadt lebendig
                     und
@@ -28,7 +31,8 @@
                     zur Mitwirkung. Werl ist offen für alle, die Teil unserer Gemeinschaft werden und gemeinsam mit uns
                     die
                     Zukunft gestalten möchten. Willkommen bei der Bürgergemeinschaft Werl!</p>
-                  <p v-if="!$store.state.mobile" class="my-15 d-block text-white ma-2 ">Die Bürgergemeinschaft Werl arbeitet engagiert
+                  <p v-if="!$store.state.mobile" class="my-15 d-block text-white ma-2 ">Die Bürgergemeinschaft Werl
+                    arbeitet engagiert
                     daran,
                     unsere Stadt lebendig
                     und
@@ -41,22 +45,24 @@
                     die
                     Zukunft gestalten möchten. Willkommen bei der Bürgergemeinschaft Werl!</p>
                 </div>
-                <v-row style="width: 100%" class="mx-0">
-                  <v-col class=" d-flex justify-center" md="6" cols="12">
-                    <v-btn class="mt-n4 text-white" style="background-color: #2F53A7">Endecke Unsere Erfolge</v-btn>
+                <v-row class="mx-0" style="width: 100%">
+                  <v-col class=" d-flex justify-center" cols="12" md="6">
+                    <v-btn class="mt-n4 text-white" style="background-color: #2F53A7" @click="$router.push('/erfolge')">
+                      Endecke Unsere Erfolge
+                    </v-btn>
                   </v-col>
-                  <v-col class=" d-flex justify-center" md="6" cols="12">
-                    <v-btn class="mt-n4 text-white " style="background-color: #2F53A7">Bleib up-to-date</v-btn>
+                  <v-col class=" d-flex justify-center" cols="12" md="6">
+                    <v-btn class="mt-n4 text-white " style="background-color: #2F53A7"
+                           @click="$router.push('/aktuelles')">Bleib up-to-date
+                    </v-btn>
                   </v-col>
                 </v-row>
               </v-col>
 
 
-
-
               <v-spacer></v-spacer>
               <v-col v-if="!$store.state.mobile" cols="12" md="6" style="height: 100%; width: 100%;">
-                <v-card  class="card-rechts my-auto ">
+                <v-card class="card-rechts my-auto ">
                   <div
                       style="position: absolute; left: 42%;  z-index: 200;  height: 7px; width: 100px; border-radius: 0px 0px 50px 50px; background-color: white">
 
@@ -65,12 +71,12 @@
                       style="position: absolute; bottom:0px; left: 42%;  z-index: 200;  height: 7px; width: 100px; border-radius: 50px 50px 0px 00px; background-color: white">
 
                   </div>
-                  <v-card  class="innercard mx-auto my-auto">
+                  <v-card class="innercard mx-auto my-auto">
                     <!--                      <h1 class="mb-8 text-center text-white">
                                             {{ animatedText }}
 
                                           </h1>-->
-                    <v-timeline  >
+                    <v-timeline>
                       <v-timeline-item
                           dot-color="purple-lighten-2"
                           fill-dot
@@ -144,11 +150,14 @@
               <v-col class="" cols="12" md="5" style="height: 100%; width: 100%;">
 
 
-                <h1 v-if="!$store.state.mobile" class="mt-15 mx-3 text-white text-center mt-2">Willkommen bei der Bürgergemeinschaft Werl!</h1>
-                <h2 v-if="$store.state.mobile" class=" mx-3 text-white text-center mt-2">Willkommen bei der Bürgergemeinschaft Werl!</h2>
+                <h1 v-if="!$store.state.mobile" class="mt-15 mx-3 text-white text-center mt-2">Willkommen bei der
+                  Bürgergemeinschaft Werl!</h1>
+                <h2 v-if="$store.state.mobile" class=" mx-3 text-white text-center mt-2">Willkommen bei der
+                  Bürgergemeinschaft Werl!</h2>
 
                 <div>
-                  <p v-if="$store.state.mobile" class="mt-2 mb-12 d-block text-white ma-2 ">Die Bürgergemeinschaft Werl arbeitet engagiert
+                  <p v-if="$store.state.mobile" class="mt-2 mb-12 d-block text-white ma-2 ">Die Bürgergemeinschaft Werl
+                    arbeitet engagiert
                     daran,
                     unsere Stadt lebendig
                     und
@@ -160,7 +169,8 @@
                     zur Mitwirkung. Werl ist offen für alle, die Teil unserer Gemeinschaft werden und gemeinsam mit uns
                     die
                     Zukunft gestalten möchten. Willkommen bei der Bürgergemeinschaft Werl!</p>
-                  <p v-if="!$store.state.mobile" class="my-15 d-block text-white ma-2 ">Die Bürgergemeinschaft Werl arbeitet engagiert
+                  <p v-if="!$store.state.mobile" class="my-15 d-block text-white ma-2 ">Die Bürgergemeinschaft Werl
+                    arbeitet engagiert
                     daran,
                     unsere Stadt lebendig
                     und
@@ -173,22 +183,20 @@
                     die
                     Zukunft gestalten möchten. Willkommen bei der Bürgergemeinschaft Werl!</p>
                 </div>
-                <v-row style="width: 100%" class="mx-0">
-                  <v-col class=" d-flex justify-center" md="6" cols="12">
+                <v-row class="mx-0" style="width: 100%">
+                  <v-col class=" d-flex justify-center" cols="12" md="6">
                     <v-btn class="mt-n4 text-white" style="background-color: #2F53A7">Endecke Unsere Erfolge</v-btn>
                   </v-col>
-                  <v-col class=" d-flex justify-center" md="6" cols="12">
+                  <v-col class=" d-flex justify-center" cols="12" md="6">
                     <v-btn class="mt-n4 text-white " style="background-color: #2F53A7">Bleib up-to-date</v-btn>
                   </v-col>
                 </v-row>
               </v-col>
 
 
-
-
               <v-spacer></v-spacer>
               <v-col v-if="!$store.state.mobile" cols="12" md="6" style="height: 100%; width: 100%;">
-                <v-card  class="card-rechts my-auto ">
+                <v-card class="card-rechts my-auto ">
                   <div
                       style="position: absolute; left: 42%;  z-index: 200;  height: 7px; width: 100px; border-radius: 0px 0px 50px 50px; background-color: white">
 
@@ -197,12 +205,12 @@
                       style="position: absolute; bottom:0px; left: 42%;  z-index: 200;  height: 7px; width: 100px; border-radius: 50px 50px 0px 00px; background-color: white">
 
                   </div>
-                  <v-card  class="innercard mx-auto my-auto">
+                  <v-card class="innercard mx-auto my-auto">
                     <!--                      <h1 class="mb-8 text-center text-white">
                                             {{ animatedText }}
 
                                           </h1>-->
-                    <v-timeline  >
+                    <v-timeline>
                       <v-timeline-item
                           dot-color="purple-lighten-2"
                           fill-dot
