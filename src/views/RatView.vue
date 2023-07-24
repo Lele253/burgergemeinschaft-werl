@@ -184,6 +184,8 @@ export default {
 
 .bild {
   border-radius: 20px;
+  box-shadow: 4px 4px 4px black;
+
 }
 
 .mainCard {
@@ -191,6 +193,7 @@ export default {
   width: 100%;
   max-width: 300px;
   border-radius: 20px;
+  box-shadow: 4px 6px 8px black;
 }
 
 .secondCard {
@@ -198,6 +201,7 @@ export default {
   width: 100%;
   border-radius: 20px;
   background-color: #2F53A7;
+box-shadow: 4px 6px 8px black;
 }
 
 .selectedCardMobile {

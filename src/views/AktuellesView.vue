@@ -14,7 +14,7 @@
             </v-col>
 
             <v-col cols="4" style="overflow-y: scroll !important;">
-              <div style="height: 65%; overflow-y: scroll !important;">
+              <div style="height: 60%; overflow-y: scroll !important;">
 
                 <v-card
                     v-for="beitrag in beiträge"
