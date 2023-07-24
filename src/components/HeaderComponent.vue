@@ -162,7 +162,7 @@ export default {
   },
   methods: {
     checkMobileView() {
-      if (window.innerWidth <= 1205) {
+      if (window.innerWidth <= 800) {
         this.mobile = true;
         this.$store.state.mobile =true;
       } else {
