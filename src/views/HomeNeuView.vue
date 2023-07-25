@@ -130,7 +130,7 @@
                           <v-card-title class="bg-cyan-lighten-1">
 
                             <h4 class="font-weight-light">
-                              Wusstest du?
+                              Wusstest du, dass...
                             </h4>
                           </v-card-title>
                           <v-card-text class="mt-2">
@@ -348,18 +348,14 @@ export default {
         this.$store.state.beiträge = response1.data
         this.beitrag = this.$store.state.beiträge[this.$store.state.beiträge.length - 1];
 
-        if (this.beitrag.titel.length > 12) {
-          this.beitrag.titel = this.beitrag.titel.slice(0, 16) + '...'
+        if (this.beitrag.titel.length > 120) {
+          this.beitrag.titel = this.beitrag.titel.slice(0, 120) + '...'
         }
 
-        if (this.beitrag.inhalt.length > 120) {
-          this.beitrag.inhalt = this.beitrag.inhalt.slice(0, 120) + '...'
-        }
 
         const response2 = await axios.get('/erfolge')
         this.$store.state.erfolge = response2.data
         this.erfolg = this.$store.state.erfolge[this.$store.state.erfolge.length - 1];
-
         if (this.erfolg.text.length > 120) {
           this.erfolg.text = this.erfolg.text.slice(0, 120) + '...'
         }
@@ -368,12 +364,8 @@ export default {
         this.$store.state.kommentare = response3.data
         this.kommentar = this.$store.state.kommentare[this.$store.state.kommentare.length - 1];
 
-        if (this.kommentar.titel.length > 12) {
-          this.kommentar.titel = this.kommentar.titel.slice(0, 16) + '...'
-        }
-
-        if (this.kommentar.text.length > 120) {
-          this.kommentar.text = this.kommentar.text.slice(0, 120) + '...'
+        if (this.kommentar.titel.length > 120) {
+          this.kommentar.titel = this.kommentar.titel.slice(0, 120) + '...'
         }
 
 
