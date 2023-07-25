@@ -10,22 +10,28 @@
 
           <div v-if="!$store.state.mobile">
             <h1 class="text-center pt-5">Wusstest du, dass...</h1>
-            <div class="mt-2" style="height: 82vh; overflow-y: scroll; padding-bottom: 80px">
-              <v-card v-for="erfolg in erfolge"  :key="erfolg"
-                      style="width: 80vw;max-width: 800px; box-shadow: 4px 6px 8px black; width: 98%; margin-bottom: 20px; background-color: rgba(47, 83, 167, 0.65); border-radius: 20px">
-                <v-card-item>
-                  <v-row>
-                    <v-col v-if="erfolg.image != '' ">
-                      <v-img :src="erfolg.image" style="border-radius: 20px"/>
-                    </v-col>
-                    <v-col class="d-flex align-center">
-                      <p class="text-center text-white">
-                        {{ erfolg.text }}
-                      </p>
-                    </v-col>
-                  </v-row>
-                </v-card-item>
-              </v-card>
+            <div class="mt-2" style="height: 100vh; width: 100vw; overflow-y: scroll;padding-bottom: 250px ">
+              <v-row style="width: 100%;" class="mx-0 justify-center">
+                <v-col cols="11">
+                  <v-card v-for="erfolg in erfolge"  :key="erfolg"
+                          style="width: 80vw; box-shadow: 4px 6px 8px black; width: 100%; margin-bottom: 20px; background-color: rgba(47, 83, 167, 0.65); border-radius: 20px">
+                    <v-card-item>
+                      <v-row>
+                        <v-col cols="4" v-if="erfolg.image != '' ">
+                          <v-img :src="erfolg.image" cover style="max-height: 250px; width: 100%; border-radius: 20px !important;"/>
+                        </v-col>
+                        <v-col cols="8" class="d-flex align-center">
+                          <p class="text-center text-white">
+                            {{ erfolg.text }}
+                          </p>
+                        </v-col>
+                      </v-row>
+                    </v-card-item>
+                  </v-card>
+
+                </v-col>
+              </v-row>
+
             </div>
           </div>
 

@@ -22,7 +22,7 @@
                     v-slot="{ isSelected, toggle }">
                   <v-card
                       :class="{ 'cardOne': isSelected }"
-                      class="ml-5 mr-5 d-flex align-center card justify-center"
+                      class="ml-5 mt-10 mr-5  card "
                       elevation="0"
                       width="300"
                       @click="toggle">
@@ -31,10 +31,19 @@
                       <h5 class="text-center">{{ p.position }}</h5>
                       <v-img
                           :src="p.image"
-                          class="image"
-                          height="350" min-width="233"/>
+                          class="image mx-auto"
+                          cover
+
+                          height="370" width="243"/>
+                    </div>
+                    <div class="d-flex justify-center">
+                    <a :href="'mailto:' + p.email" class="text-center pt-2  text-black mt-4" style="text-align: justify; text-justify: inter-word;">
+                      {{ p.email }}
+                    </a>
+
                     </div>
                   </v-card>
+
                 </v-slide-group-item>
               </v-slide-group>
             </v-sheet>
@@ -139,7 +148,7 @@ export default {
 }
 
 .cardOne {
-  transform: scale(1.2);
+  transform: scale(1.1);
   transition: transform 0.5s ease;
 }
 

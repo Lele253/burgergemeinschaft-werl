@@ -32,10 +32,14 @@
         <v-col class="my-n2 mt-5" cols="5">
           <v-text-field v-model="titel" label="Titel" variant="outlined"></v-text-field>
         </v-col>
-        <v-col class="mb-n2" cols="10">
-          <v-file-input v-model="bild" accept="image/*" label="Bild" prepend-icon="mdi-camera"
-                        variant="outlined"></v-file-input>
+        <v-col class="mb-n2" cols="5">
+          <v-text-field variant="outlined" v-model="email"  label="Email"
+                        ></v-text-field>
         </v-col>
+        <v-col class="mb-n2" cols="5">
+        <v-file-input v-model="bild" accept="image/*" label="Bild" prepend-icon="mdi-camera"
+                      variant="outlined"></v-file-input>
+      </v-col>
         <v-col class="mb-n2" cols="10">
           <v-textarea v-model="vita" label="Vita" variant="outlined"></v-textarea>
         </v-col>
@@ -76,7 +80,7 @@ export default {
   data() {
     return {
       rat: [],
-
+      email:'',
       ratAnlegen: true,
       ratLoeschen: false,
       name: '',
@@ -102,6 +106,8 @@ export default {
         formdata.append('titel', this.titel)
         formdata.append('image', this.bild[0])
         formdata.append('vita', this.vita)
+        formdata.append('email', this.email)
+
 
         await axios.post('/rat', formdata, {
           headers: {
@@ -114,11 +120,13 @@ export default {
           titel: this.titel,
           bild: this.bild,
           vita: this.vita,
+          email:this.vita,
         })
         this.name = '';
         this.titel = ''
         this.bild = ''
         this.vita = ''
+        this.email =''
       } catch (e) {
         alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut. Falls das Problem weiterhin besteht, kontaktieren Sie Bitte den Administrator.")
       }

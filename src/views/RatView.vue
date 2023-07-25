@@ -16,16 +16,23 @@
             </v-card>
           </v-col>
           <v-col cols="6">
-            <v-card class="secondCard pa-5" style="overflow-y: scroll">
+            <v-card class="secondCard pa-4 pb-8" style="">
+
               <h2 class="text-center text-white">{{ person.name }}</h2>
-              <p class="text-center pt-2" style="font-size: 18px; color: #dcdcdc">{{
-                  person.titel
-                }}
+              <p class="text-center pt-2" style="font-size: 18px; color: #dcdcdc">
+                {{person.titel}}
               </p>
-              <v-card-item>
-                <p class="pt-2 mx-10 text-white" style="text-align: justify; text-justify: inter-word;">
-                  {{ person.vita }}
-                </p>
+
+              <v-card-item style="overflow-y: scroll; height: 70%">
+                  <p class="pt-2 mx-10 text-white" style="overflow-y: scroll; text-align: justify; text-justify: inter-word;">
+                    {{ person.vita }}
+                  </p>
+              </v-card-item>
+
+              <v-card-item  class="text-center">
+                <a :href="'mailto:' + person.email" class="text-center pt-2 mx-10 text-white" style="text-align: justify; text-justify: inter-word;">
+                  {{ person.email }}
+                </a>
               </v-card-item>
             </v-card>
           </v-col>

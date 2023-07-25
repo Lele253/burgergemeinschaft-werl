@@ -13,7 +13,7 @@
               <h1 class="text-center mt-n12 mb-5">Bleib immer auf dem Laufendem</h1>
             </v-col>
 
-            <v-col cols="4" style="overflow-y: scroll !important;">
+            <v-col class="" cols="4" style="overflow-y: scroll !important;">
               <div style="height: 65vh !important; overflow-y: scroll !important;">
 
                 <v-card
@@ -24,12 +24,12 @@
                     @click="selectCard(beitrag); this.beitrag = beitrag">
 
                   <v-row class="mx-0" style="width: 100%">
-                    <v-col cols="3">
-                      <v-img :src="beitrag.image" class="mx-2 my-2 image"/>
+                    <v-col class="px-0" cols="5">
+                      <v-img :src="beitrag.image" cover style="border-radius: 20px" class="ml-1 mt-1 image"/>
                     </v-col>
 
-                    <v-col class="mt-3 d-flex align-center" cols="9">
-                      <h3 class="text-center mx-5">{{ beitrag.titel }}</h3>
+                    <v-col class="px-0 mt-3 d-flex align-center" cols="7">
+                      <h4 style="margin-left: 10px !important;" class="text-center mx-5">{{ beitrag.titel }}</h4>
                     </v-col>
 
                     <v-col class="d-flex justify-end" cols="12">

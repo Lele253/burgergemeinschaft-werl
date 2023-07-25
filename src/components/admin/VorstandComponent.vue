@@ -32,7 +32,11 @@
         <v-col class="my-n2 mt-5" cols="10">
           <v-text-field v-model="position" label="Position" variant="outlined"/>
         </v-col>
-        <v-col class="mb-n2" cols="10">
+        <v-col class="mb-n2" cols="5">
+          <v-text-field variant="outlined" v-model="email"  label="Email"
+          ></v-text-field>
+        </v-col>
+        <v-col class="mb-n2" cols="5">
           <v-file-input v-model="bild" label="Bild" prepend-icon="mdi-camera" variant="outlined"/>
         </v-col>
         <v-col class="d-flex justify-center mb-n5" cols="10">
@@ -75,7 +79,7 @@ export default {
   data() {
     return {
       vorstand: [],
-
+      email:'',
       vorstandAnlegen: true,
       vorstandLoeschen: false,
       name: '',
@@ -99,6 +103,8 @@ export default {
         formdata.append('name', this.name)
         formdata.append('position', this.position)
         formdata.append('image', this.bild[0])
+        formdata.append('email', this.email)
+
 
         await axios.post('/vorstand', formdata, {
           headers: {
@@ -110,10 +116,12 @@ export default {
           name: this.name,
           position: this.position,
           img: this.bild,
+          email: this.email
         })
         this.name = '';
         this.position = ''
         this.bild = ''
+        this.email =''
       } catch (e) {
         alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut. Falls das Problem weiterhin besteht, kontaktieren Sie Bitte den Administrator.")
       }
