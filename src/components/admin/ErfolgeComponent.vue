@@ -162,6 +162,7 @@ export default {
           alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut. Falls das Problem weiterhin besteht, kontaktieren Sie Bitte den Administrator.")
         }
       }
+      await this.getAllErfolge()
     },
     async deleteErfolg(erfolg) {
       try {

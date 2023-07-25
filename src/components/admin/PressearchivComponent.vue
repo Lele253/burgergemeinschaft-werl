@@ -205,7 +205,7 @@ export default {
         }
       }
 
-
+      await this.getAllPressearchiv()
     },
     async deleteBeitrag(beitrag) {
       try {

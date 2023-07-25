@@ -122,6 +122,7 @@ export default {
       } catch (e) {
         alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut. Falls das Problem weiterhin besteht, kontaktieren Sie Bitte den Administrator.")
       }
+      await this.getAllRat()
     },
     async löschen(person) {
       try {

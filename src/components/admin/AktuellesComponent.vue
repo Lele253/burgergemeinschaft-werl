@@ -53,7 +53,7 @@
             <h4>{{ beitrag.titel }}</h4>
           </v-col>
           <v-col cols="6" style="height: 150px; overflow-y: auto">
-            {{ beitrag.text }}
+            {{ beitrag.inhalt }}
           </v-col>
           <v-col class="d-flex align-center justify-center" cols="2">
             <p class="text-center">{{ beitrag.datum }}</p>
@@ -156,6 +156,7 @@ export default {
         }
       }
 
+      await this.getAllAktuelles();
     },
     async deleteBeitrag(beitrag) {
       try {
@@ -193,6 +194,7 @@ export default {
     async getAllAktuelles() {
       const response = await axios.get('/aktuelles')
       this.$store.state.beiträge = response.data
+      this.beiträge = this.$store.state.beiträge
     }
   },
   created() {

@@ -137,6 +137,8 @@ export default {
       this.email = ''
       this.passwort = ''
       this.berechtigung = ''
+
+      await this.getAllUser()
     },
     async getAllUser() {
       const response = await axios.get('/user/all')
