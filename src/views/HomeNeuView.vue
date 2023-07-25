@@ -304,6 +304,7 @@ export default {
   name: "HomeNeuView",
   data() {
     return {
+      name: 'Bürgergemeinschaft Werl',
       beitrag: {},
       erfolg: {},
       kommentar: {},
@@ -336,6 +337,9 @@ export default {
   mounted() {
     this.animateText();
     this.getAllTexte();
+  },
+  created() {
+    this.$store.state.routername = this.name
   },
   methods: {
     async getAllTexte() {
