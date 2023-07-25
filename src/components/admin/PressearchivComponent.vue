@@ -51,7 +51,6 @@
     <div class="d-flex justify-center">
       <v-card v-if="löschen" class="card">
         <v-row class="mx-auto my-1" style="width: 95%">
-          <v-col class="text-center" cols="2"><h4>Bild</h4></v-col>
           <v-col class="text-center" cols="2"><h4>Titel</h4></v-col>
           <v-col class="text-center" cols="2"><h4>Untertitel</h4></v-col>
           <v-col class="text-center" cols="3"><h4>Inhalt</h4></v-col>
