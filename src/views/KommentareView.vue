@@ -68,10 +68,10 @@
         <!--        Mobile-->
 
 
-        <div v-if="$store.state.mobile" class="d-flex justify-center" style=" width: 100vw">
-          <div style="overflow-y:scroll; height: 100vh; padding-bottom: 250px">
-            <v-card v-for="beitrag in kommentare" :key="beitrag" class="mx-10 mt-10"
-                    style="background-color: #2F53A7; border-radius: 20px">
+        <div v-if="$store.state.mobile" class="d-flex justify-center" style=" width: 100%">
+          <div style="overflow-y:scroll; overflow-x: hidden;  width: 100%; height: 100vh; padding-bottom: 250px">
+            <v-card v-for="beitrag in kommentare" :key="beitrag" class="mx-auto mt-10"
+                    style="background-color: #2F53A7; border-radius: 20px ; width: 90%">
               <v-row class="d-flex justify-center mx-0" style="width: 100%;">
                 <v-col class="mt-4" cols="10">
                   <h3 class="text-white text-center">{{ beitrag.titel }}</h3>
@@ -79,7 +79,7 @@
                 <v-col cols="12">
                   <v-expansion-panels>
                     <v-expansion-panel
-                        :title="beitrag.titel"
+                        title="Beitrag..."
                         class="text-white"
                         color="#2F53A7"
                         style=" background-color: rgba(97,153,218,0.73); border: #69a6f1 solid 2px; border-radius: 20px  "

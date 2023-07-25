@@ -4,7 +4,7 @@
     <v-img :src="background" cover style="height: 100vh; position: fixed; width: 100vw ;">
       <div
           style=" background-color: rgba(255,255,255,0.21);height: 100%; width: 100%; overflow-y: scroll; padding-bottom: 100px; padding-top:20px ">
-        <div style="height: 10%; width: 100vw"/>
+        <div v-if="!$store.state.mobile" style="height: 10%; width: 100vw"/>
         <v-row class="d-flex justify-center " style="overflow-y: scroll ">
           <v-col class="d-flex justify-center" cols="12" md="4">
             <v-card class="card">

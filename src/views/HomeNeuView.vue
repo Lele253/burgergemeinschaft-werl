@@ -89,11 +89,11 @@
                         <v-card class="timeline-card mx-3">
                           <v-card-title class="bg-purple-lighten-2">
                             <h4 class="font-weight-light">
-                              {{ beitrag.titel }}
+                              Aktuelles
                             </h4>
                           </v-card-title>
                           <v-card-text class="mt-2">
-                            {{ beitrag.inhalt }}
+                            {{ beitrag.titel}}
                           </v-card-text>
                         </v-card>
                       </v-timeline-item>
@@ -108,12 +108,12 @@
                         <v-card class="mx-3 timeline-card">
                           <v-card-title class="bg-amber-lighten-1 justify-end">
                             <h4 class="me-4 font-weight-light">
-                              {{ kommentar.titel }}
+                              Kommentar
                             </h4>
 
                           </v-card-title>
                           <v-card-text class="mt-2">
-                            {{ kommentar.text }}
+                            {{ kommentar.titel }}
                           </v-card-text>
                         </v-card>
                       </v-timeline-item>
@@ -130,7 +130,7 @@
                           <v-card-title class="bg-cyan-lighten-1">
 
                             <h4 class="font-weight-light">
-                              Wussten du?
+                              Wusstest du?
                             </h4>
                           </v-card-title>
                           <v-card-text class="mt-2">
