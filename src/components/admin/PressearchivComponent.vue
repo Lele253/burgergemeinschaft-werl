@@ -59,20 +59,16 @@
         </v-row>
         <v-row v-for="beitrag in beiträge" :key="beitrag" class="mx-auto my-1 mt-5"
                style="border: black solid 2px;border-radius: 10px; width: 95%">
-          <v-col class="text-center mt-3" cols="2">
-            <v-img :src="beitrag.img" style="max-height: 200px; border-radius: 13px"/>
+          <v-col class="align-center d-flex justify-center" cols="2">
+            <p class="text-center mt-3">{{ beitrag.titel }}</p>
           </v-col>
 
-          <v-col class="text-center mt-3" cols="2">
-            <h4>{{ beitrag.titel }}</h4>
-          </v-col>
-
-          <v-col cols="2" style="height: 200px; overflow-y: auto">
-            <h5 class="text-center mt-3">{{ beitrag.untertitel }}</h5>
+          <v-col class="align-center d-flex justify-center" cols="2">
+            <p class="text-center mt-3">{{ beitrag.untertitel }}</p>
           </v-col>
 
           <v-col cols="3" style="max-height: 200px; overflow-y: auto">
-            <p class="text-center ">{{ beitrag.text }}</p>
+            <p class="d-block ">{{ beitrag.text }}</p>
           </v-col>
 
           <v-col class="align-center d-flex justify-center" cols="2">
