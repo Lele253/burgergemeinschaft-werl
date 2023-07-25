@@ -242,6 +242,7 @@ export default {
       } catch (e) {
         this.error = e
       }
+      await location.reload()
     },
     async getUser() {
       try {
@@ -258,7 +259,7 @@ export default {
     async logout() {
       localStorage.removeItem('token')
       this.$store.dispatch('user', null)
-      location.reload()
+      await location.reload()
     }
   },
   async created() {

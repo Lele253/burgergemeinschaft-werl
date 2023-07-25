@@ -47,12 +47,15 @@
                 </div>
                 <v-row class="mx-0" style="width: 100%">
                   <v-col class=" d-flex justify-center" cols="12" md="6">
-                    <v-btn class="mt-n4 text-white" style="background-color: #2F53A7" @click="$router.push('/erfolge')">
-                      Endecke Unsere Erfolge
+                    <v-btn class="mt-n4 text-white" style="background-color: #2F53A7"
+                           variant="outlined"
+                           @click="$router.push('/mitglied')">
+                      Werde Mitglied
                     </v-btn>
                   </v-col>
                   <v-col class=" d-flex justify-center" cols="12" md="6">
                     <v-btn class="mt-n4 text-white " style="background-color: #2F53A7"
+                           variant="outlined"
                            @click="$router.push('/aktuelles')">Bleib up-to-date
                     </v-btn>
                   </v-col>
@@ -185,10 +188,17 @@
                 </div>
                 <v-row class="mx-0" style="width: 100%">
                   <v-col class=" d-flex justify-center" cols="12" md="6">
-                    <v-btn class="mt-n4 text-white" style="background-color: #2F53A7">Endecke Unsere Erfolge</v-btn>
+                    <v-btn class="mt-n4" color="white"
+                           style="background-color: #2F53A7"
+                           variant="outlined" @click="$router.push('/mitglied')">Werde
+                      Mitglied
+                    </v-btn>
                   </v-col>
                   <v-col class=" d-flex justify-center" cols="12" md="6">
-                    <v-btn class="mt-n4 text-white " style="background-color: #2F53A7">Bleib up-to-date</v-btn>
+                    <v-btn class="mt-n4 text-white " style="background-color: #2F53A7"
+                           variant="outlined"
+                           @click="$router.push('/aktuelles')">Bleib up-to-date
+                    </v-btn>
                   </v-col>
                 </v-row>
               </v-col>
