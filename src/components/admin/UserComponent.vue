@@ -107,7 +107,7 @@ export default {
       nachname: '',
       email: '',
       passwort: '',
-      berechtigungenItems: ['Admin', 'Verfasser', 'Keine'],
+      berechtigungenItems: ['Admin', 'Verfasser'],
       userArray: []
     }
   },

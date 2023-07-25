@@ -78,7 +78,7 @@
 
       <div class="d-flex align-center mt-n8" style="height: 100%; width: 20vw">
         <v-row class=" px-0" style="width: 100%">
-          <v-col class="d-flex justify-center  col-links" cols="12">
+          <v-col v-if="user.status == 'Admin'" class="d-flex justify-center  col-links" cols="12">
             <v-btn :class="{ 'userAktive': userAktive }"
                    class="button-links"
                    @click="vorstandAktiv= false;  userAktive=userAktive = true; aktuellesAktive= false;erfolgeAktive=false;kommentareAktive=false;pressearchivAktive=false;ratAktive=false;bewerbungAktive=false">
@@ -113,21 +113,21 @@
               Pressearchiv
             </v-btn>
           </v-col>
-          <v-col class="d-flex justify-center  col-links" cols="12">
+          <v-col v-if="user.status == 'Admin'" class="d-flex justify-center  col-links" cols="12">
             <v-btn :class="{ 'userAktive': ratAktive  }"
                    class="button-links"
                    @click=" vorstandAktiv= false; userAktive=userAktive = false; aktuellesAktive= false;erfolgeAktive=false;kommentareAktive=false;pressearchivAktive=false;ratAktive=true;bewerbungAktive=false">
               Rat
             </v-btn>
           </v-col>
-          <v-col class="d-flex justify-center  col-links" cols="12">
+          <v-col v-if="user.status == 'Admin'" class="d-flex justify-center  col-links" cols="12">
             <v-btn :class="{ 'userAktive': vorstandAktiv  }"
                    class="button-links"
                    @click="vorstandAktiv= true; userAktive=userAktive = false; aktuellesAktive= false;erfolgeAktive=false;kommentareAktive=false;pressearchivAktive=false;ratAktive=false;bewerbungAktive=false">
               Vorstand
             </v-btn>
           </v-col>
-          <v-col class="d-flex justify-center  col-links" cols="12">
+          <v-col v-if="user.status == 'Admin'" class="d-flex justify-center  col-links" cols="12">
             <v-btn :class="{ 'userAktive': bewerbungAktive  }"
                    class="button-links"
                    @click="vorstandAktiv= false; userAktive=userAktive = false; aktuellesAktive= false;erfolgeAktive=false;kommentareAktive=false;pressearchivAktive=false;ratAktive=false;bewerbungAktive=true">
