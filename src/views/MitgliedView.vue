@@ -1,13 +1,15 @@
 <template>
   <div>
     <HeaderComponent/>
-    <v-img :src="background" cover style="height: 85vh; position: fixed; width: 150vw">
-      <div class="d-flex align-center"
-           style="background-color: rgba(255,255,255,0.21);height: 100%; width: 100%">
-        <v-row class="d-flex justify-center mt-n15">
-          <v-col class="d-flex justify-center" cols="4">
+    <v-img :src="background" cover  style="height: 100vh; position: fixed; width: 100vw ;">
+      <div
+           style=" background-color: rgba(255,255,255,0.21);height: 100%; width: 100%; overflow-y: scroll; padding-bottom: 100px; padding-top:20px ">
+        <v-row style="overflow-y: scroll " class="d-flex justify-center ">
+          <v-col class="d-flex justify-center" md="4" cols="12">
             <v-card class="card">
-              <h2 class="text-center mt-10">Ich will mitmachen!</h2>
+              <h2 v-if="!$store.state.mobile" class="text-center mt-10">Ich will mitmachen!</h2>
+              <h2 v-if="$store.state.mobile" class="text-center mt-4">Ich will mitmachen!</h2>
+
               <p class="text-center mt-5 mx-10"> Finden Sie sich in unseren Zielen wieder? Dann werden Sie Mitglied
                 in
                 der
@@ -15,13 +17,15 @@
                 und
                 gestalten Sie aktiv das Leben in unserer Stadt Werl mit...
               </p>
-              <v-img :src="bild" class="mt-5" height="150"/>
-              <h4 class="text-center mt-8 mt-t mx-10">
+              <v-img v-if="!$store.state.mobile" :src="bild" class="mt-5" height="150"/>
+              <v-img v-if="$store.state.mobile" :src="bild" class="mt-5" height="80"/>
+
+              <h4 class="text-center mt-8 mb-5 mx-10">
                 Füllen Sie dafür einfach das Formular aus und wir kontaktieren Sie zeitnah.
               </h4>
             </v-card>
           </v-col>
-          <v-col class="d-flex justify-center" cols="6">
+          <v-col class="d-flex justify-center" md="6" cols="12">
             <v-card class="card mx-0">
               <v-form class="mt-10 mx-10 d-flex justify-center" @submit="abschicken">
                 <v-row style="width: 100%">

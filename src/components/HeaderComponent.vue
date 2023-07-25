@@ -74,7 +74,7 @@
               </v-btn>
             </v-col>
             <v-col>
-              <v-btn class="text-center text-white"
+              <v-btn v-if="tabletHorizontal" class="text-center text-white"
                      @click="weiterleiten('https://sessionnet.krz.de/werl/bi/info.asp')">
                 Tagesordnung
               </v-btn>
@@ -132,7 +132,7 @@ export default {
       name: "HeaderComponent",
 
       mobile: false,
-
+      tabletHorizontal: false,
       drawer: false,
       team: ['Vorstand', 'Rat'],
       selected: 'Team',
@@ -162,13 +162,19 @@ export default {
   },
   methods: {
     checkMobileView() {
-      if (window.innerWidth <= 800) {
+      if (window.innerWidth <= 850) {
         this.mobile = true;
         this.$store.state.mobile =true;
       } else {
         this.mobile = false;
         this.$store.state.mobile =false;
 
+      }
+      if (window.innerWidth <= 1200){
+        this.tabletHorizontal = false
+      }
+      else {
+        this.tabletHorizontal = true
       }
     },
     weiterleiten(url) {

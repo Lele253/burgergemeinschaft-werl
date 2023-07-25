@@ -349,7 +349,7 @@ export default {
         this.beitrag = this.$store.state.beiträge[this.$store.state.beiträge.length - 1];
 
         if (this.beitrag.titel.length > 12) {
-          this.beitrag.titel = this.beitrag.titel.slice(0, 12) + '...'
+          this.beitrag.titel = this.beitrag.titel.slice(0, 16) + '...'
         }
 
         if (this.beitrag.inhalt.length > 120) {
@@ -369,7 +369,7 @@ export default {
         this.kommentar = this.$store.state.kommentare[this.$store.state.kommentare.length - 1];
 
         if (this.kommentar.titel.length > 12) {
-          this.kommentar.titel = this.kommentar.titel.slice(0, 12) + '...'
+          this.kommentar.titel = this.kommentar.titel.slice(0, 16) + '...'
         }
 
         if (this.kommentar.text.length > 120) {
