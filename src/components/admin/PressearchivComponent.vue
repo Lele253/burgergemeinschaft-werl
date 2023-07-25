@@ -53,11 +53,13 @@
         <v-row class="mx-auto my-1" style="width: 95%">
           <v-col class="text-center" cols="2"><h4>Titel</h4></v-col>
           <v-col class="text-center" cols="2"><h4>Untertitel</h4></v-col>
-          <v-col class="text-center" cols="3"><h4>Inhalt</h4></v-col>
+          <v-col class="text-center" cols="4"><h4>Inhalt</h4></v-col>
           <v-col class="text-center" cols="2"><h4>Autor</h4></v-col>
+          <v-col class="text-center" cols="2"><h4>Löschen</h4></v-col>
         </v-row>
         <v-row v-for="beitrag in beiträge" :key="beitrag" class="mx-auto my-1 mt-5"
                style="border: black solid 2px;border-radius: 10px; width: 95%">
+
           <v-col class="align-center d-flex justify-center" cols="2">
             <p class="text-center mt-3">{{ beitrag.titel }}</p>
           </v-col>
@@ -66,7 +68,7 @@
             <p class="text-center mt-3">{{ beitrag.untertitel }}</p>
           </v-col>
 
-          <v-col cols="3" style="max-height: 200px; overflow-y: auto">
+          <v-col cols="4" style="max-height: 200px; overflow-y: auto">
             <p class="d-block ">{{ beitrag.text }}</p>
           </v-col>
 
@@ -74,7 +76,7 @@
             <p class="text-center mt-3">{{ beitrag.autor }}</p>
           </v-col>
 
-          <v-col class="py-0 pr-1 d-flex align-center justify-center" cols="1">
+          <v-col class="py-0 pr-1 d-flex align-center justify-center" cols="2">
             <Icon icon="tabler:trash-x-filled"
                   style="font-size: 30px; color: red; cursor: pointer"
                   @click="deleteBeitrag(beitrag)"/>
