@@ -1,29 +1,36 @@
-# Stage 1: Build the Vue app
+# Basis-Image: Node.js
 FROM node:14 as build-stage
 
+# Arbeitsverzeichnis im Container erstellen
 WORKDIR /app
 
+# Abhängigkeiten kopieren und installieren
 COPY package*.json ./
-
 RUN npm install
 
+# Projektdateien kopieren
 COPY . .
 
+# Build durchführen
 RUN npm run build
 
-# Stage 2: Serve the Vue app with NGINX
-FROM nginx:1.21
+# Nginx-Image für die Bereitstellung verwenden
+FROM nginx:stable-alpine as production-stage
 
-# Remove the default NGINX configuration
+# SSL-Zertifikat und Schlüssel in das Container-Image kopieren
+COPY leandro-graf_de.crt /etc/nginx/ssl/
+COPY leandro-graf_de.key /etc/nginx/ssl/
+
 RUN rm /etc/nginx/conf.d/default.conf
 
-# Kopiere die NGINX-Konfiguration in den Container
-COPY nginx.conf /etc/nginx/conf.d/
+# Nginx-Konfigurationsdatei kopieren
+COPY nginx/nginx.conf /etc/nginx/nginx.conf
 
-# Kopiere die gebauten Dateien aus dem ersten Stage in das NGINX-Verzeichnis
+# Vue.js-Build aus dem vorherigen Build-Stage kopieren
 COPY --from=build-stage /app/dist /usr/share/nginx/html
 
+# Port 8090 für HTTPS freigeben
 EXPOSE 8090
 
-
+# Nginx starten
 CMD ["nginx", "-g", "daemon off;"]
