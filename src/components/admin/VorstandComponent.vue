@@ -30,10 +30,10 @@
           <v-text-field v-model="name" label="Name" variant="outlined"/>
         </v-col>
         <v-col class="my-n2 mt-5" cols="10">
-          <v-text-field v-model="position" label="Position" variant="outlined"/>
+          <v-select v-model="position" :items="positionAuswahl" label="Position" variant="outlined"/>
         </v-col>
         <v-col class="mb-n2" cols="5">
-          <v-text-field variant="outlined" v-model="email"  label="Email"
+          <v-text-field v-model="email" label="Email" variant="outlined"
           ></v-text-field>
         </v-col>
         <v-col class="mb-n2" cols="5">
@@ -78,8 +78,9 @@ export default {
   },
   data() {
     return {
+      positionAuswahl: ["Vorsitzender", "Vorsitzende", "Stellv. Vorsitzender", "Stellv. Vorsitzende", "Schriftführerin", "Schriftführer", "Kassenwart", "Kassenwärtin", "Besitzer", "Besitzerin"],
       vorstand: [],
-      email:'',
+      email: '',
       vorstandAnlegen: true,
       vorstandLoeschen: false,
       name: '',
@@ -121,7 +122,7 @@ export default {
         this.name = '';
         this.position = ''
         this.bild = ''
-        this.email =''
+        this.email = ''
       } catch (e) {
         alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut. Falls das Problem weiterhin besteht, kontaktieren Sie Bitte den Administrator.")
       }

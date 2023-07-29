@@ -20,17 +20,19 @@
 
               <h2 class="text-center text-white">{{ person.name }}</h2>
               <p class="text-center pt-2" style="font-size: 18px; color: #dcdcdc">
-                {{person.titel}}
+                {{ person.titel }}
               </p>
 
               <v-card-item style="overflow-y: scroll; height: 70%">
-                  <p class="pt-2 mx-10 text-white" style="overflow-y: scroll; text-align: justify; text-justify: inter-word;">
-                    {{ person.vita }}
-                  </p>
+                <p class="pt-2 mx-10 text-white"
+                   style="overflow-y: scroll; text-align: justify; text-justify: inter-word;">
+                  {{ person.vita }}
+                </p>
               </v-card-item>
 
-              <v-card-item  class="text-center">
-                <a :href="'mailto:' + person.email" class="text-center pt-2 mx-10 text-white" style="text-align: justify; text-justify: inter-word;">
+              <v-card-item class="text-center">
+                <a :href="'mailto:' + person.email" class="text-center pt-2 mx-10 text-white"
+                   style="text-align: justify; text-justify: inter-word;">
                   {{ person.email }}
                 </a>
               </v-card-item>
@@ -54,7 +56,7 @@
               style="height: 100%; width: 94%"
           >
             <v-slide-group-item
-                v-for="n in rat"
+                v-for="n in sortRat"
                 :key="n"
                 v-slot="{ isSelected, toggle }"
             >
@@ -80,7 +82,7 @@
         <h2 class="text-center text-white mb-2">Unser Rat</h2>
         <v-row class="justify-center mx-0" style="width: 100%">
 
-          <v-col v-for="x in $store.state.rat" :key="x.id" cols="10">
+          <v-col v-for="x in sortRat" :key="x.id" cols="10">
             <v-card
                 style="box-shadow: 2px 4px 6px black; width: 100%; min-height: 450px; background-color: #2F53A7; border-radius: 20px">
               <v-img :src="x.image" cover style="height: 90% "></v-img>
@@ -126,6 +128,28 @@ export default {
   },
   mounted() {
     this.getAllRat()
+  },
+  computed: {
+    sortRat: function () {
+      const order = ["Vorsitzender", "Stellv. Vorsitzender"];
+
+      const vorsitzende = [];
+      const rest = [];
+
+      this.rat.forEach((ratObj) => {
+        if (order.includes(ratObj.titel)) {
+          vorsitzende.push(ratObj);
+        } else {
+          rest.push(ratObj);
+        }
+      });
+
+      vorsitzende.sort((a, b) => b.titel.localeCompare(a.titel));
+      rest.sort((a, b) => a.titel.localeCompare(b.titel));
+      console.log([...vorsitzende, ...rest])
+      return [...vorsitzende, ...rest];
+
+    }
   },
   methods: {
     async getAllRat() {
@@ -208,7 +232,7 @@ export default {
   width: 100%;
   border-radius: 20px;
   background-color: #2F53A7;
-box-shadow: 4px 6px 8px black;
+  box-shadow: 4px 6px 8px black;
 }
 
 .selectedCardMobile {

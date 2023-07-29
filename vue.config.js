@@ -1,8 +1,8 @@
 const {defineConfig} = require('@vue/cli-service')
 module.exports = defineConfig({
-    publicPath: process.env.NODE_ENV === 'production'
+    /*publicPath: process.env.NODE_ENV === 'production'
         ? '/bg-werl/'
-        : '/',
+        : '/',*/
     transpileDependencies: true,
 
     pluginOptions: {

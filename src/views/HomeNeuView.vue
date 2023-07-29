@@ -79,7 +79,7 @@
                                             {{ animatedText }}
 
                                           </h1>-->
-                    <v-timeline>
+                    <v-timeline side="end">
                       <v-timeline-item
                           dot-color="purple-lighten-2"
                           fill-dot
@@ -93,7 +93,7 @@
                             </h4>
                           </v-card-title>
                           <v-card-text class="mt-2">
-                            {{ beitrag.titel}}
+                            {{ beitrag.titel }}
                           </v-card-text>
                         </v-card>
                       </v-timeline-item>
@@ -220,7 +220,7 @@
                                             {{ animatedText }}
 
                                           </h1>-->
-                    <v-timeline>
+                    <v-timeline side="end">
                       <v-timeline-item
                           dot-color="purple-lighten-2"
                           fill-dot

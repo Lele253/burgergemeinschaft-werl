@@ -17,7 +17,7 @@
                   center-active
                   show-arrows>
                 <v-slide-group-item
-                    v-for="p in vorstand"
+                    v-for="p in sortVorstand"
                     :key="p"
                     v-slot="{ isSelected, toggle }">
                   <v-card
@@ -37,9 +37,10 @@
                           height="370" width="243"/>
                     </div>
                     <div class="d-flex justify-center">
-                    <a :href="'mailto:' + p.email" class="text-center pt-2  text-black mt-4" style="text-align: justify; text-justify: inter-word;">
-                      {{ p.email }}
-                    </a>
+                      <a :href="'mailto:' + p.email" class="text-center pt-2  text-black mt-4"
+                         style="text-align: justify; text-justify: inter-word;">
+                        {{ p.email }}
+                      </a>
 
                     </div>
                   </v-card>
@@ -57,7 +58,7 @@
                   center-active
                   show-arrows>
                 <v-slide-group-item
-                    v-for="p in vorstand"
+                    v-for="p in sortVorstand"
                     :key="p"
                     v-slot="{ isSelected}">
                   <v-card
@@ -103,6 +104,17 @@ export default {
   },
   components: {
     HeaderComponent
+  },
+  computed: {
+    sortVorstand: function () {
+      const order = ["Vorsitzender", "Vorsitzende", "Stellv. Vorsitzender", "Stellv. Vorsitzende", "Schriftführerin", "Schriftführer", "Kassenwart", "Kassenwärtin", "Besitzer", "Besitzerin"];
+
+      return [...this.vorstand].sort((a, b) => {
+        const positionA = order.indexOf(a.position);
+        const positionB = order.indexOf(b.position);
+        return positionA - positionB;
+      });
+    }
   },
   methods: {
     async getAllVorstand() {

@@ -6,7 +6,7 @@
     <v-app-bar v-if="!mobile" class="header" height="125">
       <v-row class=" d-flex justify-center mx-0" style="width: 100%">
         <v-col class="d-flex justify-start" cols="2">
-          <v-img style="cursor: pointer" :src="background" height="70" @click="$router.push('/')"/>
+          <v-img :src="background" height="70" style="cursor: pointer" @click="$router.push('/')"/>
         </v-col>
 
         <v-col cols="2"/>
@@ -54,7 +54,7 @@
             </v-col>
             <v-col>
               <v-btn class="text-center text-white"
-                     @click="weiterleiten('https://leandro-graf.de/positionspapier.pdf')">
+                     @click="weiterleiten('http://212.227.51.43/positionspapier.pdf')">
                 Position
               </v-btn>
             </v-col>
@@ -164,16 +164,15 @@ export default {
     checkMobileView() {
       if (window.innerWidth <= 850) {
         this.mobile = true;
-        this.$store.state.mobile =true;
+        this.$store.state.mobile = true;
       } else {
         this.mobile = false;
-        this.$store.state.mobile =false;
+        this.$store.state.mobile = false;
 
       }
-      if (window.innerWidth <= 1200){
+      if (window.innerWidth <= 1200) {
         this.tabletHorizontal = false
-      }
-      else {
+      } else {
         this.tabletHorizontal = true
       }
     },
