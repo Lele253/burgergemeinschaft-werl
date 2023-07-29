@@ -11,16 +11,17 @@
           <div v-if="!$store.state.mobile">
             <h1 class="text-center pt-5">Wusstest du, dass...</h1>
             <div class="mt-2" style="height: 100vh; width: 100vw; overflow-y: scroll;padding-bottom: 250px ">
-              <v-row style="width: 100%;" class="mx-0 justify-center">
-                <v-col cols="11">
-                  <v-card v-for="erfolg in erfolge"  :key="erfolg"
+              <v-row class="mx-0 justify-center" style="width: 100%;">
+                <v-col cols="9">
+                  <v-card v-for="erfolg in erfolge" :key="erfolg"
                           style="width: 80vw; box-shadow: 4px 6px 8px black; width: 100%; margin-bottom: 20px; background-color: rgba(47, 83, 167, 0.65); border-radius: 20px">
                     <v-card-item>
                       <v-row>
-                        <v-col cols="4" v-if="erfolg.image != '' ">
-                          <v-img :src="erfolg.image" cover style="max-height: 250px; width: 100%; border-radius: 20px !important;"/>
+                        <v-col v-if="erfolg.image != '' " cols="4">
+                          <v-img :src="erfolg.image" cover
+                                 style="max-height: 250px; width: 100%; border-radius: 20px !important;"/>
                         </v-col>
-                        <v-col cols="8" class="d-flex align-center">
+                        <v-col class="d-flex align-center" cols="8">
                           <p class="text-center text-white">
                             {{ erfolg.text }}
                           </p>

@@ -5,6 +5,7 @@ export default createStore({
         user: null,
         routername: 'BG Werl',
         mobile: false,
+        tablet: false,
         beiträge: [],
         erfolge: [],
         kommentare: [],

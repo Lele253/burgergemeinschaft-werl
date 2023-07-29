@@ -170,10 +170,12 @@ export default {
         this.$store.state.mobile = false;
 
       }
-      if (window.innerWidth <= 1200) {
+      if (window.innerWidth <= 1300) {
         this.tabletHorizontal = false
+        this.$store.state.tablet = false
       } else {
         this.tabletHorizontal = true
+        this.$store.state.tablet = true
       }
     },
     weiterleiten(url) {

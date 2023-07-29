@@ -4,11 +4,11 @@
       <!--      <v-col class="text-center text-white mt-4" cols="12">
               {{ new Date().getFullYear() }} — <strong>BG Werl</strong>
             </v-col>-->
-      <v-col v-if="!$store.state.mobile" cols="4" lg="1" md="4" sm="4">
+      <v-col v-if="!$store.state.mobile" cols="4" lg="1" md="3" sm="3">
         <h3 class="text-center text-white" style="cursor: pointer" @click="$router.push('/datenschutz')">
           Datenschutz</h3>
       </v-col>
-      <v-col class="d-flex justify-center" cols="4" lg="1" md="4" sm="4">
+      <v-col class="d-flex justify-center" cols="4" lg="1" md="3" sm="3">
         <div class="text-center ml-2">
           <h3 class="footer-text text-white" style="cursor:pointer;" @click="snackbarKontakt = true">Kontakt</h3>
           <v-snackbar v-model="snackbarKontakt" width="80">
@@ -37,11 +37,11 @@
         </div>
       </v-col>
 
-      <v-col class="hidden-sm-and-down" cols="4" lg="1" md="4" sm="4">
+      <v-col v-if="$store.state.tablet" class="hidden-sm-and-down" cols="4" lg="1" md="4" sm="0">
         <h3 class="text-center text-white" style="cursor: pointer" @click="$router.push('/verwaltung')">Verwaltung</h3>
       </v-col>
 
-      <v-col class="d-flex justify-center" cols="4" lg="1" md="4" sm="4">
+      <v-col class="d-flex justify-center" cols="4" lg="1" md="3" sm="3">
         <div class="text-center">
           <h3 class="ml-2 footer-text text-white" style="cursor:pointer;" @click="snackbarLinks = true">Links</h3>
           <v-snackbar v-model="snackbarLinks" width="80">
@@ -82,7 +82,7 @@
           </v-snackbar>
         </div>
       </v-col>
-      <v-col class="hidden-sm-and-down" cols="4" lg="1" md="4" sm="4">
+      <v-col class="hidden-sm-and-down" cols="4" lg="1" md="3" sm="3">
         <h3 v-if="!$store.state.mobile" class="text-white text-center" style="cursor: pointer"
             @click="$router.push('/impressum')">Impressum</h3>
       </v-col>

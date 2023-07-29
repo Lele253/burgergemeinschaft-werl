@@ -8,6 +8,7 @@
           <!--          Slider-->
 
           <div class="d-flex align-center" style="height: 88%">
+
             <v-sheet
                 class="hidden-xs"
                 style="background-color: rgba(255,255,255,0)"
@@ -26,9 +27,12 @@
                       elevation="0"
                       width="300"
                       @click="toggle">
+
                     <div>
+
                       <h2 class="text-center">{{ p.name }}</h2>
                       <h5 class="text-center">{{ p.position }}</h5>
+
                       <v-img
                           :src="p.image"
                           class="image mx-auto"
@@ -68,11 +72,20 @@
                     <div>
                       <h2 class="text-center">{{ p.name }}</h2>
                       <h5 class="text-center">{{ p.position }}</h5>
+                      <div class="mt-n5 mb-2 d-flex justify-center">
+                        <a :href="'mailto:' + p.email" class="text-center pt-2  text-black mt-4"
+                           style="text-align: justify; text-justify: inter-word;">
+                          {{ p.email }}
+                        </a>
+
+                      </div>
                       <v-img
                           :src="p.image" class="image" cover
                           height="350" max-width="240"/>
                     </div>
+
                   </v-card>
+
                 </v-slide-group-item>
               </v-slide-group>
             </v-sheet>

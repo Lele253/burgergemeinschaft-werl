@@ -7,9 +7,9 @@
           <v-card
               v-if="!$store.state.mobile"
               class="mt-n5"
-              style=" border-radius: 0px; box-shadow: 0 0 10px 10px rgba(0,0,0,0.5); height: 85%; width: 90%; background-color: rgba(0,0,0,0.6); color: transparent; max-height: 740px">
+              style=" border-radius: 0px; box-shadow: 0 0 10px 10px rgba(0,0,0,0.5); height: 85%; width: 90%; background-color: rgba(0,0,0,0.66); color: transparent; max-height: 740px">
             <v-row class="ma-0 pb-0" style="overflow-y: scroll; width: 100%; height: 100%">
-              <v-col class="" cols="12" md="5" style="height: 100%; width: 100%;">
+              <v-col class="" cols="12" md="6" style="height: 100%; width: 100%;">
 
 
                 <h1 v-if="!$store.state.mobile" class="mt-15 mx-3 text-white text-center mt-2">Willkommen bei der
@@ -18,7 +18,8 @@
                   Bürgergemeinschaft Werl!</h2>
 
                 <div>
-                  <p v-if="$store.state.mobile" class="mt-2 mb-12 d-block text-white ma-2 ">Die Bürgergemeinschaft Werl
+                  <p v-if="$store.state.mobile" class="mt-2 mb-12 d-block text-white ma-2">Die
+                    Bürgergemeinschaft Werl
                     arbeitet engagiert
                     daran,
                     unsere Stadt lebendig
@@ -31,7 +32,8 @@
                     zur Mitwirkung. Werl ist offen für alle, die Teil unserer Gemeinschaft werden und gemeinsam mit uns
                     die
                     Zukunft gestalten möchten. Willkommen bei der Bürgergemeinschaft Werl!</p>
-                  <p v-if="!$store.state.mobile" class="my-15 d-block text-white ma-2 ">Die Bürgergemeinschaft Werl
+                  <p v-if="!$store.state.mobile" class="my-15 d-block text-white ma-2 " style="font-size: 22px">Die
+                    Bürgergemeinschaft Werl
                     arbeitet engagiert
                     daran,
                     unsere Stadt lebendig
@@ -64,7 +66,7 @@
 
 
               <v-spacer></v-spacer>
-              <v-col v-if="!$store.state.mobile" cols="12" md="6" style="height: 100%; width: 100%;">
+              <v-col v-if="!$store.state.mobile" cols="12" md="5" style="height: 100%; width: 100%;">
                 <v-card class="card-rechts my-auto ">
                   <div
                       style="position: absolute; left: 42%;  z-index: 200;  height: 7px; width: 100px; border-radius: 0px 0px 50px 50px; background-color: white">
@@ -81,13 +83,12 @@
                                           </h1>-->
                     <v-timeline side="end">
                       <v-timeline-item
-                          dot-color="purple-lighten-2"
-                          fill-dot
+                          dot-color="blue"
                           size="x-small"
                           style="cursor: pointer"
                           @click="$router.push('/aktuelles')">
                         <v-card class="timeline-card mx-3">
-                          <v-card-title class="bg-purple-lighten-2">
+                          <v-card-title class="text-white" style="background-color: #2b7dda">
                             <h4 class="font-weight-light">
                               Aktuelles
                             </h4>
@@ -99,14 +100,13 @@
                       </v-timeline-item>
 
                       <v-timeline-item
-                          dot-color="amber-lighten-1"
-                          fill-dot
+                          dot-color="blue"
                           size="x-small"
                           style="cursor: pointer"
                           @click="$router.push('/kommentare')"
                       >
                         <v-card class="mx-3 timeline-card">
-                          <v-card-title class="bg-amber-lighten-1 justify-end">
+                          <v-card-title class=" justify-end text-white" style="background-color: #2b7dda">
                             <h4 class="me-4 font-weight-light">
                               Kommentar
                             </h4>
@@ -119,15 +119,14 @@
                       </v-timeline-item>
 
                       <v-timeline-item
-                          dot-color="cyan-lighten-1"
-                          fill-dot
+                          dot-color="blue"
                           size="x-small"
                           style="cursor: pointer"
                           @click="$router.push('/erfolge')"
 
                       >
                         <v-card class="mx-3 timeline-card">
-                          <v-card-title class="bg-cyan-lighten-1">
+                          <v-card-title class="text-white" style="background-color: #2b7dda">
 
                             <h4 class="font-weight-light">
                               Wusstest du, dass...
