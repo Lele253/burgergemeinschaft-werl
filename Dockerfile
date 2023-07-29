@@ -24,7 +24,7 @@ COPY leandro-graf_de.key /etc/nginx/ssl/
 RUN rm /etc/nginx/conf.d/default.conf
 
 # Nginx-Konfigurationsdatei kopieren
-COPY nginx/nginx.conf /etc/nginx/nginx.conf
+COPY nginx.conf /etc/nginx/nginx.conf
 
 # Vue.js-Build aus dem vorherigen Build-Stage kopieren
 COPY --from=build-stage /app/dist /usr/share/nginx/html
