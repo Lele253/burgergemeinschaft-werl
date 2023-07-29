@@ -27,7 +27,7 @@ RUN rm /etc/nginx/conf.d/default.conf
 COPY nginx.conf /etc/nginx/nginx.conf
 
 # Vue.js-Build aus dem vorherigen Build-Stage kopieren
-COPY --from=build-stage /app/dist /usr/share/nginx/html
+COPY --from=build-stage /app/dist /app
 
 # Port 8090 für HTTPS freigeben
 EXPOSE 8090
