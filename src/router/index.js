@@ -23,7 +23,7 @@ const routes = [
         component: DatenschutzView
     },
     {
-        path: '/aktuelles',
+        path: '/aktuell',
         name: 'aktuelles',
         component: AktuellesView
     },
