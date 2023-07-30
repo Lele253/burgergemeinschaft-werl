@@ -48,7 +48,7 @@
               </v-menu>
             </v-col>
             <v-col>
-              <v-btn class="text-center text-white" @click="$router.push('/aktuelles')">
+              <v-btn class="text-center text-white" @click="$router.push('/aktuell')">
                 Aktuelles
               </v-btn>
             </v-col>
@@ -141,7 +141,7 @@ export default {
         {titel: 'Home', url: '/'},
         {titel: 'Rat', url: '/rat'},
         {titel: 'Vorstand', url: '/vorstand'},
-        {titel: 'Aktuelles', url: '/aktuelles'},
+        {titel: 'Aktuelles', url: '/aktuell'},
         {titel: 'Position', url: 'https://leandro-graf.de/positionspapier.pdf'},
         {titel: 'Erfolge', url: '/erfolge'},
         {titel: 'Kommentare', url: '/kommentare'},
