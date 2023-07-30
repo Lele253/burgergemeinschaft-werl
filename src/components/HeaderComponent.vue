@@ -54,7 +54,7 @@
             </v-col>
             <v-col>
               <v-btn class="text-center text-white"
-                     @click="weiterleiten('http://212.227.51.43/positionspapier.pdf')">
+                     @click="weiterleiten('https://bg-werl.site:8080/auth/positionspapier')">
                 Position
               </v-btn>
             </v-col>
