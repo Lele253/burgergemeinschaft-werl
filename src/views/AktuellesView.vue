@@ -125,7 +125,7 @@ export default {
       try {
         const response = await axios.get('/aktuelles')
         this.$store.state.beiträge = response.data
-
+        this.$store.state.beiträge.sort((b, a) => a.id - b.id);
         this.beiträge = this.$store.state.beiträge;
 
         this.beiträge.forEach(item => {

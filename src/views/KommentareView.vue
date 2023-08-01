@@ -129,6 +129,7 @@ export default {
       try {
         const response = await axios.get('/kommentare')
         this.$store.state.kommentare = response.data
+        this.$store.state.kommentare.sort((b, a) => a.id - b.id);
 
         this.kommentare = this.$store.state.kommentare
 

@@ -53,7 +53,7 @@
 
                   <v-list-item class="text-center mt-2">
 
-                    <v-virtual-scroll :height="420" :items="[beitrag.text]">
+                    <v-virtual-scroll style="padding-bottom: 100px" :height="420" :items="[beitrag.text]">
                       <template v-slot:default="{ item }">
                         <p class="mx-10 text-white">{{ item }}</p>
                       </template>
@@ -134,7 +134,7 @@ export default {
       try {
         const response = await axios.get('/pressearchiv')
         this.$store.state.pressearchiv = response.data
-
+        this.$store.state.pressearchiv.sort((b, a) => a.id - b.id);
         this.pressearchiv = this.$store.state.pressearchiv
 
         this.pressearchiv.forEach(item => {
