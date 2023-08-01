@@ -5,7 +5,7 @@
       <div
           style=" background-color: rgba(255,255,255,0.21);height: 100%; width: 100%; overflow-y: scroll; padding-bottom: 100px; padding-top:20px ">
         <div v-if="!$store.state.mobile" style="height: 10%; width: 100vw"/>
-        <v-row class="d-flex justify-center " style="overflow-y: scroll ">
+        <v-row class="d-flex justify-center ml-1" style="overflow-y: scroll">
           <v-col class="d-flex justify-center" cols="12" md="4">
             <v-card class="card">
               <h2 v-if="!$store.state.mobile" class="text-center mt-10">Ich will mitmachen!</h2>
@@ -218,5 +218,9 @@ export default {
   background-color: rgba(217, 214, 214, 0.85);
   box-shadow: 4px 6px 8px black;
   border-radius: 20px 20px 20px 20px;
+}
+
+.v-row {
+  width: 100%;
 }
 </style>
