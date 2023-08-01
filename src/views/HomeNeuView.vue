@@ -58,7 +58,7 @@
                   <v-col class=" d-flex justify-center" cols="12" md="6">
                     <v-btn class="mt-n4 text-white " style="background-color: #2F53A7"
                            variant="outlined"
-                           @click="$router.push('/aktuell')">Bleib up-to-date
+                           @click="$router.push('/aktuelles')">Bleib up-to-date
                     </v-btn>
                   </v-col>
                 </v-row>
@@ -86,7 +86,7 @@
                           dot-color="blue"
                           size="x-small"
                           style="cursor: pointer"
-                          @click="$router.push('/aktuell')">
+                          @click="$router.push('/aktuelles')">
                         <v-card class="timeline-card mx-3">
                           <v-card-title class="text-white" style="background-color: #2b7dda">
                             <h4 class="font-weight-light">
@@ -196,7 +196,7 @@
                   <v-col class=" d-flex justify-center" cols="12" md="6">
                     <v-btn class="mt-n4 text-white " style="background-color: #2F53A7"
                            variant="outlined"
-                           @click="$router.push('/aktuell')">Bleib up-to-date
+                           @click="$router.push('/aktuelles')">Bleib up-to-date
                     </v-btn>
                   </v-col>
                 </v-row>
@@ -225,7 +225,7 @@
                           fill-dot
                           size="x-small"
                           style="cursor: pointer"
-                          @click="$router.push('/aktuell')">
+                          @click="$router.push('/aktuelles')">
                         <v-card class="timeline-card mx-3">
                           <v-card-title class="bg-purple-lighten-2">
                             <h4 class="font-weight-light">

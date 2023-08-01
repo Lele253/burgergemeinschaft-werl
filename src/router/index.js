@@ -23,7 +23,7 @@ const routes = [
         component: DatenschutzView
     },
     {
-        path: '/aktuell',
+        path: '/aktuelles',
         name: 'aktuelles',
         component: AktuellesView
     },
@@ -66,6 +66,9 @@ const routes = [
         path: '/impressum',
         name: 'Impressum',
         component: ImpressumView
+    },
+    {
+        path: '/:catchAll(.*)', component: HomeNeuView
     },
 
 ]
