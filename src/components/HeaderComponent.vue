@@ -112,7 +112,8 @@
         width="150"
     >
       <v-list>
-        <v-list-item v-for="link in links" :key="link" class="text-center text-white" @click="weiterleiten(link.url)">
+        <v-list-item v-for="link in links" :key="link" class="text-center text-white links"
+                     @click="weiterleiten(link.url)">
           {{ link.titel }}
           <v-divider></v-divider>
         </v-list-item>
@@ -146,6 +147,7 @@ export default {
         {titel: 'Erfolge', url: '/erfolge'},
         {titel: 'Kommentare', url: '/kommentare'},
         {titel: 'Pressearchiv', url: '/pressearchiv'},
+        {titel: 'Mitglied werden', url: '/mitglied'},
         {titel: 'Tagesordnung', url: 'https://sessionnet.krz.de/werl/bi/info.asp'},
         {titel: 'Impressum', url: '/impressum'},
         {titel: 'Datenschutz', url: '/datenschutz'},
@@ -192,6 +194,10 @@ export default {
 <style scoped>
 .header {
   background-color: #2F53A7
+}
+
+.links:hover {
+  background-color: grey;
 }
 
 .mitglied-button {

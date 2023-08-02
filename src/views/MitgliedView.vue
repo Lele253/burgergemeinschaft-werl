@@ -1,17 +1,18 @@
 <template>
   <div>
     <HeaderComponent/>
-    <v-img :src="background" cover style="height: 100vh; position: fixed; width: 100vw ;">
+    <v-img :src="background" cover style="height: 100vh; position: fixed; width: 100% ;">
       <div
-          style=" background-color: rgba(255,255,255,0.21);height: 100%; width: 100%; overflow-y: scroll; padding-bottom: 100px; padding-top:20px ">
-        <div v-if="!$store.state.mobile" style="height: 10%; width: 100vw"/>
-        <v-row class="d-flex justify-center " style="overflow-y: scroll ">
+          style=" background-color: rgba(255,255,255,0.21);height: 100%; overflow-y: scroll;overflow-x: hidden; padding-bottom: 100px; padding-top:20px ">
+        <div v-if="!$store.state.mobile" style="height: 10%; width: 100%"/>
+        <v-row class="d-flex justify-center ml-1 mb-3" style="overflow-y: scroll">
           <v-col class="d-flex justify-center" cols="12" md="4">
             <v-card class="card">
               <h2 v-if="!$store.state.mobile" class="text-center mt-10">Ich will mitmachen!</h2>
               <h2 v-if="$store.state.mobile" class="text-center mt-4">Ich will mitmachen!</h2>
 
-              <p class="text-center mt-5 mx-10"> Finden Sie sich in unseren Zielen wieder? Dann werden Sie Mitglied
+              <p class="text-center mt-5 mx-10">
+                Finden Sie sich in unseren Zielen wieder? Dann werden Sie Mitglied
                 in
                 der
                 Bürgergemeinschaft Werl e.V.
@@ -30,7 +31,7 @@
             <v-card class="card mx-0">
               <v-form class="mt-10 mx-10 d-flex justify-center" @submit="abschicken">
                 <v-row style="width: 100%">
-                  <v-col class="py-0" cols="6">
+                  <v-col class="py-0" cols="12" lg="6" md="6" sm="6">
                     <v-text-field
                         v-model="vorname"
                         :rules="rules"
@@ -38,7 +39,7 @@
                         variant="outlined"
                     ></v-text-field>
                   </v-col>
-                  <v-col class="py-0" cols="6">
+                  <v-col class="py-0" cols="12" lg="6" md="6" sm="6">
                     <v-text-field
                         v-model="nachname"
                         :rules="rules"
@@ -218,5 +219,9 @@ export default {
   background-color: rgba(217, 214, 214, 0.85);
   box-shadow: 4px 6px 8px black;
   border-radius: 20px 20px 20px 20px;
+}
+
+.v-row {
+  width: 100%;
 }
 </style>
