@@ -6,8 +6,8 @@
         <div class="d-flex align-center justify-center" style="height: 100%; padding-bottom: 100px">
           <v-card
               v-if="!$store.state.mobile"
-              class="mt-n5"
-              style=" border-radius: 0px; box-shadow: 0 0 10px 10px rgba(0,0,0,0.5); height: 85%; width: 90%; background-color: rgba(0,0,0,0.66); color: transparent; max-height: 740px">
+              class="mt-n8"
+              style=" border-radius: 0px; box-shadow: 5px 5px 12px rgba(0,0,0,0.21); height: 85%; width: 90%; backdrop-filter: blur(4px); background-color: rgba(0,0,0,0.66); border-radius: 20px; border-left: 2px solid #FFFFFF75;border-top: 2px solid #FFFFFF75; color: transparent; max-height: 740px">
             <v-row class="ma-0 pb-0" style="overflow-y: scroll; width: 100%; height: 100%">
               <v-col class="" cols="12" md="6" style="height: 100%; width: 100%;">
 
