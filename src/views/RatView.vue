@@ -123,7 +123,7 @@ import {Icon} from '@iconify/vue';
 export default {
   data() {
     return {
-      name: "Rat",
+      name: "Rat u. Ausschüsse",
       background: require('../assets/VorstandUndRat.png'),
       model: [],
 

@@ -49,7 +49,7 @@ const routes = [
     },
     {
         path: '/rat',
-        name: 'rat',
+        name: 'Rat u. Ausschüsse',
         component: RatView
     },
     {
