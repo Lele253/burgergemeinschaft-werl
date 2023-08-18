@@ -38,7 +38,7 @@
                 <v-list style="background-color: #2F53A7; border-radius: 20px; position:relative; left: -10px">
                   <v-list-item class="text-white"
                                @click="$router.push('/rat')">
-                    Rat
+                    Rat u. Ausschuss
                   </v-list-item>
                   <v-divider color="black" thickness="3"></v-divider>
                   <v-list-item class="text-white" @click="$router.push('/vorstand')">
@@ -140,7 +140,7 @@ export default {
 
       links: [
         {titel: 'Home', url: '/'},
-        {titel: 'Rat', url: '/rat'},
+        {titel: 'Rat u. Ausschuss', url: '/rat'},
         {titel: 'Vorstand', url: '/vorstand'},
         {titel: 'Aktuelles', url: '/aktuelles'},
         {titel: 'Position', url: 'https://leandro-graf.de/positionspapier.pdf'},

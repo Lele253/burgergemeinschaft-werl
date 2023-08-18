@@ -14,6 +14,8 @@ export default createStore({
         pressearchiv: [],
         bewerbungen: [],
 
+        contentDelta: ''
+
 
     },
 

@@ -25,11 +25,11 @@
 
                   <v-row class="mx-0" style="width: 100%">
                     <v-col class="px-0" cols="5">
-                      <v-img :src="beitrag.image" cover style="border-radius: 20px" class="ml-1 mt-1 image"/>
+                      <v-img :src="beitrag.image" class="ml-1 mt-1 image" cover style="border-radius: 20px"/>
                     </v-col>
 
                     <v-col class="px-0 mt-3 d-flex align-center" cols="7">
-                      <h4 style="margin-left: 10px !important;" class="text-center mx-5">{{ beitrag.titel }}</h4>
+                      <h4 class="text-center mx-5" style="margin-left: 10px !important;">{{ beitrag.titel }}</h4>
                     </v-col>
 
                     <v-col class="d-flex justify-end" cols="12">
@@ -52,6 +52,7 @@
                   </v-list-item>
 
                   <v-list-item class="text-center mt-2">
+
 
                     <v-virtual-scroll :height="420" :items="[beitrag.inhalt]">
                       <template v-slot:default="{ item }">
@@ -79,10 +80,10 @@
                 <v-col cols="12">
                   <v-expansion-panels>
                     <v-expansion-panel
-                        title="Beitrag..."
                         class="text-white"
                         color="#2F53A7"
                         style=" background-color: rgba(97,153,218,0.73); border: #69a6f1 solid 2px; border-radius: 20px  "
+                        title="Beitrag..."
                     >
                       <v-expansion-panel-text class="text-center">{{ beitrag.inhalt }}</v-expansion-panel-text>
                     </v-expansion-panel>
@@ -105,6 +106,7 @@
 <script>
 import HeaderComponent from "@/components/HeaderComponent";
 import axios from "axios";
+import {QuillDeltaToHtmlConverter} from "quill-delta-to-html";
 
 export default {
   data() {
@@ -121,6 +123,10 @@ export default {
     HeaderComponent
   },
   methods: {
+    convertDeltaToHtml(delta) {
+      const converter = new QuillDeltaToHtmlConverter(delta.ops, {});
+      return converter.convert();
+    },
     async getAllBeiträge() {
       try {
         const response = await axios.get('/aktuelles')
