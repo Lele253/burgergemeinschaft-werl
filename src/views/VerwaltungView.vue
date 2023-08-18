@@ -239,10 +239,10 @@ export default {
         localStorage.setItem('token', response.data)
         this.$store.state.user = true
         this.dialog = false
+        await location.reload()
       } catch (e) {
         this.error = e
       }
-      await location.reload()
     },
     async getUser() {
       try {
