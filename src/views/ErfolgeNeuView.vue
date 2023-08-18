@@ -14,7 +14,7 @@
               <v-row class="mx-0 justify-center" style="width: 100%;">
                 <v-col cols="9">
                   <v-card v-for="erfolg in erfolge" :key="erfolg"
-                          style="width: 80vw; box-shadow: 4px 6px 8px black; width: 100%; margin-bottom: 20px; background-color: rgba(47, 83, 167, 0.65); border-radius: 20px">
+                          style="width: 80vw; border-left: 2px solid #FFFFFF75;border-top: 2px solid #FFFFFF75; backdrop-filter: blur(8px); box-shadow: 4px 6px 8px rgba(0,0,0,0.44); width: 100%; margin-bottom: 20px; background-color: rgba(47,83,167,0.63); border-radius: 20px">
                     <v-card-item>
                       <v-row>
                         <v-col v-if="erfolg.image != '' " cols="4">
