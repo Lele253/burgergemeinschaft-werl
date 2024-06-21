@@ -144,6 +144,7 @@ export default {
       const response = await axios.get('/user/all')
       this.userArray = response.data
     },
+
     async löschen(user) {
       try {
         const index = this.userArray.indexOf(user);

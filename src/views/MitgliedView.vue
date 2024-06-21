@@ -171,7 +171,7 @@ export default {
   methods: {
     async abschicken() {
       try {
-        await axios.post('/bewerbung', {
+       let response = await axios.post('/bewerbung', {
           vorname: this.vorname,
           nachname: this.nachname,
           email: this.email,
@@ -181,10 +181,12 @@ export default {
           straße: this.adresse,
           bearbeitet: false
         })
+
         this.clear()
       } catch (e) {
         alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut. Falls das Problem weiterhin besteht, kontaktieren Sie Bitte den Administrator.")
       }
+
     },
     clear() {
       this.vorname = null
