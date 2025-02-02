@@ -75,7 +75,7 @@
             </v-col>
             <v-col>
               <v-btn v-if="tabletHorizontal" class="text-center text-white"
-                     @click="weiterleiten('https://sessionnet.krz.de/werl/bi/info.asp')">
+                     @click="weiterleiten('https://sessionnet.owl-it.de/werl/bi/info.asp')">
                 Tagesordnung
               </v-btn>
             </v-col>
@@ -148,7 +148,7 @@ export default {
         {titel: 'Kommentare', url: '/kommentare'},
         {titel: 'Pressearchiv', url: '/pressearchiv'},
         {titel: 'Mitglied werden', url: '/mitglied'},
-        {titel: 'Tagesordnung', url: 'https://sessionnet.krz.de/werl/bi/info.asp'},
+        {titel: 'Tagesordnung', url: 'https://sessionnet.owl-it.de/werl/bi/info.asp'},
         {titel: 'Impressum', url: '/impressum'},
         {titel: 'Datenschutz', url: '/datenschutz'},
 
