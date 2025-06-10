@@ -171,7 +171,7 @@ export default {
   methods: {
     async abschicken() {
       try {
-       let response = await axios.post('/bewerbung', {
+        await axios.post('/bewerbung', {
           vorname: this.vorname,
           nachname: this.nachname,
           email: this.email,

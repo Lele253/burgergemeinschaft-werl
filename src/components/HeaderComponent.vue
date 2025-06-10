@@ -22,7 +22,7 @@
           </v-btn>
         </v-col>
 
-        <v-col cols="11">
+        <v-col cols="12">
           <v-row class="d-flex mt-n10">
             <v-col>
               <v-menu>
@@ -54,8 +54,14 @@
             </v-col>
             <v-col>
               <v-btn class="text-center text-white"
-                     @click="weiterleiten('https://bg-werl.site:8080/auth/positionspapier')">
+                     @click="weiterleiten('https://bg-werl.site/positionspapier.pdf')">
                 Position
+              </v-btn>
+            </v-col>
+            <v-col>
+              <v-btn class="text-center text-white"
+                     @click="weiterleiten('https://bg-werl.site/SatzungBGWerl.pdf')">
+                Satzung BG Werl
               </v-btn>
             </v-col>
             <v-col>
@@ -143,7 +149,8 @@ export default {
         {titel: 'Rat u. Ausschüsse', url: '/rat'},
         {titel: 'Vorstand', url: '/vorstand'},
         {titel: 'Aktuelles', url: '/aktuelles'},
-        {titel: 'Position', url: 'https://leandro-graf.de/positionspapier.pdf'},
+        {titel: 'Position', url: 'https://bg-werl.site/positionspapier.pdf'},
+        {titel: 'Satzung BG Werl', url: 'https://bg-werl.site/SatzungBGWerl.pdf'},
         {titel: 'Erfolge', url: '/erfolge'},
         {titel: 'Kommentare', url: '/kommentare'},
         {titel: 'Pressearchiv', url: '/pressearchiv'},

@@ -56,7 +56,7 @@
 
                     <v-virtual-scroll :height="420" :items="[beitrag.inhalt]">
                       <template v-slot:default="{ item }">
-                        <p class="mx-10 text-white">{{ item }}</p>
+                        <p class="mx-10 text-white" style="padding-bottom: 50px">{{ item }}</p>
                       </template>
                     </v-virtual-scroll>
                   </v-list-item>
