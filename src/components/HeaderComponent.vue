@@ -47,6 +47,29 @@
                 </v-list>
               </v-menu>
             </v-col>
+            <v-col class="d-flex justify-center">
+              <v-menu>
+                <template v-slot:activator="{ props }">
+                  <v-btn
+                      class=""
+                      color="white"
+                      v-bind="props"
+                  >
+                    Wahl 2025
+                  </v-btn>
+                </template>
+                <v-list style="background-color: #2F53A7; border-radius: 20px; position:relative; left: -10px">
+                  <v-list-item class="text-white"
+                               @click="$router.push('/kreistag')">
+                    Kreistag
+                  </v-list-item>
+                  <v-divider color="black" thickness="3"></v-divider>
+                  <v-list-item class="text-white" @click="$router.push('/Stadtrat')">
+                    Stadtrat Werl
+                  </v-list-item>
+                </v-list>
+              </v-menu>
+            </v-col>
             <v-col>
               <v-btn class="text-center text-white" @click="$router.push('/aktuelles')">
                 Aktuelles
@@ -148,6 +171,8 @@ export default {
         {titel: 'Home', url: '/'},
         {titel: 'Rat u. Ausschüsse', url: '/rat'},
         {titel: 'Vorstand', url: '/vorstand'},
+        {titel: 'Kreistag', url: '/kreistag'},
+        {titel: 'Stadtrat Werl', url: '/stadtrat'},
         {titel: 'Aktuelles', url: '/aktuelles'},
         {titel: 'Position', url: 'https://bg-werl.site/positionspapier.pdf'},
         {titel: 'Satzung BG Werl', url: 'https://bg-werl.site/SatzungBGWerl.pdf'},
@@ -158,6 +183,7 @@ export default {
         {titel: 'Tagesordnung', url: 'https://sessionnet.owl-it.de/werl/bi/info.asp'},
         {titel: 'Impressum', url: '/impressum'},
         {titel: 'Datenschutz', url: '/datenschutz'},
+
 
       ]
     };

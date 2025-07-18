@@ -10,6 +10,8 @@ import RatView from "@/views/RatView";
 import ErfolgeNeuView from "@/views/ErfolgeNeuView";
 import DatenschutzView from "@/views/DatenschutzView";
 import HomeNeuView from "@/views/HomeNeuView";
+import KreistagView from "@/views/KreistagView.vue";
+import StadtratView from "@/views/StadtratView.vue";
 
 const routes = [
     {
@@ -26,6 +28,16 @@ const routes = [
         path: '/aktuelles',
         name: 'aktuelles',
         component: AktuellesView
+    },
+    {
+        path: '/kreistag',
+        name: 'kreistag',
+        component: KreistagView
+    },
+    {
+        path: '/Stadtrat',
+        name: 'Stadtrat',
+        component: StadtratView
     },
     {
         path: '/erfolge',
