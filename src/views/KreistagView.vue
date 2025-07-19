@@ -132,7 +132,7 @@ export default {
 
   },
   created() {
-    this.$store.state.routername = this.name
+    this.$store.state.routername = "Kreistag"
   },
   mounted() {
   }

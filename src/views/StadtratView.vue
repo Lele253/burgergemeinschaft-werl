@@ -114,7 +114,7 @@ export default {
         {
           wahlbezirk: "030",
           image: require('../assets/stadtrat/030 - Mareike Pieper.jpg'),
-          name: "Lothar Pieper"
+          name: "Mareike Pieper"
         },
         {
           wahlbezirk: "040",
@@ -164,11 +164,6 @@ export default {
           name: "Christa Schmigowski"
         },
         {
-          wahlbezirk: "050",
-          image: require('../assets/stadtrat/050 - Jens Schmigowski.jpg'),
-          name: "Jens Schmigowski"
-        },
-        {
           wahlbezirk: "130",
           image: require('../assets/stadtrat/130 - Manfred Niemeyer.jpg'),
           name: "Manfred Niemeyer"
@@ -214,7 +209,7 @@ export default {
 
   },
   created() {
-    this.$store.state.routername = this.name
+    this.$store.state.routername = "Stadtrat"
   },
   mounted() {
   }

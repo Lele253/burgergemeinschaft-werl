@@ -15,6 +15,9 @@
           <h1 class="text-center text-white" @click="$router.push('/')">
             {{ $store.state.routername }}
           </h1>
+          <h1 >
+
+          </h1>
         </v-col>
 
         <v-col class="d-flex align-center pr-10 justify-end" cols="4">
